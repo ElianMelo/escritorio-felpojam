@@ -3,14 +3,19 @@ extends RigidBody3D
 
 @export var office_item_data: OfficeItemData = null
 @onready var camera: Camera3D = %MainCamera3D
+@onready var office_item_usage: OfficeItemUsage = $OfficeItemUsage
 
 var isDragging: bool = false
 const RotateSpeed: float = 20
 
-signal item_used(damage: int)
+signal item_damage_used(damage: int)
+signal item_slow_used(duration: float, target: Enums.EFFECT_TARGET)
+signal item_freeze_used(duration: float, target: Enums.EFFECT_TARGET)
+signal item_haste_used(duration: float, target: Enums.EFFECT_TARGET)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	office_item_usage.SetDuration(office_item_data.reload)
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -31,8 +36,23 @@ func stop_drag():
 	isDragging = false
 
 func use_item():
-	emit_signal("item_used", 10)
-	pass
+	if office_item_data.canDamage:
+		emit_signal("item_damage_used", office_item_data.damage)
+	if office_item_data.canFreeze:
+		emit_signal("item_freeze_used", office_item_data.freezeDuration,
+			office_item_data.effectTarget)
+	if office_item_data.canHaste:
+		emit_signal("item_haste_used", office_item_data.hasteDuration,
+			office_item_data.effectTarget)
+	if office_item_data.canSlow:
+		emit_signal("item_slow_used", office_item_data.slowDuration,
+			office_item_data.effectTarget)
+	use_item_tween()
+
+func use_item_tween():
+	var tween = create_tween()
+	tween.tween_property(self, "scale", Vector3(1.2, 1.2, 1.2), 0.2)
+	tween.tween_property(self, "scale", Vector3.ONE, 0.2)
 		
 func handle_object_position():
 	var mouse_pos = get_viewport().get_mouse_position()

@@ -5,6 +5,8 @@
 [resource]
 script = ExtResource("1_rayha")
 name = "Regular Paper"
-reload = 5.0
-damage = 10
+reload = 2.0
+canDamage = true
+damage = 25
+freezeDuration = 2.0
 metadata/_custom_type_script = "uid://dvk0rv8yoxdjy"

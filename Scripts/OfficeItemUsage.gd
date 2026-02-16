@@ -1,3 +1,4 @@
+class_name OfficeItemUsage
 extends Node3D
 
 @onready var item_progress: ItemProgress = $"../ItemProgress"
@@ -5,13 +6,16 @@ extends Node3D
 
 var modifier = 1
 
-var duration = 5
+var duration = 99
 var currentDuration = 0
 
 var effectDuration = 0
 var currentEffectDuration = 0
 
 var currentEffect: Enums.EFFECT = Enums.EFFECT.NONE
+
+func SetDuration(durationData: float):
+	duration = durationData
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("g_key_button"):
