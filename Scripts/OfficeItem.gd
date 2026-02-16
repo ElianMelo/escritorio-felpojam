@@ -2,7 +2,7 @@ class_name OfficeItem
 extends RigidBody3D
 
 @export var office_item_data: OfficeItemData = null
-@onready var camera: Camera3D = %MainCamera3D
+@export var camera: Camera3D
 @onready var office_item_usage: OfficeItemUsage = $OfficeItemUsage
 
 var isDragging: bool = false
@@ -12,6 +12,11 @@ signal item_damage_used(damage: int)
 signal item_slow_used(duration: float, target: Enums.EFFECT_TARGET)
 signal item_freeze_used(duration: float, target: Enums.EFFECT_TARGET)
 signal item_haste_used(duration: float, target: Enums.EFFECT_TARGET)
+
+func SetupData(cameraSetup: Camera3D, officeItemData: OfficeItemData):
+	camera = cameraSetup
+	office_item_data = officeItemData
+	office_item_usage.SetDuration(office_item_data.reload)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -47,7 +52,7 @@ func use_item():
 	if office_item_data.canSlow:
 		emit_signal("item_slow_used", office_item_data.slowDuration,
 			office_item_data.effectTarget)
-	use_item_tween()
+	pass
 
 func use_item_tween():
 	var tween = create_tween()

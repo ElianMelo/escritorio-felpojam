@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://wrs1isxs68sw"]
+
+[ext_resource type="Script" uid="uid://dgtk0fwsuc2q6" path="res://Scripts/OfficeItem.gd" id="1_2ohxv"]
+[ext_resource type="Resource" uid="uid://bgd2x7qjlq3yk" path="res://Data/RegularPaper.tres" id="2_udlc6"]
+[ext_resource type="Script" uid="uid://s6ba216mjbhx" path="res://Scripts/OfficeItemUsage.gd" id="3_gsc6a"]
+[ext_resource type="Script" uid="uid://dppbefblh8sm8" path="res://Scripts/ItemProgress.gd" id="4_k5hvi"]
+[ext_resource type="Texture2D" uid="uid://d2hvax8gm7b02" path="res://Sprites/radial_button_back.png" id="5_8yyny"]
+[ext_resource type="Texture2D" uid="uid://dckv0ijfcjs6c" path="res://Sprites/radial_button.png" id="6_x57ev"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r3fl7"]
+size = Vector3(1, 1.0664063, 0.077941895)
+
+[sub_resource type="BoxMesh" id="BoxMesh_nhkr4"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_7rqgy"]
+viewport_path = NodePath("ItemProgress/SubViewport")
+
+[node name="OfficeItem" type="RigidBody3D" unique_id=1235334946]
+script = ExtResource("1_2ohxv")
+office_item_data = ExtResource("2_udlc6")
+
+[node name="OfficeItemUsage" type="Node3D" parent="." unique_id=1341431946]
+script = ExtResource("3_gsc6a")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=809306776]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0010681152)
+shape = SubResource("BoxShape3D_r3fl7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1873558267]
+transform = Transform3D(1, 0, 0, 0, 1.065, 0, 0, 0, 0.055, 0, 0, 0)
+mesh = SubResource("BoxMesh_nhkr4")
+
+[node name="ItemProgress" type="Sprite3D" parent="." unique_id=1751499511]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.045499444, 0.4781475, 0.2693104)
+billboard = 1
+texture_filter = 0
+texture = SubResource("ViewportTexture_7rqgy")
+script = ExtResource("4_k5hvi")
+
+[node name="SubViewport" type="SubViewport" parent="ItemProgress" unique_id=1944659599]
+transparent_bg = true
+size = Vector2i(128, 128)
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="ItemProgress/SubViewport" unique_id=701357966]
+anchors_preset = -1
+anchor_right = 0.11100001
+anchor_bottom = 0.19800001
+offset_right = 71.168
+offset_bottom = 26.623993
+max_value = 1.0
+step = 0.0
+value = 0.5
+fill_mode = 4
+texture_under = ExtResource("5_8yyny")
+texture_progress = ExtResource("6_x57ev")
