@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="OfficeItemData" format=3 uid="uid://bgd2x7qjlq3yk"]
+
+[ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scripts/OfficeItemData.gd" id="1_rayha"]
+
+[resource]
+script = ExtResource("1_rayha")
+name = "Regular Paper"
+reload = 5.0
+damage = 10
+metadata/_custom_type_script = "uid://dvk0rv8yoxdjy"

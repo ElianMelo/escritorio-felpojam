@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://hplos1ocgsaa"]
+
+[ext_resource type="Script" uid="uid://bsqa7t68swdxd" path="res://Scripts/DraggerController.gd" id="1_tr2i4"]
+[ext_resource type="Script" uid="uid://dgtk0fwsuc2q6" path="res://Scripts/OfficeItem.gd" id="2_nhkr4"]
+[ext_resource type="Texture2D" uid="uid://dckv0ijfcjs6c" path="res://Sprites/radial_button.png" id="3_7rqgy"]
+[ext_resource type="Material" uid="uid://deuj40mclg1do" path="res://Materials/TableMaterial.tres" id="3_nhkr4"]
+[ext_resource type="Texture2D" uid="uid://d2hvax8gm7b02" path="res://Sprites/radial_button_back.png" id="3_qxria"]
+[ext_resource type="Resource" uid="uid://bgd2x7qjlq3yk" path="res://Data/RegularPaper.tres" id="3_y4jh7"]
+[ext_resource type="Script" uid="uid://s6ba216mjbhx" path="res://Scripts/OfficeItemUsage.gd" id="4_f140w"]
+[ext_resource type="Script" uid="uid://dppbefblh8sm8" path="res://Scripts/ItemProgress.gd" id="4_q68mp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r3fl7"]
+size = Vector3(1, 1.0664063, 0.077941895)
+
+[sub_resource type="BoxMesh" id="BoxMesh_nhkr4"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_7rqgy"]
+viewport_path = NodePath("OfficeItem/ItemProgress/SubViewport")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tr2i4"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_tr2i4"]
+
+[node name="Node3D" type="Node3D" unique_id=2055693070]
+
+[node name="GameManager" type="Node3D" parent="." unique_id=201966788]
+
+[node name="DraggerController" type="Node3D" parent="GameManager" unique_id=774057350]
+script = ExtResource("1_tr2i4")
+
+[node name="MainCamera3D" type="Camera3D" parent="." unique_id=1888448212]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.54597044, 0.8378045, 0, -0.8378045, 0.54597044, 0, 7.913415, 5.1601324)
+fov = 40.5
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=753834308]
+transform = Transform3D(1, 0, 0, 0, 0.7155464, 0.6985652, 0, -0.6985652, 0.7155464, 0, 0, 0)
+
+[node name="OfficeItem" type="RigidBody3D" parent="." unique_id=1954202796]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7616622, 0)
+script = ExtResource("2_nhkr4")
+office_item_data = ExtResource("3_y4jh7")
+
+[node name="OfficeItemUsage" type="Node3D" parent="OfficeItem" unique_id=924127717]
+script = ExtResource("4_f140w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OfficeItem" unique_id=91477197]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0010681152)
+shape = SubResource("BoxShape3D_r3fl7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="OfficeItem" unique_id=174440141]
+transform = Transform3D(1, 0, 0, 0, 1.065, 0, 0, 0, 0.055, 0, 0, 0)
+mesh = SubResource("BoxMesh_nhkr4")
+
+[node name="ItemProgress" type="Sprite3D" parent="OfficeItem" unique_id=332707285]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.045499444, 0.4781475, 0.2693104)
+billboard = 1
+texture_filter = 0
+texture = SubResource("ViewportTexture_7rqgy")
+script = ExtResource("4_q68mp")
+
+[node name="SubViewport" type="SubViewport" parent="OfficeItem/ItemProgress" unique_id=373146764]
+transparent_bg = true
+size = Vector2i(128, 128)
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="OfficeItem/ItemProgress/SubViewport" unique_id=535812979]
+anchors_preset = -1
+anchor_right = 0.11100001
+anchor_bottom = 0.19800001
+offset_right = 71.168
+offset_bottom = 26.623993
+max_value = 1.0
+step = 0.0
+value = 0.5
+fill_mode = 4
+texture_under = ExtResource("3_qxria")
+texture_progress = ExtResource("3_7rqgy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=173844908]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -5, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1619610930]
+shape = SubResource("BoxShape3D_tr2i4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=228405548]
+mesh = SubResource("BoxMesh_tr2i4")
+surface_material_override/0 = ExtResource("3_nhkr4")
