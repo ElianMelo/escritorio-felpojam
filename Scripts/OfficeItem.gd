@@ -7,6 +7,8 @@ extends RigidBody3D
 var isDragging: bool = false
 const RotateSpeed: float = 20
 
+signal item_used(damage: int)
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -24,13 +26,13 @@ func _physics_process(delta: float) -> void:
 
 func start_drag():
 	isDragging = true
-	print("start_drag")
 
 func stop_drag():
 	isDragging = false
-	print("stop_drag")
 
-
+func use_item():
+	emit_signal("item_used", 10)
+	pass
 		
 func handle_object_position():
 	var mouse_pos = get_viewport().get_mouse_position()

@@ -7,10 +7,11 @@ var currentOfficeItem: OfficeItem = null
 var isDragging: bool = false
 
 func _physics_process(delta):
-	if Input.is_action_just_pressed("left_click"):
+	if Input.is_action_just_released("left_click"):
 		if isDragging:
 			handle_stop_drag()
 			return
+	if Input.is_action_just_pressed("left_click"):
 		var space_state = get_world_3d().direct_space_state
 		var mousepos = get_viewport().get_mouse_position()
 		var origin = cam.project_ray_origin(mousepos)
