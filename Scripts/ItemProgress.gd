@@ -17,9 +17,9 @@ func _process(delta: float) -> void:
 func set_current_mode(effect: Enums.EFFECT):
 	currentEffect = effect
 	match currentEffect:
-		Enums.EFFECT.HASTE:	
+		Enums.EFFECT.HASTE:
 			progress_sprite.modulate = Color.AQUAMARINE
-		Enums.EFFECT.FREEZE:	
+		Enums.EFFECT.FREEZE:
 			progress_sprite.modulate = Color.CYAN
 		Enums.EFFECT.SLOW:
 			progress_sprite.modulate = Color.YELLOW

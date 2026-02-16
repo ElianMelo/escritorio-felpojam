@@ -78,7 +78,11 @@ func handle_object_rotation(delta):
 func handle_object_reset():
 	if Input.is_action_just_pressed("right_click"):
 		rotation = Vector3(-45, 0, 0)
+		ResetRotation()
 	pass
+
+func ResetRotation():
+	rotation = Vector3(-45, 0, 0)
 
 func handle_scale_test():
 	if Input.is_action_just_pressed("button_test"):

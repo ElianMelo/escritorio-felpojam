@@ -66,6 +66,7 @@ transform = Transform3D(1, 0, 0, 0, 0.7155464, 0.6985652, 0, -0.6985652, 0.71554
 
 [node name="OfficeItem" parent="." unique_id=1235334946 node_paths=PackedStringArray("camera") instance=ExtResource("6_q68mp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7616622, 0)
+visible = false
 camera = NodePath("../MainCamera3D")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=173844908]
