@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="OfficeItemData" format=3 uid="uid://dqk58bdx34deo"]
+
+[ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scripts/OfficeItemData.gd" id="1_8sc3b"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_rayha"]
+
+[resource]
+script = ExtResource("1_8sc3b")
+name = "Papel Pequeno"
+reload = 1.0
+canDamage = true
+damage = 1
+canSlow = true
+slowDuration = 2.0
+freezeDuration = 2.0
+chargeSeconds = 1.0
+meshResource = SubResource("PrismMesh_rayha")
+metadata/_custom_type_script = "uid://dvk0rv8yoxdjy"

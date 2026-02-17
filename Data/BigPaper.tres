@@ -6,12 +6,17 @@
 
 [resource]
 script = ExtResource("1_doqk2")
-name = "Big Paper"
+name = "Papel Grande"
 reload = 10.0
 canDamage = true
 damage = 50
+canSlow = true
+slowDuration = 2.0
+canFreeze = true
 freezeDuration = 2.0
 canHaste = true
 hasteDuration = 3.0
+canCharge = true
+chargeSeconds = 2.0
 meshResource = SubResource("BoxMesh_doqk2")
 metadata/_custom_type_script = "uid://dvk0rv8yoxdjy"

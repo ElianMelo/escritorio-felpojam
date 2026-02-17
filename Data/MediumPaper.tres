@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="OfficeItemData" format=3 uid="uid://bhm1ch14ybiuj"]
+
+[ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scripts/OfficeItemData.gd" id="1_nishv"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_rayha"]
+
+[resource]
+script = ExtResource("1_nishv")
+name = "Papel Médio"
+reload = 1.0
+canDamage = true
+damage = 1
+canFreeze = true
+freezeDuration = 2.0
+chargeSeconds = 1.0
+meshResource = SubResource("PrismMesh_rayha")
+metadata/_custom_type_script = "uid://dvk0rv8yoxdjy"

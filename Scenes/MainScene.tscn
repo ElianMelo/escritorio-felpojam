@@ -11,6 +11,8 @@
 [ext_resource type="Resource" uid="uid://bct7pfbubiwtb" path="res://Data/BigPaper.tres" id="5_4b75m"]
 [ext_resource type="Texture2D" uid="uid://bsti8misj8x0m" path="res://Sprites/block.png" id="5_6t1o7"]
 [ext_resource type="PackedScene" uid="uid://wrs1isxs68sw" path="res://Prefabs/OfficeItem.tscn" id="6_q68mp"]
+[ext_resource type="Resource" uid="uid://bhm1ch14ybiuj" path="res://Data/MediumPaper.tres" id="7_5qxwa"]
+[ext_resource type="Resource" uid="uid://dqk58bdx34deo" path="res://Data/SmallPaper.tres" id="8_xc4hf"]
 [ext_resource type="Script" uid="uid://dfs6r6ukjj5v0" path="res://Scenes/Tooltip.gd" id="10_xb4mg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tr2i4"]
@@ -27,7 +29,7 @@ script = ExtResource("1_tr2i4")
 
 [node name="PlayerBoardController" type="Node3D" parent="GameManager" unique_id=1486856888]
 script = ExtResource("2_0iob3")
-office_item_data = Array[ExtResource("3_y4jh7")]([ExtResource("4_0iob3"), ExtResource("5_4b75m")])
+office_item_data = Array[ExtResource("3_y4jh7")]([ExtResource("4_0iob3"), ExtResource("5_4b75m"), ExtResource("7_5qxwa"), ExtResource("8_xc4hf")])
 
 [node name="Interface" type="Node3D" parent="GameManager" unique_id=1165999141]
 unique_name_in_owner = true
@@ -164,8 +166,8 @@ text = "Moeda: 1"
 [node name="TooltipBase" type="Control" parent="GameManager/Interface" unique_id=1914065227]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 175.0
-offset_bottom = 123.0
+offset_right = 200.0
+offset_bottom = 150.0
 
 [node name="Tooltip" type="PanelContainer" parent="GameManager/Interface/TooltipBase" unique_id=1907105786]
 layout_mode = 1
@@ -179,16 +181,20 @@ script = ExtResource("10_xb4mg")
 
 [node name="MarginContainer" type="MarginContainer" parent="GameManager/Interface/TooltipBase/Tooltip" unique_id=142689954]
 layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
 
 [node name="RichTextLabel" type="RichTextLabel" parent="GameManager/Interface/TooltipBase/Tooltip/MarginContainer" unique_id=1068105818]
 layout_mode = 2
 size_flags_stretch_ratio = 0.0
 mouse_filter = 2
-theme_override_font_sizes/normal_font_size = 14
-theme_override_font_sizes/bold_font_size = 14
-theme_override_font_sizes/bold_italics_font_size = 14
-theme_override_font_sizes/italics_font_size = 14
-theme_override_font_sizes/mono_font_size = 14
+theme_override_font_sizes/normal_font_size = 13
+theme_override_font_sizes/bold_font_size = 13
+theme_override_font_sizes/bold_italics_font_size = 13
+theme_override_font_sizes/italics_font_size = 13
+theme_override_font_sizes/mono_font_size = 13
 bbcode_enabled = true
 text = "[img=32]res://Sprites/Effects/Blunt.png[/img]
 [b]Blunt[/b]"

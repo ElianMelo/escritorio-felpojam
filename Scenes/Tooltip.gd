@@ -1,15 +1,21 @@
 class_name Tooltip
 extends PanelContainer
 
-const OFFSET: Vector2 = Vector2.ONE * 10.0
+const OFFSET: Vector2 = Vector2(1,-10) * 10.0
 var opacity_tween: Tween = null
 
 @onready var rich_text_label: RichTextLabel = $MarginContainer/RichTextLabel
+@onready var margin_container: MarginContainer = $MarginContainer
+@onready var tooltip: Tooltip = $"."
+@onready var tooltip_base: Control = $".."
 
-const BLUNT_IMAGE = "[img=32]res://Sprites/Effects/Blunt.png[/img]"
-const GLUE_IMAGE = "[img=32]res://Sprites/Effects/Glue.png[/img]"
-const TECH_IMAGE = "[img=32]res://Sprites/Effects/Tech.png[/img]"
-const WHITE_IMAGE = "[img=32]res://Sprites/Effects/White.png[/img]"
+var baseWidght: float =  300
+var baseHeight: float =  140
+
+const BLUNT_IMAGE = "[img=16]res://Sprites/Effects/Blunt.png[/img]"
+const GLUE_IMAGE = "[img=16]res://Sprites/Effects/Glue.png[/img]"
+const TECH_IMAGE = "[img=16]res://Sprites/Effects/Tech.png[/img]"
+const WHITE_IMAGE = "[img=16]res://Sprites/Effects/White.png[/img]"
 
 func _ready() -> void:
 	toggle(false)
@@ -18,26 +24,36 @@ func _input(event: InputEvent) -> void:
 	if visible and event is InputEventMouseMotion:
 		global_position = get_global_mouse_position() + OFFSET
 
+func ResetOriginalSize():
+	tooltip.size = Vector2(baseWidght, baseHeight)
+	margin_container.size = Vector2(baseWidght, baseHeight)
+	rich_text_label.size = Vector2(baseWidght, baseHeight)
+
 func SetupTooltipData(itemData: OfficeItemData):
+	ResetOriginalSize()
+	var damageItem = ""
+	if itemData.canDamage:
+		damageItem = "Causa %s de dano [br]" % [itemData.damage]
 	var effectsText = BuiltEffectsText(itemData)
 	rich_text_label.text = \
-		itemData.name  + " " + str(itemData.reload) + "[br]" \
+		"-[b] " + itemData.name  + " -[/b][br] Recarga: " + str(itemData.reload) + "[br]\n" \
+		+ damageItem \
 		+ effectsText + "[br]"
 	pass
 
 func BuiltEffectsText(itemData: OfficeItemData):
 	var effectsString: String = ""
 	if itemData.canCharge:
-		effectsString += "Causa %s Em branco por %s segundos" \
+		effectsString += "Aplica %s Em branco por %s segundos[br]" \
 		% [GetImageByEffect(Enums.EFFECT.CHARGE), itemData.chargeSeconds]
 	if itemData.canHaste:
-		effectsString += "Causa %s Tecnologico por %s segundos" \
+		effectsString += "Aplica %s Tecnologico por %s segundos[br]" \
 		% [GetImageByEffect(Enums.EFFECT.HASTE), itemData.hasteDuration]
 	if itemData.canSlow:
-		effectsString += "Causa %s Cola por %s segundos" \
+		effectsString += "Aplica %s Cola por %s segundos[br]" \
 		% [GetImageByEffect(Enums.EFFECT.SLOW), itemData.slowDuration]
 	if itemData.canFreeze:
-		effectsString += "Causa %s Contundente por %s segundos" \
+		effectsString += "Aplica %s Contundente por %s segundos[br]" \
 		% [GetImageByEffect(Enums.EFFECT.FREEZE), itemData.freezeDuration]
 	return effectsString
 
@@ -53,6 +69,7 @@ func GetImageByEffect(effect: Enums.EFFECT):
 			return WHITE_IMAGE
 
 func toggle(on: bool):
+	ResetOriginalSize()
 	if on:
 		show()
 		modulate.a = 0.0

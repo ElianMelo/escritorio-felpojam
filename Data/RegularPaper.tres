@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("1_rayha")
-name = "Regular Paper"
+name = "Papel Regular"
 reload = 1.0
 canDamage = true
 damage = 1
