@@ -7,6 +7,7 @@ var currentOfficeItem: OfficeItem = null
 var isDragging: bool = false
 
 func _physics_process(delta):
+	if Global.game_state == Global.GAME_STATE.BATTLE: return
 	if Input.is_action_just_released("left_click"):
 		if isDragging:
 			handle_stop_drag()
@@ -27,6 +28,7 @@ func handle_start_drag(baseObject):
 	var officeItem = baseObject as OfficeItem
 	if officeItem == null: return
 	currentOfficeItem = officeItem
+	if !currentOfficeItem.isPlayer: return
 	currentOfficeItem.start_drag()
 	isDragging = true
 
