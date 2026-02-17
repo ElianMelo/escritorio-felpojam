@@ -24,6 +24,9 @@ func SetupData(cameraSetup: Camera3D, officeItemData: OfficeItemData,
 	office_item_usage.SetDuration(office_item_data.reload)
 	mesh_instance_3d.mesh = office_item_data.meshResource
 
+func ReceiveEffect(effect: Enums.EFFECT, duration: float):
+	office_item_usage.ReceiveEffect(effect, duration)
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	office_item_usage.SetDuration(office_item_data.reload)

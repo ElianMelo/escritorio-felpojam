@@ -5,7 +5,8 @@ extends Node3D
 @onready var camera: Camera3D = %MainCamera3D
 @export var office_item_data: Array[OfficeItemData]
 
-var office_item_list: Array[OfficeItem]
+var player_office_items: Array[OfficeItem]
+var enemy_office_items: Array[OfficeItem]
 
 var rng = RandomNumberGenerator.new()
 
@@ -25,9 +26,7 @@ func _ready() -> void:
 	for i in range(0, 4):
 		InstantiateOfficeItem(false)
 		currentXOffset += offsetIncrease
-	#office_item_list.push_back(office_item)
-	#SetupOfficeItem(office_item)
-	#OrderArrayBasedOnPosition()
+	OrderArrayBasedOnPosition()
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -38,7 +37,9 @@ func _process(delta: float) -> void:
 	pass
 
 func OrderArrayBasedOnPosition():
-	office_item_list.sort_custom(func(a, b): return a.position.x[1] > b.position.x[1])
+	#player_office_items.sort_custom(func(a, b): return a.position.x[1] > b.position.x[1])
+	#enemy_office_items.sort_custom(func(a, b): return a.position.x[1] > b.position.x[1])
+	pass
 
 func InstantiateOfficeItem(isPlayer: bool):
 	var instace = OFFICE_ITEM.instantiate()
@@ -50,8 +51,11 @@ func InstantiateOfficeItem(isPlayer: bool):
 	officeItem.SetupData(camera, 
 		office_item_data[rng.randi_range(0, office_item_data.size()-1 )], 
 		isPlayer)
+	if isPlayer:
+		player_office_items.push_back(officeItem)
+	else:
+		enemy_office_items.push_back(officeItem)
 	SetupOfficeItem(officeItem)
-	OrderArrayBasedOnPosition()
 
 func SetupOfficeItem(currentOfficeItem: OfficeItem):
 	currentOfficeItem.connect("item_damage_used", OnItemDamageUsed)
@@ -73,13 +77,29 @@ func OnItemDamageUsed(damage: int, isPlayer: bool):
 	pass
 
 func OnItemSlowUsed(duration: float, target: Enums.EFFECT_TARGET, isPlayer: bool):
-	print("Slow!!!")
+	# inverse to get other items
+	var randomItem: OfficeItem = GetRandomItemBasedOnPlayer(!isPlayer)
+	randomItem.ReceiveEffect(Enums.EFFECT.SLOW, duration)
 	pass
 
 func OnItemHasteUsed(duration: float, target: Enums.EFFECT_TARGET, isPlayer: bool):
-	print("Haste!!!")
+	var randomItem: OfficeItem = GetRandomItemBasedOnPlayer(isPlayer)
+	randomItem.ReceiveEffect(Enums.EFFECT.HASTE, duration)
 	pass
 
 func OnItemFreezeUsed(duration: float, target: Enums.EFFECT_TARGET, isPlayer: bool):
-	print("Freeze!!!")
+	# inverse to get other items
+	var randomItem: OfficeItem = GetRandomItemBasedOnPlayer(!isPlayer)
+	randomItem.ReceiveEffect(Enums.EFFECT.FREEZE, duration)
 	pass
+
+func GetRandomItemBasedOnPlayer(isPlayer: bool):
+	var randomItem: OfficeItem = null
+	if isPlayer:
+		randomItem = GetRandomItemFromItemList(player_office_items)
+	else:
+		randomItem = GetRandomItemFromItemList(enemy_office_items)
+	return randomItem
+
+func GetRandomItemFromItemList(current_list: Array[OfficeItem]):
+	return current_list[rng.randi_range(0, current_list.size()-1 )]

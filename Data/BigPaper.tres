@@ -11,5 +11,7 @@ reload = 10.0
 canDamage = true
 damage = 50
 freezeDuration = 2.0
+canHaste = true
+hasteDuration = 3.0
 meshResource = SubResource("BoxMesh_doqk2")
 metadata/_custom_type_script = "uid://dvk0rv8yoxdjy"
