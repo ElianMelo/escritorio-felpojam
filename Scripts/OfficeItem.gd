@@ -16,6 +16,8 @@ signal item_slow_used(duration: float, target: Enums.EFFECT_TARGET, isPlayer: bo
 signal item_freeze_used(duration: float, target: Enums.EFFECT_TARGET, isPlayer: bool)
 signal item_haste_used(duration: float, target: Enums.EFFECT_TARGET, isPlayer: bool)
 signal item_charge_used(duration: float, target: Enums.EFFECT_TARGET, isPlayer: bool)
+signal item_mouse_entered()
+signal item_mouse_exited()
 
 func SetupData(cameraSetup: Camera3D, officeItemData: OfficeItemData,
 	isThisPlayer: bool):
@@ -138,3 +140,11 @@ func check_overlap(offsetValue:float):
 	
 	for result in results:
 		print("Hit:", result.collider.name)
+
+
+func _on_mouse_entered() -> void:
+	emit_signal("item_mouse_entered", office_item_data)
+
+
+func _on_mouse_exited() -> void:
+	emit_signal("item_mouse_exited")

@@ -63,6 +63,14 @@ func SetupOfficeItem(currentOfficeItem: OfficeItem):
 	currentOfficeItem.connect("item_haste_used", OnItemHasteUsed)
 	currentOfficeItem.connect("item_freeze_used", OnItemFreezeUsed)
 	currentOfficeItem.connect("item_charge_used", OnItemChargeUsed)
+	currentOfficeItem.connect("item_mouse_entered", OnItemMouseEntered)
+	currentOfficeItem.connect("item_mouse_exited", OnItemMouseExited)
+
+func OnItemMouseEntered(itemData: OfficeItemData):
+	interface.DisplayTooltipWithData(itemData)
+	
+func OnItemMouseExited():
+	interface.HideTooltip()
 
 func OnItemDamageUsed(damage: int, isPlayer: bool):
 	if isPlayer:

@@ -20,11 +20,11 @@ func set_current_mode(effect: Enums.EFFECT):
 		Enums.EFFECT.HASTE:
 			progress_sprite.modulate = Color.AQUAMARINE
 		Enums.EFFECT.FREEZE:
-			progress_sprite.modulate = Color.CYAN
+			progress_sprite.modulate = Color.DARK_VIOLET
 		Enums.EFFECT.SLOW:
 			progress_sprite.modulate = Color.YELLOW
 		Enums.EFFECT.CHARGE:
-			progress_sprite.modulate = Color.ORCHID
+			progress_sprite.modulate = Color.SANDY_BROWN
 		Enums.EFFECT.NONE:
 			progress_sprite.modulate = Color.WHITE
 	pass
