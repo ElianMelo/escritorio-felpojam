@@ -15,6 +15,7 @@ signal item_damage_used(damage: int, isPlayer: bool)
 signal item_slow_used(duration: float, target: Enums.EFFECT_TARGET, isPlayer: bool)
 signal item_freeze_used(duration: float, target: Enums.EFFECT_TARGET, isPlayer: bool)
 signal item_haste_used(duration: float, target: Enums.EFFECT_TARGET, isPlayer: bool)
+signal item_charge_used(duration: float, target: Enums.EFFECT_TARGET, isPlayer: bool)
 
 func SetupData(cameraSetup: Camera3D, officeItemData: OfficeItemData,
 	isThisPlayer: bool):
@@ -61,6 +62,9 @@ func use_item():
 			office_item_data.effectTarget, isPlayer)
 	if office_item_data.canSlow:
 		emit_signal("item_slow_used", office_item_data.slowDuration,
+			office_item_data.effectTarget, isPlayer)
+	if office_item_data.canCharge:
+		emit_signal("item_charge_used", office_item_data.chargeSeconds,
 			office_item_data.effectTarget, isPlayer)
 	use_item_tween()
 

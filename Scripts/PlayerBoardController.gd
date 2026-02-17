@@ -62,6 +62,7 @@ func SetupOfficeItem(currentOfficeItem: OfficeItem):
 	currentOfficeItem.connect("item_slow_used", OnItemSlowUsed)
 	currentOfficeItem.connect("item_haste_used", OnItemHasteUsed)
 	currentOfficeItem.connect("item_freeze_used", OnItemFreezeUsed)
+	currentOfficeItem.connect("item_charge_used", OnItemChargeUsed)
 
 func OnItemDamageUsed(damage: int, isPlayer: bool):
 	if isPlayer:
@@ -80,18 +81,20 @@ func OnItemSlowUsed(duration: float, target: Enums.EFFECT_TARGET, isPlayer: bool
 	# inverse to get other items
 	var randomItem: OfficeItem = GetRandomItemBasedOnPlayer(!isPlayer)
 	randomItem.ReceiveEffect(Enums.EFFECT.SLOW, duration)
-	pass
 
 func OnItemHasteUsed(duration: float, target: Enums.EFFECT_TARGET, isPlayer: bool):
 	var randomItem: OfficeItem = GetRandomItemBasedOnPlayer(isPlayer)
 	randomItem.ReceiveEffect(Enums.EFFECT.HASTE, duration)
-	pass
 
 func OnItemFreezeUsed(duration: float, target: Enums.EFFECT_TARGET, isPlayer: bool):
 	# inverse to get other items
 	var randomItem: OfficeItem = GetRandomItemBasedOnPlayer(!isPlayer)
 	randomItem.ReceiveEffect(Enums.EFFECT.FREEZE, duration)
-	pass
+	
+func OnItemChargeUsed(duration: float, target: Enums.EFFECT_TARGET, isPlayer: bool):
+	var randomItem: OfficeItem = GetRandomItemBasedOnPlayer(isPlayer)
+	randomItem.ReceiveEffect(Enums.EFFECT.CHARGE, duration)
+	
 
 func GetRandomItemBasedOnPlayer(isPlayer: bool):
 	var randomItem: OfficeItem = null

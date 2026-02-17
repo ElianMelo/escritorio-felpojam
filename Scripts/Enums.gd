@@ -4,7 +4,8 @@ enum EFFECT {
 	NONE,
 	HASTE, 
 	SLOW, 
-	FREEZE
+	FREEZE,
+	CHARGE
 }
 
 enum EFFECT_TARGET {

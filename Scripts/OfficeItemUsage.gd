@@ -11,6 +11,7 @@ var currentDuration = 0
 
 var effectDuration = 0
 var currentEffectDuration = 0
+var canDoubleUse = false
 
 var currentEffect: Enums.EFFECT = Enums.EFFECT.NONE
 
@@ -27,11 +28,6 @@ func OnGameStateChanged(state:Global.GAME_STATE):
 
 func _process(delta: float) -> void:
 	if(Global.game_state != Global.GAME_STATE.BATTLE): return
-	#if Input.is_action_just_pressed("g_key_button"):
-		#if currentEffect == Enums.EFFECT.SLOW:
-			#ReceiveEffect(Enums.EFFECT.HASTE, 2)
-		#else:
-			#ReceiveEffect(Enums.EFFECT.SLOW, 2)
 	currentDuration += delta * modifier
 	currentEffectDuration += delta
 	item_progress.set_current_progress(currentDuration / duration)
@@ -57,6 +53,11 @@ func ReceiveEffect(effect: Enums.EFFECT, effect_duration: float):
 			modifier = 1
 		Enums.EFFECT.FREEZE:
 			modifier = 0
+		Enums.EFFECT.CHARGE:
+			currentDuration += effect_duration
+			effectDuration = 0.3
+			if currentDuration <= duration: return
+			currentDuration -= duration
 	
 func UseItem():
 	office_item.use_item()

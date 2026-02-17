@@ -11,5 +11,7 @@ reload = 1.0
 canDamage = true
 damage = 1
 freezeDuration = 2.0
+canCharge = true
+chargeSeconds = 1.0
 meshResource = SubResource("PrismMesh_rayha")
 metadata/_custom_type_script = "uid://dvk0rv8yoxdjy"
