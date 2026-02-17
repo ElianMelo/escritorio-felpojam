@@ -4,19 +4,24 @@ extends RigidBody3D
 @export var office_item_data: OfficeItemData = null
 @export var camera: Camera3D
 @onready var office_item_usage: OfficeItemUsage = $OfficeItemUsage
+@onready var mesh_instance_3d: MeshInstance3D = $MeshInstance3D
 
 var isDragging: bool = false
+var isPlayer: bool = true
 const RotateSpeed: float = 20
 
-signal item_damage_used(damage: int)
-signal item_slow_used(duration: float, target: Enums.EFFECT_TARGET)
-signal item_freeze_used(duration: float, target: Enums.EFFECT_TARGET)
-signal item_haste_used(duration: float, target: Enums.EFFECT_TARGET)
+signal item_damage_used(damage: int, isPlayer: bool)
+signal item_slow_used(duration: float, target: Enums.EFFECT_TARGET, isPlayer: bool)
+signal item_freeze_used(duration: float, target: Enums.EFFECT_TARGET, isPlayer: bool)
+signal item_haste_used(duration: float, target: Enums.EFFECT_TARGET, isPlayer: bool)
 
-func SetupData(cameraSetup: Camera3D, officeItemData: OfficeItemData):
+func SetupData(cameraSetup: Camera3D, officeItemData: OfficeItemData,
+	isThisPlayer: bool):
+	isPlayer = isThisPlayer
 	camera = cameraSetup
 	office_item_data = officeItemData
 	office_item_usage.SetDuration(office_item_data.reload)
+	mesh_instance_3d.mesh = office_item_data.meshResource
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -42,17 +47,17 @@ func stop_drag():
 
 func use_item():
 	if office_item_data.canDamage:
-		emit_signal("item_damage_used", office_item_data.damage)
+		emit_signal("item_damage_used", office_item_data.damage, isPlayer)
 	if office_item_data.canFreeze:
 		emit_signal("item_freeze_used", office_item_data.freezeDuration,
-			office_item_data.effectTarget)
+			office_item_data.effectTarget, isPlayer)
 	if office_item_data.canHaste:
 		emit_signal("item_haste_used", office_item_data.hasteDuration,
-			office_item_data.effectTarget)
+			office_item_data.effectTarget, isPlayer)
 	if office_item_data.canSlow:
 		emit_signal("item_slow_used", office_item_data.slowDuration,
-			office_item_data.effectTarget)
-	pass
+			office_item_data.effectTarget, isPlayer)
+	use_item_tween()
 
 func use_item_tween():
 	var tween = create_tween()
@@ -82,7 +87,7 @@ func handle_object_reset():
 	pass
 
 func ResetRotation():
-	rotation = Vector3(-45, 0, 0)
+	rotation = Vector3(0, 0, 0)
 
 func handle_scale_test():
 	if Input.is_action_just_pressed("button_test"):

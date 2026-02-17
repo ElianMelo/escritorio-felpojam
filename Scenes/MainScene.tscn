@@ -30,6 +30,36 @@ office_item_data = Array[ExtResource("3_y4jh7")]([ExtResource("4_0iob3"), ExtRes
 unique_name_in_owner = true
 script = ExtResource("3_4b75m")
 
+[node name="PlayerHealthLabel" type="Label" parent="GameManager/Interface" unique_id=311271098]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Health: 100"
+vertical_alignment = 2
+
+[node name="PlayerHealthProgressBar" type="TextureProgressBar" parent="GameManager/Interface" unique_id=800995818]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -233.5
+offset_top = -32.0
+offset_right = 233.5
+grow_horizontal = 2
+grow_vertical = 0
+max_value = 1.0
+step = 0.0
+value = 1.0
+nine_patch_stretch = true
+texture_under = ExtResource("4_xb4mg")
+texture_progress = ExtResource("5_6t1o7")
+tint_under = Color(0.7275708, 0.20202413, 0.080811985, 1)
+tint_over = Color(0.96384543, 0.5862406, 0.528046, 1)
+tint_progress = Color(0.8257538, 0, 0.12489211, 1)
+
 [node name="EnemyHealthLabel" type="Label" parent="GameManager/Interface" unique_id=21650350]
 anchors_preset = 15
 anchor_right = 1.0
@@ -44,7 +74,7 @@ anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -227.0
 offset_right = 240.0
-offset_bottom = 56.0
+offset_bottom = 30.0
 grow_horizontal = 2
 max_value = 1.0
 step = 0.0

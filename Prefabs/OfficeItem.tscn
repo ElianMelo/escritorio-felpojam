@@ -10,7 +10,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_r3fl7"]
 size = Vector3(1, 1.0664063, 0.077941895)
 
-[sub_resource type="BoxMesh" id="BoxMesh_nhkr4"]
+[sub_resource type="TorusMesh" id="TorusMesh_2ohxv"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_7rqgy"]
 viewport_path = NodePath("ItemProgress/SubViewport")
@@ -27,11 +27,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0010681152)
 shape = SubResource("BoxShape3D_r3fl7")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1873558267]
-transform = Transform3D(1, 0, 0, 0, 1.065, 0, 0, 0, 0.055, 0, 0, 0)
-mesh = SubResource("BoxMesh_nhkr4")
+mesh = SubResource("TorusMesh_2ohxv")
 
 [node name="ItemProgress" type="Sprite3D" parent="." unique_id=1751499511]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.045499444, 0.4781475, 0.2693104)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.045499444, 0.68045104, 0.2693104)
 billboard = 1
 texture_filter = 0
 texture = SubResource("ViewportTexture_7rqgy")

@@ -14,11 +14,13 @@ extends Resource
 @export var effectTarget: Enums.EFFECT_TARGET = Enums.EFFECT_TARGET.RANDOM
 @export var isMarked: bool
 @export var markedEffect: Enums.EFFECT = Enums.EFFECT.NONE
+@export var meshResource: Mesh
 
 func _init(p_name = "", p_reload = 0.0, p_canDamage = false,\
 	p_damage = 0, p_canSlow = false, p_slowDuration = 0.0,\
 	p_canFreeze = false, p_freezeDuration = 0.0, p_canHaste = false,\
-	p_hasteDuration = 0.0, p_effectTarget = Enums.EFFECT_TARGET.RANDOM):
+	p_hasteDuration = 0.0, p_effectTarget = Enums.EFFECT_TARGET.RANDOM, \
+	p_meshResource: Mesh = null):
 	name = p_name
 	reload = p_reload
 	canDamage = p_canDamage
@@ -30,5 +32,5 @@ func _init(p_name = "", p_reload = 0.0, p_canDamage = false,\
 	canHaste = p_canHaste
 	hasteDuration = p_hasteDuration
 	effectTarget = p_effectTarget
-	
+	meshResource = p_meshResource
 	

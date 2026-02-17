@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scripts/OfficeItemData.gd" id="1_doqk2"]
 
+[sub_resource type="BoxMesh" id="BoxMesh_doqk2"]
+
 [resource]
 script = ExtResource("1_doqk2")
 name = "Big Paper"
@@ -9,4 +11,5 @@ reload = 10.0
 canDamage = true
 damage = 50
 freezeDuration = 2.0
+meshResource = SubResource("BoxMesh_doqk2")
 metadata/_custom_type_script = "uid://dvk0rv8yoxdjy"
