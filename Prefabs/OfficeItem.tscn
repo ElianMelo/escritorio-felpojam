@@ -16,6 +16,8 @@ size = Vector3(1, 1.0664063, 0.077941895)
 viewport_path = NodePath("ItemProgress/SubViewport")
 
 [node name="OfficeItem" type="RigidBody3D" unique_id=1235334946]
+mass = 3.0
+linear_damp = 3.0
 script = ExtResource("1_2ohxv")
 office_item_data = ExtResource("2_udlc6")
 

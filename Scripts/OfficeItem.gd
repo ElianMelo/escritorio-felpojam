@@ -60,8 +60,9 @@ func use_item():
 	use_item_tween()
 
 func use_item_tween():
+	var startY = position.y
 	var tween = create_tween()
-	tween.tween_property(self, "scale", Vector3(1.2, 1.2, 1.2), 0.2)
+	tween.tween_property(self, "scale", Vector3(1.2, 1, 1.2), 0.2)
 	tween.tween_property(self, "scale", Vector3.ONE, 0.2)
 		
 func handle_object_position():
