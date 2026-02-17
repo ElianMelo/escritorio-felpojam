@@ -17,5 +17,7 @@ signal game_state_changed(state: Global.GAME_STATE)
 
 func ChangeGameState(state: Global.GAME_STATE):
 	game_state = state
+	player_health = player_max_health
+	enemy_health = enemy_max_health
 	emit_signal("game_state_changed", state)
 	

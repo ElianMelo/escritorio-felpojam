@@ -32,24 +32,25 @@ office_item_data = Array[ExtResource("3_y4jh7")]([ExtResource("4_0iob3"), ExtRes
 unique_name_in_owner = true
 script = ExtResource("3_4b75m")
 
-[node name="PlayerHealthLabel" type="Label" parent="GameManager/Interface" unique_id=311271098]
+[node name="BattleInterface" type="Control" parent="GameManager/Interface" unique_id=1859071300]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Health: 100"
-vertical_alignment = 2
 
-[node name="PlayerHealthProgressBar" type="TextureProgressBar" parent="GameManager/Interface" unique_id=800995818]
+[node name="PlayerHealthProgressBar" type="TextureProgressBar" parent="GameManager/Interface/BattleInterface" unique_id=146480453]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -233.5
-offset_top = -32.0
-offset_right = 233.5
+offset_left = -150.0
+offset_top = -30.0
+offset_right = 150.0
 grow_horizontal = 2
 grow_vertical = 0
 max_value = 1.0
@@ -62,21 +63,32 @@ tint_under = Color(0.7275708, 0.20202413, 0.080811985, 1)
 tint_over = Color(0.96384543, 0.5862406, 0.528046, 1)
 tint_progress = Color(0.8257538, 0, 0.12489211, 1)
 
-[node name="EnemyHealthLabel" type="Label" parent="GameManager/Interface" unique_id=21650350]
-anchors_preset = 15
-anchor_right = 1.0
+[node name="PlayerHealthLabel" type="Label" parent="GameManager/Interface/BattleInterface" unique_id=311271098]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
+offset_left = -44.0
+offset_top = -23.0
+offset_right = 44.0
 grow_horizontal = 2
-grow_vertical = 2
-text = "Health: 100"
+grow_vertical = 0
+text = "Vida: 100"
+horizontal_alignment = 1
+vertical_alignment = 2
 
-[node name="EnemyHealthProgressBar" type="TextureProgressBar" parent="GameManager/Interface" unique_id=554908225]
+[node name="EnemyHealthProgressBar" type="TextureProgressBar" parent="GameManager/Interface/BattleInterface" unique_id=554908225]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -227.0
-offset_right = 240.0
-offset_bottom = 30.0
+offset_left = -147.0
+offset_top = 2.0
+offset_right = 153.0
+offset_bottom = 32.0
 grow_horizontal = 2
 max_value = 1.0
 step = 0.0
@@ -87,6 +99,62 @@ texture_progress = ExtResource("5_6t1o7")
 tint_under = Color(0.7275708, 0.20202413, 0.080811985, 1)
 tint_over = Color(0.96384543, 0.5862406, 0.528046, 1)
 tint_progress = Color(0.8257538, 0, 0.12489211, 1)
+
+[node name="EnemyHealthLabel" type="Label" parent="GameManager/Interface/BattleInterface" unique_id=21650350]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -44.0
+offset_right = 44.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Vida: 100"
+horizontal_alignment = 1
+
+[node name="StopFightButton" type="Button" parent="GameManager/Interface/BattleInterface" unique_id=554972227]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -187.0
+offset_top = -143.0
+offset_right = -29.984985
+offset_bottom = -53.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Parar Luta"
+
+[node name="ShopInterface" type="Control" parent="GameManager/Interface" unique_id=1582442463]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="InitFightButton" type="Button" parent="GameManager/Interface/ShopInterface" unique_id=1945604408]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 925.0
+offset_top = 465.0
+offset_right = 1082.015
+offset_bottom = 555.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Iniciar Luta"
+
+[node name="Label" type="Label" parent="GameManager/Interface/ShopInterface" unique_id=152367821]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 30
+text = "Moeda: 1"
 
 [node name="MainCamera3D" type="Camera3D" parent="." unique_id=1888448212]
 unique_name_in_owner = true
@@ -110,3 +178,6 @@ shape = SubResource("BoxShape3D_tr2i4")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=228405548]
 mesh = SubResource("BoxMesh_tr2i4")
 surface_material_override/0 = ExtResource("3_nhkr4")
+
+[connection signal="pressed" from="GameManager/Interface/BattleInterface/StopFightButton" to="GameManager/Interface" method="_on_stop_fight_button_pressed"]
+[connection signal="pressed" from="GameManager/Interface/ShopInterface/InitFightButton" to="GameManager/Interface" method="_on_init_fight_button_pressed"]
