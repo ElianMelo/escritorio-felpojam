@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://hplos1ocgsaa"]
 
+[ext_resource type="Script" uid="uid://c35u18xfvdsjj" path="res://Scenes/GameManager.gd" id="1_8ju71"]
 [ext_resource type="Script" uid="uid://bsqa7t68swdxd" path="res://Scripts/DraggerController.gd" id="1_tr2i4"]
 [ext_resource type="Script" uid="uid://cjg3s4tyuaopy" path="res://Scripts/PlayerBoardController.gd" id="2_0iob3"]
 [ext_resource type="Script" uid="uid://btxlbpkwaflct" path="res://Scripts/InterfaceController.gd" id="3_4b75m"]
@@ -18,6 +19,7 @@
 [node name="Node3D" type="Node3D" unique_id=2055693070]
 
 [node name="GameManager" type="Node3D" parent="." unique_id=201966788]
+script = ExtResource("1_8ju71")
 
 [node name="DraggerController" type="Node3D" parent="GameManager" unique_id=774057350]
 script = ExtResource("1_tr2i4")

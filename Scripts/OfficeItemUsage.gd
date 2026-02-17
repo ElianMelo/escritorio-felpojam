@@ -17,12 +17,21 @@ var currentEffect: Enums.EFFECT = Enums.EFFECT.NONE
 func SetDuration(durationData: float):
 	duration = durationData
 
+func _ready() -> void:
+	Global.connect("game_state_changed", OnGameStateChanged)
+
+func OnGameStateChanged(state:Global.GAME_STATE):
+	currentDuration = 0
+	currentEffectDuration = 0
+	item_progress.set_current_progress(currentDuration / duration)
+
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("g_key_button"):
-		if currentEffect == Enums.EFFECT.SLOW:
-			ReceiveEffect(Enums.EFFECT.HASTE, 2)
-		else:
-			ReceiveEffect(Enums.EFFECT.SLOW, 2)
+	if(Global.game_state != Global.GAME_STATE.BATTLE): return
+	#if Input.is_action_just_pressed("g_key_button"):
+		#if currentEffect == Enums.EFFECT.SLOW:
+			#ReceiveEffect(Enums.EFFECT.HASTE, 2)
+		#else:
+			#ReceiveEffect(Enums.EFFECT.SLOW, 2)
 	currentDuration += delta * modifier
 	currentEffectDuration += delta
 	item_progress.set_current_progress(currentDuration / duration)

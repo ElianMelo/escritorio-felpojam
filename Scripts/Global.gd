@@ -1,7 +1,21 @@
 extends Node
 
+enum GAME_STATE {
+	PREBATTLE,
+	BATTLE,
+	SHOP
+}
+
 var player_max_health:float = 200
 var enemy_max_health:float = 200
 
 var player_health:float = 200
 var enemy_health:float = 200
+var game_state:Global.GAME_STATE = Global.GAME_STATE.SHOP
+
+signal game_state_changed(state: Global.GAME_STATE)
+
+func ChangeGameState(state: Global.GAME_STATE):
+	game_state = state
+	emit_signal("game_state_changed", state)
+	

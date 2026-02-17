@@ -5,6 +5,7 @@ extends RigidBody3D
 @export var camera: Camera3D
 @onready var office_item_usage: OfficeItemUsage = $OfficeItemUsage
 @onready var mesh_instance_3d: MeshInstance3D = $MeshInstance3D
+@onready var item_progress: ItemProgress = $ItemProgress
 
 var isDragging: bool = false
 var isPlayer: bool = true
@@ -30,6 +31,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	item_progress.visible = Global.game_state == Global.GAME_STATE.BATTLE
 	pass
 
 func _physics_process(delta: float) -> void:
