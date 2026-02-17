@@ -4,7 +4,12 @@ extends PanelContainer
 const OFFSET: Vector2 = Vector2.ONE * 10.0
 var opacity_tween: Tween = null
 
-@onready var rich_text_label: RichTextLabel = $RichTextLabel
+@onready var rich_text_label: RichTextLabel = $MarginContainer/RichTextLabel
+
+const BLUNT_IMAGE = "[img=32]res://Sprites/Effects/Blunt.png[/img]"
+const GLUE_IMAGE = "[img=32]res://Sprites/Effects/Glue.png[/img]"
+const TECH_IMAGE = "[img=32]res://Sprites/Effects/Tech.png[/img]"
+const WHITE_IMAGE = "[img=32]res://Sprites/Effects/White.png[/img]"
 
 func _ready() -> void:
 	toggle(false)
@@ -14,9 +19,38 @@ func _input(event: InputEvent) -> void:
 		global_position = get_global_mouse_position() + OFFSET
 
 func SetupTooltipData(itemData: OfficeItemData):
-	rich_text_label.text = "[img=32]res://Sprites/Effects/Blunt.png[/img][br]"\
-		+ itemData.name
+	var effectsText = BuiltEffectsText(itemData)
+	rich_text_label.text = \
+		itemData.name  + " " + str(itemData.reload) + "[br]" \
+		+ effectsText + "[br]"
 	pass
+
+func BuiltEffectsText(itemData: OfficeItemData):
+	var effectsString: String = ""
+	if itemData.canCharge:
+		effectsString += "Causa %s Em branco por %s segundos" \
+		% [GetImageByEffect(Enums.EFFECT.CHARGE), itemData.chargeSeconds]
+	if itemData.canHaste:
+		effectsString += "Causa %s Tecnologico por %s segundos" \
+		% [GetImageByEffect(Enums.EFFECT.HASTE), itemData.hasteDuration]
+	if itemData.canSlow:
+		effectsString += "Causa %s Cola por %s segundos" \
+		% [GetImageByEffect(Enums.EFFECT.SLOW), itemData.slowDuration]
+	if itemData.canFreeze:
+		effectsString += "Causa %s Contundente por %s segundos" \
+		% [GetImageByEffect(Enums.EFFECT.FREEZE), itemData.freezeDuration]
+	return effectsString
+
+func GetImageByEffect(effect: Enums.EFFECT):
+	match effect:
+		Enums.EFFECT.SLOW:
+			return GLUE_IMAGE
+		Enums.EFFECT.HASTE:
+			return TECH_IMAGE
+		Enums.EFFECT.FREEZE:
+			return BLUNT_IMAGE
+		Enums.EFFECT.CHARGE:
+			return WHITE_IMAGE
 
 func toggle(on: bool):
 	if on:
