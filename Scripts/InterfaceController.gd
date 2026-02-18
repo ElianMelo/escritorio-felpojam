@@ -28,6 +28,8 @@ func OnGameStateChanged(state: Global.GAME_STATE):
 	match state:
 		Global.GAME_STATE.BATTLE:
 			battle_interface.visible = true
+		Global.GAME_STATE.PREBATTLE:
+			battle_interface.visible = true
 		Global.GAME_STATE.SHOP:
 			shop_interface.visible = true
 
@@ -84,4 +86,4 @@ func _on_stop_fight_button_pressed() -> void:
 	Global.ChangeGameState(Global.GAME_STATE.SHOP)
 
 func _on_init_fight_button_pressed() -> void:
-	Global.ChangeGameState(Global.GAME_STATE.BATTLE)
+	Global.ChangeGameState(Global.GAME_STATE.PREBATTLE)

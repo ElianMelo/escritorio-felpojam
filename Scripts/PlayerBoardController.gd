@@ -31,11 +31,34 @@ func _ready() -> void:
 
 func OnGameStateChanged(state: Global.GAME_STATE):
 	match state:
+		Global.GAME_STATE.PREBATTLE:
+			CleanShopObjects()
+			CreateEnemyObjects()
+			Global.ChangeGameState(Global.GAME_STATE.BATTLE)
+			isShop = false 
 		Global.GAME_STATE.BATTLE:
 			isShop = false 
 		Global.GAME_STATE.SHOP:
 			isShop = true
+			CleanEnemyObjects()
 			InitShopObjects()
+
+func CleanShopObjects():
+	for i in range(0, shop_office_items.size()):
+		shop_office_items[i].queue_free()
+	shop_office_items.clear()
+
+func CleanEnemyObjects():
+	for i in range(0, enemy_office_items.size()):
+		enemy_office_items[i].queue_free()
+	enemy_office_items.clear()
+
+func CreateEnemyObjects():
+	currentXOffset = -4
+	currentZOffset = -2
+	for i in range(0, 5):
+		InstantiateOfficeItem(false)
+		currentXOffset += offsetIncrease
 
 func InitShopObjects():
 	currentXOffset = -4
