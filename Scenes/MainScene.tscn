@@ -400,6 +400,7 @@ fit_content = true
 vertical_alignment = 1
 
 [node name="MenuInterface" type="Control" parent="GameManager/Interface" unique_id=1175070585]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -409,6 +410,15 @@ grow_vertical = 2
 size_flags_vertical = 0
 mouse_filter = 2
 script = ExtResource("26_r0vnq")
+
+[node name="TextureRect" type="TextureRect" parent="GameManager/Interface/MenuInterface" unique_id=788149245]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_xb4mg")
 
 [node name="Button" type="Button" parent="GameManager/Interface/MenuInterface" unique_id=1439375503]
 layout_mode = 1
