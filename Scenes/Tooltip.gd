@@ -26,8 +26,6 @@ func _input(event: InputEvent) -> void:
 
 func ResetOriginalSize():
 	tooltip.size = Vector2(baseWidght, baseHeight)
-	margin_container.size = Vector2(baseWidght, baseHeight)
-	rich_text_label.size = Vector2(baseWidght, baseHeight)
 
 func SetupTooltipData(itemData: OfficeItemData):
 	ResetOriginalSize()
