@@ -9,6 +9,7 @@ extends RigidBody3D
 
 var isDragging: bool = false
 var isPlayer: bool = true
+var isShop: bool = false
 const RotateSpeed: float = 20
 
 signal item_damage_used(damage: int, isPlayer: bool)
@@ -20,8 +21,10 @@ signal item_mouse_entered()
 signal item_mouse_exited()
 
 func SetupData(cameraSetup: Camera3D, officeItemData: OfficeItemData,
-	isThisPlayer: bool):
+	isThisPlayer: bool,
+	isThisShop: bool = false):
 	isPlayer = isThisPlayer
+	isShop = isThisShop
 	camera = cameraSetup
 	office_item_data = officeItemData
 	office_item_usage.SetDuration(office_item_data.reload)

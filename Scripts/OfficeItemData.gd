@@ -3,6 +3,7 @@ extends Resource
 
 @export var name: String
 @export var reload: float
+@export var value: float
 @export var canDamage: bool
 @export var damage: int
 @export var canSlow: bool
@@ -23,8 +24,10 @@ func _init(p_name = "", p_reload = 0.0, p_canDamage = false,\
 	p_canFreeze = false, p_freezeDuration = 0.0, p_canHaste = false,\
 	p_canCharge = false, p_chargeSeconds = 0.0, \
 	p_hasteDuration = 0.0, p_effectTarget = Enums.EFFECT_TARGET.RANDOM, \
-	p_meshResource: Mesh = null):
+	p_meshResource: Mesh = null,
+	p_value = 0.0):
 	name = p_name
+	value = p_value
 	reload = p_reload
 	canDamage = p_canDamage
 	damage = p_damage

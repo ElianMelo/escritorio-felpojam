@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dckv0ijfcjs6c" path="res://Sprites/radial_button.png" id="6_x57ev"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r3fl7"]
-size = Vector3(1.0840454, 0.7225952, 1.0413094)
+size = Vector3(1.5160065, 0.7392273, 1.4763062)
 
 [sub_resource type="TorusMesh" id="TorusMesh_2ohxv"]
 
@@ -25,7 +25,7 @@ office_item_data = ExtResource("2_udlc6")
 script = ExtResource("3_gsc6a")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=809306776]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.016693115, 0.13272095, 0.017183304)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00020599365, 0.12440491, -0.025693774)
 shape = SubResource("BoxShape3D_r3fl7")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1873558267]

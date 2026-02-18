@@ -28,7 +28,9 @@ func handle_start_drag(baseObject):
 	var officeItem = baseObject as OfficeItem
 	if officeItem == null: return
 	currentOfficeItem = officeItem
-	if !currentOfficeItem.isPlayer: return
+	#if !currentOfficeItem.isPlayer: return
+	if !currentOfficeItem.isShop && \
+		 !currentOfficeItem.isPlayer: return
 	currentOfficeItem.start_drag()
 	isDragging = true
 

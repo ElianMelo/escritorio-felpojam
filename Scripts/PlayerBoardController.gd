@@ -1,3 +1,4 @@
+class_name PlayerBoardController
 extends Node3D
 
 @onready var office_item: OfficeItem = $"../../OfficeItem"
@@ -34,8 +35,17 @@ func OnGameStateChanged(state: Global.GAME_STATE):
 			isShop = false 
 		Global.GAME_STATE.SHOP:
 			isShop = true
+			InitShopObjects()
+
+func InitShopObjects():
+	currentXOffset = -4
+	currentZOffset = -2
+	for i in range(0, 5):
+		InstantiateOfficeItem(false, true)
+		currentXOffset += offsetIncrease
 
 func DebugInitObjects():
+	currentXOffset = -2
 	for i in range(0, 2):
 		InstantiateOfficeItem(true)
 		currentXOffset += offsetIncrease
@@ -58,7 +68,7 @@ func OrderArrayBasedOnPosition():
 	#enemy_office_items.sort_custom(func(a, b): return a.position.x[1] > b.position.x[1])
 	pass
 
-func InstantiateOfficeItem(isPlayer: bool):
+func InstantiateOfficeItem(isPlayer: bool, isShop: bool = false):
 	var instace = OFFICE_ITEM.instantiate()
 	add_child(instace)
 	var officeItem = instace as OfficeItem
@@ -67,9 +77,11 @@ func InstantiateOfficeItem(isPlayer: bool):
 	officeItem.ResetRotation()
 	officeItem.SetupData(camera, 
 		office_item_data[rng.randi_range(0, office_item_data.size()-1 )], 
-		isPlayer)
+		isPlayer, isShop)
 	if isPlayer:
 		player_office_items.push_back(officeItem)
+	elif isShop:
+		shop_office_items.push_back(officeItem)
 	else:
 		enemy_office_items.push_back(officeItem)
 	SetupOfficeItem(officeItem)
@@ -119,7 +131,19 @@ func OnItemFreezeUsed(duration: float, target: Enums.EFFECT_TARGET, isPlayer: bo
 func OnItemChargeUsed(duration: float, target: Enums.EFFECT_TARGET, isPlayer: bool):
 	var randomItem: OfficeItem = GetRandomItemBasedOnPlayer(isPlayer)
 	randomItem.ReceiveEffect(Enums.EFFECT.CHARGE, duration)
-	
+
+func PlayerAmountItems():
+	return player_office_items.size()
+
+func DeleteShopItem(officeItem: OfficeItem):
+	shop_office_items.erase(officeItem)
+
+func DeletePlayerItem(officeItem: OfficeItem):
+	player_office_items.erase(officeItem)
+	officeItem.queue_free()
+
+func AddPlayerItem(officeItem: OfficeItem):
+	player_office_items.push_back(officeItem)
 
 func GetRandomItemBasedOnPlayer(isPlayer: bool):
 	var randomItem: OfficeItem = null

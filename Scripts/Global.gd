@@ -13,6 +13,8 @@ var player_health:float = 200
 var enemy_health:float = 200
 var game_state:Global.GAME_STATE = Global.GAME_STATE.SHOP
 
+var coin: int = 2
+
 signal game_state_changed(state: Global.GAME_STATE)
 
 func ChangeGameState(state: Global.GAME_STATE):

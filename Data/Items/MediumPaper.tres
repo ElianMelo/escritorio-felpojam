@@ -8,6 +8,7 @@
 script = ExtResource("1_nishv")
 name = "Papel Médio"
 reload = 1.0
+value = 1.0
 canDamage = true
 damage = 1
 canFreeze = true
