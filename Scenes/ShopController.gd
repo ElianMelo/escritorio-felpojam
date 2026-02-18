@@ -8,6 +8,8 @@ extends Node3D
 
 @onready var player_board_controller: PlayerBoardController = %PlayerBoardController
 
+var isActive = false
+
 func _ready() -> void:
 	Global.connect("game_state_changed", OnGameStateChanged)
 	if !Global.firstItemBrought:
@@ -16,12 +18,27 @@ func _ready() -> void:
 
 func OnGameStateChanged(state: Global.GAME_STATE):
 	match state:
-		Global.GAME_STATE.BATTLE:
-			pass
 		Global.GAME_STATE.SHOP:
-			pass
+			ShowShopItems()
+		_:
+			HideShopItems()
+			
+func ShowShopItems():
+	buy_item.set_process(true)
+	sell_item.set_process(true)
+	buy_item.visible = true
+	sell_item.visible = true
+	isActive = true
+
+func HideShopItems():
+	buy_item.set_process(false)
+	sell_item.set_process(false)
+	buy_item.visible = false
+	sell_item.visible = false
+	isActive = false
 
 func _on_buy_item_body_entered(body: Node) -> void:
+	if !isActive: return
 	var officeItem = body as OfficeItem
 	if officeItem == null: return
 	if officeItem.isPlayer:
@@ -32,6 +49,7 @@ func _on_buy_item_body_entered(body: Node) -> void:
 	pass # Replace with function body.
 
 func _on_sell_item_body_entered(body: Node) -> void:
+	if !isActive: return
 	var officeItem = body as OfficeItem
 	if officeItem == null: return
 	if officeItem.isShop: 

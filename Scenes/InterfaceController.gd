@@ -12,7 +12,7 @@ extends Node3D
 
 @onready var battle_interface: Control = $BattleInterface
 @onready var shop_interface: Control = $ShopInterface
-@onready var tooltip: Tooltip = $TooltipBase/Tooltip
+@onready var tooltip: TooltipItem = $TooltipBase/Tooltip
 
 var shop_message_tween: Tween
 
@@ -83,7 +83,7 @@ func HideTooltip():
 	pass
 
 func _on_stop_fight_button_pressed() -> void:
-	Global.ChangeGameState(Global.GAME_STATE.SHOP)
+	Global.ChangeGameState(Global.GAME_STATE.STAMP)
 
 func _on_init_fight_button_pressed() -> void:
 	Global.ChangeGameState(Global.GAME_STATE.PREBATTLE)

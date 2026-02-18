@@ -3,7 +3,8 @@ extends Node
 enum GAME_STATE {
 	PREBATTLE,
 	BATTLE,
-	SHOP
+	SHOP,
+	STAMP
 }
 
 var player_max_health:float = 200

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="OfficeItemData" format=3 uid="uid://bct7pfbubiwtb"]
 
-[ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scripts/OfficeItemData.gd" id="1_doqk2"]
+[ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="1_doqk2"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_doqk2"]
 

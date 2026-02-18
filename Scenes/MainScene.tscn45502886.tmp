@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://hplos1ocgsaa"]
 
-[ext_resource type="Script" uid="uid://c35u18xfvdsjj" path="res://Scenes/GameManager.gd" id="1_8ju71"]
-[ext_resource type="Script" uid="uid://bsqa7t68swdxd" path="res://Scenes/DraggerController.gd" id="1_tr2i4"]
-[ext_resource type="Script" uid="uid://cjg3s4tyuaopy" path="res://Scenes/PlayerBoardController.gd" id="2_0iob3"]
-[ext_resource type="Script" uid="uid://btxlbpkwaflct" path="res://Scenes/InterfaceController.gd" id="3_4b75m"]
+[ext_resource type="Script" uid="uid://c35u18xfvdsjj" path="res://Scripts/GameManager.gd" id="1_8ju71"]
+[ext_resource type="Script" uid="uid://bsqa7t68swdxd" path="res://Scripts/DraggerController.gd" id="1_tr2i4"]
+[ext_resource type="Script" uid="uid://cjg3s4tyuaopy" path="res://Scripts/PlayerBoardController.gd" id="2_0iob3"]
+[ext_resource type="Script" uid="uid://btxlbpkwaflct" path="res://Scripts/InterfaceController.gd" id="3_4b75m"]
 [ext_resource type="Material" uid="uid://deuj40mclg1do" path="res://Materials/TableMaterial.tres" id="3_nhkr4"]
-[ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="3_y4jh7"]
+[ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scripts/OfficeItemData.gd" id="3_y4jh7"]
 [ext_resource type="Resource" uid="uid://bgd2x7qjlq3yk" path="res://Data/Items/RegularPaper.tres" id="4_0iob3"]
 [ext_resource type="Texture2D" uid="uid://6mgebga6vqdm" path="res://Sprites/block_back.png" id="4_xb4mg"]
 [ext_resource type="Resource" uid="uid://bct7pfbubiwtb" path="res://Data/Items/BigPaper.tres" id="5_4b75m"]
@@ -14,17 +14,103 @@
 [ext_resource type="Resource" uid="uid://bhm1ch14ybiuj" path="res://Data/Items/MediumPaper.tres" id="7_5qxwa"]
 [ext_resource type="Resource" uid="uid://dqk58bdx34deo" path="res://Data/Items/SmallPaper.tres" id="8_xc4hf"]
 [ext_resource type="Resource" uid="uid://cyp8u2mmcc3by" path="res://Data/Enemy/ITGuy.tres" id="9_xc4hf"]
-[ext_resource type="Script" uid="uid://dynmmei2x0ghb" path="res://Scenes/ShopController.gd" id="10_6rnll"]
+[ext_resource type="Script" uid="uid://dynmmei2x0ghb" path="res://Scripts/ShopController.gd" id="10_6rnll"]
 [ext_resource type="Material" uid="uid://dto1p7gvf4xmd" path="res://Materials/ShopBuy.tres" id="11_enc0b"]
 [ext_resource type="Material" uid="uid://bkohhwthjvth2" path="res://Materials/ShopSell.tres" id="12_hx8n4"]
-[ext_resource type="Script" uid="uid://dfs6r6ukjj5v0" path="res://Scenes/TooltipItem.gd" id="16_c1ier"]
-[ext_resource type="Script" uid="uid://dmlqriwqj4hgx" path="res://Scenes/StampController.gd" id="17_i0j58"]
-[ext_resource type="Script" uid="uid://j7v16xnxv5mf" path="res://Scenes/Strampler.gd" id="18_c1ier"]
+[ext_resource type="Script" uid="uid://dmlqriwqj4hgx" path="res://Scripts/StampController.gd" id="17_i0j58"]
+[ext_resource type="Script" uid="uid://j7v16xnxv5mf" path="res://Scripts/Strampler.gd" id="18_c1ier"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6rnll"]
 size = Vector3(1.0087891, 1, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_6rnll"]
+
+[sub_resource type="GDScript" id="GDScript_i0j58"]
+script/source = "class_name Tooltip
+extends PanelContainer
+
+const OFFSET: Vector2 = Vector2(1,-10) * 10.0
+var opacity_tween: Tween = null
+
+@onready var rich_text_label: RichTextLabel = $MarginContainer/RichTextLabel
+@onready var margin_container: MarginContainer = $MarginContainer
+@onready var tooltip: Tooltip = $\".\"
+@onready var tooltip_base: Control = $\"..\"
+
+var baseWidght: float =  300
+var baseHeight: float =  140
+
+const BLUNT_IMAGE = \"[img=16]res://Sprites/Effects/Blunt.png[/img]\"
+const GLUE_IMAGE = \"[img=16]res://Sprites/Effects/Glue.png[/img]\"
+const TECH_IMAGE = \"[img=16]res://Sprites/Effects/Tech.png[/img]\"
+const WHITE_IMAGE = \"[img=16]res://Sprites/Effects/White.png[/img]\"
+
+func _ready() -> void:
+	toggle(false)
+
+func _input(event: InputEvent) -> void:
+	if visible and event is InputEventMouseMotion:
+		global_position = get_global_mouse_position() + OFFSET
+
+func ResetOriginalSize():
+	tooltip.size = Vector2(baseWidght, baseHeight)
+
+func SetupTooltipData(itemData: OfficeItemData):
+	ResetOriginalSize()
+	var damageItem = \"\"
+	if itemData.canDamage:
+		damageItem = \"Causa %s de dano [br]\" % [itemData.damage]
+	var effectsText = BuiltEffectsText(itemData)
+	rich_text_label.text = \\
+		\"-[b] \" + itemData.name  + \" -[/b][br] Recarga: \" + str(itemData.reload) + \"[br]\\n\" \\
+		+ damageItem \\
+		+ effectsText + \"[br]\"
+	pass
+
+func BuiltEffectsText(itemData: OfficeItemData):
+	var effectsString: String = \"\"
+	if itemData.canCharge:
+		effectsString += \"Aplica %s Em branco por %s segundos[br]\" \\
+		% [GetImageByEffect(Enums.EFFECT.CHARGE), itemData.chargeSeconds]
+	if itemData.canHaste:
+		effectsString += \"Aplica %s Tecnologico por %s segundos[br]\" \\
+		% [GetImageByEffect(Enums.EFFECT.HASTE), itemData.hasteDuration]
+	if itemData.canSlow:
+		effectsString += \"Aplica %s Cola por %s segundos[br]\" \\
+		% [GetImageByEffect(Enums.EFFECT.SLOW), itemData.slowDuration]
+	if itemData.canFreeze:
+		effectsString += \"Aplica %s Contundente por %s segundos[br]\" \\
+		% [GetImageByEffect(Enums.EFFECT.FREEZE), itemData.freezeDuration]
+	return effectsString
+
+func GetImageByEffect(effect: Enums.EFFECT):
+	match effect:
+		Enums.EFFECT.SLOW:
+			return GLUE_IMAGE
+		Enums.EFFECT.HASTE:
+			return TECH_IMAGE
+		Enums.EFFECT.FREEZE:
+			return BLUNT_IMAGE
+		Enums.EFFECT.CHARGE:
+			return WHITE_IMAGE
+
+func toggle(on: bool):
+	ResetOriginalSize()
+	if on:
+		show()
+		modulate.a = 0.0
+		tween_opacity(1.0)
+	else:
+		modulate.a = 1.0
+		await tween_opacity(0.0).finished
+		hide()
+
+func tween_opacity(to: float):
+	if opacity_tween: opacity_tween.kill()
+	opacity_tween = get_tree().create_tween()
+	opacity_tween.tween_property(self, \"modulate:a\", to, 0.2)
+	return opacity_tween
+"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tr2i4"]
 
@@ -278,7 +364,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-script = ExtResource("16_c1ier")
+script = SubResource("GDScript_i0j58")
 
 [node name="MarginContainer" type="MarginContainer" parent="GameManager/Interface/TooltipBase/Tooltip" unique_id=142689954]
 layout_mode = 2

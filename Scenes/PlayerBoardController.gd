@@ -5,6 +5,7 @@ extends Node3D
 @onready var interface: InterfaceController = %Interface
 @onready var camera: Camera3D = %MainCamera3D
 @export var office_item_data: Array[OfficeItemData]
+@onready var stamp: StampController = %Stamp
 
 @export var enemy_data: EnemyData
 
@@ -42,6 +43,7 @@ func _process(delta: float) -> void:
 	pass
 
 func ResetPositions():
+	stamp.ResetStamplerPosition()
 	currentXOffset = xInitialOffset
 	currentZOffset = zInitialOffsetEnemy
 	for i in range(0, shop_office_items.size()):

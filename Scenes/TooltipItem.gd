@@ -1,4 +1,4 @@
-class_name Tooltip
+class_name TooltipItem
 extends PanelContainer
 
 const OFFSET: Vector2 = Vector2(1,-10) * 10.0
@@ -6,7 +6,7 @@ var opacity_tween: Tween = null
 
 @onready var rich_text_label: RichTextLabel = $MarginContainer/RichTextLabel
 @onready var margin_container: MarginContainer = $MarginContainer
-@onready var tooltip: Tooltip = $"."
+@onready var tooltip: TooltipItem = $"."
 @onready var tooltip_base: Control = $".."
 
 var baseWidght: float =  300
