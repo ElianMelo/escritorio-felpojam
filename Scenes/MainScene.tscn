@@ -99,6 +99,25 @@ font_size = 64
 unique_name_in_owner = true
 script = ExtResource("3_4b75m")
 
+[node name="GeneralInterface" type="Control" parent="GameManager/Interface" unique_id=377106865]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="GameManager/Interface/GeneralInterface" unique_id=1294020157]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+offset_right = 40.0
+grow_vertical = 0
+text = "Aperte R para resetar posição"
+
 [node name="BattleInterface" type="Control" parent="GameManager/Interface" unique_id=1859071300]
 visible = false
 layout_mode = 3
@@ -213,9 +232,9 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 925.0
-offset_top = 465.0
+offset_top = 461.0
 offset_right = 1082.015
-offset_bottom = 555.0
+offset_bottom = 551.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "Iniciar Luta"

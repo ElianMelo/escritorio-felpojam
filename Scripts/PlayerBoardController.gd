@@ -20,7 +20,12 @@ const OFFICE_ITEM = preload("res://Prefabs/OfficeItem.tscn")
 
 var currentXOffset = -2
 var currentZOffset = 2
-var offsetIncrease = 2
+
+# Const
+const offsetIncrease = 2
+const xInitialOffset = -4
+const zInitialOffsetEnemy = -2
+const zInitialOffsetPlayer = 2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -28,6 +33,37 @@ func _ready() -> void:
 	OnGameStateChanged(Global.game_state)
 	# DebugInitObjects()
 	pass # Replace with function body.
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("r_key_button"):
+		ResetPositions()
+		pass
+	pass
+
+func ResetPositions():
+	currentXOffset = xInitialOffset
+	currentZOffset = zInitialOffsetEnemy
+	for i in range(0, shop_office_items.size()):
+		shop_office_items[i].position = \
+			Vector3(currentXOffset, 0, currentZOffset)
+		shop_office_items[i].rotation = Vector3.ZERO
+		currentXOffset += offsetIncrease
+	currentXOffset = xInitialOffset
+	currentZOffset = zInitialOffsetEnemy
+	for i in range(0, enemy_office_items.size()):
+		enemy_office_items[i].position = \
+			Vector3(currentXOffset, 0, currentZOffset)
+		enemy_office_items[i].rotation = Vector3.ZERO
+		currentXOffset += offsetIncrease
+	currentXOffset = xInitialOffset
+	currentZOffset = zInitialOffsetPlayer
+	for i in range(0, player_office_items.size()):
+		player_office_items[i].position = \
+			Vector3(currentXOffset, 0, currentZOffset)
+		player_office_items[i].rotation = Vector3.ZERO
+		currentXOffset += offsetIncrease
+	pass
 
 func OnGameStateChanged(state: Global.GAME_STATE):
 	match state:
@@ -54,37 +90,30 @@ func CleanEnemyObjects():
 	enemy_office_items.clear()
 
 func CreateEnemyObjects():
-	currentXOffset = -4
-	currentZOffset = -2
+	currentXOffset = xInitialOffset
+	currentZOffset = zInitialOffsetEnemy
 	for i in range(0, 5):
 		InstantiateOfficeItem(false)
 		currentXOffset += offsetIncrease
 
 func InitShopObjects():
-	currentXOffset = -4
-	currentZOffset = -2
+	currentXOffset = xInitialOffset
+	currentZOffset = zInitialOffsetEnemy
 	for i in range(0, 5):
 		InstantiateOfficeItem(false, true)
 		currentXOffset += offsetIncrease
 
 func DebugInitObjects():
-	currentXOffset = -2
+	currentXOffset = xInitialOffset
 	for i in range(0, 2):
 		InstantiateOfficeItem(true)
 		currentXOffset += offsetIncrease
-	currentXOffset = -2
-	currentZOffset = -2
+	currentXOffset = xInitialOffset
+	currentZOffset = zInitialOffsetPlayer
 	for i in range(0, 4):
 		InstantiateOfficeItem(false)
 		currentXOffset += offsetIncrease
 	OrderArrayBasedOnPosition()
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("r_key_button"):
-		InstantiateOfficeItem(true)
-		pass
-	pass
 
 func OrderArrayBasedOnPosition():
 	#player_office_items.sort_custom(func(a, b): return a.position.x[1] > b.position.x[1])
