@@ -17,6 +17,7 @@ enum EFFECT_TARGET {
 }
 
 enum STAMP_EFFECT {
+	NONE,
 	DAMAGE,
 	HASTE, 
 	SLOW, 

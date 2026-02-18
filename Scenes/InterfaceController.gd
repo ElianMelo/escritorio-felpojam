@@ -10,8 +10,12 @@ extends Node3D
 @onready var coin_label: Label = $ShopInterface/CoinLabel
 @onready var shop_message: Label = $ShopInterface/ShopMessage
 
+# StampInterface
+@onready var init_fight_stamp_button: Button = $StampInterface/InitFightStampButton
+
 @onready var battle_interface: Control = $BattleInterface
 @onready var shop_interface: Control = $ShopInterface
+@onready var stamp_interface: Control = $StampInterface
 @onready var tooltip: TooltipItem = $TooltipBase/Tooltip
 
 var shop_message_tween: Tween
@@ -32,10 +36,14 @@ func OnGameStateChanged(state: Global.GAME_STATE):
 			battle_interface.visible = true
 		Global.GAME_STATE.SHOP:
 			shop_interface.visible = true
+		Global.GAME_STATE.STAMP:
+			stamp_interface.visible = true
+			init_fight_stamp_button.disabled = true
 
 func DisableAllInterfaces():
 	battle_interface.visible = false
 	shop_interface.visible = false
+	stamp_interface.visible = false
 
 func DisplayEnemyHealth():
 	enemy_health.text = "Vida: " + str(Global.enemy_health)
@@ -48,7 +56,9 @@ func DisplayPlayerHealth():
 
 func UpdateCoinText():
 	coin_label.text = "Moeda: " + str(Global.coin)
-	pass
+
+func EnableButtonStamp():
+	init_fight_stamp_button.disabled = false
 
 func ShowShopFeedbackMessage(message: String):
 	shop_message.text = message
@@ -73,8 +83,8 @@ func ShopMessageTweenHandle():
 func set_font_color(color:Color):
 	shop_message.add_theme_color_override("font_color", color)
 
-func DisplayTooltipWithData(itemData: OfficeItemData):
-	tooltip.SetupTooltipData(itemData)
+func DisplayTooltipWithData(officeItem: OfficeItem):
+	tooltip.SetupTooltipData(officeItem)
 	tooltip.toggle(true)
 	pass
 
@@ -86,4 +96,7 @@ func _on_stop_fight_button_pressed() -> void:
 	Global.ChangeGameState(Global.GAME_STATE.STAMP)
 
 func _on_init_fight_button_pressed() -> void:
+	Global.ChangeGameState(Global.GAME_STATE.PREBATTLE)
+
+func _on_init_fight_stamp_button_pressed() -> void:
 	Global.ChangeGameState(Global.GAME_STATE.PREBATTLE)

@@ -12,12 +12,16 @@ var isPlayer: bool = true
 var isShop: bool = false
 const RotateSpeed: float = 20
 
+var stamp: bool = false
+var stampList: Array[StampEffectData] = []
+var currentStampEffectSearch: Enums.STAMP_EFFECT
+
 signal item_damage_used(damage: int, isPlayer: bool)
 signal item_slow_used(duration: float, target: Enums.EFFECT_TARGET, isPlayer: bool)
 signal item_freeze_used(duration: float, target: Enums.EFFECT_TARGET, isPlayer: bool)
 signal item_haste_used(duration: float, target: Enums.EFFECT_TARGET, isPlayer: bool)
 signal item_charge_used(duration: float, target: Enums.EFFECT_TARGET, isPlayer: bool)
-signal item_mouse_entered()
+signal item_mouse_entered(officeItem: OfficeItem)
 signal item_mouse_exited()
 
 func SetupData(cameraSetup: Camera3D, officeItemData: OfficeItemData,
@@ -56,9 +60,24 @@ func start_drag():
 func stop_drag():
 	isDragging = false
 
+func AddStampEffect(stampEffect: Enums.STAMP_EFFECT, stampValue: float):
+	stamp = true
+	stampList.push_back(StampEffectData.new(stampEffect, stampValue))
+	pass
+
+func GetFinalValueOnStamps(stampEffect: Enums.STAMP_EFFECT):
+	if stampList.size() == 0: return 0
+	var finalResult = 0
+	for i in range(0, stampList.size()):
+		if stampList[i].stampEffect == stampEffect:
+			finalResult += stampList[i].stampEffectValue
+	return finalResult
+
 func use_item():
-	if office_item_data.canDamage:
-		emit_signal("item_damage_used", office_item_data.damage, isPlayer)
+	if office_item_data.canDamage or \
+	 	GetFinalValueOnStamps(Enums.STAMP_EFFECT.DAMAGE) != 0:
+		emit_signal("item_damage_used", office_item_data.damage \
+		+ GetFinalValueOnStamps(Enums.STAMP_EFFECT.DAMAGE), isPlayer)
 	if office_item_data.canFreeze:
 		emit_signal("item_freeze_used", office_item_data.freezeDuration,
 			office_item_data.effectTarget, isPlayer)
@@ -146,7 +165,7 @@ func check_overlap(offsetValue:float):
 
 
 func _on_mouse_entered() -> void:
-	emit_signal("item_mouse_entered", office_item_data)
+	emit_signal("item_mouse_entered", self)
 
 
 func _on_mouse_exited() -> void:

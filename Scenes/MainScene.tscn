@@ -121,7 +121,6 @@ grow_vertical = 0
 text = "Aperte R para resetar posição"
 
 [node name="BattleInterface" type="Control" parent="GameManager/Interface" unique_id=1859071300]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -264,6 +263,27 @@ text = "Compre um item arrastando !"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="StampInterface" type="Control" parent="GameManager/Interface" unique_id=674640711]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="InitFightStampButton" type="Button" parent="GameManager/Interface/StampInterface" unique_id=1444430212]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 925.0
+offset_top = 461.0
+offset_right = 1082.015
+offset_bottom = 551.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Iniciar Luta"
+
 [node name="TooltipBase" type="Control" parent="GameManager/Interface" unique_id=1914065227]
 layout_mode = 3
 anchors_preset = 0
@@ -353,4 +373,5 @@ surface_material_override/0 = ExtResource("3_nhkr4")
 [connection signal="body_entered" from="GameManager/Shop/SellItem" to="GameManager/Shop" method="_on_sell_item_body_entered"]
 [connection signal="pressed" from="GameManager/Interface/BattleInterface/StopFightButton" to="GameManager/Interface" method="_on_stop_fight_button_pressed"]
 [connection signal="pressed" from="GameManager/Interface/ShopInterface/InitFightButton" to="GameManager/Interface" method="_on_init_fight_button_pressed"]
+[connection signal="pressed" from="GameManager/Interface/StampInterface/InitFightStampButton" to="GameManager/Interface" method="_on_init_fight_stamp_button_pressed"]
 [connection signal="body_entered" from="GameManager/Stamp/Stampler" to="GameManager/Stamp" method="_on_stampler_body_entered"]

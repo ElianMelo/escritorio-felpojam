@@ -151,8 +151,8 @@ func SetupOfficeItem(currentOfficeItem: OfficeItem):
 	currentOfficeItem.connect("item_mouse_entered", OnItemMouseEntered)
 	currentOfficeItem.connect("item_mouse_exited", OnItemMouseExited)
 
-func OnItemMouseEntered(itemData: OfficeItemData):
-	interface.DisplayTooltipWithData(itemData)
+func OnItemMouseEntered(officeItem: OfficeItem):
+	interface.DisplayTooltipWithData(officeItem)
 	
 func OnItemMouseExited():
 	interface.HideTooltip()

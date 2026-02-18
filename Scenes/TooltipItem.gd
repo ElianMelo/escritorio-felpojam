@@ -12,6 +12,8 @@ var opacity_tween: Tween = null
 var baseWidght: float =  300
 var baseHeight: float =  140
 
+var currentOfficeItem: OfficeItem = null
+
 const BLUNT_IMAGE = "[img=16]res://Sprites/Effects/Blunt.png[/img]"
 const GLUE_IMAGE = "[img=16]res://Sprites/Effects/Glue.png[/img]"
 const TECH_IMAGE = "[img=16]res://Sprites/Effects/Tech.png[/img]"
@@ -27,17 +29,44 @@ func _input(event: InputEvent) -> void:
 func ResetOriginalSize():
 	tooltip.size = Vector2(baseWidght, baseHeight)
 
-func SetupTooltipData(itemData: OfficeItemData):
+func SetupTooltipData(officeItem: OfficeItem):
 	ResetOriginalSize()
+	var itemData = officeItem.office_item_data
 	var damageItem = ""
 	if itemData.canDamage:
 		damageItem = "Causa %s de dano [br]" % [itemData.damage]
 	var effectsText = BuiltEffectsText(itemData)
+	var stampEffectsText = BuiltStampEffectsText(officeItem)
 	rich_text_label.text = \
 		"-[b] " + itemData.name  + " -[/b][br] Recarga: " + str(itemData.reload) + "[br]\n" \
 		+ damageItem \
-		+ effectsText + "[br]"
+		+ effectsText + "[br]" \
+		+ stampEffectsText + "[br]"
 	pass
+
+func BuiltStampEffectsText(officeItem: OfficeItem):
+	var effectsString: String = ""
+	if officeItem.stampList.size() == 0:
+		return effectsString
+	effectsString += "\n-[b] Marcas -[/b] [br]"
+	for i in range(0, officeItem.stampList.size()):
+		match officeItem.stampList[i].stampEffect:
+			Enums.STAMP_EFFECT.DAMAGE:
+				effectsString += "Cortante %s causa %d de dano [br]" \
+				% [GetImageByStampEffect(Enums.STAMP_EFFECT.DAMAGE), officeItem.stampList[i].stampEffectValue]
+			Enums.STAMP_EFFECT.HASTE:
+				effectsString += "Tecnologico %s causa por %d segundos [br]" \
+				% [GetImageByEffect(Enums.EFFECT.HASTE), officeItem.stampList[i].stampEffectValue]
+			Enums.STAMP_EFFECT.SLOW:
+				effectsString += "Cola %s causa por %d segundos [br]" \
+				% [GetImageByEffect(Enums.EFFECT.SLOW), officeItem.stampList[i].stampEffectValue]
+			Enums.STAMP_EFFECT.CHARGE:
+				effectsString += "Em branco %s causa por %d segundos [br]" \
+				% [GetImageByEffect(Enums.EFFECT.CHARGE), officeItem.stampList[i].stampEffectValue]
+			Enums.STAMP_EFFECT.FREEZE:
+				effectsString += "Contundente %s causa por %d segundos [br]" \
+				% [GetImageByEffect(Enums.EFFECT.FREEZE), officeItem.stampList[i].stampEffectValue]
+	return effectsString
 
 func BuiltEffectsText(itemData: OfficeItemData):
 	var effectsString: String = ""
@@ -65,6 +94,11 @@ func GetImageByEffect(effect: Enums.EFFECT):
 			return BLUNT_IMAGE
 		Enums.EFFECT.CHARGE:
 			return WHITE_IMAGE
+
+func GetImageByStampEffect(effect: Enums.STAMP_EFFECT):
+	match effect:
+		Enums.STAMP_EFFECT.DAMAGE:
+			return GLUE_IMAGE
 
 func toggle(on: bool):
 	ResetOriginalSize()
