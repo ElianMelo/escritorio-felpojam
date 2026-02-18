@@ -7,13 +7,15 @@ extends Node3D
 @export var office_item_data: Array[OfficeItemData]
 @onready var stamp: StampController = %Stamp
 
-@export var enemy_data: EnemyData
+@export var enemiesData: Array[EnemyData]
 
 var player_office_items: Array[OfficeItem]
 var enemy_office_items: Array[OfficeItem]
 var shop_office_items: Array[OfficeItem]
 
+var currentEnemyData: EnemyData
 var isShop = false
+var currentEnemyDataIndex = 0
 
 var rng = RandomNumberGenerator.new()
 
@@ -72,7 +74,7 @@ func OnGameStateChanged(state: Global.GAME_STATE):
 	match state:
 		Global.GAME_STATE.PREBATTLE:
 			CleanShopObjects()
-			CreateEnemyObjects()
+			CreateEnemyObjectByData()
 			Global.ChangeGameState(Global.GAME_STATE.BATTLE)
 		Global.GAME_STATE.BATTLE:
 			pass
@@ -92,6 +94,18 @@ func CleanEnemyObjects():
 	for i in range(0, enemy_office_items.size()):
 		enemy_office_items[i].queue_free()
 	enemy_office_items.clear()
+
+func CreateEnemyObjectByData():
+	currentXOffset = xInitialOffset
+	currentZOffset = zInitialOffsetEnemy
+	currentEnemyData = enemiesData[currentEnemyDataIndex]
+	Global.enemy_health = currentEnemyData.health
+	Global.enemy_max_health = currentEnemyData.health
+	for i in range(0, currentEnemyData.enemyItems.size()):
+		InstantiateOfficeItemEnemyByData(currentEnemyData.enemyItems[i])
+		currentXOffset += offsetIncrease
+	# increment this later
+	# currentEnemyDataIndex++
 
 func CreateEnemyObjects():
 	currentXOffset = xInitialOffset
@@ -124,6 +138,17 @@ func OrderArrayBasedOnPosition():
 	#enemy_office_items.sort_custom(func(a, b): return a.position.x[1] > b.position.x[1])
 	pass
 
+func InstantiateOfficeItemEnemyByData(officeItemData: OfficeItemData):
+	var instace = OFFICE_ITEM.instantiate()
+	add_child(instace)
+	var officeItem = instace as OfficeItem
+	if officeItem == null: return
+	officeItem.position += Vector3(currentXOffset, 0, currentZOffset)
+	officeItem.ResetRotation()
+	officeItem.SetupData(camera,  officeItemData, false, false)
+	enemy_office_items.push_back(officeItem)
+	SetupOfficeItem(officeItem)
+	
 func InstantiateOfficeItem(isPlayer: bool, isShop: bool = false):
 	var instace = OFFICE_ITEM.instantiate()
 	add_child(instace)

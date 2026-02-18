@@ -14,7 +14,7 @@ var player_health:float = 200
 var enemy_health:float = 200
 var game_state:Global.GAME_STATE = Global.GAME_STATE.SHOP
 
-var coin: int = 2
+var coin: int = 10
 var firstItemBrought: bool = false
 
 signal game_state_changed(state: Global.GAME_STATE)

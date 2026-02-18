@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://wrs1isxs68sw" path="res://Prefabs/OfficeItem.tscn" id="6_q68mp"]
 [ext_resource type="Resource" uid="uid://bhm1ch14ybiuj" path="res://Data/Items/MediumPaper.tres" id="7_5qxwa"]
 [ext_resource type="Resource" uid="uid://dqk58bdx34deo" path="res://Data/Items/SmallPaper.tres" id="8_xc4hf"]
+[ext_resource type="Script" uid="uid://dp2dtn4l4rb7q" path="res://Scenes/EnemyData.gd" id="9_4sso6"]
 [ext_resource type="Resource" uid="uid://cyp8u2mmcc3by" path="res://Data/Enemy/ITGuy.tres" id="9_xc4hf"]
 [ext_resource type="Script" uid="uid://dynmmei2x0ghb" path="res://Scenes/ShopController.gd" id="10_6rnll"]
 [ext_resource type="Material" uid="uid://dto1p7gvf4xmd" path="res://Materials/ShopBuy.tres" id="11_enc0b"]
@@ -48,7 +49,7 @@ script = ExtResource("1_tr2i4")
 unique_name_in_owner = true
 script = ExtResource("2_0iob3")
 office_item_data = Array[ExtResource("3_y4jh7")]([ExtResource("4_0iob3"), ExtResource("5_4b75m"), ExtResource("7_5qxwa"), ExtResource("8_xc4hf")])
-enemy_data = ExtResource("9_xc4hf")
+enemiesData = Array[ExtResource("9_4sso6")]([ExtResource("9_xc4hf")])
 
 [node name="Shop" type="Node3D" parent="GameManager" unique_id=196357716]
 unique_name_in_owner = true

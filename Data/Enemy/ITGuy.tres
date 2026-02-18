@@ -1,8 +1,13 @@
 [gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://cyp8u2mmcc3by"]
 
 [ext_resource type="Script" uid="uid://dp2dtn4l4rb7q" path="res://Scenes/EnemyData.gd" id="1_f277y"]
+[ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="1_jf51v"]
+[ext_resource type="Resource" uid="uid://bct7pfbubiwtb" path="res://Data/Items/BigPaper.tres" id="2_ikutx"]
+[ext_resource type="Resource" uid="uid://dqk58bdx34deo" path="res://Data/Items/SmallPaper.tres" id="3_n7yxe"]
 
 [resource]
 script = ExtResource("1_f277y")
 name = "Cara do TI"
+health = 230
+enemyItems = Array[ExtResource("1_jf51v")]([ExtResource("2_ikutx"), ExtResource("3_n7yxe"), ExtResource("2_ikutx")])
 metadata/_custom_type_script = "uid://dp2dtn4l4rb7q"
