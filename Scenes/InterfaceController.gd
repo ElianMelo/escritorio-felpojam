@@ -18,6 +18,7 @@ extends Node3D
 @onready var battle_interface: Control = $BattleInterface
 @onready var shop_interface: Control = $ShopInterface
 @onready var stamp_interface: Control = $StampInterface
+@onready var menu_interface: MenuInterface = $MenuInterface
 @onready var tooltip: TooltipItem = $TooltipBase/Tooltip
 
 var shop_message_tween: Tween
@@ -25,6 +26,14 @@ var shop_message_tween: Tween
 func _ready() -> void:
 	Global.connect("game_state_changed", OnGameStateChanged)
 	OnGameStateChanged(Global.game_state)
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("escape_key_button"):
+		SwitchMenuInterface()
+	pass
+
+func SwitchMenuInterface():
+	menu_interface.Switch()
 
 func OnGameStateChanged(state: Global.GAME_STATE):
 	DisplayEnemyHealth()
@@ -46,6 +55,7 @@ func DisableAllInterfaces():
 	battle_interface.visible = false
 	shop_interface.visible = false
 	stamp_interface.visible = false
+	menu_interface.visible = false
 
 func DisplayEnemyHealth():
 	enemy_health.text = "Vida: " + str(Global.enemy_health)

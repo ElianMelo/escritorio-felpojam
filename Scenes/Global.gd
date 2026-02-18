@@ -16,6 +16,7 @@ var game_state:Global.GAME_STATE = Global.GAME_STATE.SHOP
 
 var coin: int = 10
 var firstItemBrought: bool = false
+var isGamePaused = false
 
 signal game_state_changed(state: Global.GAME_STATE)
 

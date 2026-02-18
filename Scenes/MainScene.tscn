@@ -27,6 +27,7 @@
 [ext_resource type="Resource" uid="uid://c05d32nalpfet" path="res://Data/Stample/Freeze.tres" id="16_p5ymy"]
 [ext_resource type="Script" uid="uid://dmlqriwqj4hgx" path="res://Scenes/StampController.gd" id="17_i0j58"]
 [ext_resource type="Script" uid="uid://j7v16xnxv5mf" path="res://Scenes/Strampler.gd" id="18_c1ier"]
+[ext_resource type="Script" uid="uid://bgpmi5d2vep8d" path="res://Scenes/MenuInterface.gd" id="26_r0vnq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6rnll"]
 size = Vector3(1.0087891, 1, 1)
@@ -397,6 +398,32 @@ text = "[img=32]res://Sprites/Effects/Blunt.png[/img]
 [b]Blunt[/b]"
 fit_content = true
 vertical_alignment = 1
+
+[node name="MenuInterface" type="Control" parent="GameManager/Interface" unique_id=1175070585]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+mouse_filter = 2
+script = ExtResource("26_r0vnq")
+
+[node name="Button" type="Button" parent="GameManager/Interface/MenuInterface" unique_id=1439375503]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.609
+anchor_bottom = 0.708
+offset_left = -59.0
+offset_top = -55.0
+offset_right = -84.568054
+offset_bottom = -139.784
+grow_horizontal = 2
+grow_vertical = 2
+text = "Jogar"
 
 [node name="MainCamera3D" type="Camera3D" parent="." unique_id=1888448212]
 unique_name_in_owner = true

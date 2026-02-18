@@ -177,9 +177,11 @@ func SetupOfficeItem(currentOfficeItem: OfficeItem):
 	currentOfficeItem.connect("item_mouse_exited", OnItemMouseExited)
 
 func OnItemMouseEntered(officeItem: OfficeItem):
+	if Global.isGamePaused: return
 	interface.DisplayTooltipWithData(officeItem)
 	
 func OnItemMouseExited():
+	if Global.isGamePaused: return
 	interface.HideTooltip()
 
 func OnItemDamageUsed(damage: int, isPlayer: bool):

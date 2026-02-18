@@ -9,6 +9,7 @@ var isDragging: bool = false
 
 func _physics_process(delta):
 	if Global.game_state == Global.GAME_STATE.BATTLE: return
+	if Global.isGamePaused: return
 	if Input.is_action_just_released("left_click"):
 		if isDragging:
 			handle_stop_drag()
