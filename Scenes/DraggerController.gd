@@ -4,6 +4,7 @@ const RAY_LENGTH = 10000.0
 @onready var cam: Camera3D = %MainCamera3D
 
 var currentOfficeItem: OfficeItem = null
+var currentStrampler: Strampler = null
 var isDragging: bool = false
 
 func _physics_process(delta):
@@ -25,6 +26,11 @@ func _physics_process(delta):
 		handle_start_drag(collision_object)
 
 func handle_start_drag(baseObject):
+	var stampler = baseObject as Strampler
+	if stampler != null:
+		stampler.start_drag()
+		currentStrampler = stampler
+		isDragging = true
 	var officeItem = baseObject as OfficeItem
 	if officeItem == null: return
 	currentOfficeItem = officeItem
@@ -36,6 +42,10 @@ func handle_start_drag(baseObject):
 
 func handle_stop_drag():
 	if !isDragging: return
+	if currentOfficeItem == null:
+		currentStrampler.stop_drag()
+		isDragging = false
+		return
 	currentOfficeItem.stop_drag()
 	currentOfficeItem = null
 	isDragging = false
