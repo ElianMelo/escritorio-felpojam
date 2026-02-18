@@ -6,14 +6,22 @@
 [ext_resource type="Script" uid="uid://btxlbpkwaflct" path="res://Scripts/InterfaceController.gd" id="3_4b75m"]
 [ext_resource type="Material" uid="uid://deuj40mclg1do" path="res://Materials/TableMaterial.tres" id="3_nhkr4"]
 [ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scripts/OfficeItemData.gd" id="3_y4jh7"]
-[ext_resource type="Resource" uid="uid://bgd2x7qjlq3yk" path="res://Data/RegularPaper.tres" id="4_0iob3"]
+[ext_resource type="Resource" uid="uid://bgd2x7qjlq3yk" path="res://Data/Items/RegularPaper.tres" id="4_0iob3"]
 [ext_resource type="Texture2D" uid="uid://6mgebga6vqdm" path="res://Sprites/block_back.png" id="4_xb4mg"]
-[ext_resource type="Resource" uid="uid://bct7pfbubiwtb" path="res://Data/BigPaper.tres" id="5_4b75m"]
+[ext_resource type="Resource" uid="uid://bct7pfbubiwtb" path="res://Data/Items/BigPaper.tres" id="5_4b75m"]
 [ext_resource type="Texture2D" uid="uid://bsti8misj8x0m" path="res://Sprites/block.png" id="5_6t1o7"]
 [ext_resource type="PackedScene" uid="uid://wrs1isxs68sw" path="res://Prefabs/OfficeItem.tscn" id="6_q68mp"]
-[ext_resource type="Resource" uid="uid://bhm1ch14ybiuj" path="res://Data/MediumPaper.tres" id="7_5qxwa"]
-[ext_resource type="Resource" uid="uid://dqk58bdx34deo" path="res://Data/SmallPaper.tres" id="8_xc4hf"]
+[ext_resource type="Resource" uid="uid://bhm1ch14ybiuj" path="res://Data/Items/MediumPaper.tres" id="7_5qxwa"]
+[ext_resource type="Resource" uid="uid://dqk58bdx34deo" path="res://Data/Items/SmallPaper.tres" id="8_xc4hf"]
+[ext_resource type="Resource" uid="uid://cyp8u2mmcc3by" path="res://Data/Enemy/ITGuy.tres" id="9_xc4hf"]
+[ext_resource type="Script" uid="uid://dynmmei2x0ghb" path="res://Scenes/ShopController.gd" id="10_6rnll"]
 [ext_resource type="Script" uid="uid://dfs6r6ukjj5v0" path="res://Scenes/Tooltip.gd" id="10_xb4mg"]
+[ext_resource type="Material" uid="uid://dto1p7gvf4xmd" path="res://Materials/ShopBuy.tres" id="11_enc0b"]
+[ext_resource type="Material" uid="uid://bkohhwthjvth2" path="res://Materials/ShopSell.tres" id="12_hx8n4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6rnll"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_6rnll"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tr2i4"]
 
@@ -30,6 +38,41 @@ script = ExtResource("1_tr2i4")
 [node name="PlayerBoardController" type="Node3D" parent="GameManager" unique_id=1486856888]
 script = ExtResource("2_0iob3")
 office_item_data = Array[ExtResource("3_y4jh7")]([ExtResource("4_0iob3"), ExtResource("5_4b75m"), ExtResource("7_5qxwa"), ExtResource("8_xc4hf")])
+enemy_data = ExtResource("9_xc4hf")
+
+[node name="Shop" type="Node3D" parent="GameManager" unique_id=196357716]
+unique_name_in_owner = true
+script = ExtResource("10_6rnll")
+
+[node name="BuyItem" type="StaticBody3D" parent="GameManager/Shop" unique_id=1938444092]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.524273, -0.38748217, 0.008393526)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GameManager/Shop/BuyItem" unique_id=230697353]
+shape = SubResource("BoxShape3D_6rnll")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="GameManager/Shop/BuyItem" unique_id=384106391]
+material_override = ExtResource("11_enc0b")
+mesh = SubResource("BoxMesh_6rnll")
+
+[node name="Label3D" type="Label3D" parent="GameManager/Shop/BuyItem" unique_id=465242065]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.4139967, 0.72883356)
+text = "Comprar"
+font_size = 64
+
+[node name="SellItem" type="StaticBody3D" parent="GameManager/Shop" unique_id=764015520]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6189532, -0.33825302, -0.047612637)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GameManager/Shop/SellItem" unique_id=202734072]
+shape = SubResource("BoxShape3D_6rnll")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="GameManager/Shop/SellItem" unique_id=39565476]
+material_override = ExtResource("12_hx8n4")
+mesh = SubResource("BoxMesh_6rnll")
+
+[node name="Label3D" type="Label3D" parent="GameManager/Shop/SellItem" unique_id=221861197]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.4139967, 0.72883356)
+text = "Vender"
+font_size = 64
 
 [node name="Interface" type="Node3D" parent="GameManager" unique_id=1165999141]
 unique_name_in_owner = true

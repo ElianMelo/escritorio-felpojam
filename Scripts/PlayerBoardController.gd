@@ -5,8 +5,13 @@ extends Node3D
 @onready var camera: Camera3D = %MainCamera3D
 @export var office_item_data: Array[OfficeItemData]
 
+@export var enemy_data: EnemyData
+
 var player_office_items: Array[OfficeItem]
 var enemy_office_items: Array[OfficeItem]
+var shop_office_items: Array[OfficeItem]
+
+var isShop = false
 
 var rng = RandomNumberGenerator.new()
 
@@ -18,6 +23,19 @@ var offsetIncrease = 2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Global.connect("game_state_changed", OnGameStateChanged)
+	OnGameStateChanged(Global.game_state)
+	# DebugInitObjects()
+	pass # Replace with function body.
+
+func OnGameStateChanged(state: Global.GAME_STATE):
+	match state:
+		Global.GAME_STATE.BATTLE:
+			isShop = false 
+		Global.GAME_STATE.SHOP:
+			isShop = true
+
+func DebugInitObjects():
 	for i in range(0, 2):
 		InstantiateOfficeItem(true)
 		currentXOffset += offsetIncrease
@@ -27,7 +45,6 @@ func _ready() -> void:
 		InstantiateOfficeItem(false)
 		currentXOffset += offsetIncrease
 	OrderArrayBasedOnPosition()
-	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

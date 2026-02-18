@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://cyp8u2mmcc3by"]
+
+[ext_resource type="Script" uid="uid://dp2dtn4l4rb7q" path="res://Scripts/EnemyData.gd" id="1_f277y"]
+
+[resource]
+script = ExtResource("1_f277y")
+name = "Cara do TI"
+metadata/_custom_type_script = "uid://dp2dtn4l4rb7q"
