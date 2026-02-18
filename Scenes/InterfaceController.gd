@@ -11,7 +11,9 @@ extends Node3D
 @onready var shop_message: Label = $ShopInterface/ShopMessage
 
 # StampInterface
-@onready var init_fight_stamp_button: Button = $StampInterface/InitFightStampButton
+@onready var init_shop_stamp_button: Button = $StampInterface/InitShopStampButton
+@onready var stamp_text_label: RichTextLabel = $StampInterface/StampDataBox/MarginContainer/RichTextLabel
+@onready var stamp_message: Label = $StampInterface/StampMessage
 
 @onready var battle_interface: Control = $BattleInterface
 @onready var shop_interface: Control = $ShopInterface
@@ -38,7 +40,7 @@ func OnGameStateChanged(state: Global.GAME_STATE):
 			shop_interface.visible = true
 		Global.GAME_STATE.STAMP:
 			stamp_interface.visible = true
-			init_fight_stamp_button.disabled = true
+			init_shop_stamp_button.disabled = true
 
 func DisableAllInterfaces():
 	battle_interface.visible = false
@@ -58,7 +60,7 @@ func UpdateCoinText():
 	coin_label.text = "Moeda: " + str(Global.coin)
 
 func EnableButtonStamp():
-	init_fight_stamp_button.disabled = false
+	init_shop_stamp_button.disabled = false
 
 func ShowShopFeedbackMessage(message: String):
 	shop_message.text = message
@@ -98,5 +100,52 @@ func _on_stop_fight_button_pressed() -> void:
 func _on_init_fight_button_pressed() -> void:
 	Global.ChangeGameState(Global.GAME_STATE.PREBATTLE)
 
-func _on_init_fight_stamp_button_pressed() -> void:
-	Global.ChangeGameState(Global.GAME_STATE.PREBATTLE)
+func _on_init_shop_stamp_button_pressed() -> void:
+	Global.ChangeGameState(Global.GAME_STATE.SHOP)
+
+func SetupStampData(stampEffect: Enums.STAMP_EFFECT, stampValue: float):
+	stamp_text_label.text = StampTextData(stampEffect, stampValue)
+	pass
+
+func ShowStampFeedbackMessage(message: String):
+	stamp_message.text = message
+
+func StampTextData(stampEffect: Enums.STAMP_EFFECT, stampValue: float):
+	match stampEffect:
+		Enums.STAMP_EFFECT.DAMAGE:
+			return "Cortante %s causa %d de dano [br]" \
+				% [GetImageByStampEffect(stampEffect), stampValue]
+		Enums.STAMP_EFFECT.HASTE:
+			return "Tecnologico %s causa por %d segundos [br]" \
+				% [GetImageByStampEffect(stampEffect), stampValue]
+		Enums.STAMP_EFFECT.SLOW:
+			return "Cola %s causa por %d segundos [br]" \
+				% [GetImageByStampEffect(stampEffect), stampValue]
+		Enums.STAMP_EFFECT.CHARGE:
+			return "Em branco %s causa por %d segundos [br]" \
+				% [GetImageByStampEffect(stampEffect), stampValue]
+		Enums.STAMP_EFFECT.FREEZE:
+			return "Contundente %s causa por %d segundos [br]" \
+				% [GetImageByStampEffect(stampEffect), stampValue]
+	pass
+
+const BLUNT_IMAGE = "[img=16]res://Sprites/Effects/Blunt.png[/img]"
+const GLUE_IMAGE = "[img=16]res://Sprites/Effects/Glue.png[/img]"
+const TECH_IMAGE = "[img=16]res://Sprites/Effects/Tech.png[/img]"
+const WHITE_IMAGE = "[img=16]res://Sprites/Effects/White.png[/img]"
+
+func GetImageByEffect(effect: Enums.EFFECT):
+	match effect:
+		Enums.EFFECT.SLOW:
+			return GLUE_IMAGE
+		Enums.EFFECT.HASTE:
+			return TECH_IMAGE
+		Enums.EFFECT.FREEZE:
+			return BLUNT_IMAGE
+		Enums.EFFECT.CHARGE:
+			return WHITE_IMAGE
+
+func GetImageByStampEffect(effect: Enums.STAMP_EFFECT):
+	match effect:
+		Enums.STAMP_EFFECT.DAMAGE:
+			return GLUE_IMAGE

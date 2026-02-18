@@ -29,6 +29,8 @@ func ShowStampler():
 	stampler.visible = true
 	isActive = true
 	canStample = true
+	interface.ShowStampFeedbackMessage("Carimbe um item!")
+	interface.SetupStampData(Enums.STAMP_EFFECT.DAMAGE, 50)
 
 func HideStampler():
 	stampler.set_process(false)
@@ -49,3 +51,4 @@ func _on_stampler_body_entered(body: Node) -> void:
 	officeItem.AddStampEffect(Enums.STAMP_EFFECT.DAMAGE, 50)
 	canStample = false
 	interface.EnableButtonStamp()
+	interface.ShowStampFeedbackMessage("Item carimbado com sucesso!")

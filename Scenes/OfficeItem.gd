@@ -124,7 +124,7 @@ func ResetRotation():
 	rotation = Vector3(0, 0, 0)
 
 func handle_scale_test():
-	if Input.is_action_just_pressed("button_test"):
+	if Input.is_action_just_pressed("g_key_button"):
 		check_overlap(3)
 		var tween = create_tween()
 		tween.tween_property(self, "scale", Vector3(1.2, 1.2, 1.2), 0.2)

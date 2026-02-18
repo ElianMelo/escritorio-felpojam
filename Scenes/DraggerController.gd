@@ -22,6 +22,7 @@ func _physics_process(delta):
 		query.collide_with_areas = true
 		var result = space_state.intersect_ray(query)
 		if result == null: return
+		if result.has("collider") == false: return
 		var collision_object = result.collider
 		handle_start_drag(collision_object)
 

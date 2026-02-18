@@ -305,15 +305,15 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -191.0
-offset_top = -135.0
-offset_right = -33.984863
-offset_bottom = -45.0
+offset_left = 925.0
+offset_top = 461.0
+offset_right = 1082.015
+offset_bottom = 551.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "Ir Loja"
 
-[node name="StampMessage" type="Label" parent="GameManager/Interface/StampInterface" unique_id=1887335428]
+[node name="ShopMessage" type="Label" parent="GameManager/Interface/StampInterface" unique_id=1887335428]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
