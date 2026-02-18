@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cpf7vsp400lig"
-path="res://.godot/imported/Tec.png-9c6679bae2214dede9d01706433a03a1.ctex"
+path="res://.godot/imported/TechDecalNew.png-30416e492c0a85950d1f47eb169e6ac3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Decal/Tec.png"
-dest_files=["res://.godot/imported/Tec.png-9c6679bae2214dede9d01706433a03a1.ctex"]
+source_file="res://Sprites/Decal/TechDecalNew.png"
+dest_files=["res://.godot/imported/TechDecalNew.png-30416e492c0a85950d1f47eb169e6ac3.ctex"]
 
 [params]
 

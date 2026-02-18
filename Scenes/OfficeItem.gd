@@ -6,12 +6,14 @@ extends RigidBody3D
 @onready var office_item_usage: OfficeItemUsage = $OfficeItemUsage
 @onready var mesh_instance_3d: MeshInstance3D = $MeshInstance3D
 @onready var item_progress: ItemProgress = $ItemProgress
+@export var listDecal: Array[Decal] = []
 
 var isDragging: bool = false
 var isPlayer: bool = true
 var isShop: bool = false
 const RotateSpeed: float = 20
 
+var currentDecalIndex: int = 0
 var stamp: bool = false
 var stampList: Array[StampEffectData] = []
 var currentStampEffectSearch: Enums.STAMP_EFFECT
@@ -33,6 +35,13 @@ func SetupData(cameraSetup: Camera3D, officeItemData: OfficeItemData,
 	office_item_data = officeItemData
 	office_item_usage.SetDuration(office_item_data.reload)
 	mesh_instance_3d.mesh = office_item_data.meshResource
+
+func SetDecal(texture: Texture2D):
+	if currentDecalIndex >= listDecal.size(): return
+	listDecal[currentDecalIndex].texture_albedo = texture
+	listDecal[currentDecalIndex].texture_emission = texture
+	listDecal[currentDecalIndex].visible = true
+	currentDecalIndex += 1
 
 func ReceiveEffect(effect: Enums.EFFECT, duration: float):
 	office_item_usage.ReceiveEffect(effect, duration)
