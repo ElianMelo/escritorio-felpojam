@@ -17,7 +17,13 @@
 [ext_resource type="Script" uid="uid://dynmmei2x0ghb" path="res://Scenes/ShopController.gd" id="10_6rnll"]
 [ext_resource type="Material" uid="uid://dto1p7gvf4xmd" path="res://Materials/ShopBuy.tres" id="11_enc0b"]
 [ext_resource type="Material" uid="uid://bkohhwthjvth2" path="res://Materials/ShopSell.tres" id="12_hx8n4"]
+[ext_resource type="Script" uid="uid://c5jetj4udxqq0" path="res://Scenes/StampEffectData.gd" id="14_gyaec"]
+[ext_resource type="Resource" uid="uid://drf0sncqfwlbo" path="res://Data/Stample/Charge.tres" id="15_mymud"]
+[ext_resource type="Resource" uid="uid://cokp8rxyj6g42" path="res://Data/Stample/Slow.tres" id="15_p5ymy"]
+[ext_resource type="Resource" uid="uid://dxguj342l1vd" path="res://Data/Stample/Haste.tres" id="16_3va76"]
+[ext_resource type="Resource" uid="uid://dr2m60dwyfegl" path="res://Data/Stample/Damage.tres" id="16_4sso6"]
 [ext_resource type="Script" uid="uid://dfs6r6ukjj5v0" path="res://Scenes/TooltipItem.gd" id="16_c1ier"]
+[ext_resource type="Resource" uid="uid://c05d32nalpfet" path="res://Data/Stample/Freeze.tres" id="16_p5ymy"]
 [ext_resource type="Script" uid="uid://dmlqriwqj4hgx" path="res://Scenes/StampController.gd" id="17_i0j58"]
 [ext_resource type="Script" uid="uid://j7v16xnxv5mf" path="res://Scenes/Strampler.gd" id="18_c1ier"]
 
@@ -100,6 +106,8 @@ font_size = 64
 [node name="Stamp" type="Node3D" parent="GameManager" unique_id=1188671156]
 unique_name_in_owner = true
 script = ExtResource("17_i0j58")
+stampListEffects = Array[ExtResource("14_gyaec")]([ExtResource("16_4sso6"), ExtResource("15_p5ymy"), ExtResource("16_p5ymy"), ExtResource("16_3va76"), ExtResource("15_mymud")])
+godotBugKeepThis = Array[ExtResource("3_y4jh7")]([ExtResource("5_4b75m")])
 
 [node name="Stampler" type="RigidBody3D" parent="GameManager/Stamp" unique_id=1799912410]
 transform = Transform3D(0.83829015, 0, 0.54522437, 0, 1, 0, -0.54522437, 0, 0.83829015, 0.043121815, 1.0573719, -2.5185325)

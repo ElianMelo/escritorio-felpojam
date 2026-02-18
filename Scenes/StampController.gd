@@ -3,11 +3,15 @@ extends Node3D
 
 @onready var stampler: Strampler = $Stampler
 @onready var interface: InterfaceController = %Interface
+@export var stampListEffects: Array[StampEffectData]
+@export var godotBugKeepThis: Array[OfficeItemData]
 
+var currentStampleData: StampEffectData
 var isActive: bool = false
 var canStample: bool = false
 
 var stamplerInitialPosition: Vector3 = Vector3(0.043,1.057,-2.519)
+var rng = RandomNumberGenerator.new()
 
 func _ready() -> void:
 	Global.connect("game_state_changed", OnGameStateChanged)
@@ -30,7 +34,9 @@ func ShowStampler():
 	isActive = true
 	canStample = true
 	interface.ShowStampFeedbackMessage("Carimbe um item!")
-	interface.SetupStampData(Enums.STAMP_EFFECT.DAMAGE, 50)
+	currentStampleData = stampListEffects[rng.randi_range(0, stampListEffects.size()-1)]
+	interface.SetupStampData(currentStampleData.stampEffect, currentStampleData.stampEffectValue)
+	ResetStamplerPosition()
 
 func HideStampler():
 	stampler.set_process(false)
@@ -48,7 +54,7 @@ func _on_stampler_body_entered(body: Node) -> void:
 	var officeItem = body as OfficeItem
 	if officeItem == null: return
 	if !stampler.isDragging: return
-	officeItem.AddStampEffect(Enums.STAMP_EFFECT.DAMAGE, 50)
+	officeItem.AddStampEffect(currentStampleData.stampEffect, currentStampleData.stampEffectValue)
 	canStample = false
 	interface.EnableButtonStamp()
 	interface.ShowStampFeedbackMessage("Item carimbado com sucesso!")

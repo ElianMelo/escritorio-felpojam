@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="StampEffectData" format=3 uid="uid://dxguj342l1vd"]
+
+[ext_resource type="Script" uid="uid://c5jetj4udxqq0" path="res://Scenes/StampEffectData.gd" id="1_4vgxv"]
+
+[resource]
+script = ExtResource("1_4vgxv")
+stampEffect = 2
+stampEffectValue = 2.0
+metadata/_custom_type_script = "uid://c5jetj4udxqq0"

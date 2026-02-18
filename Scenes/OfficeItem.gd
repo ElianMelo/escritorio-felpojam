@@ -78,17 +78,21 @@ func use_item():
 	 	GetFinalValueOnStamps(Enums.STAMP_EFFECT.DAMAGE) != 0:
 		emit_signal("item_damage_used", office_item_data.damage \
 		+ GetFinalValueOnStamps(Enums.STAMP_EFFECT.DAMAGE), isPlayer)
-	if office_item_data.canFreeze:
-		emit_signal("item_freeze_used", office_item_data.freezeDuration,
+	if office_item_data.canFreeze or \
+	 	GetFinalValueOnStamps(Enums.STAMP_EFFECT.FREEZE) != 0:
+		emit_signal("item_freeze_used", office_item_data.freezeDuration + GetFinalValueOnStamps(Enums.STAMP_EFFECT.FREEZE),
 			office_item_data.effectTarget, isPlayer)
-	if office_item_data.canHaste:
-		emit_signal("item_haste_used", office_item_data.hasteDuration,
+	if office_item_data.canHaste or \
+	 	GetFinalValueOnStamps(Enums.STAMP_EFFECT.HASTE) != 0:
+		emit_signal("item_haste_used", office_item_data.hasteDuration + GetFinalValueOnStamps(Enums.STAMP_EFFECT.HASTE),
 			office_item_data.effectTarget, isPlayer)
-	if office_item_data.canSlow:
-		emit_signal("item_slow_used", office_item_data.slowDuration,
+	if office_item_data.canSlow or \
+	 	GetFinalValueOnStamps(Enums.STAMP_EFFECT.SLOW) != 0:
+		emit_signal("item_slow_used", office_item_data.slowDuration + GetFinalValueOnStamps(Enums.STAMP_EFFECT.SLOW),
 			office_item_data.effectTarget, isPlayer)
-	if office_item_data.canCharge:
-		emit_signal("item_charge_used", office_item_data.chargeSeconds,
+	if office_item_data.canCharge or \
+	 	GetFinalValueOnStamps(Enums.STAMP_EFFECT.CHARGE) != 0:
+		emit_signal("item_charge_used", office_item_data.chargeSeconds + GetFinalValueOnStamps(Enums.STAMP_EFFECT.CHARGE),
 			office_item_data.effectTarget, isPlayer)
 	use_item_tween()
 
