@@ -15,3 +15,11 @@ enum EFFECT_TARGET {
 	RANDOM,
 	ALL
 }
+
+enum STAMP_EFFECT {
+	DAMAGE,
+	HASTE, 
+	SLOW, 
+	FREEZE,
+	CHARGE
+}

@@ -353,3 +353,4 @@ surface_material_override/0 = ExtResource("3_nhkr4")
 [connection signal="body_entered" from="GameManager/Shop/SellItem" to="GameManager/Shop" method="_on_sell_item_body_entered"]
 [connection signal="pressed" from="GameManager/Interface/BattleInterface/StopFightButton" to="GameManager/Interface" method="_on_stop_fight_button_pressed"]
 [connection signal="pressed" from="GameManager/Interface/ShopInterface/InitFightButton" to="GameManager/Interface" method="_on_init_fight_button_pressed"]
+[connection signal="body_entered" from="GameManager/Stamp/Stampler" to="GameManager/Stamp" method="_on_stampler_body_entered"]

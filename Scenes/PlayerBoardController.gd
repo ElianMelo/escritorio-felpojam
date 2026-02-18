@@ -68,14 +68,16 @@ func ResetPositions():
 	pass
 
 func OnGameStateChanged(state: Global.GAME_STATE):
+	isShop = false
 	match state:
 		Global.GAME_STATE.PREBATTLE:
 			CleanShopObjects()
 			CreateEnemyObjects()
 			Global.ChangeGameState(Global.GAME_STATE.BATTLE)
-			isShop = false 
 		Global.GAME_STATE.BATTLE:
-			isShop = false 
+			pass
+		Global.GAME_STATE.STAMP:
+			CleanEnemyObjects()
 		Global.GAME_STATE.SHOP:
 			isShop = true
 			CleanEnemyObjects()
