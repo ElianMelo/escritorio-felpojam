@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bfj3cxl8hkubf"]
+
+[ext_resource type="Texture2D" uid="uid://d06fhmjfwy3rk" path="res://Sprites/Decal/TechDecal.png" id="1_s5n4o"]
+
+[resource]
+albedo_texture = ExtResource("1_s5n4o")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 4.95
