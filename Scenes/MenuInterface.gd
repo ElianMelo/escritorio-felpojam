@@ -29,3 +29,12 @@ func HideVisuals():
 	Global.isGamePaused = false
 	self.visible = false
 	pass
+
+func _on_resume_button_pressed() -> void:
+	HideVisuals()
+
+func _on_play_button_pressed() -> void:
+	HideVisuals()
+
+func _on_quit_button_pressed() -> void:
+	get_tree().quit()

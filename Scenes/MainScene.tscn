@@ -28,6 +28,7 @@
 [ext_resource type="Script" uid="uid://dmlqriwqj4hgx" path="res://Scenes/StampController.gd" id="17_i0j58"]
 [ext_resource type="Script" uid="uid://j7v16xnxv5mf" path="res://Scenes/Strampler.gd" id="18_c1ier"]
 [ext_resource type="Script" uid="uid://bgpmi5d2vep8d" path="res://Scenes/MenuInterface.gd" id="26_r0vnq"]
+[ext_resource type="PackedScene" uid="uid://6dojk3vwcu5m" path="res://Models/Tabuleiro.glb" id="27_c3pre"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6rnll"]
 size = Vector3(1.0087891, 1, 1)
@@ -257,9 +258,11 @@ text = "Parar Luta"
 [node name="ShopInterface" type="Control" parent="GameManager/Interface" unique_id=1582442463]
 visible = false
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="InitFightButton" type="Button" parent="GameManager/Interface/ShopInterface" unique_id=1945604408]
 layout_mode = 1
@@ -268,18 +271,18 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 925.0
-offset_top = 461.0
-offset_right = 1082.015
-offset_bottom = 551.0
+offset_left = -195.0
+offset_top = -130.0
+offset_right = -37.984985
+offset_bottom = -40.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "Iniciar Luta"
 
 [node name="CoinLabel" type="Label" parent="GameManager/Interface/ShopInterface" unique_id=152367821]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+layout_mode = 1
+offset_right = 133.0
+offset_bottom = 42.0
 theme_override_font_sizes/font_size = 30
 text = "Moeda: 2"
 
@@ -288,10 +291,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 208.0
-offset_top = 23.0
-offset_right = 955.0
-offset_bottom = 65.0
+offset_left = -373.5
+offset_right = 373.5
+offset_bottom = 42.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 30
@@ -300,6 +302,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StampInterface" type="Control" parent="GameManager/Interface" unique_id=674640711]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -400,7 +403,6 @@ fit_content = true
 vertical_alignment = 1
 
 [node name="MenuInterface" type="Control" parent="GameManager/Interface" unique_id=1175070585]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -420,7 +422,22 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_xb4mg")
 
-[node name="Button" type="Button" parent="GameManager/Interface/MenuInterface" unique_id=1439375503]
+[node name="ResumeButton" type="Button" parent="GameManager/Interface/MenuInterface" unique_id=753619268]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.609
+anchor_bottom = 0.708
+offset_left = -59.0
+offset_top = -110.0
+offset_right = -84.568054
+offset_bottom = -194.784
+grow_horizontal = 2
+grow_vertical = 2
+text = "Voltar"
+
+[node name="PlayButton" type="Button" parent="GameManager/Interface/MenuInterface" unique_id=1439375503]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -435,10 +452,29 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Jogar"
 
+[node name="QuitButton" type="Button" parent="GameManager/Interface/MenuInterface" unique_id=1775478679]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.609
+anchor_bottom = 0.708
+offset_left = -59.0
+offset_top = 1.0
+offset_right = -84.568054
+offset_bottom = -83.784
+grow_horizontal = 2
+grow_vertical = 2
+text = "Sair"
+
 [node name="MainCamera3D" type="Camera3D" parent="." unique_id=1888448212]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 0.54597044, 0.8378045, 0, -0.8378045, 0.54597044, 0, 7.913415, 5.1601324)
-fov = 40.5
+transform = Transform3D(1, 0, 0, 0, 0.46484205, 0.8853936, 0, -0.8853936, 0.46484205, 0, 7.913415, 5.1601324)
+fov = 64.0
+near = 0.045
+
+[node name="Tabuleiro2" parent="." unique_id=2086816527 instance=ExtResource("27_c3pre")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, -0.10082483, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=753834308]
 transform = Transform3D(1, 0, 0, 0, 0.7155464, 0.6985652, 0, -0.6985652, 0.7155464, 0, 0, 0)
@@ -464,3 +500,6 @@ surface_material_override/0 = ExtResource("3_nhkr4")
 [connection signal="pressed" from="GameManager/Interface/BattleInterface/StopFightButton" to="GameManager/Interface" method="_on_stop_fight_button_pressed"]
 [connection signal="pressed" from="GameManager/Interface/ShopInterface/InitFightButton" to="GameManager/Interface" method="_on_init_fight_button_pressed"]
 [connection signal="pressed" from="GameManager/Interface/StampInterface/InitShopStampButton" to="GameManager/Interface" method="_on_init_shop_stamp_button_pressed"]
+[connection signal="pressed" from="GameManager/Interface/MenuInterface/ResumeButton" to="GameManager/Interface/MenuInterface" method="_on_resume_button_pressed"]
+[connection signal="pressed" from="GameManager/Interface/MenuInterface/PlayButton" to="GameManager/Interface/MenuInterface" method="_on_play_button_pressed"]
+[connection signal="pressed" from="GameManager/Interface/MenuInterface/QuitButton" to="GameManager/Interface/MenuInterface" method="_on_quit_button_pressed"]

@@ -15,6 +15,8 @@ extends Node3D
 @onready var stamp_text_label: RichTextLabel = $StampInterface/StampDataBox/MarginContainer/RichTextLabel
 @onready var stamp_message: Label = $StampInterface/StampMessage
 
+# Intefaces
+@onready var general_interface: Control = $GeneralInterface
 @onready var battle_interface: Control = $BattleInterface
 @onready var shop_interface: Control = $ShopInterface
 @onready var stamp_interface: Control = $StampInterface
@@ -26,6 +28,7 @@ var shop_message_tween: Tween
 func _ready() -> void:
 	Global.connect("game_state_changed", OnGameStateChanged)
 	OnGameStateChanged(Global.game_state)
+	general_interface.visible = true
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("escape_key_button"):
