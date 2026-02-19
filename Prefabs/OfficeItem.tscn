@@ -5,9 +5,12 @@
 [ext_resource type="Script" uid="uid://s6ba216mjbhx" path="res://Scenes/OfficeItemUsage.gd" id="3_gsc6a"]
 [ext_resource type="Texture2D" uid="uid://cej3m5yjrc7dk" path="res://Sprites/Decal/GlueDecal.png" id="4_gsc6a"]
 [ext_resource type="Script" uid="uid://dppbefblh8sm8" path="res://Scenes/ItemProgress.gd" id="4_k5hvi"]
-[ext_resource type="Texture2D" uid="uid://d06fhmjfwy3rk" path="res://Sprites/Decal/TechDecal.png" id="4_udlc6"]
 [ext_resource type="Texture2D" uid="uid://d2hvax8gm7b02" path="res://Sprites/radial_button_back.png" id="5_8yyny"]
+[ext_resource type="Texture2D" uid="uid://x2k40u7ho4x2" path="res://Sprites/Decal/DamageDecal.png" id="5_x57ev"]
+[ext_resource type="Texture2D" uid="uid://de24ieshk4y2f" path="res://Sprites/Decal/StunDecal.png" id="6_c23tc"]
 [ext_resource type="Texture2D" uid="uid://dckv0ijfcjs6c" path="res://Sprites/radial_button.png" id="6_x57ev"]
+[ext_resource type="Texture2D" uid="uid://dvjebtwd8unp6" path="res://Sprites/Decal/WhiteDecal.png" id="7_do2v4"]
+[ext_resource type="Texture2D" uid="uid://cpf7vsp400lig" path="res://Sprites/Decal/TechDecalNew.png" id="8_ynvmh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r3fl7"]
 size = Vector3(1.5160065, 0.7392273, 1.4763062)
@@ -36,55 +39,55 @@ layers = 3
 mesh = SubResource("BoxMesh_udlc6")
 
 [node name="Decal1" type="Decal" parent="MeshInstance3D" unique_id=315352591]
-transform = Transform3D(0.29999897, -2.3283064e-09, 8.195639e-08, 1.3969839e-09, 0.3, 7.450581e-09, 2.2351742e-08, -6.3329935e-08, 0.29999882, -0.0027139187, 0, -0.008141518)
+transform = Transform3D(0.15, -6.9849204e-10, -1.1175909e-08, 6.984944e-10, 0.15, 3.1664975e-08, 1.1175909e-08, -3.1664975e-08, 0.15, 0.0060055256, 0.29582268, -0.017813206)
 visible = false
 size = Vector3(2, 4.5056534, 2)
 texture_albedo = ExtResource("4_gsc6a")
 texture_emission = ExtResource("4_gsc6a")
-emission_energy = 0.3
+emission_energy = 0.0
 upper_fade = 0.0033145596
 lower_fade = 0.00399269
 cull_mask = 2
 
 [node name="Decal2" type="Decal" parent="MeshInstance3D" unique_id=40161473]
-transform = Transform3D(0.29999897, -2.3283064e-09, 8.195639e-08, 1.3969839e-09, 0.3, 7.450581e-09, 2.2351742e-08, -6.3329935e-08, 0.29999882, 0.31987906, 0, 0.29865962)
+transform = Transform3D(0.15, -6.9849204e-10, -1.1175909e-08, 6.984944e-10, 0.15, 3.1664975e-08, 1.1175909e-08, -3.1664975e-08, 0.15, 0.3285985, 0.29582268, 0.28898793)
 visible = false
 size = Vector3(2, 4.5056534, 2)
-texture_albedo = ExtResource("4_udlc6")
-texture_emission = ExtResource("4_udlc6")
+texture_albedo = ExtResource("5_x57ev")
+texture_emission = ExtResource("5_x57ev")
 emission_energy = 0.3
 upper_fade = 0.0033145596
 lower_fade = 0.00399269
 cull_mask = 2
 
 [node name="Decal3" type="Decal" parent="MeshInstance3D" unique_id=179636813]
-transform = Transform3D(0.29999897, -2.3283064e-09, 8.195639e-08, 1.3969839e-09, 0.3, 7.450581e-09, 2.2351742e-08, -6.3329935e-08, 0.29999882, 0.2876675, 0, -0.29038143)
+transform = Transform3D(0.15, -6.9849204e-10, -1.1175909e-08, 6.984944e-10, 0.15, 3.1664975e-08, 1.1175909e-08, -3.1664975e-08, 0.15, 0.29638696, 0.29582268, -0.30005312)
 visible = false
 size = Vector3(2, 4.5056534, 2)
-texture_albedo = ExtResource("4_udlc6")
-texture_emission = ExtResource("4_udlc6")
+texture_albedo = ExtResource("6_c23tc")
+texture_emission = ExtResource("6_c23tc")
 emission_energy = 0.3
 upper_fade = 0.0033145596
 lower_fade = 0.00399269
 cull_mask = 2
 
 [node name="Decal4" type="Decal" parent="MeshInstance3D" unique_id=1366792798]
-transform = Transform3D(0.29999897, -2.3283064e-09, 8.195639e-08, 1.3969839e-09, 0.3, 7.450581e-09, 2.2351742e-08, -6.3329935e-08, 0.29999882, -0.2849537, 0, -0.29038143)
+transform = Transform3D(0.15, -6.9849204e-10, -1.1175909e-08, 6.984944e-10, 0.15, 3.1664975e-08, 1.1175909e-08, -3.1664975e-08, 0.15, -0.27623427, 0.29582268, -0.30005312)
 visible = false
 size = Vector3(2, 4.5056534, 2)
-texture_albedo = ExtResource("4_udlc6")
-texture_emission = ExtResource("4_udlc6")
-emission_energy = 0.3
+texture_albedo = ExtResource("7_do2v4")
+texture_emission = ExtResource("7_do2v4")
+emission_energy = 0.0
 upper_fade = 0.0033145596
 lower_fade = 0.00399269
 cull_mask = 2
 
 [node name="Decal5" type="Decal" parent="MeshInstance3D" unique_id=156664900]
-transform = Transform3D(0.29999897, -2.3283064e-09, 8.195639e-08, 1.3969839e-09, 0.3, 7.450581e-09, 2.2351742e-08, -6.3329935e-08, 0.29999882, -0.30395067, 0, 0.279526)
+transform = Transform3D(0.15, -6.9849204e-10, -1.1175909e-08, 6.984944e-10, 0.15, 3.1664975e-08, 1.1175909e-08, -3.1664975e-08, 0.15, -0.27657476, 0.29582268, 0.28203365)
 visible = false
 size = Vector3(2, 4.5056534, 2)
-texture_albedo = ExtResource("4_udlc6")
-texture_emission = ExtResource("4_udlc6")
+texture_albedo = ExtResource("8_ynvmh")
+texture_emission = ExtResource("8_ynvmh")
 emission_energy = 0.3
 upper_fade = 0.0033145596
 lower_fade = 0.00399269
