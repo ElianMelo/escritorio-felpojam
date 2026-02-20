@@ -6,6 +6,7 @@ extends Node3D
 @onready var camera: Camera3D = %MainCamera3D
 @export var office_item_data: Array[OfficeItemData]
 @onready var stamp: StampController = %Stamp
+@onready var spawner_controller: SpawnerController = %SpawnerController
 
 @export var enemiesData: Array[EnemyData]
 
@@ -145,7 +146,7 @@ func InstantiateOfficeItemEnemyByData(officeItemData: OfficeItemData):
 	if officeItem == null: return
 	officeItem.position += Vector3(currentXOffset, 0, currentZOffset)
 	officeItem.ResetRotation()
-	officeItem.SetupData(camera,  officeItemData, false, false)
+	officeItem.SetupData(camera,  officeItemData, spawner_controller, false, false)
 	enemy_office_items.push_back(officeItem)
 	SetupOfficeItem(officeItem)
 	
@@ -158,7 +159,7 @@ func InstantiateOfficeItem(isPlayer: bool, isShop: bool = false):
 	officeItem.ResetRotation()
 	officeItem.SetupData(camera, 
 		office_item_data[rng.randi_range(0, office_item_data.size()-1 )], 
-		isPlayer, isShop)
+		spawner_controller, isPlayer, isShop)
 	if isPlayer:
 		player_office_items.push_back(officeItem)
 	elif isShop:

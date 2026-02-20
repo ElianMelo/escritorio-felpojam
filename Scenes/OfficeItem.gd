@@ -8,6 +8,8 @@ extends RigidBody3D
 @onready var item_progress: ItemProgress = $ItemProgress
 @export var listDecal: Array[Decal] = []
 
+var spawner_controller: SpawnerController
+
 var isDragging: bool = false
 var isPlayer: bool = true
 var isShop: bool = false
@@ -27,10 +29,12 @@ signal item_mouse_entered(officeItem: OfficeItem)
 signal item_mouse_exited()
 
 func SetupData(cameraSetup: Camera3D, officeItemData: OfficeItemData,
+	spawnerController: SpawnerController,
 	isThisPlayer: bool,
 	isThisShop: bool = false):
 	isPlayer = isThisPlayer
 	isShop = isThisShop
+	spawner_controller = spawnerController
 	camera = cameraSetup
 	office_item_data = officeItemData
 	office_item_usage.SetDuration(office_item_data.reload)
@@ -45,6 +49,8 @@ func SetDecal(texture: Texture2D):
 
 func ReceiveEffect(effect: Enums.EFFECT, duration: float):
 	office_item_usage.ReceiveEffect(effect, duration)
+	spawner_controller.SpawnPopup(self.position + \
+		Vector3(0,1,0), effect)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
