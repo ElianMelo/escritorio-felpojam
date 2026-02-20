@@ -9,6 +9,8 @@ extends Node3D
 @onready var player_board_controller: PlayerBoardController = %PlayerBoardController
 
 var isActive = false
+var defaultBuyValue = 2
+var defaultSellValue = 1
 
 func _ready() -> void:
 	Global.connect("game_state_changed", OnGameStateChanged)
@@ -64,11 +66,11 @@ func AttemptBuyItem(officeItem: OfficeItem):
 		interface.ShowShopFeedbackMessage(\
 			"Você só pode ter 5 itens")
 		return
-	if Global.coin < officeItem.office_item_data.value:
+	if Global.coin < defaultBuyValue:
 		interface.ShowShopFeedbackMessage(\
 			"Moeda insuficiente para comprar esse item!!")
 		return
-	Global.coin -= officeItem.office_item_data.value
+	Global.coin -= defaultBuyValue
 	officeItem.isShop = false
 	officeItem.isPlayer = true
 	if !Global.firstItemBrought:
@@ -88,7 +90,7 @@ func SellItem(officeItem: OfficeItem):
 		return
 	interface.ShowShopFeedbackMessage(\
 			"Item vendido com sucesso!")
-	Global.coin += officeItem.office_item_data.value
+	Global.coin += defaultSellValue
 	player_board_controller.DeletePlayerItem(officeItem)
 	interface.UpdateCoinText()
 	pass

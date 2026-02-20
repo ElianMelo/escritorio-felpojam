@@ -1,18 +1,18 @@
 [gd_resource type="Resource" script_class="OfficeItemData" format=3 uid="uid://bhm1ch14ybiuj"]
 
 [ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="1_nishv"]
-
-[sub_resource type="PrismMesh" id="PrismMesh_rayha"]
+[ext_resource type="PackedScene" uid="uid://cvsiybmg1ci2p" path="res://Models/Props/Boosterpack.glb" id="1_yhjii"]
 
 [resource]
 script = ExtResource("1_nishv")
 name = "Papel Médio"
 reload = 1.0
-value = 2.0
 canDamage = true
 damage = 1
 canFreeze = true
 freezeDuration = 2.0
 chargeSeconds = 1.0
-meshResource = SubResource("PrismMesh_rayha")
+meshScene = ExtResource("1_yhjii")
+initialRotation = Vector3(0, 90, 0)
+shapePosition = Vector3(0, 0.172, -0.007)
 metadata/_custom_type_script = "uid://dvk0rv8yoxdjy"

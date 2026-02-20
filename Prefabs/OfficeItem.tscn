@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dgtk0fwsuc2q6" path="res://Scenes/OfficeItem.gd" id="1_2ohxv"]
 [ext_resource type="Resource" uid="uid://bgd2x7qjlq3yk" path="res://Data/Items/RegularPaper.tres" id="2_udlc6"]
 [ext_resource type="Script" uid="uid://s6ba216mjbhx" path="res://Scenes/OfficeItemUsage.gd" id="3_gsc6a"]
+[ext_resource type="PackedScene" uid="uid://cvsiybmg1ci2p" path="res://Models/Props/Boosterpack.glb" id="4_c23tc"]
 [ext_resource type="Texture2D" uid="uid://cej3m5yjrc7dk" path="res://Sprites/Decal/GlueDecal.png" id="4_gsc6a"]
 [ext_resource type="Script" uid="uid://dppbefblh8sm8" path="res://Scenes/ItemProgress.gd" id="4_k5hvi"]
 [ext_resource type="Texture2D" uid="uid://d2hvax8gm7b02" path="res://Sprites/radial_button_back.png" id="5_8yyny"]
@@ -13,9 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cpf7vsp400lig" path="res://Sprites/Decal/TechDecalNew.png" id="8_ynvmh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r3fl7"]
-size = Vector3(1.5160065, 0.7392273, 1.4763062)
-
-[sub_resource type="BoxMesh" id="BoxMesh_udlc6"]
+size = Vector3(1.1451018, 0.32132286, 2.8670995)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_7rqgy"]
 viewport_path = NodePath("ItemProgress/SubViewport")
@@ -25,21 +24,22 @@ mass = 3.0
 linear_damp = 3.0
 script = ExtResource("1_2ohxv")
 office_item_data = ExtResource("2_udlc6")
-listDecal = [NodePath("MeshInstance3D/Decal1"), NodePath("MeshInstance3D/Decal2"), NodePath("MeshInstance3D/Decal3"), NodePath("MeshInstance3D/Decal4"), NodePath("MeshInstance3D/Decal5")]
+listDecal = [NodePath("Decal1"), NodePath("Decal2"), NodePath("Decal3"), NodePath("Decal4"), NodePath("Decal5")]
 
 [node name="OfficeItemUsage" type="Node3D" parent="." unique_id=1341431946]
 script = ExtResource("3_gsc6a")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=809306776]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00020599365, 0.12440491, -0.025693774)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0063453913, 0.1631827, 0.014398694)
+visible = false
 shape = SubResource("BoxShape3D_r3fl7")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1873558267]
-layers = 3
-mesh = SubResource("BoxMesh_udlc6")
+[node name="Boosterpack" parent="." unique_id=1198984799 instance=ExtResource("4_c23tc")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, -0.28732693, 0)
+visible = false
 
-[node name="Decal1" type="Decal" parent="MeshInstance3D" unique_id=315352591]
-transform = Transform3D(0.15, -6.9849204e-10, -1.1175909e-08, 6.984944e-10, 0.15, 3.1664975e-08, 1.1175909e-08, -3.1664975e-08, 0.15, 0.0060055256, 0.29582268, -0.017813206)
+[node name="Decal1" type="Decal" parent="." unique_id=315352591]
+transform = Transform3D(0.29999995, -1.396981e-09, -3.5762785e-08, 1.3969889e-09, 0.3, 6.332994e-08, 3.5762785e-08, -6.332993e-08, 0.29999995, 0.006005524, -0.29213923, -0.0178132)
 visible = false
 size = Vector3(2, 4.5056534, 2)
 texture_albedo = ExtResource("4_gsc6a")
@@ -49,8 +49,8 @@ upper_fade = 0.0033145596
 lower_fade = 0.00399269
 cull_mask = 2
 
-[node name="Decal2" type="Decal" parent="MeshInstance3D" unique_id=40161473]
-transform = Transform3D(0.15, -6.9849204e-10, -1.1175909e-08, 6.984944e-10, 0.15, 3.1664975e-08, 1.1175909e-08, -3.1664975e-08, 0.15, 0.3285985, 0.29582268, 0.28898793)
+[node name="Decal2" type="Decal" parent="." unique_id=40161473]
+transform = Transform3D(0.29999995, -1.396981e-09, -3.5762785e-08, 1.3969889e-09, 0.3, 6.332994e-08, 3.5762785e-08, -6.332993e-08, 0.29999995, 0.3285984, -0.043143034, 0.28898785)
 visible = false
 size = Vector3(2, 4.5056534, 2)
 texture_albedo = ExtResource("5_x57ev")
@@ -60,8 +60,8 @@ upper_fade = 0.0033145596
 lower_fade = 0.00399269
 cull_mask = 2
 
-[node name="Decal3" type="Decal" parent="MeshInstance3D" unique_id=179636813]
-transform = Transform3D(0.15, -6.9849204e-10, -1.1175909e-08, 6.984944e-10, 0.15, 3.1664975e-08, 1.1175909e-08, -3.1664975e-08, 0.15, 0.29638696, 0.29582268, -0.30005312)
+[node name="Decal3" type="Decal" parent="." unique_id=179636813]
+transform = Transform3D(0.29999995, -1.396981e-09, -3.5762785e-08, 1.3969889e-09, 0.3, 6.332994e-08, 3.5762785e-08, -6.332993e-08, 0.29999995, 0.29638687, -0.043143034, -0.30005303)
 visible = false
 size = Vector3(2, 4.5056534, 2)
 texture_albedo = ExtResource("6_c23tc")
@@ -71,8 +71,8 @@ upper_fade = 0.0033145596
 lower_fade = 0.00399269
 cull_mask = 2
 
-[node name="Decal4" type="Decal" parent="MeshInstance3D" unique_id=1366792798]
-transform = Transform3D(0.15, -6.9849204e-10, -1.1175909e-08, 6.984944e-10, 0.15, 3.1664975e-08, 1.1175909e-08, -3.1664975e-08, 0.15, -0.27623427, 0.29582268, -0.30005312)
+[node name="Decal4" type="Decal" parent="." unique_id=1366792798]
+transform = Transform3D(0.29999995, -1.396981e-09, -3.5762785e-08, 1.3969889e-09, 0.3, 6.332994e-08, 3.5762785e-08, -6.332993e-08, 0.29999995, -0.27623418, -0.043143034, -0.30005303)
 visible = false
 size = Vector3(2, 4.5056534, 2)
 texture_albedo = ExtResource("7_do2v4")
@@ -82,8 +82,8 @@ upper_fade = 0.0033145596
 lower_fade = 0.00399269
 cull_mask = 2
 
-[node name="Decal5" type="Decal" parent="MeshInstance3D" unique_id=156664900]
-transform = Transform3D(0.15, -6.9849204e-10, -1.1175909e-08, 6.984944e-10, 0.15, 3.1664975e-08, 1.1175909e-08, -3.1664975e-08, 0.15, -0.27657476, 0.29582268, 0.28203365)
+[node name="Decal5" type="Decal" parent="." unique_id=156664900]
+transform = Transform3D(0.29999995, -1.396981e-09, -3.5762785e-08, 1.3969889e-09, 0.3, 6.332994e-08, 3.5762785e-08, -6.332993e-08, 0.29999995, -0.27657467, -0.043143034, 0.28203356)
 visible = false
 size = Vector3(2, 4.5056534, 2)
 texture_albedo = ExtResource("8_ynvmh")

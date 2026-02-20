@@ -4,7 +4,6 @@ extends RigidBody3D
 @export var office_item_data: OfficeItemData = null
 @export var camera: Camera3D
 @onready var office_item_usage: OfficeItemUsage = $OfficeItemUsage
-@onready var mesh_instance_3d: MeshInstance3D = $MeshInstance3D
 @onready var item_progress: ItemProgress = $ItemProgress
 @export var listDecal: Array[Decal] = []
 
@@ -38,7 +37,17 @@ func SetupData(cameraSetup: Camera3D, officeItemData: OfficeItemData,
 	camera = cameraSetup
 	office_item_data = officeItemData
 	office_item_usage.SetDuration(office_item_data.reload)
-	mesh_instance_3d.mesh = office_item_data.meshResource
+	SpawnMesh()
+
+func SpawnMesh():
+	var instace = office_item_data.meshScene.instantiate()
+	var meshMode = instace as Node3D
+	
+	add_child(instace)
+	meshMode.rotation_degrees = Vector3(0,90,0)
+	#var meshMode = instace as Node3D
+	#meshMode.rotation = office_item_data.initialRotation
+	#collision_shape_3d.position = office_item_data.shapePosition
 
 func SetDecal(texture: Texture2D):
 	if currentDecalIndex >= listDecal.size(): return
@@ -58,6 +67,7 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+@warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
 	item_progress.visible = Global.game_state == Global.GAME_STATE.BATTLE
 	pass
@@ -112,6 +122,7 @@ func use_item():
 	use_item_tween()
 
 func use_item_tween():
+	@warning_ignore("unused_variable")
 	var startY = position.y
 	var tween = create_tween()
 	tween.tween_property(self, "scale", Vector3(1.2, 1, 1.2), 0.2)
@@ -159,6 +170,7 @@ func handle_move_forward(speed:float, delta:float):
 	pass
 
 # check overlap with collision shape 3d down
+@warning_ignore("unused_parameter")
 func check_overlap(offsetValue:float):
 	var space_state = get_world_3d().direct_space_state
 	var box := BoxShape3D.new()

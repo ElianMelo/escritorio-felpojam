@@ -3,7 +3,6 @@ extends Resource
 
 @export var name: String
 @export var reload: float
-@export var value: float
 @export var canDamage: bool
 @export var damage: int
 @export var canSlow: bool
@@ -17,17 +16,17 @@ extends Resource
 @export var effectTarget: Enums.EFFECT_TARGET = Enums.EFFECT_TARGET.RANDOM
 @export var isMarked: bool
 @export var markedEffect: Enums.EFFECT = Enums.EFFECT.NONE
-@export var meshResource: Mesh
+@export var meshScene: PackedScene
+@export var shapePosition: Vector3
 
 func _init(p_name = "", p_reload = 0.0, p_canDamage = false,\
 	p_damage = 0, p_canSlow = false, p_slowDuration = 0.0,\
 	p_canFreeze = false, p_freezeDuration = 0.0, p_canHaste = false,\
 	p_canCharge = false, p_chargeSeconds = 0.0, \
 	p_hasteDuration = 0.0, p_effectTarget = Enums.EFFECT_TARGET.RANDOM, \
-	p_meshResource: Mesh = null,
-	p_value = 0.0):
+	p_meshScene: PackedScene = null, \
+	p_shapePosition: Vector3 = Vector3.ZERO):
 	name = p_name
-	value = p_value
 	reload = p_reload
 	canDamage = p_canDamage
 	damage = p_damage
@@ -40,5 +39,6 @@ func _init(p_name = "", p_reload = 0.0, p_canDamage = false,\
 	chargeSeconds = p_chargeSeconds
 	hasteDuration = p_hasteDuration
 	effectTarget = p_effectTarget
-	meshResource = p_meshResource
+	meshScene = p_meshScene
+	shapePosition = p_shapePosition
 	

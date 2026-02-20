@@ -32,6 +32,7 @@
 [ext_resource type="Script" uid="uid://bgpmi5d2vep8d" path="res://Scenes/MenuInterface.gd" id="26_r0vnq"]
 [ext_resource type="PackedScene" uid="uid://6dojk3vwcu5m" path="res://Models/Table/Tabuleiro.glb" id="27_c3pre"]
 [ext_resource type="PackedScene" uid="uid://dp3ai8c76eee7" path="res://Prefabs/PopupText.tscn" id="29_u5v48"]
+[ext_resource type="PackedScene" uid="uid://cvsiybmg1ci2p" path="res://Models/Props/Boosterpack.glb" id="33_rv6c1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6rnll"]
 size = Vector3(0.63793945, 1.4852295, 0.71673584)
@@ -551,6 +552,9 @@ shape = SubResource("BoxShape3D_tr2i4")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=228405548]
 mesh = SubResource("BoxMesh_tr2i4")
 surface_material_override/0 = ExtResource("3_nhkr4")
+
+[node name="Boosterpack" parent="." unique_id=128710154 instance=ExtResource("33_rv6c1")]
+visible = false
 
 [connection signal="body_entered" from="GameManager/Shop/BuyItem" to="GameManager/Shop" method="_on_buy_item_body_entered"]
 [connection signal="body_entered" from="GameManager/Shop/SellItem" to="GameManager/Shop" method="_on_sell_item_body_entered"]
