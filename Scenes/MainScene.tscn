@@ -137,6 +137,7 @@ unique_name_in_owner = true
 script = ExtResource("3_4b75m")
 
 [node name="GeneralInterface" type="Control" parent="GameManager/Interface" unique_id=377106865]
+visible = false
 layout_mode = 3
 anchors_preset = 2
 anchor_top = 1.0
@@ -255,7 +256,7 @@ grow_vertical = 0
 mouse_filter = 1
 text = "Parar Luta"
 
-[node name="ShopInterface" type="Control" parent="GameManager/Interface" unique_id=1582442463]
+[node name="PostBattleInterface" type="Control" parent="GameManager/Interface" unique_id=610781493]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -263,6 +264,52 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
+
+[node name="ResultText" type="Label" parent="GameManager/Interface/PostBattleInterface" unique_id=799200938]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -113.0
+offset_right = 121.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 78
+text = "Vitória"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="GoldResultText" type="Label" parent="GameManager/Interface/PostBattleInterface" unique_id=1850873493]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.0
+offset_top = -11.5
+offset_right = 44.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+text = "Ganhou 1 de moeda"
+horizontal_alignment = 1
+
+[node name="ShopInterface" type="Control" parent="GameManager/Interface" unique_id=1582442463]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
 
 [node name="InitFightButton" type="Button" parent="GameManager/Interface/ShopInterface" unique_id=1945604408]
 layout_mode = 1
@@ -403,6 +450,7 @@ fit_content = true
 vertical_alignment = 1
 
 [node name="MenuInterface" type="Control" parent="GameManager/Interface" unique_id=1175070585]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -473,7 +521,7 @@ transform = Transform3D(1, 0, 0, 0, 0.46484205, 0.8853936, 0, -0.8853936, 0.4648
 fov = 64.0
 near = 0.045
 
-[node name="Tabuleiro2" parent="." unique_id=2086816527 instance=ExtResource("27_c3pre")]
+[node name="MainBoard" parent="." unique_id=2086816527 instance=ExtResource("27_c3pre")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, -0.10082483, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=753834308]

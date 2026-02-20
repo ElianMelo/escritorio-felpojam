@@ -8,7 +8,7 @@
 script = ExtResource("1_rayha")
 name = "Papel Regular"
 reload = 1.0
-value = 1.0
+value = 2.0
 canDamage = true
 damage = 1
 freezeDuration = 2.0

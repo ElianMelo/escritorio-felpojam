@@ -8,7 +8,7 @@
 script = ExtResource("1_doqk2")
 name = "Papel Grande"
 reload = 10.0
-value = 1.0
+value = 2.0
 canDamage = true
 damage = 50
 canSlow = true

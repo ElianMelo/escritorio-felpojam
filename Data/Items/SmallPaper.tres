@@ -8,7 +8,7 @@
 script = ExtResource("1_8sc3b")
 name = "Papel Pequeno"
 reload = 1.0
-value = 1.0
+value = 2.0
 canDamage = true
 damage = 1
 canSlow = true

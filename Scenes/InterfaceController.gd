@@ -15,9 +15,14 @@ extends Node3D
 @onready var stamp_text_label: RichTextLabel = $StampInterface/StampDataBox/MarginContainer/RichTextLabel
 @onready var stamp_message: Label = $StampInterface/StampMessage
 
+# PostBattleInterface
+@onready var result_text: Label = $PostBattleInterface/ResultText
+@onready var gold_result_text: Label = $PostBattleInterface/GoldResultText
+
 # Intefaces
 @onready var general_interface: Control = $GeneralInterface
 @onready var battle_interface: Control = $BattleInterface
+@onready var post_battle_interface: Control = $PostBattleInterface
 @onready var shop_interface: Control = $ShopInterface
 @onready var stamp_interface: Control = $StampInterface
 @onready var menu_interface: MenuInterface = $MenuInterface
@@ -48,6 +53,8 @@ func OnGameStateChanged(state: Global.GAME_STATE):
 			battle_interface.visible = true
 		Global.GAME_STATE.PREBATTLE:
 			battle_interface.visible = true
+		Global.GAME_STATE.POSTBATTLE:
+			post_battle_interface.visible = true
 		Global.GAME_STATE.SHOP:
 			shop_interface.visible = true
 		Global.GAME_STATE.STAMP:
@@ -59,6 +66,12 @@ func DisableAllInterfaces():
 	shop_interface.visible = false
 	stamp_interface.visible = false
 	menu_interface.visible = false
+	post_battle_interface.visible = false
+
+func ChangePostBattleText(resultText: String, goldText: String):
+	result_text.text = resultText
+	gold_result_text.text = goldText
+	pass
 
 func DisplayEnemyHealth():
 	enemy_health.text = "Vida: " + str(Global.enemy_health)

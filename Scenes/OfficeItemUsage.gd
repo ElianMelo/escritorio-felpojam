@@ -57,7 +57,7 @@ func ReceiveEffect(effect: Enums.EFFECT, effect_duration: float):
 			currentDuration += effect_duration
 			effectDuration = 0.3
 			if currentDuration <= duration: return
-			currentDuration -= duration
+			# currentDuration -= duration
 	
 func UseItem():
 	office_item.use_item()

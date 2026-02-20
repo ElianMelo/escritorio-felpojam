@@ -63,6 +63,7 @@ func AttemptBuyItem(officeItem: OfficeItem):
 	if player_board_controller.PlayerAmountItems() == 5:
 		interface.ShowShopFeedbackMessage(\
 			"Você só pode ter 5 itens")
+		return
 	if Global.coin < officeItem.office_item_data.value:
 		interface.ShowShopFeedbackMessage(\
 			"Moeda insuficiente para comprar esse item!!")
