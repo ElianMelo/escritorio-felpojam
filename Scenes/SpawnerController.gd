@@ -8,7 +8,7 @@ func SpawnPopup(targetPosition: Vector3, effect: Enums.EFFECT):
 	add_child(instace)
 	var popupText = instace as PopupText
 	popupText.position = targetPosition
-	popupText.SetupData(ConvertEffectToText(effect))
+	popupText.SetupData(ConvertEffectToText(effect), effect)
 
 func ConvertEffectToText(effect: Enums.EFFECT):
 	match effect:

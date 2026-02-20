@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6hgg16y1w7lk"
-path.s3tc="res://.godot/imported/Tabuleiro_Vaso e plantas_Albedo_3.png-5098181d339f5b76e0e5dd66d761f84e.s3tc.ctex"
+uid="uid://dq5aawpoqyak0"
+path.s3tc="res://.godot/imported/Tabuleiro_Tabuleiro _Albedo.png-c3ecf7805cc680998e4abd88c0a607c7.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "5e069c773789b2fcb29762dcf17739bb"
+"md5": "8522c3455ffbc494f5d5bd0882dde408"
 }
 
 [deps]
 
-source_file="res://Models/Tabuleiro_Vaso e plantas_Albedo_3.png"
-dest_files=["res://.godot/imported/Tabuleiro_Vaso e plantas_Albedo_3.png-5098181d339f5b76e0e5dd66d761f84e.s3tc.ctex"]
+source_file="res://Models/Table/Tabuleiro_Tabuleiro _Albedo.png"
+dest_files=["res://.godot/imported/Tabuleiro_Tabuleiro _Albedo.png-c3ecf7805cc680998e4abd88c0a607c7.s3tc.ctex"]
 
 [params]
 

@@ -29,7 +29,7 @@
 [ext_resource type="Script" uid="uid://dmlqriwqj4hgx" path="res://Scenes/StampController.gd" id="17_i0j58"]
 [ext_resource type="Script" uid="uid://j7v16xnxv5mf" path="res://Scenes/Strampler.gd" id="18_c1ier"]
 [ext_resource type="Script" uid="uid://bgpmi5d2vep8d" path="res://Scenes/MenuInterface.gd" id="26_r0vnq"]
-[ext_resource type="PackedScene" uid="uid://6dojk3vwcu5m" path="res://Models/Tabuleiro.glb" id="27_c3pre"]
+[ext_resource type="PackedScene" uid="uid://6dojk3vwcu5m" path="res://Models/Table/Tabuleiro.glb" id="27_c3pre"]
 [ext_resource type="PackedScene" uid="uid://dp3ai8c76eee7" path="res://Prefabs/PopupText.tscn" id="29_u5v48"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6rnll"]
@@ -527,7 +527,7 @@ transform = Transform3D(1, 0, 0, 0, 0.46484205, 0.8853936, 0, -0.8853936, 0.4648
 fov = 64.0
 near = 0.045
 
-[node name="MainBoard" parent="." unique_id=2086816527 instance=ExtResource("27_c3pre")]
+[node name="MainBoard" parent="." unique_id=1941616761 instance=ExtResource("27_c3pre")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, -0.10082483, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=753834308]

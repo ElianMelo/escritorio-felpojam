@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://6dojk3vwcu5m"
-path="res://.godot/imported/Tabuleiro.glb-7ff6ced7a5aaf16f54e311d4ff6673dd.scn"
+path="res://.godot/imported/Tabuleiro.glb-36203feb513de6db0ff58daba4794e80.scn"
 
 [deps]
 
-source_file="res://Models/Tabuleiro.glb"
-dest_files=["res://.godot/imported/Tabuleiro.glb-7ff6ced7a5aaf16f54e311d4ff6673dd.scn"]
+source_file="res://Models/Table/Tabuleiro.glb"
+dest_files=["res://.godot/imported/Tabuleiro.glb-36203feb513de6db0ff58daba4794e80.scn"]
 
 [params]
 

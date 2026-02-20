@@ -16,18 +16,7 @@ func _process(delta: float) -> void:
 
 func set_current_mode(effect: Enums.EFFECT):
 	currentEffect = effect
-	match currentEffect:
-		Enums.EFFECT.HASTE:
-			progress_sprite.modulate = Color.AQUAMARINE
-		Enums.EFFECT.FREEZE:
-			progress_sprite.modulate = Color.DARK_VIOLET
-		Enums.EFFECT.SLOW:
-			progress_sprite.modulate = Color.YELLOW
-		Enums.EFFECT.CHARGE:
-			progress_sprite.modulate = Color.SANDY_BROWN
-		Enums.EFFECT.NONE:
-			progress_sprite.modulate = Color.WHITE
-	pass
+	progress_sprite.modulate = Global.GetColorByEffect(effect)
 	
 func set_current_progress(percentage: float):
 	progress_bar.value = percentage

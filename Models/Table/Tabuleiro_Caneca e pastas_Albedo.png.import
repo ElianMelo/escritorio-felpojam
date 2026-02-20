@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dq5aawpoqyak0"
-path.s3tc="res://.godot/imported/Tabuleiro_Tabuleiro _Albedo.png-3dc59f9085929b4e16c8f70dbd8361ad.s3tc.ctex"
+uid="uid://bj4gno3ix57uy"
+path.s3tc="res://.godot/imported/Tabuleiro_Caneca e pastas_Albedo.png-cebe7f7f52c62d0d9d862fe3ee8e12a4.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "8522c3455ffbc494f5d5bd0882dde408"
+"md5": "485cff2e832a48cebb70100a0531cce0"
 }
 
 [deps]
 
-source_file="res://Models/Tabuleiro_Tabuleiro _Albedo.png"
-dest_files=["res://.godot/imported/Tabuleiro_Tabuleiro _Albedo.png-3dc59f9085929b4e16c8f70dbd8361ad.s3tc.ctex"]
+source_file="res://Models/Table/Tabuleiro_Caneca e pastas_Albedo.png"
+dest_files=["res://.godot/imported/Tabuleiro_Caneca e pastas_Albedo.png-cebe7f7f52c62d0d9d862fe3ee8e12a4.s3tc.ctex"]
 
 [params]
 
