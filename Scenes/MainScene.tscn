@@ -28,12 +28,13 @@
 [ext_resource type="Resource" uid="uid://c05d32nalpfet" path="res://Data/Stample/Freeze.tres" id="16_p5ymy"]
 [ext_resource type="Script" uid="uid://dmlqriwqj4hgx" path="res://Scenes/StampController.gd" id="17_i0j58"]
 [ext_resource type="Script" uid="uid://j7v16xnxv5mf" path="res://Scenes/Strampler.gd" id="18_c1ier"]
+[ext_resource type="PackedScene" uid="uid://b6nwdw4clne82" path="res://Models/Stamp/Carimbo.glb" id="23_t8ijv"]
 [ext_resource type="Script" uid="uid://bgpmi5d2vep8d" path="res://Scenes/MenuInterface.gd" id="26_r0vnq"]
 [ext_resource type="PackedScene" uid="uid://6dojk3vwcu5m" path="res://Models/Table/Tabuleiro.glb" id="27_c3pre"]
 [ext_resource type="PackedScene" uid="uid://dp3ai8c76eee7" path="res://Prefabs/PopupText.tscn" id="29_u5v48"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6rnll"]
-size = Vector3(1.0087891, 1, 1)
+size = Vector3(0.63793945, 1.4852295, 0.71673584)
 
 [sub_resource type="BoxMesh" id="BoxMesh_6rnll"]
 
@@ -119,7 +120,7 @@ stampListEffects = Array[ExtResource("14_gyaec")]([ExtResource("16_4sso6"), ExtR
 godotBugKeepThis = Array[ExtResource("3_y4jh7")]([ExtResource("5_4b75m")])
 
 [node name="Stampler" type="RigidBody3D" parent="GameManager/Stamp" unique_id=1799912410]
-transform = Transform3D(0.83829015, 0, 0.54522437, 0, 1, 0, -0.54522437, 0, 0.83829015, 0.043121815, 1.0573719, -2.5185325)
+transform = Transform3D(0.58030504, 0, 0.8143992, 0, 1, 0, -0.8143992, 0, 0.58030504, 0.1334033, 0.5625973, -3.2376635)
 disable_mode = 2
 sleeping = true
 lock_rotation = true
@@ -131,12 +132,11 @@ max_contacts_reported = 10
 script = ExtResource("18_c1ier")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GameManager/Stamp/Stampler" unique_id=2019120693]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0043945313, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0028076172, 0.24261475, 0.0038146973)
 shape = SubResource("BoxShape3D_6rnll")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="GameManager/Stamp/Stampler" unique_id=1026486662]
-material_override = ExtResource("11_enc0b")
-mesh = SubResource("BoxMesh_6rnll")
+[node name="CarimboVisuals" parent="GameManager/Stamp/Stampler" unique_id=1109980605 instance=ExtResource("23_t8ijv")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, -0.48378193, 0)
 
 [node name="Interface" type="Node3D" parent="GameManager" unique_id=1165999141]
 unique_name_in_owner = true
