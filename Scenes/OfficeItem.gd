@@ -4,6 +4,7 @@ extends RigidBody3D
 @export var office_item_data: OfficeItemData = null
 @export var camera: Camera3D
 @onready var office_item_usage: OfficeItemUsage = $OfficeItemUsage
+@onready var collision_shape_3d: CollisionShape3D = $CollisionShape3D
 @onready var item_progress: ItemProgress = $ItemProgress
 @export var listDecal: Array[Decal] = []
 
@@ -44,8 +45,12 @@ func SpawnMesh():
 	var meshMode = instace as Node3D
 	add_child(instace)
 	meshMode.rotation_degrees = Vector3(0,90,0)
-	meshMode.position += Vector3(0,0.2,0)
 	meshMode.position += Vector3(0,office_item_data.meshYOffset,0)
+	var boxShape = collision_shape_3d.shape as BoxShape3D
+	boxShape = boxShape.duplicate()
+	collision_shape_3d.shape = boxShape
+	boxShape.size = office_item_data.collisionShapeSize
+	collision_shape_3d.position = office_item_data.collisionShapePosition
 
 func SetDecal(texture: Texture2D):
 	if currentDecalIndex >= listDecal.size(): return

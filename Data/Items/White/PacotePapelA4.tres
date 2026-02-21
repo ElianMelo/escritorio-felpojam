@@ -1,15 +1,18 @@
 [gd_resource type="Resource" script_class="OfficeItemData" format=3 uid="uid://bxgplmr1dnm5w"]
 
-[ext_resource type="PackedScene" uid="uid://cmgmeeqivuu21" path="res://Models/Props/Pack papel a4/Pack papel a4.glb" id="1_k2w7b"]
-[ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="2_oy5ug"]
+[ext_resource type="PackedScene" uid="uid://cmgmeeqivuu21" path="res://Models/Props/Pack papel a4/Pack papel a4.glb" id="1_m4jem"]
+[ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="2_4um5a"]
 
 [resource]
-script = ExtResource("2_oy5ug")
+script = ExtResource("2_4um5a")
 name = "Pacote Papel A4"
 reload = 5.0
 canDamage = true
 damage = 4
 canCharge = true
 chargeSeconds = 3.0
-meshScene = ExtResource("1_k2w7b")
+meshScene = ExtResource("1_m4jem")
+meshYOffset = 1.2
+collisionShapeSize = Vector3(0.916, 0.232, 2.288)
+collisionShapePosition = Vector3(0, 0.115, 0)
 metadata/_custom_type_script = "uid://dvk0rv8yoxdjy"

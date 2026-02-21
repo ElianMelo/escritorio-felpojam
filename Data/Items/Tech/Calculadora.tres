@@ -1,15 +1,18 @@
 [gd_resource type="Resource" script_class="OfficeItemData" format=3 uid="uid://bp2eukglh8xer"]
 
-[ext_resource type="PackedScene" uid="uid://dlya1iaqkcx3t" path="res://Models/Props/Calculadora/Calculadora.glb" id="1_urvc5"]
-[ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="2_111t3"]
+[ext_resource type="PackedScene" uid="uid://dlya1iaqkcx3t" path="res://Models/Props/Calculadora/Calculadora.glb" id="1_dieyg"]
+[ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="2_tqu1u"]
 
 [resource]
-script = ExtResource("2_111t3")
+script = ExtResource("2_tqu1u")
 name = "Calculadora"
 reload = 8.0
 canDamage = true
 damage = 12
 canHaste = true
 hasteDuration = 6.0
-meshScene = ExtResource("1_urvc5")
+meshScene = ExtResource("1_dieyg")
+meshYOffset = 0.123
+collisionShapeSize = Vector3(1.1947625, 0.27323562, 1.7126043)
+collisionShapePosition = Vector3(0.0044187754, 0.13583198, -0.007124111)
 metadata/_custom_type_script = "uid://dvk0rv8yoxdjy"

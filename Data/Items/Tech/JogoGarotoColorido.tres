@@ -1,15 +1,18 @@
 [gd_resource type="Resource" script_class="OfficeItemData" format=3 uid="uid://bm57a14rs17rl"]
 
-[ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="1_5fai8"]
-[ext_resource type="PackedScene" uid="uid://bwvnyrbsjy25r" path="res://Models/Props/Gameboy color/Gameboy color.glb" id="1_n1bbe"]
+[ext_resource type="PackedScene" uid="uid://bwvnyrbsjy25r" path="res://Models/Props/Gameboy color/Gameboy color.glb" id="1_xqtjh"]
+[ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="2_27ubt"]
 
 [resource]
-script = ExtResource("1_5fai8")
+script = ExtResource("2_27ubt")
 name = "Jogo Garoto Colorido"
 reload = 7.0
 canDamage = true
 damage = 10
 canHaste = true
 hasteDuration = 5.0
-meshScene = ExtResource("1_n1bbe")
+meshScene = ExtResource("1_xqtjh")
+meshYOffset = 1.2
+collisionShapeSize = Vector3(0.916, 0.232, 2.288)
+collisionShapePosition = Vector3(0, 0.115, 0)
 metadata/_custom_type_script = "uid://dvk0rv8yoxdjy"

@@ -12,4 +12,7 @@ damage = 2
 canSlow = true
 slowDuration = 5.0
 meshScene = ExtResource("1_pqrot")
+meshYOffset = 0.142
+collisionShapeSize = Vector3(1.0837376, 0.31697905, 1.0343308)
+collisionShapePosition = Vector3(0.010553166, 0.1577037, 0.06752403)
 metadata/_custom_type_script = "uid://dvk0rv8yoxdjy"

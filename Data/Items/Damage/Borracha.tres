@@ -10,4 +10,7 @@ reload = 1.0
 canDamage = true
 damage = 1
 meshScene = ExtResource("1_rw0e0")
+meshYOffset = 0.081
+collisionShapeSize = Vector3(0.49649715, 0.15388542, 0.81178284)
+collisionShapePosition = Vector3(-0.006103635, 0.076156884, 0.0047917366)
 metadata/_custom_type_script = "uid://dvk0rv8yoxdjy"

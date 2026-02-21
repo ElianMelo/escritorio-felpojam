@@ -1,15 +1,18 @@
 [gd_resource type="Resource" script_class="OfficeItemData" format=3 uid="uid://dn8huehs0n064"]
 
-[ext_resource type="PackedScene" uid="uid://bm1nfklylp1lt" path="res://Models/Props/Cd janela/Cd janela 98.glb" id="1_od4qc"]
-[ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="2_86sk6"]
+[ext_resource type="PackedScene" uid="uid://bm1nfklylp1lt" path="res://Models/Props/Cd janela/Cd janela 98.glb" id="1_65pbk"]
+[ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="2_ajiud"]
 
 [resource]
-script = ExtResource("2_86sk6")
+script = ExtResource("2_ajiud")
 name = "Janela 98"
 reload = 6.0
 canDamage = true
 damage = 5
 canHaste = true
 hasteDuration = 3.0
-meshScene = ExtResource("1_od4qc")
+meshScene = ExtResource("1_65pbk")
+meshYOffset = 0.136
+collisionShapeSize = Vector3(1.5949552, 0.27323562, 1.8657732)
+collisionShapePosition = Vector3(0.002091691, 0.13583198, -0.008319542)
 metadata/_custom_type_script = "uid://dvk0rv8yoxdjy"
