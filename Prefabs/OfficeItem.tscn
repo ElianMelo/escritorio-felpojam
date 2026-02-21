@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cpf7vsp400lig" path="res://Sprites/Decal/TechDecalNew.png" id="8_ynvmh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r3fl7"]
-size = Vector3(1.4074646, 0.6930239, 2.0317895)
+size = Vector3(2.0223687, 0.6930239, 1.8161485)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_7rqgy"]
 viewport_path = NodePath("ItemProgress/SubViewport")
@@ -29,7 +29,7 @@ listDecal = [NodePath("Decal1"), NodePath("Decal2"), NodePath("Decal3"), NodePat
 script = ExtResource("3_gsc6a")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=809306776]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0065648854, 0.34572613, 0.0061771274)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.004527211, 0.34572613, 0.8085522)
 shape = SubResource("BoxShape3D_r3fl7")
 
 [node name="Decal1" type="Decal" parent="." unique_id=315352591]

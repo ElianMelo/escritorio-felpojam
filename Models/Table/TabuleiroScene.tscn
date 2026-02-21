@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://bl4dm1gvii45m"]
+
+[ext_resource type="PackedScene" uid="uid://6dojk3vwcu5m" path="res://Models/Table/Tabuleiro.glb" id="1_brux1"]
+
+[node name="Tabuleiro2" unique_id=1941616761 instance=ExtResource("1_brux1")]

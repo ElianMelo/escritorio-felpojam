@@ -5,7 +5,6 @@
 [ext_resource type="Script" uid="uid://cjg3s4tyuaopy" path="res://Scenes/PlayerBoardController.gd" id="2_0iob3"]
 [ext_resource type="Script" uid="uid://db0xqpkaqqrm5" path="res://Scenes/SpawnerController.gd" id="2_s1acj"]
 [ext_resource type="Script" uid="uid://btxlbpkwaflct" path="res://Scenes/InterfaceController.gd" id="3_4b75m"]
-[ext_resource type="Material" uid="uid://deuj40mclg1do" path="res://Materials/TableMaterial.tres" id="3_nhkr4"]
 [ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="3_y4jh7"]
 [ext_resource type="Texture2D" uid="uid://6mgebga6vqdm" path="res://Sprites/block_back.png" id="4_xb4mg"]
 [ext_resource type="Texture2D" uid="uid://bsti8misj8x0m" path="res://Sprites/block.png" id="5_6t1o7"]
@@ -49,6 +48,7 @@
 [ext_resource type="Resource" uid="uid://csujqi3wwfxy7" path="res://Data/Enemy/ITGuy4.tres" id="28_20cv7"]
 [ext_resource type="PackedScene" uid="uid://dp3ai8c76eee7" path="res://Prefabs/PopupText.tscn" id="29_u5v48"]
 [ext_resource type="PackedScene" uid="uid://cil2s8bi4aytc" path="res://Models/Stamp/CarimboScene.tscn" id="40_20cv7"]
+[ext_resource type="PackedScene" uid="uid://bl4dm1gvii45m" path="res://Models/Table/TabuleiroScene.tscn" id="47_20cv7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6rnll"]
 size = Vector3(0.63793945, 1.7787476, 0.71673584)
@@ -157,10 +157,6 @@ chargeSeconds = 2.0
 meshScene = SubResource("PackedScene_dtg5n")
 metadata/_custom_type_script = "uid://dvk0rv8yoxdjy"
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_tr2i4"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_tr2i4"]
-
 [node name="Node3D" type="Node3D" unique_id=2055693070]
 
 [node name="GameManager" type="Node3D" parent="." unique_id=201966788]
@@ -256,6 +252,10 @@ shape = SubResource("BoxShape3D_6rnll")
 
 [node name="CarimboVisuals" parent="GameManager/Stamp/Stampler" unique_id=1209866256 instance=ExtResource("40_20cv7")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, -0.4869088, 0)
+
+[node name="Skeleton3D" parent="GameManager/Stamp/Stampler/CarimboVisuals/Carimbo_001" parent_id_path=PackedInt32Array(1209866256, 1513720273) index="0" unique_id=1885682324]
+bones/1/position = Vector3(3.6328677e-16, -0.43268704, -2.0687854)
+bones/2/position = Vector3(8.091388e-16, -0.43268687, -4.076724)
 
 [node name="Interface" type="Node3D" parent="GameManager" unique_id=1165999141]
 unique_name_in_owner = true
@@ -642,12 +642,16 @@ text = "Sair"
 
 [node name="MainCamera3D" type="Camera3D" parent="." unique_id=1888448212]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 0.46484205, 0.8853936, 0, -0.8853936, 0.46484205, 0, 7.913415, 5.1601324)
+transform = Transform3D(1, 0, 0, 0, 0.43295124, 0.9014174, 0, -0.9014174, 0.43295124, -0.4074192, 7.913415, 4.4675207)
 fov = 64.0
 near = 0.045
 
-[node name="MainBoard" parent="." unique_id=1941616761 instance=ExtResource("27_c3pre")]
+[node name="MainBoard" parent="." unique_id=1263248501 instance=ExtResource("27_c3pre")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.046443224, -0.11300421, 0.015141487)
+visible = false
+
+[node name="Tabuleiro2" parent="." unique_id=1941616761 instance=ExtResource("47_20cv7")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=753834308]
 transform = Transform3D(1, 0, 0, 0, 0.7155464, 0.6985652, 0, -0.6985652, 0.7155464, 0, 0, 0)
@@ -660,16 +664,6 @@ camera = NodePath("../MainCamera3D")
 [node name="PopupText" parent="." unique_id=1805898919 instance=ExtResource("29_u5v48")]
 transform = Transform3D(1, 0, 0, 0, -1, -1.509958e-07, 0, 1.509958e-07, -1, -4, 3.7335773, -0.2831515)
 visible = false
-
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=173844908]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -5, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1619610930]
-shape = SubResource("BoxShape3D_tr2i4")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=228405548]
-mesh = SubResource("BoxMesh_tr2i4")
-surface_material_override/0 = ExtResource("3_nhkr4")
 
 [connection signal="body_entered" from="GameManager/Shop/BuyItem" to="GameManager/Shop" method="_on_buy_item_body_entered"]
 [connection signal="body_entered" from="GameManager/Shop/SellItem" to="GameManager/Shop" method="_on_sell_item_body_entered"]
