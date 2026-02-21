@@ -12,4 +12,5 @@ damage = 1
 canSlow = true
 slowDuration = 3.0
 meshScene = ExtResource("1_3q4sn")
+meshYOffset = 0.5
 metadata/_custom_type_script = "uid://dvk0rv8yoxdjy"

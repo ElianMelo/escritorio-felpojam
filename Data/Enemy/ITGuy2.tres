@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://cyp8u2mmcc3by"]
+
+[ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="1_vbwkj"]
+[ext_resource type="Resource" uid="uid://bvi6bc5pumg30" path="res://Data/Items/White/PacoteDeFigurinhas.tres" id="2_4kn52"]
+[ext_resource type="Resource" uid="uid://dn8huehs0n064" path="res://Data/Items/Tech/CdJanela98.tres" id="3_s55tf"]
+[ext_resource type="Resource" uid="uid://bm57a14rs17rl" path="res://Data/Items/Tech/JogoGarotoColorido.tres" id="4_cyme8"]
+[ext_resource type="Script" uid="uid://dp2dtn4l4rb7q" path="res://Scenes/EnemyData.gd" id="5_sjuhb"]
+
+[resource]
+script = ExtResource("5_sjuhb")
+name = "Cara do TI 2"
+health = 230
+enemyItems = Array[ExtResource("1_vbwkj")]([ExtResource("2_4kn52"), ExtResource("3_s55tf"), ExtResource("4_cyme8")])
+metadata/_custom_type_script = "uid://dp2dtn4l4rb7q"

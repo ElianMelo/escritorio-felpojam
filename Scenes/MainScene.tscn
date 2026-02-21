@@ -17,7 +17,7 @@
 [ext_resource type="Resource" uid="uid://bm57a14rs17rl" path="res://Data/Items/Tech/JogoGarotoColorido.tres" id="8_cotnl"]
 [ext_resource type="Script" uid="uid://dp2dtn4l4rb7q" path="res://Scenes/EnemyData.gd" id="9_4sso6"]
 [ext_resource type="Resource" uid="uid://23uhkh103iob" path="res://Data/Items/Damage/Grampeador.tres" id="9_8um71"]
-[ext_resource type="Resource" uid="uid://cyp8u2mmcc3by" path="res://Data/Enemy/ITGuy.tres" id="9_xc4hf"]
+[ext_resource type="Resource" uid="uid://cyp8u2mmcc3by" path="res://Data/Enemy/ITGuy2.tres" id="9_xc4hf"]
 [ext_resource type="Resource" uid="uid://bvi6bc5pumg30" path="res://Data/Items/White/PacoteDeFigurinhas.tres" id="9_ypccg"]
 [ext_resource type="Script" uid="uid://dynmmei2x0ghb" path="res://Scenes/ShopController.gd" id="10_6rnll"]
 [ext_resource type="Resource" uid="uid://c1v7pkp3m7vut" path="res://Data/Items/Glue/Cola.tres" id="10_hkvke"]
@@ -43,8 +43,11 @@
 [ext_resource type="Resource" uid="uid://du3nrhlbl2hu2" path="res://Data/Items/White/Livro.tres" id="20_qtnps"]
 [ext_resource type="Resource" uid="uid://cuggrnoelg1a4" path="res://Data/Items/White/PostIt.tres" id="23_b420t"]
 [ext_resource type="PackedScene" uid="uid://b6nwdw4clne82" path="res://Models/Stamp/Carimbo.glb" id="23_t8ijv"]
+[ext_resource type="Resource" uid="uid://ccdyewkoi2qkm" path="res://Data/Enemy/ITGuy1.tres" id="25_uuu6x"]
 [ext_resource type="Script" uid="uid://bgpmi5d2vep8d" path="res://Scenes/MenuInterface.gd" id="26_r0vnq"]
 [ext_resource type="PackedScene" uid="uid://6dojk3vwcu5m" path="res://Models/Table/Tabuleiro.glb" id="27_c3pre"]
+[ext_resource type="Resource" uid="uid://chks1r6yh2gwi" path="res://Data/Enemy/ITGuy3.tres" id="27_hkvke"]
+[ext_resource type="Resource" uid="uid://csujqi3wwfxy7" path="res://Data/Enemy/ITGuy4.tres" id="28_20cv7"]
 [ext_resource type="PackedScene" uid="uid://dp3ai8c76eee7" path="res://Prefabs/PopupText.tscn" id="29_u5v48"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6rnll"]
@@ -174,7 +177,7 @@ script = ExtResource("1_tr2i4")
 unique_name_in_owner = true
 script = ExtResource("2_0iob3")
 office_item_data = Array[ExtResource("3_y4jh7")]([ExtResource("6_usjqs"), ExtResource("7_uuu6x"), ExtResource("7_d0jji"), ExtResource("9_8um71"), ExtResource("10_hkvke"), ExtResource("11_20cv7"), ExtResource("12_ywy86"), ExtResource("11_dtg5n"), ExtResource("6_dtg5n"), ExtResource("15_goiu7"), ExtResource("8_cotnl"), ExtResource("17_fqfjr"), ExtResource("18_oqotn"), ExtResource("19_eebff"), ExtResource("20_qtnps"), ExtResource("9_ypccg"), ExtResource("10_rmfi2"), ExtResource("23_b420t")])
-enemiesData = Array[ExtResource("9_4sso6")]([ExtResource("9_xc4hf")])
+enemiesData = Array[ExtResource("9_4sso6")]([ExtResource("25_uuu6x"), ExtResource("9_xc4hf"), ExtResource("27_hkvke"), ExtResource("28_20cv7")])
 
 [node name="Shop" type="Node3D" parent="GameManager" unique_id=196357716]
 unique_name_in_owner = true

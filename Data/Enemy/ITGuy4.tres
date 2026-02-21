@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://csujqi3wwfxy7"]
+
+[ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="1_v7i5c"]
+[ext_resource type="Resource" uid="uid://bvi6bc5pumg30" path="res://Data/Items/White/PacoteDeFigurinhas.tres" id="2_vw4pb"]
+[ext_resource type="Resource" uid="uid://dn8huehs0n064" path="res://Data/Items/Tech/CdJanela98.tres" id="3_k378i"]
+[ext_resource type="Resource" uid="uid://bm57a14rs17rl" path="res://Data/Items/Tech/JogoGarotoColorido.tres" id="4_oelf8"]
+[ext_resource type="Resource" uid="uid://bya5s4tqs2ii1" path="res://Data/Items/Tech/CelularFlip.tres" id="5_f3jxd"]
+[ext_resource type="Script" uid="uid://dp2dtn4l4rb7q" path="res://Scenes/EnemyData.gd" id="6_2i4ts"]
+[ext_resource type="Resource" uid="uid://dlm4uung1p3gy" path="res://Data/Items/Tech/Mouse.tres" id="6_vw4pb"]
+
+[resource]
+script = ExtResource("6_2i4ts")
+name = "Cara do TI 4"
+health = 230
+enemyItems = Array[ExtResource("1_v7i5c")]([ExtResource("2_vw4pb"), ExtResource("3_k378i"), ExtResource("4_oelf8"), ExtResource("5_f3jxd"), ExtResource("6_vw4pb")])
+metadata/_custom_type_script = "uid://dp2dtn4l4rb7q"

@@ -1,7 +1,7 @@
 extends Node3D
 
-var winGold = 2
-var loseGold = 1
+var winGold = 3
+var loseGold = 2
 var winText = "Vitória!"
 var loseText = "Derrota!"
 

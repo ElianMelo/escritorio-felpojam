@@ -105,8 +105,9 @@ func CreateEnemyObjectByData():
 	for i in range(0, currentEnemyData.enemyItems.size()):
 		InstantiateOfficeItemEnemyByData(currentEnemyData.enemyItems[i])
 		currentXOffset += offsetIncrease
-	# increment this later
-	# currentEnemyDataIndex++
+	currentEnemyDataIndex += 1
+	if currentEnemyDataIndex >= enemiesData.size():
+		currentEnemyDataIndex = 0
 
 func CreateEnemyObjects():
 	currentXOffset = xInitialOffset
