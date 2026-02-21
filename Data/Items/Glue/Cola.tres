@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="OfficeItemData" format=3 uid="uid://c1v7pkp3m7vut"]
+
+[ext_resource type="PackedScene" uid="uid://ca2s0cg871fn7" path="res://Models/Props/Cola/Cola.glb" id="1_elbex"]
+[ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="2_faich"]
+
+[resource]
+script = ExtResource("2_faich")
+name = "Cola"
+reload = 2.0
+canDamage = true
+damage = 1
+canSlow = true
+slowDuration = 1.0
+meshScene = ExtResource("1_elbex")
+metadata/_custom_type_script = "uid://dvk0rv8yoxdjy"

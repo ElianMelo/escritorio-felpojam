@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="OfficeItemData" format=3 uid="uid://bplhb36wbmudv"]
+
+[ext_resource type="PackedScene" uid="uid://trbn3213s0yn" path="res://Models/Props/Notbook/Notbook .glb" id="1_iqsyt"]
+[ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="2_bhrra"]
+
+[resource]
+script = ExtResource("2_bhrra")
+name = "Notebook"
+reload = 10.0
+canDamage = true
+damage = 20
+canHaste = true
+hasteDuration = 10.0
+meshScene = ExtResource("1_iqsyt")
+metadata/_custom_type_script = "uid://dvk0rv8yoxdjy"

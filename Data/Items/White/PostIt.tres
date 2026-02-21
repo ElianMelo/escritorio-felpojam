@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="OfficeItemData" format=3 uid="uid://cuggrnoelg1a4"]
+
+[ext_resource type="PackedScene" uid="uid://dfohfb3gl63od" path="res://Models/Props/Post it/Post it.glb" id="1_18xr1"]
+[ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="2_e7r1t"]
+
+[resource]
+script = ExtResource("2_e7r1t")
+name = "Post it"
+reload = 0.5
+canCharge = true
+chargeSeconds = 0.5
+meshScene = ExtResource("1_18xr1")
+metadata/_custom_type_script = "uid://dvk0rv8yoxdjy"

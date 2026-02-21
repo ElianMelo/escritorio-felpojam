@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="OfficeItemData" format=3 uid="uid://bcmibgb7erd86"]
+
+[ext_resource type="PackedScene" uid="uid://duhdk1h6qvgp8" path="res://Models/Props/Estilete/Estilete.glb" id="1_kkys2"]
+[ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="2_chakl"]
+
+[resource]
+script = ExtResource("2_chakl")
+name = "Estilete"
+reload = 3.0
+canDamage = true
+damage = 5
+meshScene = ExtResource("1_kkys2")
+metadata/_custom_type_script = "uid://dvk0rv8yoxdjy"

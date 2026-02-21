@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="OfficeItemData" format=3 uid="uid://chsiyo3htlj4o"]
+
+[ext_resource type="PackedScene" uid="uid://wo1wgkid6cxo" path="res://Models/Props/Fita crepe/Fita Crepe.glb" id="1_pqrot"]
+[ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="2_c1cx1"]
+
+[resource]
+script = ExtResource("2_c1cx1")
+name = "Fita Crepe"
+reload = 5.0
+canDamage = true
+damage = 2
+canSlow = true
+slowDuration = 5.0
+meshScene = ExtResource("1_pqrot")
+metadata/_custom_type_script = "uid://dvk0rv8yoxdjy"

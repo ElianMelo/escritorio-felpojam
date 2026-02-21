@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="OfficeItemData" format=3 uid="uid://du3nrhlbl2hu2"]
+
+[ext_resource type="PackedScene" uid="uid://d3t0ilitb8r8j" path="res://Models/Props/Livro/Livro.glb" id="1_suhhh"]
+[ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="2_nc2pv"]
+
+[resource]
+script = ExtResource("2_nc2pv")
+name = "Livro"
+reload = 6.0
+canDamage = true
+damage = 5
+canCharge = true
+chargeSeconds = 5.0
+meshScene = ExtResource("1_suhhh")
+metadata/_custom_type_script = "uid://dvk0rv8yoxdjy"

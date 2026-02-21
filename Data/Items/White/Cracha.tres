@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="OfficeItemData" format=3 uid="uid://cl8t5uhbq4yu5"]
+
+[ext_resource type="PackedScene" uid="uid://cfahinhjmegdg" path="res://Models/Props/Crachá/Crachá.glb" id="1_4vuhm"]
+[ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="2_mu8p1"]
+
+[resource]
+script = ExtResource("2_mu8p1")
+name = "Cracha"
+reload = 3.0
+canDamage = true
+damage = 1
+canCharge = true
+chargeSeconds = 2.0
+meshScene = ExtResource("1_4vuhm")
+metadata/_custom_type_script = "uid://dvk0rv8yoxdjy"

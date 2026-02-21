@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="OfficeItemData" format=3 uid="uid://cefo1w3xc3vsb"]
+
+[ext_resource type="PackedScene" uid="uid://cgfcx05ag1vfo" path="res://Models/Props/Corretivo/Corretivo.glb" id="1_3q4sn"]
+[ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="2_4n522"]
+
+[resource]
+script = ExtResource("2_4n522")
+name = "Corretivo"
+reload = 3.0
+canDamage = true
+damage = 1
+canSlow = true
+slowDuration = 3.0
+meshScene = ExtResource("1_3q4sn")
+metadata/_custom_type_script = "uid://dvk0rv8yoxdjy"

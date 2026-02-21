@@ -9,26 +9,39 @@
 [ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="3_y4jh7"]
 [ext_resource type="Texture2D" uid="uid://6mgebga6vqdm" path="res://Sprites/block_back.png" id="4_xb4mg"]
 [ext_resource type="Texture2D" uid="uid://bsti8misj8x0m" path="res://Sprites/block.png" id="5_6t1o7"]
-[ext_resource type="Resource" uid="uid://dn8huehs0n064" path="res://Data/Items/CdJanela98.tres" id="6_dtg5n"]
+[ext_resource type="Resource" uid="uid://dn8huehs0n064" path="res://Data/Items/Tech/CdJanela98.tres" id="6_dtg5n"]
 [ext_resource type="PackedScene" uid="uid://wrs1isxs68sw" path="res://Prefabs/OfficeItem.tscn" id="6_q68mp"]
-[ext_resource type="Resource" uid="uid://23uhkh103iob" path="res://Data/Items/Estilete.tres" id="7_d0jji"]
-[ext_resource type="Resource" uid="uid://bm57a14rs17rl" path="res://Data/Items/JogoGarotoColorido.tres" id="8_cotnl"]
+[ext_resource type="Resource" uid="uid://b18e37y7q4f2y" path="res://Data/Items/Blunt/Lixeira.tres" id="6_usjqs"]
+[ext_resource type="Resource" uid="uid://bcmibgb7erd86" path="res://Data/Items/Damage/Estilete.tres" id="7_d0jji"]
+[ext_resource type="Resource" uid="uid://dutly6kxdqu3r" path="res://Data/Items/Damage/Borracha.tres" id="7_uuu6x"]
+[ext_resource type="Resource" uid="uid://bm57a14rs17rl" path="res://Data/Items/Tech/JogoGarotoColorido.tres" id="8_cotnl"]
 [ext_resource type="Script" uid="uid://dp2dtn4l4rb7q" path="res://Scenes/EnemyData.gd" id="9_4sso6"]
+[ext_resource type="Resource" uid="uid://23uhkh103iob" path="res://Data/Items/Damage/Grampeador.tres" id="9_8um71"]
 [ext_resource type="Resource" uid="uid://cyp8u2mmcc3by" path="res://Data/Enemy/ITGuy.tres" id="9_xc4hf"]
-[ext_resource type="Resource" uid="uid://bvi6bc5pumg30" path="res://Data/Items/PacoteDeFigurinhas.tres" id="9_ypccg"]
+[ext_resource type="Resource" uid="uid://bvi6bc5pumg30" path="res://Data/Items/White/PacoteDeFigurinhas.tres" id="9_ypccg"]
 [ext_resource type="Script" uid="uid://dynmmei2x0ghb" path="res://Scenes/ShopController.gd" id="10_6rnll"]
-[ext_resource type="Resource" uid="uid://bxgplmr1dnm5w" path="res://Data/Items/PacotePapelA4.tres" id="10_rmfi2"]
+[ext_resource type="Resource" uid="uid://c1v7pkp3m7vut" path="res://Data/Items/Glue/Cola.tres" id="10_hkvke"]
+[ext_resource type="Resource" uid="uid://bxgplmr1dnm5w" path="res://Data/Items/White/PacotePapelA4.tres" id="10_rmfi2"]
+[ext_resource type="Resource" uid="uid://cefo1w3xc3vsb" path="res://Data/Items/Glue/Corretivo.tres" id="11_20cv7"]
+[ext_resource type="Resource" uid="uid://bp2eukglh8xer" path="res://Data/Items/Tech/Calculadora.tres" id="11_dtg5n"]
 [ext_resource type="Material" uid="uid://dto1p7gvf4xmd" path="res://Materials/ShopBuy.tres" id="11_enc0b"]
 [ext_resource type="Material" uid="uid://bkohhwthjvth2" path="res://Materials/ShopSell.tres" id="12_hx8n4"]
+[ext_resource type="Resource" uid="uid://chsiyo3htlj4o" path="res://Data/Items/Glue/FitaCrepe.tres" id="12_ywy86"]
 [ext_resource type="Script" uid="uid://c5jetj4udxqq0" path="res://Scenes/StampEffectData.gd" id="14_gyaec"]
+[ext_resource type="Resource" uid="uid://bya5s4tqs2ii1" path="res://Data/Items/Tech/CelularFlip.tres" id="15_goiu7"]
 [ext_resource type="Resource" uid="uid://drf0sncqfwlbo" path="res://Data/Stample/Charge.tres" id="15_mymud"]
 [ext_resource type="Resource" uid="uid://cokp8rxyj6g42" path="res://Data/Stample/Slow.tres" id="15_p5ymy"]
 [ext_resource type="Resource" uid="uid://dxguj342l1vd" path="res://Data/Stample/Haste.tres" id="16_3va76"]
 [ext_resource type="Resource" uid="uid://dr2m60dwyfegl" path="res://Data/Stample/Damage.tres" id="16_4sso6"]
 [ext_resource type="Script" uid="uid://dfs6r6ukjj5v0" path="res://Scenes/TooltipItem.gd" id="16_c1ier"]
 [ext_resource type="Resource" uid="uid://c05d32nalpfet" path="res://Data/Stample/Freeze.tres" id="16_p5ymy"]
+[ext_resource type="Resource" uid="uid://dlm4uung1p3gy" path="res://Data/Items/Tech/Mouse.tres" id="17_fqfjr"]
 [ext_resource type="Script" uid="uid://dmlqriwqj4hgx" path="res://Scenes/StampController.gd" id="17_i0j58"]
 [ext_resource type="Script" uid="uid://j7v16xnxv5mf" path="res://Scenes/Strampler.gd" id="18_c1ier"]
+[ext_resource type="Resource" uid="uid://bplhb36wbmudv" path="res://Data/Items/Tech/Notebook.tres" id="18_oqotn"]
+[ext_resource type="Resource" uid="uid://cl8t5uhbq4yu5" path="res://Data/Items/White/Cracha.tres" id="19_eebff"]
+[ext_resource type="Resource" uid="uid://du3nrhlbl2hu2" path="res://Data/Items/White/Livro.tres" id="20_qtnps"]
+[ext_resource type="Resource" uid="uid://cuggrnoelg1a4" path="res://Data/Items/White/PostIt.tres" id="23_b420t"]
 [ext_resource type="PackedScene" uid="uid://b6nwdw4clne82" path="res://Models/Stamp/Carimbo.glb" id="23_t8ijv"]
 [ext_resource type="Script" uid="uid://bgpmi5d2vep8d" path="res://Scenes/MenuInterface.gd" id="26_r0vnq"]
 [ext_resource type="PackedScene" uid="uid://6dojk3vwcu5m" path="res://Models/Table/Tabuleiro.glb" id="27_c3pre"]
@@ -160,7 +173,7 @@ script = ExtResource("1_tr2i4")
 [node name="PlayerBoardController" type="Node3D" parent="GameManager" unique_id=1486856888]
 unique_name_in_owner = true
 script = ExtResource("2_0iob3")
-office_item_data = Array[ExtResource("3_y4jh7")]([ExtResource("6_dtg5n"), ExtResource("7_d0jji"), ExtResource("8_cotnl"), ExtResource("9_ypccg"), ExtResource("10_rmfi2")])
+office_item_data = Array[ExtResource("3_y4jh7")]([ExtResource("6_usjqs"), ExtResource("7_uuu6x"), ExtResource("7_d0jji"), ExtResource("9_8um71"), ExtResource("10_hkvke"), ExtResource("11_20cv7"), ExtResource("12_ywy86"), ExtResource("11_dtg5n"), ExtResource("6_dtg5n"), ExtResource("15_goiu7"), ExtResource("8_cotnl"), ExtResource("17_fqfjr"), ExtResource("18_oqotn"), ExtResource("19_eebff"), ExtResource("20_qtnps"), ExtResource("9_ypccg"), ExtResource("10_rmfi2"), ExtResource("23_b420t")])
 enemiesData = Array[ExtResource("9_4sso6")]([ExtResource("9_xc4hf")])
 
 [node name="Shop" type="Node3D" parent="GameManager" unique_id=196357716]
@@ -631,7 +644,7 @@ fov = 64.0
 near = 0.045
 
 [node name="MainBoard" parent="." unique_id=1941616761 instance=ExtResource("27_c3pre")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, -0.10082483, 0)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.046443224, -0.11300421, 0.015141487)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=753834308]
 transform = Transform3D(1, 0, 0, 0, 0.7155464, 0.6985652, 0, -0.6985652, 0.7155464, 0, 0, 0)

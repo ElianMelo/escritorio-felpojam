@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="OfficeItemData" format=3 uid="uid://b18e37y7q4f2y"]
+
+[ext_resource type="PackedScene" uid="uid://b3ni6pxc12uj5" path="res://Models/Props/Lixeira/Lixeira.glb" id="1_87jev"]
+[ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="2_4ig0b"]
+
+[resource]
+script = ExtResource("2_4ig0b")
+name = "Lixeira"
+reload = 5.0
+canDamage = true
+damage = 5
+canFreeze = true
+freezeDuration = 3.0
+meshScene = ExtResource("1_87jev")
+metadata/_custom_type_script = "uid://dvk0rv8yoxdjy"
