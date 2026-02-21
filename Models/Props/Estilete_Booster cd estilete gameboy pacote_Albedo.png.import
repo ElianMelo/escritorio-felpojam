@@ -3,10 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cr56i4i5dgtpr"
-path.s3tc="res://.godot/imported/Estilete_Booster cd estilete gameboy pacote_Albedo.png-8032957b3e6362c2f8cfe721dee25ea8.s3tc.ctex"
+path="res://.godot/imported/Estilete_Booster cd estilete gameboy pacote_Albedo.png-8032957b3e6362c2f8cfe721dee25ea8.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
 "md5": "302ceded6732f1efc5ac39ffc02d6586"
@@ -15,13 +14,13 @@ generator_parameters={
 [deps]
 
 source_file="res://Models/Props/Estilete_Booster cd estilete gameboy pacote_Albedo.png"
-dest_files=["res://.godot/imported/Estilete_Booster cd estilete gameboy pacote_Albedo.png-8032957b3e6362c2f8cfe721dee25ea8.s3tc.ctex"]
+dest_files=["res://.godot/imported/Estilete_Booster cd estilete gameboy pacote_Albedo.png-8032957b3e6362c2f8cfe721dee25ea8.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/high_quality=false
-compress/lossy_quality=0.7
+compress/lossy_quality=1.0
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
