@@ -46,6 +46,7 @@
 [ext_resource type="PackedScene" uid="uid://6dojk3vwcu5m" path="res://Models/Table/Tabuleiro.glb" id="27_c3pre"]
 [ext_resource type="Resource" uid="uid://chks1r6yh2gwi" path="res://Data/Enemy/ITGuy3.tres" id="27_hkvke"]
 [ext_resource type="Resource" uid="uid://csujqi3wwfxy7" path="res://Data/Enemy/ITGuy4.tres" id="28_20cv7"]
+[ext_resource type="Script" uid="uid://dqweomab6ksw3" path="res://Scenes/CinematicController.gd" id="29_oqotn"]
 [ext_resource type="PackedScene" uid="uid://dp3ai8c76eee7" path="res://Prefabs/PopupText.tscn" id="29_u5v48"]
 [ext_resource type="PackedScene" uid="uid://cil2s8bi4aytc" path="res://Models/Stamp/CarimboScene.tscn" id="40_20cv7"]
 [ext_resource type="PackedScene" uid="uid://bl4dm1gvii45m" path="res://Models/Table/TabuleiroScene.tscn" id="47_20cv7"]
@@ -178,6 +179,13 @@ unique_name_in_owner = true
 script = ExtResource("2_0iob3")
 office_item_data = Array[ExtResource("3_y4jh7")]([ExtResource("6_usjqs"), ExtResource("7_uuu6x"), ExtResource("7_d0jji"), ExtResource("9_8um71"), ExtResource("10_hkvke"), ExtResource("11_20cv7"), ExtResource("12_ywy86"), ExtResource("11_dtg5n"), ExtResource("6_dtg5n"), ExtResource("15_goiu7"), ExtResource("8_cotnl"), ExtResource("17_fqfjr"), ExtResource("18_oqotn"), ExtResource("19_eebff"), ExtResource("20_qtnps"), ExtResource("9_ypccg"), ExtResource("10_rmfi2"), ExtResource("23_b420t")])
 enemiesData = Array[ExtResource("9_4sso6")]([ExtResource("25_uuu6x"), ExtResource("9_xc4hf"), ExtResource("27_hkvke"), ExtResource("28_20cv7")])
+
+[node name="CinematicController" type="Node3D" parent="GameManager" unique_id=590458091]
+script = ExtResource("29_oqotn")
+cameraGameplayPosition = Vector3(-0.4074192, 7.913415, 4.4675207)
+cameraGameplayRotation = Vector3(-1.1230321, 0, 0)
+cameraCinematicPosition = Vector3(39.479164, 33.352768, -228.2965)
+cameraCinematicRotation = Vector3(-0.51487213, 1.1362094, 0)
 
 [node name="Shop" type="Node3D" parent="GameManager" unique_id=196357716]
 unique_name_in_owner = true
@@ -666,7 +674,6 @@ transform = Transform3D(1, 0, 0, 0, -1, -1.509958e-07, 0, 1.509958e-07, -1, -4, 
 visible = false
 
 [node name="Envinroment" type="Node3D" parent="." unique_id=1556227361]
-visible = false
 
 [node name="Mesa" parent="Envinroment" unique_id=655737489 instance=ExtResource("50_ywy86")]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -0.19672465, -5.810932, -0.29554772)
@@ -681,6 +688,24 @@ transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -0.38563395, -9.060822, 16
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0.872, -17, 14.976)
 
 [node name="Paredes Amarelas3" parent="Envinroment" unique_id=1390521596 instance=ExtResource("53_fqfjr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -119, -17, 14.976)
+
+[node name="Envinroment2" type="Node3D" parent="." unique_id=1380003553]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -254.03508)
+
+[node name="Mesa" parent="Envinroment2" unique_id=1242021613 instance=ExtResource("50_ywy86")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -0.19672465, -5.810932, -0.29554772)
+
+[node name="Arquivo de aço" parent="Envinroment2" unique_id=146336970 instance=ExtResource("51_goiu7")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -20.902664, 0.7655686, 13.549188)
+
+[node name="Cadeira2" parent="Envinroment2" unique_id=1271700330 instance=ExtResource("52_goiu7")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -0.38563395, -9.060822, 16.402395)
+
+[node name="Paredes Amarelas2" parent="Envinroment2" unique_id=1725006493 instance=ExtResource("53_fqfjr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0.872, -17, 14.976)
+
+[node name="Paredes Amarelas3" parent="Envinroment2" unique_id=1961666851 instance=ExtResource("53_fqfjr")]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -119, -17, 14.976)
 
 [connection signal="body_entered" from="GameManager/Shop/BuyItem" to="GameManager/Shop" method="_on_buy_item_body_entered"]

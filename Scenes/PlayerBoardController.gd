@@ -84,6 +84,7 @@ func OnGameStateChanged(state: Global.GAME_STATE):
 		Global.GAME_STATE.SHOP:
 			isShop = true
 			CleanEnemyObjects()
+			CleanShopObjects()
 			InitShopObjects()
 
 func CleanShopObjects():

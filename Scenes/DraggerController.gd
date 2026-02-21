@@ -3,6 +3,7 @@ extends Node3D
 const RAY_LENGTH = 10000.0
 @onready var cam: Camera3D = %MainCamera3D
 
+
 var currentOfficeItem: OfficeItem = null
 var currentStrampler: Strampler = null
 var isDragging: bool = false

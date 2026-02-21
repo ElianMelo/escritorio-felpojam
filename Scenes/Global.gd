@@ -5,7 +5,8 @@ enum GAME_STATE {
 	BATTLE,
 	SHOP,
 	STAMP,
-	POSTBATTLE
+	POSTBATTLE,
+	CINEMATIC
 }
 
 var player_max_health:float = 200

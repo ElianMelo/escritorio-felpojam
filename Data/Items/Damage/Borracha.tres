@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("2_nb3lo")
-name = "Estilete"
+name = "Borracha"
 reload = 1.0
 canDamage = true
 damage = 1
