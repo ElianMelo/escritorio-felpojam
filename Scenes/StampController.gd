@@ -6,11 +6,11 @@ extends Node3D
 @export var stampListEffects: Array[StampEffectData]
 @export var godotBugKeepThis: Array[OfficeItemData]
 
-const GLUE_DECAL = preload("uid://cej3m5yjrc7dk")
-const DAMAGE_DECAL = preload("uid://x2k40u7ho4x2")
-const STUN_DECAL = preload("uid://de24ieshk4y2f")
-const TECH_DECAL = preload("uid://cpf7vsp400lig")
-const WHITE_DECAL = preload("uid://dvjebtwd8unp6")
+const BLUNT_DECAL = preload("uid://chev8aslc6j1b")
+const DAMAGE_DECAL = preload("uid://c541oh11ytogj")
+const GLUE_DECAL = preload("uid://bnplemfjotac0")
+const TECH_DECAL = preload("uid://bfsmwpmhp7akm")
+const WHITE_DECAL = preload("uid://5kay72j07snk")
 
 var currentStampleData: StampEffectData
 var isActive: bool = false
@@ -79,4 +79,4 @@ func GetDecalByStampEffect(stampEffect: Enums.STAMP_EFFECT):
 		Enums.STAMP_EFFECT.CHARGE:
 			return WHITE_DECAL
 		Enums.STAMP_EFFECT.FREEZE:
-			return STUN_DECAL
+			return BLUNT_DECAL
