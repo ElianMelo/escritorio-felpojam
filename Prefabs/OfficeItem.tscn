@@ -1,9 +1,8 @@
 [gd_scene format=3 uid="uid://wrs1isxs68sw"]
 
 [ext_resource type="Script" uid="uid://dgtk0fwsuc2q6" path="res://Scenes/OfficeItem.gd" id="1_2ohxv"]
-[ext_resource type="Resource" uid="uid://bvi6bc5pumg30" path="res://Data/Items/PacoteFigurinhas.tres" id="2_c23tc"]
+[ext_resource type="Resource" uid="uid://bvi6bc5pumg30" path="res://Data/Items/PacoteDeFigurinhas.tres" id="2_c23tc"]
 [ext_resource type="Script" uid="uid://s6ba216mjbhx" path="res://Scenes/OfficeItemUsage.gd" id="3_gsc6a"]
-[ext_resource type="PackedScene" uid="uid://cvsiybmg1ci2p" path="res://Models/Props/Boosterpack.glb" id="4_c23tc"]
 [ext_resource type="Texture2D" uid="uid://cej3m5yjrc7dk" path="res://Sprites/Decal/GlueDecal.png" id="4_gsc6a"]
 [ext_resource type="Script" uid="uid://dppbefblh8sm8" path="res://Scenes/ItemProgress.gd" id="4_k5hvi"]
 [ext_resource type="Texture2D" uid="uid://d2hvax8gm7b02" path="res://Sprites/radial_button_back.png" id="5_8yyny"]
@@ -32,10 +31,6 @@ script = ExtResource("3_gsc6a")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=809306776]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0063453913, 0.1631827, 0.014398694)
 shape = SubResource("BoxShape3D_r3fl7")
-
-[node name="Boosterpack" parent="." unique_id=1676167884 instance=ExtResource("4_c23tc")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, -0.28732693, 0)
-visible = false
 
 [node name="Decal1" type="Decal" parent="." unique_id=315352591]
 transform = Transform3D(0.29999995, -1.396981e-09, -3.5762785e-08, 1.3969889e-09, 0.3, 6.332994e-08, 3.5762785e-08, -6.332993e-08, 0.29999995, 0.0060055237, 0.2501847, -0.01781322)

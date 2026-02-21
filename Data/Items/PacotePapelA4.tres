@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="OfficeItemData" format=3 uid="uid://bxgplmr1dnm5w"]
 
-[ext_resource type="PackedScene" uid="uid://bvluyr0wsq37n" path="res://Models/Props/Pack papel a4.glb" id="1_k2w7b"]
+[ext_resource type="PackedScene" uid="uid://cmgmeeqivuu21" path="res://Models/Props/Pack papel a4/Pack papel a4.glb" id="1_k2w7b"]
 [ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="2_oy5ug"]
 
 [resource]

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://hplos1ocgsaa"]
+[gd_scene format=4 uid="uid://hplos1ocgsaa"]
 
 [ext_resource type="Script" uid="uid://c35u18xfvdsjj" path="res://Scenes/GameManager.gd" id="1_8ju71"]
 [ext_resource type="Script" uid="uid://bsqa7t68swdxd" path="res://Scenes/DraggerController.gd" id="1_tr2i4"]
@@ -11,12 +11,11 @@
 [ext_resource type="Texture2D" uid="uid://bsti8misj8x0m" path="res://Sprites/block.png" id="5_6t1o7"]
 [ext_resource type="Resource" uid="uid://dn8huehs0n064" path="res://Data/Items/CdJanela98.tres" id="6_dtg5n"]
 [ext_resource type="PackedScene" uid="uid://wrs1isxs68sw" path="res://Prefabs/OfficeItem.tscn" id="6_q68mp"]
-[ext_resource type="PackedScene" uid="uid://2exnwkuabsyq" path="res://Models/Props/Estilete.glb" id="6_s1acj"]
 [ext_resource type="Resource" uid="uid://23uhkh103iob" path="res://Data/Items/Estilete.tres" id="7_d0jji"]
 [ext_resource type="Resource" uid="uid://bm57a14rs17rl" path="res://Data/Items/JogoGarotoColorido.tres" id="8_cotnl"]
 [ext_resource type="Script" uid="uid://dp2dtn4l4rb7q" path="res://Scenes/EnemyData.gd" id="9_4sso6"]
 [ext_resource type="Resource" uid="uid://cyp8u2mmcc3by" path="res://Data/Enemy/ITGuy.tres" id="9_xc4hf"]
-[ext_resource type="Resource" uid="uid://bvi6bc5pumg30" path="res://Data/Items/PacoteFigurinhas.tres" id="9_ypccg"]
+[ext_resource type="Resource" uid="uid://bvi6bc5pumg30" path="res://Data/Items/PacoteDeFigurinhas.tres" id="9_ypccg"]
 [ext_resource type="Script" uid="uid://dynmmei2x0ghb" path="res://Scenes/ShopController.gd" id="10_6rnll"]
 [ext_resource type="Resource" uid="uid://bxgplmr1dnm5w" path="res://Data/Items/PacotePapelA4.tres" id="10_rmfi2"]
 [ext_resource type="Material" uid="uid://dto1p7gvf4xmd" path="res://Materials/ShopBuy.tres" id="11_enc0b"]
@@ -40,6 +39,92 @@ size = Vector3(0.63793945, 1.7787476, 0.71673584)
 
 [sub_resource type="BoxMesh" id="BoxMesh_6rnll"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rv6c1"]
+load_path = "res://.godot/imported/Estilete_Booster cd estilete gameboy pacote_Albedo.png-8032957b3e6362c2f8cfe721dee25ea8.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rjljq"]
+resource_name = "Booster cd estilete gameboy pacote"
+cull_mode = 2
+albedo_texture = SubResource("CompressedTexture2D_rv6c1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mrs1o"]
+resource_name = "Contorno"
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_lx27r"]
+_surfaces = [{
+"aabb": AABB(-1.5771017, -0.05388789, -0.19608201, 2.8057642, 0.10495697, 0.5231261),
+"format": 34896613377,
+"index_count": 222,
+"index_data": PackedByteArray("AAAaABsAAAABABoAGwAaABwACAAAABsAGwAcAAgAGgAEABwAGgABAAQAAwABAAAACAADAAAAAwAEAAEACAAcAB0AHgADAAgACAAdAB4AHAAfAB0AHAAEAB8ABAADACAAHgAgAAMABAAgAB8AIQAeAB0AIgAgAB4AIQAiAB4AHwAgACMAIgAjACAAHQAfACQAHwAjACQAHQAkACEAJQAkACMABwAjACIABwAlACMAAgAiACEAAgAHACIAIQAkACYAIQAmAAIAJQAmACQABwACAAUAAgAmAAUABgAlAAcAJgAlAAYABwAFAAYAJgAGAAUACQAKACcAJwAKAAwACQANAAoAJwAMAAsAKAALAAwAKAAnAAsAKAAMAA8AKAApACcAKQAJACcADgAoAA8ADgApACgADgAPABAADgAQABEADgARACoADgAqACkAKgARABMAKQArAAkAKgArACkAKgATABIAKgASACsAEgATABQAEgAUABUAFQArABIAFQAUABYALAAJACsAFQAsACsALAAZAAkAGQANAAkAGQAYAA0AFwAZACwAFwAYABkAFwAsABUAFwAWABgAFQAWABcA"),
+"lods": [0.24647097, PackedByteArray("AAABAAgAAwABAAAACAADAAAACAABAAIAAwAEAAEAAQAEAAIABwADAAgAAgAHAAgABAADAAYABwAGAAMAAgAEAAUABwACAAUABgAFAAQABwAFAAYACQAKAAsACwAKAAwACQANAAoADgALAAwADgAMAA8ADgAPABAADgAQABEADgASAAsADgARABIAEgAJAAsAEgARABMAEgATABQAEgAUABUAFQAJABIAFQAUABYAFQAWABcAFwAWABgAFQAZAAkAFwAZABUAFwAYABkAGQANAAkAGQAYAA0A"), 0.7421662, PackedByteArray("AAABAAIAAwABAAAAAQAEAAIAAwAEAAEAAgAEAAUABAADAAYABgAFAAQABwADAAAABwAGAAMAAgAHAAAABwAFAAYABwACAAUA")],
+"name": "Booster cd estilete gameboy pacote",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 45,
+"vertex_data": PackedByteArray("ywwAABYTAADLDP//FhMAAMsM/////wAAyacAAAAAAADJp///AAAAAF2a/////wAAXZoAAP//AADLDAAA//8AAAAAAACzVwAA//8tohYwAACLkVyuLCUAAAv6XK4qEAAAi5FcrioQAACLkVyuFjAAAAv6Fl8qEAAAi5G5hioQAACLkRZfKhAAAIuRFl8sJQAA//9EaxYwAACLkRZfFjAAAIuRFl/lVAAA//+3cOVUAACLkbmGO/EAANniuYY78QAAi5FcruVUAAD//7uc5VQAAL8D//8vJwAAvwMAAC8nAAAAAP//s1cAAAAA//9huwAAAAAAAGG7AAAfsP//uTcAAB+wAAC5NwAAvwP//+brAAC/AwAA5usAAMiwAACDdwAAyLD//4N3AAAopwAAYbsAACin//9huwAAFPwZpSwlAAAL+rmGKhAAABT8uYYsJQAAFPxYaCwlAAD//7mGFjAAAP//uYblVAAA")
+}, {
+"aabb": AABB(-1.6246735, -0.098883525, -0.24232736, 2.9133883, 0.19494826, 0.61694276),
+"format": 34896613377,
+"index_count": 222,
+"index_data": PackedByteArray("AAAaAAIAAAAbABoAGgAHAAIAAwAAAAIAAwACAAcAGgAcAAcAGwAcABoAHQAbAAAAGwAdABwAHQAAAAMAHAAeAAcAHQAIABwAHAAIAB4AHwAdAAMAHQAfAAgABwAgAAMABwAeACAAHwADACAACAAhAB4AIgAIAB8ACAAiACEAIwAfACAAIgAfACMAHgAkACAAHgAhACQAIwAgACQAIgAlACEAAQAiACMAIgABACUABAAjACQAAQAjAAQAJgAkACEAJgAhACUABAAkACYAAQAFACUABAAFAAEAJQAFAAYABAAGAAUAJQAGACYABgAEACYACQAKAAsADQAJAAsADQALAA4AEQANAA4AEQAOABIAEQAnAA0AJwAJAA0AEwARABIAEQATACcAEwASABQAJwAoAAkAEwAoACcAFQATABQAEwAVACgAFQAUABYAKQAVABYAKQAoABUAKQAWABcAKgAJACgAKQAqACgAGAApABcAGAAqACkAGAAXABkAGAAZABAAGAAQACsAGAArACoAKwAQAAwAKgAsAAkAKwAsACoACQAsAAoALAAMAAoAKwAMAA8ALAAPAAwAKwAPACwA"),
+"lods": [0.34636804, PackedByteArray("AAAIAAIAAwAAAAIAAwACAAcAAgAIAAcABAAAAAMACAAAAAQABAADAAYABwAGAAMAAQAIAAQABgAHAAUACAAFAAcACAABAAUABAAGAAUABAAFAAEACQAKAAsACQAMAAoADQAJAAsADQALAA4ACQAPAAwADwAQAAwAEQANAA4AEQAOABIAEwARABIAEQATAA0AEwASABQADQAVAAkAEwAVAA0AFQATABQADwAJABUAFQAUABYAFQAWABcAGAAPABUAGAAVABcAGAAQAA8AGAAXABkAGAAZABAA"), 0.7930448, PackedByteArray("AAABAAIAAwAAAAIAAQAAAAQABAAAAAMABAAFAAEABAADAAYABAAGAAUAAwACAAcAAgABAAcABwAGAAMAAQAFAAcABgAHAAUA")],
+"name": "Contorno",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 45,
+"vertex_data": PackedByteArray("nw8SArsPAACrD7v9//8AAJ8P7P27DwAAqacxBgAAAACrD0MC//8AAImatPqa/wAAiZpKBZr/AACpp835AAAAAAAAu/0AtgAAmP5dxuYwAABckEPunTMAAF+QTO56PAAAWpCe1j8OAADS/s7Ea2MAAF6QR+7uWwAAT/d3zvkOAABYkJ6D7AUAAMTfnoMv+gAA0pCeg536AADS/m5Ca2MAAF6Q9RjuWwAAmP7fQOYwAABfkPAYejwAAFyQ+BidMwAAT/fFOPkOAABakJ4wPw4AAKcEtPqbJQAApwRKBZslAAAAALv9oVkAAAAAQwKhWQAA37Hq+w87AAAAAEMCALYAAN+xFAQPOwAApLJG+59+AACnBLT6BeoAAKcESgUF6gAApLK4BJ9+AABEqP//4L4AAESoAADgvgAA//+eg35lAACZ/56D9i0AAI75aTBTJwAA/Pqeg6MfAADz956D2AkAAI7509ZTJwAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_31p10"]
+resource_name = "Estilete_Cube_015"
+_surfaces = [{
+"aabb": AABB(-1.5771017, -0.05388789, -0.19608201, 2.8057642, 0.10495697, 0.5231261),
+"attribute_data": PackedByteArray("P7pTOiS4TzjirK44D6u4OmC62BCUukw48LfbEPi4VA4wqrUS+KueFHGqvjiIqa4UGpnQB7Gnjju+pyoI+5e6NuKsrjjwt9sQ+KueFCS4TzhNtaI9mqPTA+rEmAeUw41PBsF5CwbBjU/mxI1PZMmYB1/Jjk9j3JYaY9yOT2Dvnwdj3I5PY9ybGmXvjk/Z858H3fOOTzD1jk+8938LvfeOT2PclhpkyZgHKsrZBmzJhAbqxJgH9MRCBvHDAgcGwXkLTsD0CRi/eQsGwY1PD8CNTxi/jU+8tmU6C7h+PNm0STtasFU77q+wPUKukTolrZY8R69lEc2tVw9nsjIPyrHzDBu1Ng91teQMcp2tA7WmQQUvpDw+a5rZBD2gXD4fnBE7R69lEUKukTpnsjIPWrBVOxu1Ng/ZtEk7vLZlOoXDFAos9SwKx8k5B2jJDgfvxO0GBcOHCYXDFApsxE8Hq8CxCpbCCwkPwHkL"),
+"format": 34896613399,
+"index_count": 222,
+"index_data": PackedByteArray("AAA1ADYAAAABADUANgA1ADcANgA3ABQAFAA3ADgAFAA4ADkAOgA5ADgAOgA7ADkAAgA7ADoAAgADADsABAABAAUABAAGAAEACgACAAkACgAJAAsAPAAIAAkAPAA9AAgAPQA8AD4APQA+AD8AQAA/AD4AQABBAD8ABgBBAEAABgAHAEEAQgANABUAFQANAA4AFQAOAEMAQgBEAA0ARQBEAEIARQBGAEQADABGAEUADABHAEYADwBHAAwAEABIABIASQBIABAASQBKAEgASwBKAEkASwBMAEoATQBMAEsATQARAEwATgARAE0ATgATABEAFgAXAE8ATwAXABkATwAZABgAFgAaABcAGwAaABYAGwAcABoAHQAcABsAHQAeABwAHwAgACEAHwAiACAAIwAiAB8AIwAkACIAUAAkACMAUAAlACQAJgAlAFAAJgAnACUAKABRACoAKAApAFEAUgApACwAUgAsAFMAKwBSAFMAKwBTAC0AVAAsAFUAVABWACwAVwBUAFUAVwBVAC8AMABUAFcAMABYAFQAWABWAFQAWAAuAFYAWQAvADIAWQAyADMAMQBZADMAMQAzADQA"),
+"lods": [0.24647097, PackedByteArray("AAABABQAFAABAAIAAgADABQABAABAAUABAAGAAEABgAHAAgACAAJAAYACgACAAkACgAJAAsAFQANAA4ADAANABUADAAPAA0AEAARABIAEwARABAAFgAXABgAGAAXABkAFgAaABcAGwAaABYAGwAcABoAHQAcABsAHQAeABwAHwAgACEAHwAiACAAIwAiAB8AIwAkACIAIwAlACQAJgAlACMAJgAnACUAKAApACoAKwApACwAKwAsAC0ALgAsAC8AMAAuAC8AMQAvADIAMQAyADMAMQAzADQA"), 0.7421662, PackedByteArray("AAABAAIAAgADAAAABAABAAUABAAGAAEABgAHAAgACAAJAAYACgACAAkACgAJAAsADAANAA4ADAAPAA0AEAARABIAEwARABAA")],
+"material": SubResource("StandardMaterial3D_rjljq"),
+"name": "Booster cd estilete gameboy pacote",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 90,
+"vertex_data": PackedByteArray("ywwAABYTSQPLDP//FhP/BcsM/////5s+ywwAAP//+x3JpwAAAACJDMsMAAAWE/8Fyaf//wAAiQzJpwAAAABZEV2aAAD//zJdXZr/////hz3LDAAA//+bPl2aAAD//4c9ywwAAP//GSrJpwAAAAAaKssMAAAWE9spXZoAAP//GirLDP////8UIsmn//8AAOEmXZr/////6CrLDP//FhP7LwAAAACzV/cFAAAAALNX2in//y2iFjDF1IuRXK4sJZrUC/pcrioQ/9SLkVyuKhBc1IuRXK4WMPnU//+7nOVU4tSLkVyu5VTD1NniuYY78XLUi5G5hjvxctT//7dw5VSs1IuRuYY78UrU2eK5hjvxStSLkRZf5VSU1P//RGsWMNTUi5EWXxYwyNSLkRZfLCV81Av6Fl8qEEXUi5EWXyoQRdTZ4rmGO/HP4f//u5zlVK3j//+3cOVUreP//7dw5VT0/v//LaIWMEfr//9EaxYwV////0RrFjB06wv6XK4qEM7wC/oWXyoQCfoL+hZfKhDO8IuRXK4qEP//i5G5hioQ//+LkRZfKhD//78D//8vJ6EJvwMAAC8n1QkAAP//s1eiBQAA//9hu7oEAAAAAGG7Kwa/A///5uugFr8DAADm62MYKKf//2G74VQopwAAYbvxVMiw//+Dd+pKyLAAAIN33kofsP//uTevMB+wAAC5N8IwAAAAAGG7Giq/AwAALydZKB+wAAC5NxoqvwMAAObrGirIsAAAg3caKiinAABhuxoqKKf//2G79Su/A///5uu1J8iw//+Dd28qAAD//2G7tykfsP//uTeAKAAA//+zV60qvwP//y8n+ysU/BmlLCUC1BT8WGgsJZPU//+5huVUp+P//7mG5VTw/v//uYYWMFX/FPy5hiwlH/UU/BmlLCVY9f//uYYWMATrC/q5hioQAPoU/FhoLCXh9Av6uYYqEF7wJyxoo1FD/byz9XH1svvn9H+5O0ZRQ/28f7k7RviV1xptJQYP2hFGErP1cfXaEUYSAlb+VAJW/lRMVtlUAlb+VJ7QPiEm000medX1KtfYsDHpPayHTVbYVNGqIKo7qhqqTqlcqgqq/6l3qkKqYqozqlaqI6ogqvmpIKr5qb1VilX5VdJV+VXSVcxVnFWkVW9VrFV6VdpVu1X7VelV+1XpVVShzXGWq19slqtfbCqzNn/YIzs7aNGmfo4jaztZOFk4yBf0UVk4WTj/v/+//7//v/+//79bNtmXqzZLmK89QofL+zHIkPq/yFH1ot2B9N/dwD2yFOQ9phS0XicONF5dDt2MtxXHi+ETAlb+VAxY+VMCVv5UAlb+VAJW/lQCVv5UINZCLJvTOScw1WIqw9SIKQ/UHyhW1a0qI9ZJLCOrvanMVahVcqt5bPKyM38M0aZ+lhq1R7oZAkjVI/o6NRffUboaTkckOCQ4")
+}, {
+"aabb": AABB(-1.6246735, -0.098883525, -0.24232736, 2.9133883, 0.19494826, 0.61694276),
+"attribute_data": PackedByteArray("P7pTOuKsrjgkuE84D6u4OmC62BCUukw48LfbEDCqtRL4uFQO+KueFHGqvjiIqa4UGpnQB7Gnjjv7l7o2vqcqCOKsrjj4q54U8LfbECS4TzhasFU7WrBVO+rEmAeUw41P5sSNTwbBjU8GwXkLZMmYB1/Jjk9j3JYaY9yOT2Dvnwdj3I5PZe+OT2PcmxrZ858H3fOOTzD1jk+8938LvfeOT2PclhoqytkGZMmYB2zJhAb0xEIG6sSYBwbBeQvxwwIHTsD0CQ/AjU8GwY1PGL95Cxi/jU+8tmU6C7h+PNm0STtNtaI97q+wPUKukTolrZY8dbXkDBu1Ng/KsfMMZ7IyD82tVw9Hr2URcp2tAy+kPD6ao9MDtaZBBWua2QQ9oFw+H5wRO0evZRFCrpE6Z7IyDxu1Ng/ZtEk7vLZlOoXDFAos9SwKx8k5B2jJDgfvxO0GBcOHCYXDFApsxE8Hq8CxCpbCCwkPwHkL"),
+"format": 34896613399,
+"index_count": 222,
+"index_data": PackedByteArray("AAA1AAIAAAA2ADUANgA3ADUANgA4ADcAOAAUADcAOAA5ABQAOgAUADkAOgA5ADsAAQA6ADsAAQA7AAMABAAFAAIABAACAAYACgAJAAEACgALAAkABgA8AAgABgA9ADwAPQA+ADwAPQA/AD4AQAA+AD8AQAA/AEEAQQAJAAcAQQAHAEAAQgANAEMAQgBEAA0ARAAPAA0ARABFAA8ARgBCAEMARgBDAEcADABGAEcADABHAEgADgAMAEgAEAARAEkASgAQAEkASgBJAEsAFQBKAEsAFQBLAEwATQAVAEwATQBMABIATgBNABIATgASABMAFgAXABgAFgBPABcATwAZABcATwAaABkAGwAWABgAGwAYABwAHQAbABwAHQAcAB4AHwAgACEAHwAiACAAIwAfACEAIwAhACQAUAAjACQAUAAkACUAJgBQACUAJgAlACcAKAApAFEAKABRACoAUgAtACoAUgBTAC0AKwBTAFIAKwAsAFMAVABVAC0AVAAtAFYAVwBVAFQAVwAuAFUAMABXAFQAMABUAFgAWABUAFYAWABWAC8AWQAyAC4AWQAxADIAMwAxAFkAMwA0ADEA"),
+"lods": [0.34636804, PackedByteArray("AAAUAAIAFAAAAAMAAQAUAAMABAAFAAIABAACAAYABgAHAAgABwAGAAkACgAJAAEACgALAAkADAANAA4ADAAPAA0AFQARABIAFQAQABEAEwAVABIAFgAXABgAFgAZABcAFgAaABkAGwAWABgAGwAYABwAHQAbABwAHQAcAB4AHwAgACEAHwAiACAAIwAfACEAIwAhACQAIwAkACUAJgAjACUAJgAlACcAKAApACoAKwAsACoAKgAsAC0ALgAtAC8AMAAuAC8ALgAxADIAMwAxAC4AMwA0ADEA"), 0.7930448, PackedByteArray("AAABAAIAAQAAAAMABAAFAAIABAACAAYABgAHAAgABwAGAAkACgAJAAEACgALAAkADAANAA4ADAAPAA0AEAARABIAEwAQABIA")],
+"material": SubResource("StandardMaterial3D_mrs1o"),
+"name": "Contorno",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 90,
+"vertex_data": PackedByteArray("nw8SArsPfairD7v9//8++p8P7P27D47Aqw9DAv//w/ippzEGAAD7wZ8PEgK7D47AqafN+QAA+8GJmkoFmv9U+KmnMQYAAK3piZq0+pr/lfSrD0MC//8++omaSgWa/5X0qw9DAv//dNyppzEGAABi2ImaSgWa/4vUnw8SArsPGtKrD7v9//+344matPqa/9nTqafN+QAAeNufD+z9uw9JyQAAu/0AtnnIAAC7/QC2CdeY/l3G5jCJLFyQQ+6dMyQqX5BM7no8VChakJ7WPw6gLk/3d875DkYv0v7OxGtjailekEfu7lvmKMTfnoMv+rAl0pCeg5366ybS/m5Ca2OqKNKQnoOd+hYmXpD1GO5b2yfE356DL/rCJ5j+30DmMAcmX5DwGHo8CidckPgYnTM1KU/3xTj5DhYtWpCeMD8ONS7E356DL/oUGNL+bkJrY68d0v7OxGtjmCrS/m5Ca2NTMJj+30DmMD1RmP5dxuYwYzdP93fO+Q7sOJj+30DmMHw/T/fFOPkOiVJYkJ6D7AUUQFqQntY/Djg/T/fFOPkOGD9akJ4wPw41P6cEtPqbJbaspwRKBZslIq0AALv9oVnyuAAAQwKhWQ+5AABDAgC2s8inBLT6BepI4qcESgUF6rPi37EUBA87f/bfser7Dzsc9aSyuASffrP1pLJG+59+6PVEqAAA4L598USo///gvnXxAABDAgC22tbfsRQEDztU1wAAQwKhWd3UpwRKBZslYtenBEoFBeri2KSyuASffnrVRKgAAOC+vNNEqP//4L5X0qcEtPoF6qzapLJG+59+JNXfser7DzuM2AAAu/2hWaLUpwS0+pslYtGO+dPWUye1L475aTBTJ2Af//+eg35lLyT//56DfmVfMJn/noP2LcNV/Pqeg6MfO0WO+dPWUyePQJn/noP2LeE58/eeg9gJwE6O+WkwUycgSPP3noPYCUc9U4p5bGc9jzwhi+V0nlJFKW9sgpMhi+V0b2yCk/vXrbYOalKGZMUqxmg9jzxkxSvGbtG+IZfT+ibs1ewsZ9fZLkBl/U0pUmNWWVzuUVpCz14Za30LOFdcVGEqSNGwK9XUDy3k030o1NcsKCLXSSzh1IAsV9Q5LlLUSi2W0gXV9ytC02stddT4K5bU0y+D05QoPtSZLCzVcyts1zgn9tdiKC1PSbs7WmK250tos42JOehwiI/RTdGE7MbcV/Zz45XTOehc2KX/pf+xDd/y6fXL2tjyqg38lRhLLZbASymOdx+6jrcgn2bzDYtSJCC6TyEiyE4Bhy5P/IfC8X++BvJYvoLgm71x4Ke9d9T8KDDUgCii1ScrItRRKErTnSY71VwqL9bWK2VSD1dUW1FSO1VvVeJYf1OPVMZVKlDlV8QmIsgSzxIjclNctTZ8p/l+eQLukNpK5d3QhvPV2iffuN6l6zfk0dZN6V/p")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_lx27r")
+
+[sub_resource type="PackedScene" id="PackedScene_dtg5n"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [],
+"names": PackedStringArray("Estilete2", "Node3D", "Estilete", "layers", "mesh", "MeshInstance3D"),
+"node_count": 2,
+"node_ids": PackedInt32Array(725996984, 1876240109),
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 0, 0, 0, 0, 5, 2, -1, 2, 3, 0, 4, 1, 0),
+"variants": [3, SubResource("ArrayMesh_31p10")],
+"version": 3
+}
+
 [sub_resource type="Resource" id="Resource_u5v48"]
 script = ExtResource("3_y4jh7")
 name = "Papel Grande"
@@ -53,7 +138,7 @@ freezeDuration = 2.0
 canHaste = true
 hasteDuration = 3.0
 chargeSeconds = 2.0
-meshScene = ExtResource("6_s1acj")
+meshScene = SubResource("PackedScene_dtg5n")
 metadata/_custom_type_script = "uid://dvk0rv8yoxdjy"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tr2i4"]

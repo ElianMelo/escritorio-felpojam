@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="OfficeItemData" format=3 uid="uid://23uhkh103iob"]
 
-[ext_resource type="PackedScene" uid="uid://2exnwkuabsyq" path="res://Models/Props/Estilete.glb" id="1_nsk4v"]
+[ext_resource type="PackedScene" uid="uid://duhdk1h6qvgp8" path="res://Models/Props/Estilete/Estilete.glb" id="1_nsk4v"]
 [ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="2_d51v8"]
 
 [resource]

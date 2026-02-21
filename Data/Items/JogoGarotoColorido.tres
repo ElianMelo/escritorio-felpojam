@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="OfficeItemData" format=3 uid="uid://bm57a14rs17rl"]
 
 [ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="1_5fai8"]
-[ext_resource type="PackedScene" uid="uid://fgi3w2g81mmd" path="res://Models/Props/Gameboy color.glb" id="1_n1bbe"]
+[ext_resource type="PackedScene" uid="uid://bwvnyrbsjy25r" path="res://Models/Props/Gameboy color/Gameboy color.glb" id="1_n1bbe"]
 
 [resource]
 script = ExtResource("1_5fai8")

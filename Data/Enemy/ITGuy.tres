@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dp2dtn4l4rb7q" path="res://Scenes/EnemyData.gd" id="1_f277y"]
 [ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="1_jf51v"]
-[ext_resource type="Resource" uid="uid://bvi6bc5pumg30" path="res://Data/Items/PacoteFigurinhas.tres" id="2_vlv6y"]
+[ext_resource type="Resource" uid="uid://bvi6bc5pumg30" path="res://Data/Items/PacoteDeFigurinhas.tres" id="2_vlv6y"]
 [ext_resource type="Resource" uid="uid://dn8huehs0n064" path="res://Data/Items/CdJanela98.tres" id="3_ikutx"]
 [ext_resource type="Resource" uid="uid://bm57a14rs17rl" path="res://Data/Items/JogoGarotoColorido.tres" id="4_n7yxe"]
 

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="OfficeItemData" format=3 uid="uid://dn8huehs0n064"]
 
-[ext_resource type="PackedScene" uid="uid://dkh6avcgj5wtb" path="res://Models/Props/Cd janela 98.glb" id="1_od4qc"]
+[ext_resource type="PackedScene" uid="uid://bm1nfklylp1lt" path="res://Models/Props/Cd janela/Cd janela 98.glb" id="1_od4qc"]
 [ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="2_86sk6"]
 
 [resource]
