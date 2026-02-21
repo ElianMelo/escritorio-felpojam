@@ -12,4 +12,5 @@ damage = 5
 canFreeze = true
 freezeDuration = 3.0
 meshScene = ExtResource("1_87jev")
+meshYOffset = 1.0
 metadata/_custom_type_script = "uid://dvk0rv8yoxdjy"

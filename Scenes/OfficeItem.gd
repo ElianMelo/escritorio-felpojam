@@ -45,6 +45,7 @@ func SpawnMesh():
 	add_child(instace)
 	meshMode.rotation_degrees = Vector3(0,90,0)
 	meshMode.position += Vector3(0,0.2,0)
+	meshMode.position += Vector3(0,office_item_data.meshYOffset,0)
 
 func SetDecal(texture: Texture2D):
 	if currentDecalIndex >= listDecal.size(): return
