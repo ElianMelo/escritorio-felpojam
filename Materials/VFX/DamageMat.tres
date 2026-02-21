@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://duwj0cgy27oo2"]
+
+[ext_resource type="Texture2D" uid="uid://c541oh11ytogj" path="res://Sprites/Effects/Damage.png" id="1_wlf1m"]
+
+[resource]
+transparency = 1
+albedo_texture = ExtResource("1_wlf1m")

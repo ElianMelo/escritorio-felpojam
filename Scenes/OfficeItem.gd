@@ -63,6 +63,8 @@ func ReceiveEffect(effect: Enums.EFFECT, duration: float):
 	office_item_usage.ReceiveEffect(effect, duration)
 	spawner_controller.SpawnPopup(self.position + \
 		Vector3(0,1,0), effect)
+	spawner_controller.SpawnParticle(self.position + \
+		Vector3(0,1,0), effect)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://rewbc8f7wodn"]
+
+[ext_resource type="Material" uid="uid://bgidwjo2qnax2" path="res://Materials/VFX/TechMat.tres" id="1_g4qne"]
+[ext_resource type="Script" uid="uid://hqi80ijrqr35" path="res://Prefabs/EffectVFXParticle.gd" id="2_v3iw5"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_eebff"]
+
+[sub_resource type="Curve" id="Curve_oqotn"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.014532685), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="CPUParticles3D" type="CPUParticles3D" unique_id=266576548]
+material_override = ExtResource("1_g4qne")
+emitting = false
+lifetime = 0.6
+one_shot = true
+explosiveness = 0.15
+randomness = 0.08
+lifetime_randomness = 0.14
+mesh = SubResource("PlaneMesh_eebff")
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, 0, 0)
+spread = 89.64
+initial_velocity_min = 1.5
+initial_velocity_max = 2.0
+scale_amount_min = 0.2
+scale_amount_max = 0.4
+scale_amount_curve = SubResource("Curve_oqotn")
+script = ExtResource("2_v3iw5")

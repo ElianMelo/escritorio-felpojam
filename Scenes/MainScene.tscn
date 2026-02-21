@@ -257,10 +257,6 @@ shape = SubResource("BoxShape3D_6rnll")
 [node name="CarimboVisuals" parent="GameManager/Stamp/Stampler" unique_id=1209866256 instance=ExtResource("40_20cv7")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, -0.4869088, 0)
 
-[node name="Skeleton3D" parent="GameManager/Stamp/Stampler/CarimboVisuals/Carimbo_001" parent_id_path=PackedInt32Array(1209866256, 1513720273) index="0" unique_id=1885682324]
-bones/1/position = Vector3(3.6328677e-16, -0.43268704, -2.0687854)
-bones/2/position = Vector3(8.091388e-16, -0.43268687, -4.076724)
-
 [node name="Interface" type="Node3D" parent="GameManager" unique_id=1165999141]
 unique_name_in_owner = true
 script = ExtResource("3_4b75m")
@@ -670,6 +666,7 @@ transform = Transform3D(1, 0, 0, 0, -1, -1.509958e-07, 0, 1.509958e-07, -1, -4, 
 visible = false
 
 [node name="Envinroment" type="Node3D" parent="." unique_id=1556227361]
+visible = false
 
 [node name="Mesa" parent="Envinroment" unique_id=655737489 instance=ExtResource("50_ywy86")]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -0.19672465, -5.810932, -0.29554772)
