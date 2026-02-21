@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="OfficeItemData" format=3 uid="uid://bplhb36wbmudv"]
 
-[ext_resource type="PackedScene" uid="uid://trbn3213s0yn" path="res://Models/Props/Notbook/Notbook .glb" id="1_iqsyt"]
+[ext_resource type="PackedScene" uid="uid://crhlrxtwdoikx" path="res://Models/Props/Notbook/Notbook .glb" id="1_iqsyt"]
 [ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="2_bhrra"]
 
 [resource]

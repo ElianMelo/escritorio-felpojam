@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="OfficeItemData" format=3 uid="uid://bya5s4tqs2ii1"]
 
-[ext_resource type="PackedScene" uid="uid://cv3015uf848eq" path="res://Models/Props/Celular flip/Cllr flip.glb" id="1_8rdjn"]
+[ext_resource type="PackedScene" uid="uid://dbu48hj0rxlmt" path="res://Models/Props/Celular flip/Cllr flip.glb" id="1_8rdjn"]
 [ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="2_075yu"]
 
 [resource]

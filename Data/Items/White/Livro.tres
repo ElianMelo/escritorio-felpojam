@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="OfficeItemData" format=3 uid="uid://du3nrhlbl2hu2"]
 
-[ext_resource type="PackedScene" uid="uid://d3t0ilitb8r8j" path="res://Models/Props/Livro/Livro.glb" id="1_suhhh"]
+[ext_resource type="PackedScene" uid="uid://bxk04cgw5b37" path="res://Models/Props/Livro/Livro.glb" id="1_suhhh"]
 [ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="2_nc2pv"]
 
 [resource]

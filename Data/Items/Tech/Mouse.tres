@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="OfficeItemData" format=3 uid="uid://dlm4uung1p3gy"]
 
-[ext_resource type="PackedScene" uid="uid://cgqbdkxagtw4e" path="res://Models/Props/Mouse/Mouse.glb" id="1_vfjwq"]
+[ext_resource type="PackedScene" uid="uid://bktyyaqa3y78s" path="res://Models/Props/Mouse/Mouse.glb" id="1_vfjwq"]
 [ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="2_msihf"]
 
 [resource]
