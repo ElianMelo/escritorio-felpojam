@@ -2,6 +2,8 @@ class_name Strampler
 extends RigidBody3D
 
 @onready var camera: Camera3D = %MainCamera3D
+@onready var animation_player: AnimationPlayer = $CarimboVisuals/AnimationPlayer
+
 
 var isDragging: bool = false
 const RotateSpeed: float = 20
@@ -48,3 +50,6 @@ func handle_object_reset():
 
 func ResetRotation():
 	rotation = Vector3(0, 0, 0)
+
+func PlayAnimation():
+	animation_player.play("Action_001", -1, 3)

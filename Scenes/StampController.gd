@@ -60,6 +60,8 @@ func _on_stampler_body_entered(body: Node) -> void:
 	var officeItem = body as OfficeItem
 	if officeItem == null: return
 	if !stampler.isDragging: return
+	stampler.PlayAnimation()
+	await get_tree().create_timer(0.5).timeout
 	officeItem.AddStampEffect(currentStampleData.stampEffect, currentStampleData.stampEffectValue)
 	officeItem.SetDecal(GetDecalByStampEffect(currentStampleData.stampEffect))
 	canStample = false

@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://cil2s8bi4aytc"]
+
+[ext_resource type="PackedScene" uid="uid://b6nwdw4clne82" path="res://Models/Stamp/Carimbo.glb" id="1_d1666"]
+
+[node name="Carimbo2" unique_id=1209866256 instance=ExtResource("1_d1666")]
