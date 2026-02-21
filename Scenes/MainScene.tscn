@@ -49,6 +49,10 @@
 [ext_resource type="PackedScene" uid="uid://dp3ai8c76eee7" path="res://Prefabs/PopupText.tscn" id="29_u5v48"]
 [ext_resource type="PackedScene" uid="uid://cil2s8bi4aytc" path="res://Models/Stamp/CarimboScene.tscn" id="40_20cv7"]
 [ext_resource type="PackedScene" uid="uid://bl4dm1gvii45m" path="res://Models/Table/TabuleiroScene.tscn" id="47_20cv7"]
+[ext_resource type="PackedScene" uid="uid://bcp0ogqi05oo1" path="res://Models/Environment/Mesa/Mesa.glb" id="50_ywy86"]
+[ext_resource type="PackedScene" uid="uid://cd11gv1bsr657" path="res://Models/Environment/Arquivo de aço/Arquivo de aço.glb" id="51_goiu7"]
+[ext_resource type="PackedScene" uid="uid://ds0ckl5ur7u00" path="res://Models/Environment/Cadeira/Cadeira.glb" id="52_goiu7"]
+[ext_resource type="PackedScene" uid="uid://pg7sq8wh4o6v" path="res://Models/Environment/Escritorio paredes/Paredes Amarelas.glb" id="53_fqfjr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6rnll"]
 size = Vector3(0.63793945, 1.7787476, 0.71673584)
@@ -664,6 +668,21 @@ camera = NodePath("../MainCamera3D")
 [node name="PopupText" parent="." unique_id=1805898919 instance=ExtResource("29_u5v48")]
 transform = Transform3D(1, 0, 0, 0, -1, -1.509958e-07, 0, 1.509958e-07, -1, -4, 3.7335773, -0.2831515)
 visible = false
+
+[node name="Mesa" parent="." unique_id=655737489 instance=ExtResource("50_ywy86")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -0.19672465, -5.810932, -0.29554772)
+
+[node name="Arquivo de aço" parent="." unique_id=1187671115 instance=ExtResource("51_goiu7")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -20.902664, 0.7655686, 13.549188)
+
+[node name="Cadeira2" parent="." unique_id=1203807032 instance=ExtResource("52_goiu7")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -0.38563395, -9.060822, 16.402395)
+
+[node name="Paredes Amarelas2" parent="." unique_id=1502431670 instance=ExtResource("53_fqfjr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0.872, -17, 14.976)
+
+[node name="Paredes Amarelas3" parent="." unique_id=1390521596 instance=ExtResource("53_fqfjr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -119, -17, 14.976)
 
 [connection signal="body_entered" from="GameManager/Shop/BuyItem" to="GameManager/Shop" method="_on_buy_item_body_entered"]
 [connection signal="body_entered" from="GameManager/Shop/SellItem" to="GameManager/Shop" method="_on_sell_item_body_entered"]
