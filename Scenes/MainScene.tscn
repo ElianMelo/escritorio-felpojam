@@ -55,7 +55,7 @@
 [ext_resource type="PackedScene" uid="uid://pg7sq8wh4o6v" path="res://Models/Environment/Escritorio paredes/Paredes Amarelas.glb" id="53_fqfjr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6rnll"]
-size = Vector3(0.63793945, 1.7787476, 0.71673584)
+size = Vector3(0.63793945, 1.8669128, 0.71673584)
 
 [sub_resource type="BoxMesh" id="BoxMesh_6rnll"]
 
@@ -251,7 +251,7 @@ max_contacts_reported = 10
 script = ExtResource("18_c1ier")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GameManager/Stamp/Stampler" unique_id=2019120693]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0028076172, 0.09585571, 0.0038146973)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0028076172, 0.05177307, 0.0038146973)
 shape = SubResource("BoxShape3D_6rnll")
 
 [node name="CarimboVisuals" parent="GameManager/Stamp/Stampler" unique_id=1209866256 instance=ExtResource("40_20cv7")]
@@ -567,11 +567,11 @@ theme_override_constants/margin_bottom = 20
 layout_mode = 2
 size_flags_stretch_ratio = 0.0
 mouse_filter = 2
-theme_override_font_sizes/normal_font_size = 13
-theme_override_font_sizes/bold_font_size = 13
-theme_override_font_sizes/bold_italics_font_size = 13
-theme_override_font_sizes/italics_font_size = 13
-theme_override_font_sizes/mono_font_size = 13
+theme_override_font_sizes/normal_font_size = 15
+theme_override_font_sizes/bold_font_size = 15
+theme_override_font_sizes/bold_italics_font_size = 15
+theme_override_font_sizes/italics_font_size = 15
+theme_override_font_sizes/mono_font_size = 15
 bbcode_enabled = true
 text = "[img=32]res://Sprites/Effects/Blunt.png[/img]
 [b]Blunt[/b]"
@@ -669,19 +669,21 @@ camera = NodePath("../MainCamera3D")
 transform = Transform3D(1, 0, 0, 0, -1, -1.509958e-07, 0, 1.509958e-07, -1, -4, 3.7335773, -0.2831515)
 visible = false
 
-[node name="Mesa" parent="." unique_id=655737489 instance=ExtResource("50_ywy86")]
+[node name="Envinroment" type="Node3D" parent="." unique_id=1556227361]
+
+[node name="Mesa" parent="Envinroment" unique_id=655737489 instance=ExtResource("50_ywy86")]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -0.19672465, -5.810932, -0.29554772)
 
-[node name="Arquivo de aço" parent="." unique_id=1187671115 instance=ExtResource("51_goiu7")]
+[node name="Arquivo de aço" parent="Envinroment" unique_id=1187671115 instance=ExtResource("51_goiu7")]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -20.902664, 0.7655686, 13.549188)
 
-[node name="Cadeira2" parent="." unique_id=1203807032 instance=ExtResource("52_goiu7")]
+[node name="Cadeira2" parent="Envinroment" unique_id=1203807032 instance=ExtResource("52_goiu7")]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -0.38563395, -9.060822, 16.402395)
 
-[node name="Paredes Amarelas2" parent="." unique_id=1502431670 instance=ExtResource("53_fqfjr")]
+[node name="Paredes Amarelas2" parent="Envinroment" unique_id=1502431670 instance=ExtResource("53_fqfjr")]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0.872, -17, 14.976)
 
-[node name="Paredes Amarelas3" parent="." unique_id=1390521596 instance=ExtResource("53_fqfjr")]
+[node name="Paredes Amarelas3" parent="Envinroment" unique_id=1390521596 instance=ExtResource("53_fqfjr")]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -119, -17, 14.976)
 
 [connection signal="body_entered" from="GameManager/Shop/BuyItem" to="GameManager/Shop" method="_on_buy_item_body_entered"]

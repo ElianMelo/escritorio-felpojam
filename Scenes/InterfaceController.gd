@@ -155,11 +155,11 @@ func StampTextData(stampEffect: Enums.STAMP_EFFECT, stampValue: float):
 				% [GetImageByStampEffect(stampEffect), stampValue]
 	pass
 
-const BLUNT_IMAGE = "[img=16]res://Sprites/Effects/Blunt.png[/img]"
-const GLUE_IMAGE = "[img=16]res://Sprites/Effects/Glue.png[/img]"
-const DAMAGE_IMAGE = "[img=16]res://Sprites/Effects/Damage.png[/img]"
-const TECH_IMAGE = "[img=16]res://Sprites/Effects/Tech.png[/img]"
-const WHITE_IMAGE = "[img=16]res://Sprites/Effects/White.png[/img]"
+const BLUNT_IMAGE = "[img=20]res://Sprites/Effects/Blunt.png[/img]"
+const GLUE_IMAGE = "[img=20]res://Sprites/Effects/Glue.png[/img]"
+const DAMAGE_IMAGE = "[img=20]res://Sprites/Effects/Damage.png[/img]"
+const TECH_IMAGE = "[img=20]res://Sprites/Effects/Tech.png[/img]"
+const WHITE_IMAGE = "[img=20]res://Sprites/Effects/White.png[/img]"
 
 func GetImageByEffect(effect: Enums.EFFECT):
 	match effect:

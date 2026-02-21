@@ -13,6 +13,6 @@ canCharge = true
 chargeSeconds = 2.0
 meshScene = ExtResource("1_4vuhm")
 meshYOffset = 0.06
-collisionShapeSize = Vector3(0.69926214, 0.12253255, 1.0488788)
+collisionShapeSize = Vector3(0.699, 0.3, 1.049)
 collisionShapePosition = Vector3(0.0021493286, 0.060480446, -0.0005619079)
 metadata/_custom_type_script = "uid://dvk0rv8yoxdjy"

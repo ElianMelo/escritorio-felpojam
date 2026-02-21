@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("2_msihf")
 name = "Mouse"
-reload = 0.5
+reload = 1.0
 canDamage = true
 damage = 1
 canHaste = true

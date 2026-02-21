@@ -35,7 +35,7 @@ func SetupTooltipData(officeItem: OfficeItem):
 	var effectsText = BuiltEffectsText(itemData)
 	var stampEffectsText = BuiltStampEffectsText(officeItem)
 	rich_text_label.text = \
-		"-[b] " + itemData.name  + " -[/b][br] Recarga: " + str(itemData.reload) + "[br]\n" \
+		"[font_size=28][b] " + itemData.name  + "[/b][/font_size][br]\n Recarga: " + str(itemData.reload) + "[br]\n" \
 		+ damageItem \
 		+ effectsText + "[br]" \
 		+ stampEffectsText + "[br]"
@@ -45,7 +45,7 @@ func BuiltStampEffectsText(officeItem: OfficeItem):
 	var effectsString: String = ""
 	if officeItem.stampList.size() == 0:
 		return effectsString
-	effectsString += "\n-[b] Carimbos -[/b] [br]"
+	effectsString += "\n[font_size=14] Carimbos [/font_size] [br]"
 	for i in range(0, officeItem.stampList.size()):
 		effectsString += interface.StampTextData(\
 			officeItem.stampList[i].stampEffect, officeItem.stampList[i].stampEffectValue)
