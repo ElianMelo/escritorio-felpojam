@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("2_e7r1t")
 name = "Post it"
-reload = 0.5
+reload = 1.0
 canCharge = true
 chargeSeconds = 0.5
 meshScene = ExtResource("1_18xr1")

@@ -8,7 +8,6 @@ script = ExtResource("2_msihf")
 name = "Mouse"
 reload = 1.0
 canDamage = true
-damage = 1
 canHaste = true
 hasteDuration = 0.5
 meshScene = ExtResource("1_vfjwq")
