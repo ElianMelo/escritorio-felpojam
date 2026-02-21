@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="OfficeItemData" format=3 uid="uid://bvi6bc5pumg30"]
+
+[ext_resource type="PackedScene" uid="uid://cvsiybmg1ci2p" path="res://Models/Props/Boosterpack.glb" id="1_awi8b"]
+[ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="2_yibnk"]
+
+[resource]
+script = ExtResource("2_yibnk")
+name = "Pacote de Figurinhas"
+reload = 5.0
+canDamage = true
+damage = 1
+canCharge = true
+chargeSeconds = 2.0
+meshScene = ExtResource("1_awi8b")
+metadata/_custom_type_script = "uid://dvk0rv8yoxdjy"

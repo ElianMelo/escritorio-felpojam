@@ -7,16 +7,18 @@
 [ext_resource type="Script" uid="uid://btxlbpkwaflct" path="res://Scenes/InterfaceController.gd" id="3_4b75m"]
 [ext_resource type="Material" uid="uid://deuj40mclg1do" path="res://Materials/TableMaterial.tres" id="3_nhkr4"]
 [ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="3_y4jh7"]
-[ext_resource type="Resource" uid="uid://bgd2x7qjlq3yk" path="res://Data/Items/RegularPaper.tres" id="4_0iob3"]
 [ext_resource type="Texture2D" uid="uid://6mgebga6vqdm" path="res://Sprites/block_back.png" id="4_xb4mg"]
-[ext_resource type="Resource" uid="uid://bct7pfbubiwtb" path="res://Data/Items/BigPaper.tres" id="5_4b75m"]
 [ext_resource type="Texture2D" uid="uid://bsti8misj8x0m" path="res://Sprites/block.png" id="5_6t1o7"]
+[ext_resource type="Resource" uid="uid://dn8huehs0n064" path="res://Data/Items/CdJanela98.tres" id="6_dtg5n"]
 [ext_resource type="PackedScene" uid="uid://wrs1isxs68sw" path="res://Prefabs/OfficeItem.tscn" id="6_q68mp"]
-[ext_resource type="Resource" uid="uid://bhm1ch14ybiuj" path="res://Data/Items/MediumPaper.tres" id="7_5qxwa"]
-[ext_resource type="Resource" uid="uid://dqk58bdx34deo" path="res://Data/Items/SmallPaper.tres" id="8_xc4hf"]
+[ext_resource type="PackedScene" uid="uid://2exnwkuabsyq" path="res://Models/Props/Estilete.glb" id="6_s1acj"]
+[ext_resource type="Resource" uid="uid://23uhkh103iob" path="res://Data/Items/Estilete.tres" id="7_d0jji"]
+[ext_resource type="Resource" uid="uid://bm57a14rs17rl" path="res://Data/Items/JogoGarotoColorido.tres" id="8_cotnl"]
 [ext_resource type="Script" uid="uid://dp2dtn4l4rb7q" path="res://Scenes/EnemyData.gd" id="9_4sso6"]
 [ext_resource type="Resource" uid="uid://cyp8u2mmcc3by" path="res://Data/Enemy/ITGuy.tres" id="9_xc4hf"]
+[ext_resource type="Resource" uid="uid://bvi6bc5pumg30" path="res://Data/Items/PacoteFigurinhas.tres" id="9_ypccg"]
 [ext_resource type="Script" uid="uid://dynmmei2x0ghb" path="res://Scenes/ShopController.gd" id="10_6rnll"]
+[ext_resource type="Resource" uid="uid://bxgplmr1dnm5w" path="res://Data/Items/PacotePapelA4.tres" id="10_rmfi2"]
 [ext_resource type="Material" uid="uid://dto1p7gvf4xmd" path="res://Materials/ShopBuy.tres" id="11_enc0b"]
 [ext_resource type="Material" uid="uid://bkohhwthjvth2" path="res://Materials/ShopSell.tres" id="12_hx8n4"]
 [ext_resource type="Script" uid="uid://c5jetj4udxqq0" path="res://Scenes/StampEffectData.gd" id="14_gyaec"]
@@ -32,12 +34,27 @@
 [ext_resource type="Script" uid="uid://bgpmi5d2vep8d" path="res://Scenes/MenuInterface.gd" id="26_r0vnq"]
 [ext_resource type="PackedScene" uid="uid://6dojk3vwcu5m" path="res://Models/Table/Tabuleiro.glb" id="27_c3pre"]
 [ext_resource type="PackedScene" uid="uid://dp3ai8c76eee7" path="res://Prefabs/PopupText.tscn" id="29_u5v48"]
-[ext_resource type="PackedScene" uid="uid://cvsiybmg1ci2p" path="res://Models/Props/Boosterpack.glb" id="33_rv6c1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6rnll"]
-size = Vector3(0.63793945, 1.4852295, 0.71673584)
+size = Vector3(0.63793945, 1.7787476, 0.71673584)
 
 [sub_resource type="BoxMesh" id="BoxMesh_6rnll"]
+
+[sub_resource type="Resource" id="Resource_u5v48"]
+script = ExtResource("3_y4jh7")
+name = "Papel Grande"
+reload = 10.0
+canDamage = true
+damage = 50
+canSlow = true
+slowDuration = 2.0
+canFreeze = true
+freezeDuration = 2.0
+canHaste = true
+hasteDuration = 3.0
+chargeSeconds = 2.0
+meshScene = ExtResource("6_s1acj")
+metadata/_custom_type_script = "uid://dvk0rv8yoxdjy"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tr2i4"]
 
@@ -58,7 +75,7 @@ script = ExtResource("1_tr2i4")
 [node name="PlayerBoardController" type="Node3D" parent="GameManager" unique_id=1486856888]
 unique_name_in_owner = true
 script = ExtResource("2_0iob3")
-office_item_data = Array[ExtResource("3_y4jh7")]([ExtResource("4_0iob3"), ExtResource("5_4b75m"), ExtResource("7_5qxwa"), ExtResource("8_xc4hf")])
+office_item_data = Array[ExtResource("3_y4jh7")]([ExtResource("6_dtg5n"), ExtResource("7_d0jji"), ExtResource("8_cotnl"), ExtResource("9_ypccg"), ExtResource("10_rmfi2")])
 enemiesData = Array[ExtResource("9_4sso6")]([ExtResource("9_xc4hf")])
 
 [node name="Shop" type="Node3D" parent="GameManager" unique_id=196357716]
@@ -118,10 +135,10 @@ font_size = 64
 unique_name_in_owner = true
 script = ExtResource("17_i0j58")
 stampListEffects = Array[ExtResource("14_gyaec")]([ExtResource("16_4sso6"), ExtResource("15_p5ymy"), ExtResource("16_p5ymy"), ExtResource("16_3va76"), ExtResource("15_mymud")])
-godotBugKeepThis = Array[ExtResource("3_y4jh7")]([ExtResource("5_4b75m")])
+godotBugKeepThis = Array[ExtResource("3_y4jh7")]([SubResource("Resource_u5v48")])
 
 [node name="Stampler" type="RigidBody3D" parent="GameManager/Stamp" unique_id=1799912410]
-transform = Transform3D(0.58030504, 0, 0.8143992, 0, 1, 0, -0.8143992, 0, 0.58030504, 0.1334033, 0.5625973, -3.2376635)
+transform = Transform3D(0.58030504, 0, 0.8143992, 0, 1, 0, -0.8143992, 0, 0.58030504, 0.1334033, 0.5534264, -3.2376635)
 disable_mode = 2
 sleeping = true
 lock_rotation = true
@@ -133,7 +150,7 @@ max_contacts_reported = 10
 script = ExtResource("18_c1ier")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GameManager/Stamp/Stampler" unique_id=2019120693]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0028076172, 0.24261475, 0.0038146973)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0028076172, 0.09585571, 0.0038146973)
 shape = SubResource("BoxShape3D_6rnll")
 
 [node name="CarimboVisuals" parent="GameManager/Stamp/Stampler" unique_id=1109980605 instance=ExtResource("23_t8ijv")]
@@ -552,9 +569,6 @@ shape = SubResource("BoxShape3D_tr2i4")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=228405548]
 mesh = SubResource("BoxMesh_tr2i4")
 surface_material_override/0 = ExtResource("3_nhkr4")
-
-[node name="Boosterpack" parent="." unique_id=128710154 instance=ExtResource("33_rv6c1")]
-visible = false
 
 [connection signal="body_entered" from="GameManager/Shop/BuyItem" to="GameManager/Shop" method="_on_buy_item_body_entered"]
 [connection signal="body_entered" from="GameManager/Shop/SellItem" to="GameManager/Shop" method="_on_sell_item_body_entered"]

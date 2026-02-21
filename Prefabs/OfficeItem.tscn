@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://wrs1isxs68sw"]
 
 [ext_resource type="Script" uid="uid://dgtk0fwsuc2q6" path="res://Scenes/OfficeItem.gd" id="1_2ohxv"]
-[ext_resource type="Resource" uid="uid://bgd2x7qjlq3yk" path="res://Data/Items/RegularPaper.tres" id="2_udlc6"]
+[ext_resource type="Resource" uid="uid://bvi6bc5pumg30" path="res://Data/Items/PacoteFigurinhas.tres" id="2_c23tc"]
 [ext_resource type="Script" uid="uid://s6ba216mjbhx" path="res://Scenes/OfficeItemUsage.gd" id="3_gsc6a"]
 [ext_resource type="PackedScene" uid="uid://cvsiybmg1ci2p" path="res://Models/Props/Boosterpack.glb" id="4_c23tc"]
 [ext_resource type="Texture2D" uid="uid://cej3m5yjrc7dk" path="res://Sprites/Decal/GlueDecal.png" id="4_gsc6a"]
@@ -23,7 +23,7 @@ viewport_path = NodePath("ItemProgress/SubViewport")
 mass = 3.0
 linear_damp = 3.0
 script = ExtResource("1_2ohxv")
-office_item_data = ExtResource("2_udlc6")
+office_item_data = ExtResource("2_c23tc")
 listDecal = [NodePath("Decal1"), NodePath("Decal2"), NodePath("Decal3"), NodePath("Decal4"), NodePath("Decal5")]
 
 [node name="OfficeItemUsage" type="Node3D" parent="." unique_id=1341431946]
@@ -31,10 +31,9 @@ script = ExtResource("3_gsc6a")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=809306776]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0063453913, 0.1631827, 0.014398694)
-visible = false
 shape = SubResource("BoxShape3D_r3fl7")
 
-[node name="Boosterpack" parent="." unique_id=1198984799 instance=ExtResource("4_c23tc")]
+[node name="Boosterpack" parent="." unique_id=1676167884 instance=ExtResource("4_c23tc")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, -0.28732693, 0)
 visible = false
 
@@ -94,7 +93,7 @@ lower_fade = 0.00399269
 cull_mask = 2
 
 [node name="ItemProgress" type="Sprite3D" parent="." unique_id=1751499511]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.045499444, 0.68045104, 0.2693104)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.045499444, 0.98679197, 0.2693104)
 billboard = 1
 texture_filter = 0
 texture = SubResource("ViewportTexture_7rqgy")

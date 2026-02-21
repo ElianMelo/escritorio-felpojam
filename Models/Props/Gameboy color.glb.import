@@ -40,7 +40,7 @@ materials/extract_path=""
 _subresources={
 "nodes": {
 "PATH:Gameboy color": {
-"generate/physics": true,
+"mesh_instance/layers": 3,
 "physics/mask": 3,
 "physics/shape_type": 1
 }

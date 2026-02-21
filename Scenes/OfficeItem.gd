@@ -42,12 +42,9 @@ func SetupData(cameraSetup: Camera3D, officeItemData: OfficeItemData,
 func SpawnMesh():
 	var instace = office_item_data.meshScene.instantiate()
 	var meshMode = instace as Node3D
-	
 	add_child(instace)
 	meshMode.rotation_degrees = Vector3(0,90,0)
-	#var meshMode = instace as Node3D
-	#meshMode.rotation = office_item_data.initialRotation
-	#collision_shape_3d.position = office_item_data.shapePosition
+	meshMode.position += Vector3(0,0.2,0)
 
 func SetDecal(texture: Texture2D):
 	if currentDecalIndex >= listDecal.size(): return

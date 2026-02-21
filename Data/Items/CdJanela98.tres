@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="OfficeItemData" format=3 uid="uid://dn8huehs0n064"]
+
+[ext_resource type="PackedScene" uid="uid://dkh6avcgj5wtb" path="res://Models/Props/Cd janela 98.glb" id="1_od4qc"]
+[ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="2_86sk6"]
+
+[resource]
+script = ExtResource("2_86sk6")
+name = "Janela 98"
+reload = 6.0
+canDamage = true
+damage = 5
+canHaste = true
+hasteDuration = 3.0
+meshScene = ExtResource("1_od4qc")
+metadata/_custom_type_script = "uid://dvk0rv8yoxdjy"

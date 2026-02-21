@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="OfficeItemData" format=3 uid="uid://bxgplmr1dnm5w"]
+
+[ext_resource type="PackedScene" uid="uid://bvluyr0wsq37n" path="res://Models/Props/Pack papel a4.glb" id="1_k2w7b"]
+[ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="2_oy5ug"]
+
+[resource]
+script = ExtResource("2_oy5ug")
+name = "Pacote Papel A4"
+reload = 5.0
+canDamage = true
+damage = 4
+canCharge = true
+chargeSeconds = 3.0
+meshScene = ExtResource("1_k2w7b")
+metadata/_custom_type_script = "uid://dvk0rv8yoxdjy"

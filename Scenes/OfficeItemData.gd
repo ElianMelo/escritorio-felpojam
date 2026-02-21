@@ -17,7 +17,8 @@ extends Resource
 @export var isMarked: bool
 @export var markedEffect: Enums.EFFECT = Enums.EFFECT.NONE
 @export var meshScene: PackedScene
-@export var shapePosition: Vector3
+@export var collisionShapeSize: Vector3
+@export var collisionShapePosition: Vector3
 
 func _init(p_name = "", p_reload = 0.0, p_canDamage = false,\
 	p_damage = 0, p_canSlow = false, p_slowDuration = 0.0,\
@@ -25,7 +26,8 @@ func _init(p_name = "", p_reload = 0.0, p_canDamage = false,\
 	p_canCharge = false, p_chargeSeconds = 0.0, \
 	p_hasteDuration = 0.0, p_effectTarget = Enums.EFFECT_TARGET.RANDOM, \
 	p_meshScene: PackedScene = null, \
-	p_shapePosition: Vector3 = Vector3.ZERO):
+	p_collisionShapeSize: Vector3 = Vector3.ZERO, \
+	p_collisionShapePosition: Vector3 = Vector3.ZERO):
 	name = p_name
 	reload = p_reload
 	canDamage = p_canDamage
@@ -40,5 +42,6 @@ func _init(p_name = "", p_reload = 0.0, p_canDamage = false,\
 	hasteDuration = p_hasteDuration
 	effectTarget = p_effectTarget
 	meshScene = p_meshScene
-	shapePosition = p_shapePosition
+	collisionShapeSize = p_collisionShapeSize
+	collisionShapePosition = p_collisionShapePosition
 	
