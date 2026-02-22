@@ -85,8 +85,6 @@ func SetDecal(texture: Texture2D, position: Vector3):
 	)
 	currentDecal.position = clampedLocal
 	currentDecal.cull_mask = 1 << (objectLayerId - 1)
-	print("cullA? " + str(objectLayerId))
-	print("cullB? " + str(currentDecal.cull_mask))
 
 func ReceiveEffect(effect: Enums.EFFECT, duration: float):
 	office_item_usage.ReceiveEffect(effect, duration)

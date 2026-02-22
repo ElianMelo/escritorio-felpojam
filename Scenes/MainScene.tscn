@@ -192,7 +192,7 @@ unique_name_in_owner = true
 script = ExtResource("10_6rnll")
 
 [node name="BuyItem" type="RigidBody3D" parent="GameManager/Shop" unique_id=372430108]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -0.32235867, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7316327, -0.32235867, 0)
 disable_mode = 2
 sleeping = true
 lock_rotation = true
@@ -217,7 +217,7 @@ text = "Comprar"
 font_size = 64
 
 [node name="SellItem" type="RigidBody3D" parent="GameManager/Shop" unique_id=2126865965]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9276354, -0.45299673, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.432129, -0.45299673, 0)
 disable_mode = 2
 sleeping = true
 lock_rotation = true
