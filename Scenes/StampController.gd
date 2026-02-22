@@ -6,11 +6,11 @@ extends Node3D
 @export var stampListEffects: Array[StampEffectData]
 @export var godotBugKeepThis: Array[OfficeItemData]
 
-const BLUNT_DECAL = preload("uid://chev8aslc6j1b")
-const DAMAGE_DECAL = preload("uid://c541oh11ytogj")
-const GLUE_DECAL = preload("uid://bnplemfjotac0")
-const TECH_DECAL = preload("uid://bfsmwpmhp7akm")
-const WHITE_DECAL = preload("uid://5kay72j07snk")
+const BLUNT_DECAL = preload("uid://bk8eqr5wmobqn")
+const DAMAGE_DECAL = preload("uid://cx1bi837qxk05")
+const GLUE_DECAL = preload("uid://onragqb8krb5")
+const TECH_DECAL = preload("uid://cxyj0fomdrflt")
+const WHITE_DECAL = preload("uid://sivo7eq6ex8t")
 
 var currentStampleData: StampEffectData
 var isActive: bool = false

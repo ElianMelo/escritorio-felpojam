@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://bgidwjo2qnax2"]
 
-[ext_resource type="Texture2D" uid="uid://bfsmwpmhp7akm" path="res://Sprites/Effects/Tech.png" id="1_d1fo6"]
+[ext_resource type="Texture2D" uid="uid://cxyj0fomdrflt" path="res://Sprites/Effects/TechDecal.png" id="1_d1fo6"]
 
 [resource]
 transparency = 1

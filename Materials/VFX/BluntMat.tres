@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://dvs7c4x8raf35"]
 
-[ext_resource type="Texture2D" uid="uid://chev8aslc6j1b" path="res://Sprites/Effects/Blunt.png" id="1_6glvd"]
+[ext_resource type="Texture2D" uid="uid://bk8eqr5wmobqn" path="res://Sprites/Effects/BluntDecal.png" id="1_6glvd"]
 
 [resource]
 transparency = 1

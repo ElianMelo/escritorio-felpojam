@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="OfficeItemData" format=3 uid="uid://crmpqknmfjn5c"]
+
+[ext_resource type="PackedScene" uid="uid://80kyyc7bu3r6" path="res://Models/Props/Fichario/Fichario.glb" id="1_bq6bp"]
+[ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="2_17ijh"]
+
+[resource]
+script = ExtResource("2_17ijh")
+name = "Fichario"
+reload = 6.0
+canDamage = true
+damage = 10
+canCharge = true
+chargeSeconds = 3.0
+meshScene = ExtResource("1_bq6bp")
+meshYOffset = 0.397
+collisionShapeSize = Vector3(1.8826647, 0.7821809, 2.2402632)
+collisionShapePosition = Vector3(0.5018002, 0.39030463, 0.006837547)
+metadata/_custom_type_script = "uid://dvk0rv8yoxdjy"

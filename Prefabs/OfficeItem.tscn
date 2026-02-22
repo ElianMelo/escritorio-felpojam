@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dckv0ijfcjs6c" path="res://Sprites/radial_button.png" id="6_x57ev"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r3fl7"]
-size = Vector3(2.0223687, 0.6930239, 1.8161485)
+size = Vector3(0.7132522, 1.204689, 0.44314665)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_7rqgy"]
 viewport_path = NodePath("ItemProgress/SubViewport")
@@ -25,7 +25,7 @@ listDecal = [NodePath("Decal1"), NodePath("Decal2"), NodePath("Decal3"), NodePat
 script = ExtResource("3_gsc6a")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=809306776]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.004527211, 0.34572613, 0.8085522)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.008844614, 0.6015587, -0.0139579475)
 shape = SubResource("BoxShape3D_r3fl7")
 
 [node name="Decal1" type="Decal" parent="." unique_id=315352591]
@@ -33,7 +33,6 @@ transform = Transform3D(0.29999995, -1.396981e-09, -3.5762785e-08, 1.3969889e-09
 visible = false
 size = Vector3(2, 5.1781197, 2)
 texture_albedo = ExtResource("5_ynvmh")
-texture_emission = ExtResource("5_ynvmh")
 emission_energy = 0.0
 upper_fade = 0.0033145596
 lower_fade = 0.00399269
@@ -44,8 +43,7 @@ transform = Transform3D(0.29999995, -1.396981e-09, -3.5762785e-08, 1.3969889e-09
 visible = false
 size = Vector3(2, 4.5056534, 2)
 texture_albedo = ExtResource("5_ynvmh")
-texture_emission = ExtResource("5_ynvmh")
-emission_energy = 0.3
+emission_energy = 0.0
 upper_fade = 0.0033145596
 lower_fade = 0.00399269
 cull_mask = 2
@@ -55,8 +53,7 @@ transform = Transform3D(0.29999995, -1.396981e-09, -3.5762785e-08, 1.3969889e-09
 visible = false
 size = Vector3(2, 4.5056534, 2)
 texture_albedo = ExtResource("5_ynvmh")
-texture_emission = ExtResource("5_ynvmh")
-emission_energy = 0.3
+emission_energy = 0.0
 upper_fade = 0.0033145596
 lower_fade = 0.00399269
 cull_mask = 2
@@ -66,7 +63,6 @@ transform = Transform3D(0.29999995, -1.396981e-09, -3.5762785e-08, 1.3969889e-09
 visible = false
 size = Vector3(2, 4.5056534, 2)
 texture_albedo = ExtResource("5_ynvmh")
-texture_emission = ExtResource("5_ynvmh")
 emission_energy = 0.0
 upper_fade = 0.0033145596
 lower_fade = 0.00399269
@@ -77,8 +73,7 @@ transform = Transform3D(0.29999995, -1.396981e-09, -3.5762785e-08, 1.3969889e-09
 visible = false
 size = Vector3(2, 4.5056534, 2)
 texture_albedo = ExtResource("5_ynvmh")
-texture_emission = ExtResource("5_ynvmh")
-emission_energy = 0.3
+emission_energy = 0.0
 upper_fade = 0.0033145596
 lower_fade = 0.00399269
 cull_mask = 2

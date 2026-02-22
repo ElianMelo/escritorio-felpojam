@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="OfficeItemData" format=3 uid="uid://bi6cqs0hc04p7"]
+
+[ext_resource type="PackedScene" uid="uid://ckfwn5dtc4nav" path="res://Models/Props/Super bond/Super bond.glb" id="1_l77d0"]
+[ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="2_ub0oy"]
+
+[resource]
+script = ExtResource("2_ub0oy")
+name = "Super Cola"
+reload = 2.0
+canDamage = true
+damage = 3
+canSlow = true
+slowDuration = 2.0
+meshScene = ExtResource("1_l77d0")
+meshYOffset = 0.227
+collisionShapeSize = Vector3(0.7132522, 1.204689, 0.44314665)
+collisionShapePosition = Vector3(0.008844614, 0.6015587, -0.0139579475)
+metadata/_custom_type_script = "uid://dvk0rv8yoxdjy"

@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://2g8g0q4siy1x"]
 
-[ext_resource type="Texture2D" uid="uid://bnplemfjotac0" path="res://Sprites/Effects/Glue.png" id="1_nej7n"]
+[ext_resource type="Texture2D" uid="uid://onragqb8krb5" path="res://Sprites/Effects/GlueDecal.png" id="1_nej7n"]
 
 [resource]
 transparency = 1
