@@ -10,7 +10,7 @@ var currentEffect: Enums.EFFECT
 func _ready() -> void:
 	pass
 
-func SetupData(text: String, effect: Enums.EFFECT):
+func SetupPopupData(text: String, effect: Enums.EFFECT):
 	self.text = text
 	currentEffect = effect
 	DestroyCoroutine()

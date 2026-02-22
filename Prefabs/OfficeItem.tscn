@@ -14,12 +14,12 @@ size = Vector3(0.7132522, 1.204689, 0.44314665)
 [sub_resource type="ViewportTexture" id="ViewportTexture_7rqgy"]
 viewport_path = NodePath("ItemProgress/SubViewport")
 
-[node name="OfficeItem" type="RigidBody3D" unique_id=1235334946 node_paths=PackedStringArray("listDecal")]
+[node name="OfficeItem" type="RigidBody3D" unique_id=1235334946 node_paths=PackedStringArray("decalReference")]
 mass = 3.0
 linear_damp = 3.0
 script = ExtResource("1_2ohxv")
 office_item_data = ExtResource("2_c23tc")
-listDecal = [NodePath("Decal1"), NodePath("Decal2"), NodePath("Decal3"), NodePath("Decal4"), NodePath("Decal5")]
+decalReference = NodePath("DecalReference")
 
 [node name="OfficeItemUsage" type="Node3D" parent="." unique_id=1341431946]
 script = ExtResource("3_gsc6a")
@@ -28,50 +28,10 @@ script = ExtResource("3_gsc6a")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.008844614, 0.6015587, -0.0139579475)
 shape = SubResource("BoxShape3D_r3fl7")
 
-[node name="Decal1" type="Decal" parent="." unique_id=315352591]
-transform = Transform3D(0.29999995, -1.396981e-09, -3.5762785e-08, 1.3969889e-09, 0.3, 6.332994e-08, 3.5762785e-08, -6.332993e-08, 0.29999995, 0.0060055237, 0.2501847, -0.01781322)
+[node name="DecalReference" type="Decal" parent="." unique_id=315352591]
+transform = Transform3D(0.29999995, -1.396981e-09, -3.5762785e-08, 1.3969889e-09, 0.3, 6.332994e-08, 3.5762785e-08, -6.332993e-08, 0.29999995, -0.24988303, 0.28324753, 0.13666141)
 visible = false
 size = Vector3(2, 5.1781197, 2)
-texture_albedo = ExtResource("5_ynvmh")
-emission_energy = 0.0
-upper_fade = 0.0033145596
-lower_fade = 0.00399269
-cull_mask = 2
-
-[node name="Decal2" type="Decal" parent="." unique_id=40161473]
-transform = Transform3D(0.29999995, -1.396981e-09, -3.5762785e-08, 1.3969889e-09, 0.3, 6.332994e-08, 3.5762785e-08, -6.332993e-08, 0.29999995, 0.3285984, 0.39831096, 0.28898785)
-visible = false
-size = Vector3(2, 4.5056534, 2)
-texture_albedo = ExtResource("5_ynvmh")
-emission_energy = 0.0
-upper_fade = 0.0033145596
-lower_fade = 0.00399269
-cull_mask = 2
-
-[node name="Decal3" type="Decal" parent="." unique_id=179636813]
-transform = Transform3D(0.29999995, -1.396981e-09, -3.5762785e-08, 1.3969889e-09, 0.3, 6.332994e-08, 3.5762785e-08, -6.332993e-08, 0.29999995, 0.29638687, 0.39831096, -0.30005303)
-visible = false
-size = Vector3(2, 4.5056534, 2)
-texture_albedo = ExtResource("5_ynvmh")
-emission_energy = 0.0
-upper_fade = 0.0033145596
-lower_fade = 0.00399269
-cull_mask = 2
-
-[node name="Decal4" type="Decal" parent="." unique_id=1366792798]
-transform = Transform3D(0.29999995, -1.396981e-09, -3.5762785e-08, 1.3969889e-09, 0.3, 6.332994e-08, 3.5762785e-08, -6.332993e-08, 0.29999995, -0.27623418, 0.39831096, -0.30005303)
-visible = false
-size = Vector3(2, 4.5056534, 2)
-texture_albedo = ExtResource("5_ynvmh")
-emission_energy = 0.0
-upper_fade = 0.0033145596
-lower_fade = 0.00399269
-cull_mask = 2
-
-[node name="Decal5" type="Decal" parent="." unique_id=156664900]
-transform = Transform3D(0.29999995, -1.396981e-09, -3.5762785e-08, 1.3969889e-09, 0.3, 6.332994e-08, 3.5762785e-08, -6.332993e-08, 0.29999995, -0.27657467, 0.39831096, 0.28203356)
-visible = false
-size = Vector3(2, 4.5056534, 2)
 texture_albedo = ExtResource("5_ynvmh")
 emission_energy = 0.0
 upper_fade = 0.0033145596

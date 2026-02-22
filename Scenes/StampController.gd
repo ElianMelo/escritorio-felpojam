@@ -60,11 +60,13 @@ func _on_stampler_body_entered(body: Node) -> void:
 	var officeItem = body as OfficeItem
 	if officeItem == null: return
 	if !stampler.isDragging: return
+	
 	canStample = false
 	stampler.PlayAnimation()
 	await get_tree().create_timer(0.5).timeout
 	officeItem.AddStampEffect(currentStampleData.stampEffect, currentStampleData.stampEffectValue)
-	officeItem.SetDecal(GetDecalByStampEffect(currentStampleData.stampEffect))
+	officeItem.SetDecal(GetDecalByStampEffect(currentStampleData.stampEffect),\
+		officeItem.to_local(stampler.position))
 	canStample = false
 	interface.EnableButtonStamp()
 	interface.ShowStampFeedbackMessage("Item carimbado com sucesso!")

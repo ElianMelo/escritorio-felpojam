@@ -15,7 +15,7 @@ func SpawnPopup(targetPosition: Vector3, effect: Enums.EFFECT):
 	add_child(instace)
 	var popupText = instace as PopupText
 	popupText.position = targetPosition
-	popupText.SetupData(ConvertEffectToText(effect), effect)
+	popupText.SetupPopupData(ConvertEffectToText(effect), effect)
 
 func SpawnParticle(targetPosition: Vector3, effect: Enums.EFFECT):
 	var instace = EFFECT_VFX_PARTICLE.instantiate()

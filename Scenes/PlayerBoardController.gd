@@ -148,7 +148,7 @@ func InstantiateOfficeItemEnemyByData(officeItemData: OfficeItemData):
 	if officeItem == null: return
 	officeItem.position += Vector3(currentXOffset, 0, currentZOffset)
 	officeItem.ResetRotation()
-	officeItem.SetupData(camera,  officeItemData, spawner_controller, false, false)
+	officeItem.SetupOfficeItemData(camera,  officeItemData, spawner_controller, false, false)
 	enemy_office_items.push_back(officeItem)
 	SetupOfficeItem(officeItem)
 	
@@ -159,7 +159,7 @@ func InstantiateOfficeItem(isPlayer: bool, isShop: bool = false):
 	if officeItem == null: return
 	officeItem.position += Vector3(currentXOffset, 0, currentZOffset)
 	officeItem.ResetRotation()
-	officeItem.SetupData(camera, 
+	officeItem.SetupOfficeItemData(camera, 
 		office_item_data[rng.randi_range(0, office_item_data.size()-1 )], 
 		spawner_controller, isPlayer, isShop)
 	if isPlayer:

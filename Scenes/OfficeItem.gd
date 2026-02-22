@@ -6,7 +6,12 @@ extends RigidBody3D
 @onready var office_item_usage: OfficeItemUsage = $OfficeItemUsage
 @onready var collision_shape_3d: CollisionShape3D = $CollisionShape3D
 @onready var item_progress: ItemProgress = $ItemProgress
-@export var listDecal: Array[Decal] = []
+@export var decalReference: Decal
+var listDecal: Array[Decal] = []
+
+var objectLayerId = 2
+
+var current_mesh: MeshInstance3D
 
 var spawner_controller: SpawnerController
 
@@ -28,7 +33,7 @@ signal item_charge_used(duration: float, target: Enums.EFFECT_TARGET, isPlayer: 
 signal item_mouse_entered(officeItem: OfficeItem)
 signal item_mouse_exited()
 
-func SetupData(cameraSetup: Camera3D, officeItemData: OfficeItemData,
+func SetupOfficeItemData(cameraSetup: Camera3D, officeItemData: OfficeItemData,
 	spawnerController: SpawnerController,
 	isThisPlayer: bool,
 	isThisShop: bool = false):
@@ -47,17 +52,32 @@ func SpawnMesh():
 	meshMode.rotation_degrees = Vector3(0,90,0)
 	meshMode.position += Vector3(0,office_item_data.meshYOffset,0)
 	var boxShape = collision_shape_3d.shape as BoxShape3D
+	current_mesh = instace.get_child(0) as MeshInstance3D
 	boxShape = boxShape.duplicate()
 	collision_shape_3d.shape = boxShape
 	boxShape.size = office_item_data.collisionShapeSize
 	collision_shape_3d.position = office_item_data.collisionShapePosition
 
-func SetDecal(texture: Texture2D):
-	if currentDecalIndex >= listDecal.size(): return
-	listDecal[currentDecalIndex].texture_albedo = texture
-	listDecal[currentDecalIndex].texture_emission = texture
-	listDecal[currentDecalIndex].visible = true
-	currentDecalIndex += 1
+func SetDecal(texture: Texture2D, position: Vector3):
+	var currentDecal: Decal = null
+	if listDecal.size() == 0:
+		currentDecal = decalReference
+	else:
+		currentDecal = decalReference.duplicate()
+		add_child(currentDecal)
+	listDecal.push_back(currentDecal)
+	currentDecal.texture_albedo = texture
+	currentDecal.texture_emission = texture
+	currentDecal.visible = true
+	var aabb = current_mesh.mesh.get_aabb()
+	var decalHalf = currentDecal.size / 3
+	var decalHalfZ = currentDecal.size / 10
+	var clampedLocal = Vector3(
+		clamp(position.x, aabb.position.x + decalHalf.x, aabb.end.x - decalHalf.x),
+		0.2,  # depth axis, keep as-is
+		clamp(position.z, aabb.position.z, aabb.end.z)
+	)
+	currentDecal.position = clampedLocal
 
 func ReceiveEffect(effect: Enums.EFFECT, duration: float):
 	office_item_usage.ReceiveEffect(effect, duration)
