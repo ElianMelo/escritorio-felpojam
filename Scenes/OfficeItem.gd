@@ -36,13 +36,15 @@ signal item_mouse_exited()
 func SetupOfficeItemData(cameraSetup: Camera3D, officeItemData: OfficeItemData,
 	spawnerController: SpawnerController,
 	isThisPlayer: bool,
-	isThisShop: bool = false):
+	isThisShop: bool = false,
+	itemId: int = 0):
 	isPlayer = isThisPlayer
 	isShop = isThisShop
 	spawner_controller = spawnerController
 	camera = cameraSetup
 	office_item_data = officeItemData
 	office_item_usage.SetDuration(office_item_data.reload)
+	objectLayerId = itemId
 	SpawnMesh()
 
 func SpawnMesh():
@@ -53,6 +55,10 @@ func SpawnMesh():
 	meshMode.position += Vector3(0,office_item_data.meshYOffset,0)
 	var boxShape = collision_shape_3d.shape as BoxShape3D
 	current_mesh = instace.get_child(0) as MeshInstance3D
+	# current_mesh.layers = objectLayerId #1 << (objectLayerId - 1)
+	current_mesh.layers = 1 << (objectLayerId - 1)
+	#current_mesh.cull_mask = 1 << (objectLayerId - 1)
+	#current_mesh.layers= 2	
 	boxShape = boxShape.duplicate()
 	collision_shape_3d.shape = boxShape
 	boxShape.size = office_item_data.collisionShapeSize
@@ -78,6 +84,9 @@ func SetDecal(texture: Texture2D, position: Vector3):
 		clamp(position.z, aabb.position.z, aabb.end.z)
 	)
 	currentDecal.position = clampedLocal
+	currentDecal.cull_mask = 1 << (objectLayerId - 1)
+	print("cullA? " + str(objectLayerId))
+	print("cullB? " + str(currentDecal.cull_mask))
 
 func ReceiveEffect(effect: Enums.EFFECT, duration: float):
 	office_item_usage.ReceiveEffect(effect, duration)

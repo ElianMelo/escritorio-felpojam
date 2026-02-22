@@ -148,7 +148,8 @@ func InstantiateOfficeItemEnemyByData(officeItemData: OfficeItemData):
 	if officeItem == null: return
 	officeItem.position += Vector3(currentXOffset, 0, currentZOffset)
 	officeItem.ResetRotation()
-	officeItem.SetupOfficeItemData(camera,  officeItemData, spawner_controller, false, false)
+	officeItem.SetupOfficeItemData(camera,  officeItemData, spawner_controller, false, false,
+		enemy_office_items.size() + 12)
 	enemy_office_items.push_back(officeItem)
 	SetupOfficeItem(officeItem)
 	
@@ -159,9 +160,15 @@ func InstantiateOfficeItem(isPlayer: bool, isShop: bool = false):
 	if officeItem == null: return
 	officeItem.position += Vector3(currentXOffset, 0, currentZOffset)
 	officeItem.ResetRotation()
+	var currentIndex = 0
+	if isShop:
+		currentIndex = shop_office_items.size() + 2
+	else:
+		currentIndex = player_office_items.size() + 7
 	officeItem.SetupOfficeItemData(camera, 
 		office_item_data[rng.randi_range(0, office_item_data.size()-1 )], 
-		spawner_controller, isPlayer, isShop)
+		spawner_controller, isPlayer, isShop,
+		currentIndex)
 	if isPlayer:
 		player_office_items.push_back(officeItem)
 	elif isShop:
