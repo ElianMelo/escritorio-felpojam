@@ -9,11 +9,11 @@ enum GAME_STATE {
 	CINEMATIC
 }
 
-var player_max_health:float = 200
-var enemy_max_health:float = 200
+var player_max_health:float = 150
+var enemy_max_health:float = 150
 
-var player_health:float = 200
-var enemy_health:float = 200
+var player_health:float = 150
+var enemy_health:float = 150
 var game_state:Global.GAME_STATE = Global.GAME_STATE.SHOP
 
 var coin: int = 6

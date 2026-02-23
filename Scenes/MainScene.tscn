@@ -41,7 +41,10 @@
 [ext_resource type="Resource" uid="uid://cl8t5uhbq4yu5" path="res://Data/Items/White/Cracha.tres" id="19_eebff"]
 [ext_resource type="Resource" uid="uid://du3nrhlbl2hu2" path="res://Data/Items/White/Livro.tres" id="20_qtnps"]
 [ext_resource type="Resource" uid="uid://cuggrnoelg1a4" path="res://Data/Items/White/PostIt.tres" id="23_b420t"]
+[ext_resource type="Resource" uid="uid://crmpqknmfjn5c" path="res://Data/Items/White/Fichario.tres" id="24_eebff"]
+[ext_resource type="Resource" uid="uid://bi6cqs0hc04p7" path="res://Data/Items/Glue/SuperBond.tres" id="25_qtnps"]
 [ext_resource type="Resource" uid="uid://ccdyewkoi2qkm" path="res://Data/Enemy/ITGuy1.tres" id="25_uuu6x"]
+[ext_resource type="Resource" uid="uid://bno6ur3m0v00f" path="res://Data/Items/Tech/Teclado.tres" id="26_b420t"]
 [ext_resource type="Script" uid="uid://bgpmi5d2vep8d" path="res://Scenes/MenuInterface.gd" id="26_r0vnq"]
 [ext_resource type="PackedScene" uid="uid://6dojk3vwcu5m" path="res://Models/Table/Tabuleiro.glb" id="27_c3pre"]
 [ext_resource type="Resource" uid="uid://chks1r6yh2gwi" path="res://Data/Enemy/ITGuy3.tres" id="27_hkvke"]
@@ -177,7 +180,7 @@ script = ExtResource("1_tr2i4")
 [node name="PlayerBoardController" type="Node3D" parent="GameManager" unique_id=1486856888]
 unique_name_in_owner = true
 script = ExtResource("2_0iob3")
-office_item_data = Array[ExtResource("3_y4jh7")]([ExtResource("6_usjqs"), ExtResource("7_uuu6x"), ExtResource("7_d0jji"), ExtResource("9_8um71"), ExtResource("10_hkvke"), ExtResource("11_20cv7"), ExtResource("12_ywy86"), ExtResource("11_dtg5n"), ExtResource("6_dtg5n"), ExtResource("15_goiu7"), ExtResource("8_cotnl"), ExtResource("17_fqfjr"), ExtResource("18_oqotn"), ExtResource("19_eebff"), ExtResource("20_qtnps"), ExtResource("9_ypccg"), ExtResource("10_rmfi2"), ExtResource("23_b420t")])
+office_item_data = Array[ExtResource("3_y4jh7")]([ExtResource("6_usjqs"), ExtResource("7_uuu6x"), ExtResource("7_d0jji"), ExtResource("9_8um71"), ExtResource("10_hkvke"), ExtResource("11_20cv7"), ExtResource("12_ywy86"), ExtResource("11_dtg5n"), ExtResource("6_dtg5n"), ExtResource("15_goiu7"), ExtResource("8_cotnl"), ExtResource("17_fqfjr"), ExtResource("18_oqotn"), ExtResource("19_eebff"), ExtResource("20_qtnps"), ExtResource("9_ypccg"), ExtResource("10_rmfi2"), ExtResource("23_b420t"), ExtResource("24_eebff"), ExtResource("25_qtnps"), ExtResource("26_b420t")])
 enemiesData = Array[ExtResource("9_4sso6")]([ExtResource("25_uuu6x"), ExtResource("9_xc4hf"), ExtResource("27_hkvke"), ExtResource("28_20cv7")])
 
 [node name="CinematicController" type="Node3D" parent="GameManager" unique_id=590458091]

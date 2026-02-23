@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dckv0ijfcjs6c" path="res://Sprites/radial_button.png" id="6_x57ev"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r3fl7"]
-size = Vector3(0.7132522, 1.204689, 0.44314665)
+size = Vector3(3.0847394, 0.18388748, 1.2371082)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_7rqgy"]
 viewport_path = NodePath("ItemProgress/SubViewport")
@@ -25,7 +25,7 @@ decalReference = NodePath("DecalReference")
 script = ExtResource("3_gsc6a")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=809306776]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.008844614, 0.6015587, -0.0139579475)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0028067231, 0.09115791, 0.000931859)
 shape = SubResource("BoxShape3D_r3fl7")
 
 [node name="DecalReference" type="Decal" parent="." unique_id=315352591]

@@ -8,6 +8,6 @@
 [resource]
 script = ExtResource("4_jqnlt")
 name = "Cara do TI 1"
-health = 230
+health = 150
 enemyItems = Array[ExtResource("1_scwy2")]([ExtResource("2_nsce3"), ExtResource("3_tblx7")])
 metadata/_custom_type_script = "uid://dp2dtn4l4rb7q"

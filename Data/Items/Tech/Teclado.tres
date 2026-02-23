@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="OfficeItemData" format=3 uid="uid://bno6ur3m0v00f"]
+
+[ext_resource type="PackedScene" uid="uid://difu51pxna1fq" path="res://Models/Props/Teclado/Teclado.glb" id="1_dhck4"]
+[ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="2_gcf4g"]
+
+[resource]
+script = ExtResource("2_gcf4g")
+name = "Teclado"
+reload = 8.0
+canDamage = true
+damage = 20
+canHaste = true
+hasteDuration = 4.0
+meshScene = ExtResource("1_dhck4")
+meshYOffset = 0.068
+collisionShapeSize = Vector3(3.0847394, 0.18388748, 1.2371082)
+collisionShapePosition = Vector3(0.0028067231, 0.09115791, 0.000931859)
+metadata/_custom_type_script = "uid://dvk0rv8yoxdjy"
