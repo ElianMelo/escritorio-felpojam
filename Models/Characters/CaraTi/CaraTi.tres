@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://2758plcor3nl"]
+
+[ext_resource type="Texture2D" uid="uid://xv08c1poyj1h" path="res://Models/Characters/CaraTi/CaraTI.png" id="1_gopos"]
+
+[resource]
+resource_name = "CaraTi"
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_gopos")
+texture_filter = 0

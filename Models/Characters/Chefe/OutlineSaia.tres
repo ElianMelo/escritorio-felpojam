@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ckvhh2cb84744"]
+
+[resource]
+resource_name = "OutlineSaia"
+shading_mode = 0
+albedo_color = Color(0.09426187, 0.3180936, 0.26280138, 1)

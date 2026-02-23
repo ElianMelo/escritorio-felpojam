@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dk1mpi3xqfxti"]
+
+[resource]
+resource_name = "OutlineCabelo"
+shading_mode = 0
+albedo_color = Color(0.5447809, 0.63291013, 0.63291013, 1)

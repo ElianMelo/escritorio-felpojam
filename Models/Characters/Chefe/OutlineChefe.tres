@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cqtbu7e7wqo35"]
+
+[resource]
+resource_name = "OutlineChefe"
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.07155294, 0.19517241, 0.20252043, 1)
