@@ -8,6 +8,9 @@ extends Node3D
 @export var cameraCinematicPosition: Vector3
 @export var cameraCinematicRotation: Vector3
 
+@export var cameraCinematicTIPosition: Vector3
+@export var cameraCinematicTIRotation: Vector3
+
 var isGameplay:bool = true
 
 func _ready() -> void:
@@ -27,6 +30,6 @@ func SwitchCamera(isCurrentGameplay: bool):
 		camera.position = cameraGameplayPosition
 		camera.rotation = cameraGameplayRotation
 	else:
-		camera.position = cameraCinematicPosition
-		camera.rotation = cameraCinematicRotation
+		camera.position = cameraCinematicTIPosition
+		camera.rotation = cameraCinematicTIRotation
 	# camera
