@@ -2,9 +2,9 @@ class_name InterfaceController
 extends Node3D
 
 @onready var player_health_progress_bar: TextureProgressBar = $BattleInterface/PlayerHealthProgressBar
-@onready var player_health: Label = $BattleInterface/PlayerHealthLabel
+@onready var player_health: Label = $BattleInterface/PlayerHealthProgressBar/PlayerHealthLabel
 @onready var enemy_health_progress_bar: TextureProgressBar = $BattleInterface/EnemyHealthProgressBar
-@onready var enemy_health: Label = $BattleInterface/EnemyHealthLabel
+@onready var enemy_health: Label = $BattleInterface/EnemyHealthProgressBar/EnemyHealthLabel
 
 # ShopInterface
 @onready var coin_label: Label = $ShopInterface/CoinLabel
