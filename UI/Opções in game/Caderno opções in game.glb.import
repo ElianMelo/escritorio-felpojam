@@ -37,6 +37,18 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH: osso capa/Skeleton3D/capa": {
+"mesh_instance/layers": 2
+},
+"PATH:Caderno": {
+"mesh_instance/layers": 2
+},
+"PATH:Osso pagina 1/Skeleton3D/Pagina 1": {
+"mesh_instance/layers": 2
+}
+}
+}
 gltf/naming_version=2
 gltf/embedded_image_handling=1
