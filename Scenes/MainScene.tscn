@@ -57,6 +57,7 @@
 [ext_resource type="PackedScene" uid="uid://cd11gv1bsr657" path="res://Models/Environment/Arquivo de aço/Arquivo de aço.glb" id="51_goiu7"]
 [ext_resource type="PackedScene" uid="uid://ds0ckl5ur7u00" path="res://Models/Environment/Cadeira/Cadeira.glb" id="52_goiu7"]
 [ext_resource type="PackedScene" uid="uid://pg7sq8wh4o6v" path="res://Models/Environment/Escritorio paredes/Paredes Amarelas.glb" id="53_fqfjr"]
+[ext_resource type="PackedScene" uid="uid://jdm4c8yjjxb7" path="res://Models/Environment/Escritorio paredes/Fundo parede amarela.glb" id="57_awmh5"]
 [ext_resource type="PackedScene" uid="uid://crc5aeyaehbl0" path="res://Models/Environment/Baia/Baia.glb" id="58_0gkln"]
 [ext_resource type="PackedScene" uid="uid://bbwdrg4p8igkg" path="res://Models/Environment/Caneca/Caneca.glb" id="59_e2ql2"]
 [ext_resource type="PackedScene" uid="uid://tn1wtrkbx07r" path="res://Models/Characters/CaraTi/CaraDoTI.glb" id="60_e2ql2"]
@@ -456,6 +457,46 @@ mouse_filter = 1
 text = "Ganhou 1 de moeda"
 horizontal_alignment = 1
 
+[node name="CinematicInterface" type="Control" parent="GameManager/Interface" unique_id=537722586]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="MainText" type="Label" parent="GameManager/Interface/CinematicInterface" unique_id=212933419]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -392.0
+offset_top = 75.0
+offset_right = 392.0
+offset_bottom = 182.0
+grow_horizontal = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 78
+text = "A Chefe do escritório"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="SubText" type="Label" parent="GameManager/Interface/CinematicInterface" unique_id=2022518059]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -109.0
+offset_top = 188.0
+offset_right = 87.0
+offset_bottom = 211.0
+grow_horizontal = 2
+mouse_filter = 1
+text = "a mais temida dos games"
+horizontal_alignment = 1
+
 [node name="ShopInterface" type="Control" parent="GameManager/Interface" unique_id=1582442463]
 layout_mode = 3
 anchors_preset = 15
@@ -696,17 +737,14 @@ visible = false
 
 [node name="Envinroment" type="Node3D" parent="." unique_id=1556227361]
 
-[node name="Arquivo de aço" parent="Envinroment" unique_id=1187671115 instance=ExtResource("51_goiu7")]
-transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -20.902664, 0.7655686, 13.549188)
-
-[node name="Cadeira2" parent="Envinroment" unique_id=1203807032 instance=ExtResource("52_goiu7")]
-transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -0.38563395, -9.060822, 16.402395)
-
 [node name="Paredes Amarelas2" parent="Envinroment" unique_id=1502431670 instance=ExtResource("53_fqfjr")]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0.872, -17, 14.976)
 
 [node name="Paredes Amarelas3" parent="Envinroment" unique_id=1390521596 instance=ExtResource("53_fqfjr")]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -119, -17, 14.976)
+
+[node name="Fundo parede amarela" parent="Envinroment" unique_id=1305251430 instance=ExtResource("57_awmh5")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -107.007515, -14.744333, 15.068996)
 
 [node name="EnvironmentInitial" type="Node3D" parent="." unique_id=1380003553]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -254.03508)
@@ -758,6 +796,9 @@ transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 1.1259522, -0.49954224)
 
 [node name="Vaso de Plantas" parent="EnvironmentInitial" unique_id=412522427 instance=ExtResource("72_g550h")]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 16.913925, -11.29619, 11.810684)
+
+[node name="Fundo parede amarela" parent="EnvironmentInitial" unique_id=2050984532 instance=ExtResource("57_awmh5")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -107.007515, -14.744333, 15.068996)
 
 [node name="EnvironmentTI" type="Node3D" parent="." unique_id=121750561]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -469.81476)
@@ -912,6 +953,9 @@ transform = Transform3D(0.997217, 0, 19.975124, 0, 20, 0, -19.975124, 0, 0.99721
 [node name="Pc  Tela de Iniciar2" parent="EnvironmentTI" unique_id=302633912 instance=ExtResource("71_awmh5")]
 transform = Transform3D(0.997217, 0, 19.975124, 0, 20, 0, -19.975124, 0, 0.997217, -15.527439, 1.0700893, -36.60617)
 
+[node name="Fundo parede amarela" parent="EnvironmentTI" unique_id=671388576 instance=ExtResource("57_awmh5")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -107.007515, -14.744333, 15.068996)
+
 [node name="EnvironmentBoss" type="Node3D" parent="." unique_id=1109557497]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -686.0335)
 
@@ -1063,6 +1107,9 @@ transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 1.1259522, -0.49954224)
 
 [node name="Vaso de Plantas" parent="EnvironmentBoss" unique_id=1809773172 instance=ExtResource("72_g550h")]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 16.913925, -11.29619, 11.810684)
+
+[node name="Fundo parede amarela" parent="EnvironmentBoss" unique_id=1148290162 instance=ExtResource("57_awmh5")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -107.007515, -14.744333, 15.068996)
 
 [connection signal="body_entered" from="GameManager/Shop/BuyItem" to="GameManager/Shop" method="_on_buy_item_body_entered"]
 [connection signal="body_entered" from="GameManager/Shop/SellItem" to="GameManager/Shop" method="_on_sell_item_body_entered"]

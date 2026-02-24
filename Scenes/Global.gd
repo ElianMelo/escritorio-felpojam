@@ -9,19 +9,37 @@ enum GAME_STATE {
 	CINEMATIC
 }
 
+enum CINEMATIC_STATE {
+	INITIAL,
+	IT,
+	BOSS
+}
+
 var player_max_health:float = 150
 var enemy_max_health:float = 150
 
 var player_health:float = 150
 var enemy_health:float = 150
 var game_state:Global.GAME_STATE = Global.GAME_STATE.SHOP
+var cinematic_state:Global.CINEMATIC_STATE = Global.CINEMATIC_STATE.INITIAL
+
+var cinematic_title = "O cara do TI"
+var cinematic_subtitle = "O mais nerd da turma"
 
 var coin: int = 6
 var firstItemBrought: bool = false
 var isGamePaused = false
 
 signal game_state_changed(state: Global.GAME_STATE)
+signal cinematic_state_changed(state: Global.CINEMATIC_STATE)
 
+func ChangeCinematicState(state: Global.CINEMATIC_STATE, \
+	title: String, subtitle: String):
+	cinematic_state = state
+	cinematic_title = title
+	cinematic_subtitle = subtitle
+	emit_signal("cinematic_state_changed", state)
+	
 func ChangeGameState(state: Global.GAME_STATE):
 	game_state = state
 	player_health = player_max_health

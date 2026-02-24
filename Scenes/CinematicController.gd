@@ -1,6 +1,7 @@
 extends Node3D
 
 @onready var camera: Camera3D = %MainCamera3D
+@onready var interface: InterfaceController = %Interface
 
 @export var cameraGameplayPosition: Vector3
 @export var cameraGameplayRotation: Vector3
@@ -10,6 +11,9 @@ extends Node3D
 
 @export var cameraCinematicTIPosition: Vector3
 @export var cameraCinematicTIRotation: Vector3
+
+var currentCameraPosition: Vector3
+var currentCameraRotation: Vector3
 
 var isGameplay:bool = true
 
@@ -26,10 +30,23 @@ func OnGameStateChanged(state: Global.GAME_STATE):
 
 func SwitchCamera(isCurrentGameplay: bool):
 	isGameplay = !isCurrentGameplay
+	GrabCameraPositionBasedOnCinematic()
 	if isGameplay:
 		camera.position = cameraGameplayPosition
 		camera.rotation = cameraGameplayRotation
 	else:
-		camera.position = cameraCinematicTIPosition
-		camera.rotation = cameraCinematicTIRotation
+		camera.position = currentCameraPosition
+		camera.rotation = currentCameraRotation
 	# camera
+
+func GrabCameraPositionBasedOnCinematic():
+	match Global.cinematic_state:
+		Global.CINEMATIC_STATE.INITIAL:
+			currentCameraPosition = cameraCinematicTIPosition
+			currentCameraRotation = cameraCinematicTIRotation
+		Global.CINEMATIC_STATE.IT:
+			currentCameraPosition = cameraCinematicTIPosition
+			currentCameraRotation = cameraCinematicTIRotation
+		Global.CINEMATIC_STATE.BOSS:
+			currentCameraPosition = cameraCinematicTIPosition
+			currentCameraRotation = cameraCinematicTIRotation

@@ -19,6 +19,10 @@ extends Node3D
 @onready var result_text: Label = $PostBattleInterface/ResultText
 @onready var gold_result_text: Label = $PostBattleInterface/GoldResultText
 
+# CinematicInterface
+@onready var main_text: Label = $CinematicInterface/MainText
+@onready var sub_text: Label = $CinematicInterface/SubText
+
 # Intefaces
 @onready var general_interface: Control = $GeneralInterface
 @onready var battle_interface: Control = $BattleInterface
@@ -27,11 +31,13 @@ extends Node3D
 @onready var stamp_interface: Control = $StampInterface
 @onready var menu_interface: MenuInterface = $MenuInterface
 @onready var tooltip: TooltipItem = $TooltipBase/Tooltip
+@onready var cinematic_interface: Control = $CinematicInterface
 
 var shop_message_tween: Tween
 
 func _ready() -> void:
 	Global.connect("game_state_changed", OnGameStateChanged)
+	Global.connect("cinematic_state_changed", OnCinematicStateChanged)
 	OnGameStateChanged(Global.game_state)
 	general_interface.visible = true
 
@@ -60,6 +66,11 @@ func OnGameStateChanged(state: Global.GAME_STATE):
 		Global.GAME_STATE.STAMP:
 			stamp_interface.visible = true
 			init_shop_stamp_button.disabled = true
+		Global.GAME_STATE.CINEMATIC:
+			cinematic_interface.visible = true
+
+func OnCinematicStateChanged(state: Global.CINEMATIC_STATE):
+	ChangeCinematicText(Global.cinematic_title, Global.cinematic_subtitle)
 
 func DisableAllInterfaces():
 	battle_interface.visible = false
@@ -67,6 +78,11 @@ func DisableAllInterfaces():
 	stamp_interface.visible = false
 	menu_interface.visible = false
 	post_battle_interface.visible = false
+	cinematic_interface.visible = false
+
+func ChangeCinematicText(mainText: String, subText: String):
+	main_text.text = mainText
+	sub_text.text = subText
 
 func ChangePostBattleText(resultText: String, goldText: String):
 	result_text.text = resultText

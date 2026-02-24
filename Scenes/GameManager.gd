@@ -15,6 +15,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("g_key_button") \
 		and Global.game_state == Global.GAME_STATE.SHOP:
+		Global.ChangeCinematicState(Global.CINEMATIC_STATE.IT, "O cara do TI",
+			"O mais nerd")
 		Global.ChangeGameState(Global.GAME_STATE.CINEMATIC)
 		return
 	if Input.is_action_just_pressed("g_key_button") \
