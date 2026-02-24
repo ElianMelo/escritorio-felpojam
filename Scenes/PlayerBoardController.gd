@@ -76,6 +76,14 @@ func OnGameStateChanged(state: Global.GAME_STATE):
 		Global.GAME_STATE.PREBATTLE:
 			CleanShopObjects()
 			CreateEnemyObjectByData()
+			await get_tree().create_timer(0.01).timeout
+			Global.ChangeCinematicState(
+				currentEnemyData.cine_state,
+				currentEnemyData.title,
+				currentEnemyData.subTitle
+			)
+			Global.ChangeGameState(Global.GAME_STATE.CINEMATIC)
+			await get_tree().create_timer(5.0).timeout
 			Global.ChangeGameState(Global.GAME_STATE.BATTLE)
 		Global.GAME_STATE.BATTLE:
 			pass

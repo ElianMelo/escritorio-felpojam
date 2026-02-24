@@ -11,6 +11,9 @@
 [resource]
 script = ExtResource("6_2i4ts")
 name = "Cara do TI 4"
+title = "O Cara do TI"
+subTitle = "O mais nerd V4"
+cine_state = 1
 health = 150
 enemyItems = Array[ExtResource("1_v7i5c")]([ExtResource("2_vw4pb"), ExtResource("3_k378i"), ExtResource("4_oelf8"), ExtResource("5_f3jxd"), ExtResource("6_vw4pb")])
 metadata/_custom_type_script = "uid://dp2dtn4l4rb7q"
