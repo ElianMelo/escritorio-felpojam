@@ -8,6 +8,9 @@ extends RigidBody3D
 @onready var item_progress: ItemProgress = $ItemProgress
 @export var decalReference: Decal
 var listDecal: Array[Decal] = []
+@onready var audio_player: AudioStreamPlayer3D = $AudioPlayer
+
+var rng = RandomNumberGenerator.new()
 
 var objectLayerId = 2
 
@@ -130,7 +133,13 @@ func GetFinalValueOnStamps(stampEffect: Enums.STAMP_EFFECT):
 			finalResult += stampList[i].stampEffectValue
 	return finalResult
 
+func PlayUseItemAudio():
+	audio_player.pitch_scale = rng.randf_range(0.8, 1.3)
+	audio_player.volume_db = rng.randf_range(-0.2, 0.2)
+	audio_player.play()
+	
 func use_item():
+	PlayUseItemAudio()
 	if office_item_data.canDamage or \
 	 	GetFinalValueOnStamps(Enums.STAMP_EFFECT.DAMAGE) != 0:
 		emit_signal("item_damage_used", office_item_data.damage \

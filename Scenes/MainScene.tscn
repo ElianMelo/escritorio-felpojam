@@ -3,8 +3,10 @@
 [ext_resource type="Script" uid="uid://c35u18xfvdsjj" path="res://Scenes/GameManager.gd" id="1_8ju71"]
 [ext_resource type="Script" uid="uid://bsqa7t68swdxd" path="res://Scenes/DraggerController.gd" id="1_tr2i4"]
 [ext_resource type="Script" uid="uid://cjg3s4tyuaopy" path="res://Scenes/PlayerBoardController.gd" id="2_0iob3"]
+[ext_resource type="Script" uid="uid://dsmbqr4e84jns" path="res://Scenes/SoundController.gd" id="2_reede"]
 [ext_resource type="Script" uid="uid://db0xqpkaqqrm5" path="res://Scenes/SpawnerController.gd" id="2_s1acj"]
 [ext_resource type="Script" uid="uid://btxlbpkwaflct" path="res://Scenes/InterfaceController.gd" id="3_4b75m"]
+[ext_resource type="AudioStream" uid="uid://yc2xvtt3glio" path="res://Audio/Ambience/office_ambience.wav" id="3_jv1ax"]
 [ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="3_y4jh7"]
 [ext_resource type="Texture2D" uid="uid://6mgebga6vqdm" path="res://Sprites/block_back.png" id="4_xb4mg"]
 [ext_resource type="Texture2D" uid="uid://bsti8misj8x0m" path="res://Sprites/block.png" id="5_6t1o7"]
@@ -190,6 +192,13 @@ metadata/_custom_type_script = "uid://dvk0rv8yoxdjy"
 
 [node name="GameManager" type="Node3D" parent="." unique_id=201966788]
 script = ExtResource("1_8ju71")
+
+[node name="SoundController" type="Node3D" parent="GameManager" unique_id=1441507783]
+script = ExtResource("2_reede")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="GameManager/SoundController" unique_id=615173436]
+stream = ExtResource("3_jv1ax")
+volume_db = -10.0
 
 [node name="SpawnerController" type="Node3D" parent="GameManager" unique_id=1347889653]
 unique_name_in_owner = true
