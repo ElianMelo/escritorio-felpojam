@@ -158,16 +158,16 @@ func StampTextData(stampEffect: Enums.STAMP_EFFECT, stampValue: float):
 			return "Cortante %s causa %d de dano [br]" \
 				% [GetImageByStampEffect(stampEffect), stampValue]
 		Enums.STAMP_EFFECT.HASTE:
-			return "Tecnologico %s causa por %d segundos [br]" \
+			return "Tecnologico %s por %d segundos [br]" \
 				% [GetImageByStampEffect(stampEffect), stampValue]
 		Enums.STAMP_EFFECT.SLOW:
-			return "Cola %s causa por %d segundos [br]" \
+			return "Cola %s por %d segundos [br]" \
 				% [GetImageByStampEffect(stampEffect), stampValue]
 		Enums.STAMP_EFFECT.CHARGE:
-			return "Em branco %s causa por %d segundos [br]" \
+			return "Em branco %s por %d segundos [br]" \
 				% [GetImageByStampEffect(stampEffect), stampValue]
 		Enums.STAMP_EFFECT.FREEZE:
-			return "Contundente %s causa por %d segundos [br]" \
+			return "Contundente %s por %d segundos [br]" \
 				% [GetImageByStampEffect(stampEffect), stampValue]
 	pass
 

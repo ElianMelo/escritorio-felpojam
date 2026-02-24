@@ -83,7 +83,7 @@ func OnGameStateChanged(state: Global.GAME_STATE):
 				currentEnemyData.subTitle
 			)
 			Global.ChangeGameState(Global.GAME_STATE.CINEMATIC)
-			await get_tree().create_timer(5.0).timeout
+			await get_tree().create_timer(1.0).timeout
 			Global.ChangeGameState(Global.GAME_STATE.BATTLE)
 		Global.GAME_STATE.BATTLE:
 			pass

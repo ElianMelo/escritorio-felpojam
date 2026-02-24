@@ -53,6 +53,7 @@
 [ext_resource type="PackedScene" uid="uid://dp3ai8c76eee7" path="res://Prefabs/PopupText.tscn" id="29_u5v48"]
 [ext_resource type="PackedScene" uid="uid://cil2s8bi4aytc" path="res://Models/Stamp/CarimboScene.tscn" id="40_20cv7"]
 [ext_resource type="PackedScene" uid="uid://bl4dm1gvii45m" path="res://Models/Table/TabuleiroScene.tscn" id="47_20cv7"]
+[ext_resource type="Texture2D" uid="uid://dflq7kxpkdgpu" path="res://UI/Pngs ui/Painel esp itens UI PNg.png" id="49_nod4m"]
 [ext_resource type="PackedScene" uid="uid://bcp0ogqi05oo1" path="res://Models/Environment/Mesa/Mesa.glb" id="50_ywy86"]
 [ext_resource type="PackedScene" uid="uid://cd11gv1bsr657" path="res://Models/Environment/Arquivo de aço/Arquivo de aço.glb" id="51_goiu7"]
 [ext_resource type="PackedScene" uid="uid://ds0ckl5ur7u00" path="res://Models/Environment/Cadeira/Cadeira.glb" id="52_goiu7"]
@@ -544,7 +545,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StampInterface" type="Control" parent="GameManager/Interface" unique_id=674640711]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -588,20 +588,31 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -140.0
-offset_bottom = 160.0
+offset_left = -247.0
+offset_top = 47.0
+offset_right = -47.0
+offset_bottom = 307.0
 grow_horizontal = 0
 mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="GameManager/Interface/StampInterface/StampDataBox" unique_id=1714225042]
+layout_mode = 2
+texture = ExtResource("49_nod4m")
+expand_mode = 5
 
 [node name="MarginContainer" type="MarginContainer" parent="GameManager/Interface/StampInterface/StampDataBox" unique_id=393537887]
 layout_mode = 2
 theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
+theme_override_constants/margin_top = 60
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
 [node name="RichTextLabel" type="RichTextLabel" parent="GameManager/Interface/StampInterface/StampDataBox/MarginContainer" unique_id=1436480971]
 layout_mode = 2
+theme_override_colors/default_color = Color(0.06053035, 0.06053035, 0.060530342, 1)
+theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/bold_font_size = 20
+theme_override_font_sizes/bold_italics_font_size = 20
 bbcode_enabled = true
 text = "Cortante
 Adiciona 50 de dano"
@@ -617,15 +628,23 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+offset_bottom = 108.61182
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("16_c1ier")
 
+[node name="TextureRect" type="TextureRect" parent="GameManager/Interface/TooltipBase/Tooltip" unique_id=1363611459]
+layout_mode = 2
+texture = ExtResource("49_nod4m")
+expand_mode = 5
+
 [node name="MarginContainer" type="MarginContainer" parent="GameManager/Interface/TooltipBase/Tooltip" unique_id=142689954]
 layout_mode = 2
 theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
+theme_override_constants/margin_top = 60
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
@@ -633,16 +652,16 @@ theme_override_constants/margin_bottom = 20
 layout_mode = 2
 size_flags_stretch_ratio = 0.0
 mouse_filter = 2
-theme_override_font_sizes/normal_font_size = 15
-theme_override_font_sizes/bold_font_size = 15
-theme_override_font_sizes/bold_italics_font_size = 15
-theme_override_font_sizes/italics_font_size = 15
-theme_override_font_sizes/mono_font_size = 15
+theme_override_colors/default_color = Color(0.07683582, 0.07683582, 0.07683582, 1)
+theme_override_font_sizes/normal_font_size = 13
+theme_override_font_sizes/bold_font_size = 13
+theme_override_font_sizes/bold_italics_font_size = 13
+theme_override_font_sizes/italics_font_size = 13
+theme_override_font_sizes/mono_font_size = 13
 bbcode_enabled = true
 text = "[img=32]res://Sprites/Effects/Blunt.png[/img]
 [b]Blunt[/b]"
 fit_content = true
-vertical_alignment = 1
 
 [node name="MenuInterface" type="Control" parent="GameManager/Interface" unique_id=1175070585]
 visible = false
