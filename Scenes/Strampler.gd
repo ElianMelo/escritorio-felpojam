@@ -52,4 +52,4 @@ func ResetRotation():
 	rotation = Vector3(0, 0, 0)
 
 func PlayAnimation():
-	animation_player.play("Action_001", -1, 3)
+	animation_player.play("Action_001", -1, 5)

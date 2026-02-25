@@ -5,6 +5,7 @@ extends Node3D
 @onready var interface: InterfaceController = %Interface
 @export var stampListEffects: Array[StampEffectData]
 @export var godotBugKeepThis: Array[OfficeItemData]
+@onready var audio_stream_player_3d: AudioStreamPlayer3D = $AudioStreamPlayer3D
 
 const BLUNT_DECAL = preload("uid://bk8eqr5wmobqn")
 const DAMAGE_DECAL = preload("uid://cx1bi837qxk05")
@@ -63,6 +64,7 @@ func _on_stampler_body_entered(body: Node) -> void:
 	
 	canStample = false
 	stampler.PlayAnimation()
+	audio_stream_player_3d.play()
 	await get_tree().create_timer(0.5).timeout
 	officeItem.AddStampEffect(currentStampleData.stampEffect, currentStampleData.stampEffectValue)
 	officeItem.SetDecal(GetDecalByStampEffect(currentStampleData.stampEffect),\

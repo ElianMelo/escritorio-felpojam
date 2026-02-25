@@ -61,6 +61,7 @@
 [ext_resource type="PackedScene" uid="uid://um4osjvsqmv5" path="res://UI/Opções in game/Caderno opções in game.glb" id="47_iv865"]
 [ext_resource type="Texture2D" uid="uid://dfasnjmkcaaiw" path="res://UI/Pngs ui/Regua UI PNG.png" id="48_7gb0p"]
 [ext_resource type="Texture2D" uid="uid://dflq7kxpkdgpu" path="res://UI/Pngs ui/Painel esp itens UI PNg.png" id="49_nod4m"]
+[ext_resource type="AudioStream" uid="uid://hot6wh3ql7b0" path="res://Audio/SFX/stamp_sfx.mp3" id="50_13c30"]
 [ext_resource type="PackedScene" uid="uid://bcp0ogqi05oo1" path="res://Models/Environment/Mesa/Mesa.glb" id="50_ywy86"]
 [ext_resource type="PackedScene" uid="uid://cd11gv1bsr657" path="res://Models/Environment/Arquivo de aço/Arquivo de aço.glb" id="51_goiu7"]
 [ext_resource type="PackedScene" uid="uid://ds0ckl5ur7u00" path="res://Models/Environment/Cadeira/Cadeira.glb" id="52_goiu7"]
@@ -318,6 +319,9 @@ shape = SubResource("BoxShape3D_6rnll")
 
 [node name="CarimboVisuals" parent="GameManager/Stamp/Stampler" unique_id=1209866256 instance=ExtResource("40_20cv7")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, -0.4869088, 0)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="GameManager/Stamp" unique_id=604442347]
+stream = ExtResource("50_13c30")
 
 [node name="Interface" type="Node3D" parent="GameManager" unique_id=1165999141]
 unique_name_in_owner = true
