@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b17sgju4ti8qr"]
+
+[resource]
+resource_name = "OutlineBlusa"
+shading_mode = 0
+albedo_color = Color(0.040181156, 0.16038859, 0.20252284, 1)

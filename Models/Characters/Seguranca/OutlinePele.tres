@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://vu5bpdpdvieh"]
+
+[resource]
+resource_name = "OutlinePele"
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.56328773, 0.37024382, 0.3072896, 1)

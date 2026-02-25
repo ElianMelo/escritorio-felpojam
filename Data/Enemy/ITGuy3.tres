@@ -13,6 +13,6 @@ name = "Cara do TI 3"
 title = "O Cara do TI"
 subTitle = "O mais nerd V3"
 cine_state = 1
-health = 150
+health = 200
 enemyItems = Array[ExtResource("1_2l4ii")]([ExtResource("2_mc3s6"), ExtResource("3_naqx2"), ExtResource("4_qj1wv"), ExtResource("5_mc3s6")])
 metadata/_custom_type_script = "uid://dp2dtn4l4rb7q"
