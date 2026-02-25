@@ -4,12 +4,17 @@
 [ext_resource type="Resource" uid="uid://bvi6bc5pumg30" path="res://Data/Items/White/PacoteDeFigurinhas.tres" id="2_c23tc"]
 [ext_resource type="Script" uid="uid://s6ba216mjbhx" path="res://Scenes/OfficeItemUsage.gd" id="3_gsc6a"]
 [ext_resource type="AudioStream" uid="uid://tfja1m8xqw5c" path="res://Audio/SFX/small_item_usage.wav" id="3_k5hvi"]
+[ext_resource type="AudioStream" uid="uid://bphhk658nxafn" path="res://Audio/SFX/blunt_sfx.wav" id="3_sa3p3"]
 [ext_resource type="AudioStream" uid="uid://bqdewubkhvog8" path="res://Audio/SFX/grab.mp3" id="4_8yyny"]
+[ext_resource type="AudioStream" uid="uid://s4m33pdp47ld" path="res://Audio/SFX/white_sfx.mp3" id="4_13x00"]
 [ext_resource type="Script" uid="uid://dppbefblh8sm8" path="res://Scenes/ItemProgress.gd" id="4_k5hvi"]
+[ext_resource type="AudioStream" uid="uid://c4md1gce6cjm5" path="res://Audio/SFX/tech_sfx.wav" id="5_3t178"]
 [ext_resource type="Texture2D" uid="uid://d2hvax8gm7b02" path="res://Sprites/radial_button_back.png" id="5_8yyny"]
 [ext_resource type="AudioStream" uid="uid://cuae27dat0lq6" path="res://Audio/SFX/release.mp3" id="5_x57ev"]
 [ext_resource type="Texture2D" uid="uid://bfsmwpmhp7akm" path="res://Sprites/Effects/Tech.png" id="5_ynvmh"]
+[ext_resource type="AudioStream" uid="uid://dvsre56mxfsh4" path="res://Audio/SFX/glue_sfx.wav" id="6_eir2i"]
 [ext_resource type="Texture2D" uid="uid://dckv0ijfcjs6c" path="res://Sprites/radial_button.png" id="6_x57ev"]
+[ext_resource type="AudioStream" uid="uid://ws4qnqrg3qdt" path="res://Audio/SFX/item_usage.wav" id="7_dj74v"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r3fl7"]
 size = Vector3(3.0847394, 0.18388748, 1.2371082)
@@ -23,6 +28,11 @@ linear_damp = 3.0
 script = ExtResource("1_2ohxv")
 office_item_data = ExtResource("2_c23tc")
 decalReference = NodePath("DecalReference")
+blunt_sfx = ExtResource("3_sa3p3")
+white_sfx = ExtResource("4_13x00")
+tech_sfx = ExtResource("5_3t178")
+glue_sfx = ExtResource("6_eir2i")
+regular_sfx = ExtResource("7_dj74v")
 
 [node name="AudioPlayer" type="AudioStreamPlayer3D" parent="." unique_id=1325631436]
 stream = ExtResource("3_k5hvi")

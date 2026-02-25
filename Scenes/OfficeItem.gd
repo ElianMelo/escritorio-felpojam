@@ -13,6 +13,12 @@ var listDecal: Array[Decal] = []
 @onready var grab: AudioStreamPlayer3D = $Grab
 @onready var release: AudioStreamPlayer3D = $Release
 
+@export var blunt_sfx: AudioStream
+@export var white_sfx: AudioStream
+@export var tech_sfx: AudioStream
+@export var glue_sfx: AudioStream
+@export var regular_sfx: AudioStream
+
 
 var rng = RandomNumberGenerator.new()
 
@@ -141,33 +147,51 @@ func GetFinalValueOnStamps(stampEffect: Enums.STAMP_EFFECT):
 			finalResult += stampList[i].stampEffectValue
 	return finalResult
 
-func PlayUseItemAudio():
+func PlayUseItemAudio(effect: Enums.EFFECT):
+	audio_player.stream = GetAudioBasedOnEffect(effect)
 	audio_player.pitch_scale = rng.randf_range(0.8, 1.3)
 	audio_player.volume_db = rng.randf_range(-0.2, 0.2)
 	audio_player.play()
 	
+func GetAudioBasedOnEffect(effect: Enums.EFFECT):
+	match effect:
+		Enums.EFFECT.HASTE:
+			return tech_sfx
+		Enums.EFFECT.SLOW:
+			return glue_sfx
+		Enums.EFFECT.FREEZE:
+			return blunt_sfx
+		Enums.EFFECT.CHARGE:
+			return white_sfx
+		Enums.EFFECT.NONE:
+			return regular_sfx
+	
 func use_item():
-	PlayUseItemAudio()
 	if office_item_data.canDamage or \
 	 	GetFinalValueOnStamps(Enums.STAMP_EFFECT.DAMAGE) != 0:
 		emit_signal("item_damage_used", office_item_data.damage \
 		+ GetFinalValueOnStamps(Enums.STAMP_EFFECT.DAMAGE), isPlayer)
+		PlayUseItemAudio(Enums.EFFECT.NONE)
 	if office_item_data.canFreeze or \
 	 	GetFinalValueOnStamps(Enums.STAMP_EFFECT.FREEZE) != 0:
 		emit_signal("item_freeze_used", office_item_data.freezeDuration + GetFinalValueOnStamps(Enums.STAMP_EFFECT.FREEZE),
 			office_item_data.effectTarget, isPlayer)
+		PlayUseItemAudio(Enums.EFFECT.FREEZE)
 	if office_item_data.canHaste or \
 	 	GetFinalValueOnStamps(Enums.STAMP_EFFECT.HASTE) != 0:
 		emit_signal("item_haste_used", office_item_data.hasteDuration + GetFinalValueOnStamps(Enums.STAMP_EFFECT.HASTE),
 			office_item_data.effectTarget, isPlayer)
+		PlayUseItemAudio(Enums.EFFECT.HASTE)
 	if office_item_data.canSlow or \
 	 	GetFinalValueOnStamps(Enums.STAMP_EFFECT.SLOW) != 0:
 		emit_signal("item_slow_used", office_item_data.slowDuration + GetFinalValueOnStamps(Enums.STAMP_EFFECT.SLOW),
 			office_item_data.effectTarget, isPlayer)
+		PlayUseItemAudio(Enums.EFFECT.SLOW)
 	if office_item_data.canCharge or \
 	 	GetFinalValueOnStamps(Enums.STAMP_EFFECT.CHARGE) != 0:
 		emit_signal("item_charge_used", office_item_data.chargeSeconds + GetFinalValueOnStamps(Enums.STAMP_EFFECT.CHARGE),
 			office_item_data.effectTarget, isPlayer)
+		PlayUseItemAudio(Enums.EFFECT.CHARGE)
 	use_item_tween()
 
 func use_item_tween():
