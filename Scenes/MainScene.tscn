@@ -534,6 +534,7 @@ offset_right = 392.0
 offset_bottom = 182.0
 grow_horizontal = 2
 mouse_filter = 1
+theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 78
 text = "A Chefe do escritório"
 horizontal_alignment = 1
@@ -732,30 +733,6 @@ size_flags_vertical = 0
 mouse_filter = 2
 script = ExtResource("26_r0vnq")
 
-[node name="TextureRect" type="TextureRect" parent="GameManager/Interface/MenuInterface" unique_id=788149245]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("4_xb4mg")
-
-[node name="ResumeButton" type="Button" parent="GameManager/Interface/MenuInterface" unique_id=753619268]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -69.0
-offset_top = -85.0
-offset_right = 131.0
-offset_bottom = -54.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Voltar"
-
 [node name="PlayButton" type="Button" parent="GameManager/Interface/MenuInterface" unique_id=1439375503]
 layout_mode = 1
 anchors_preset = 8
@@ -763,10 +740,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -66.0
-offset_top = -17.0
-offset_right = 134.0
-offset_bottom = 14.0
+offset_left = -81.0
+offset_top = -27.0
+offset_right = 119.0
+offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Jogar"
@@ -778,36 +755,39 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -65.0
-offset_top = 49.0
-offset_right = 135.0
-offset_bottom = 80.0
+offset_left = -76.0
+offset_top = 28.0
+offset_right = 124.0
+offset_bottom = 59.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Sair"
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="GameManager/Interface" unique_id=1025884235]
+[node name="OptionsInterface" type="SubViewportContainer" parent="GameManager/Interface" unique_id=1025884235]
 visible = false
-offset_left = 150.0
+offset_left = 306.0
 offset_top = 58.0
-offset_right = 190.0
-offset_bottom = 98.0
+offset_right = 818.0
+offset_bottom = 570.0
 script = ExtResource("52_iwhv0")
 
-[node name="SubViewport" type="SubViewport" parent="GameManager/Interface/SubViewportContainer" unique_id=22938347]
+[node name="SubViewport" type="SubViewport" parent="GameManager/Interface/OptionsInterface" unique_id=22938347]
 transparent_bg = true
 handle_input_locally = false
 render_target_update_mode = 0
 
-[node name="Caderno opções in game" parent="GameManager/Interface/SubViewportContainer/SubViewport" unique_id=487994704 instance=ExtResource("47_iv865")]
+[node name="Caderno opções in game" parent="GameManager/Interface/OptionsInterface/SubViewport" unique_id=487994704 instance=ExtResource("47_iv865")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -51.04607, 1.8688061, 0.32672024)
+visible = false
 
-[node name="Camera3D" type="Camera3D" parent="GameManager/Interface/SubViewportContainer/SubViewport" unique_id=441894844]
+[node name="Camera3D" type="Camera3D" parent="GameManager/Interface/OptionsInterface/SubViewport" unique_id=441894844]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.049488, 1.9590528, 0.6480346)
+visible = false
 cull_mask = 1048574
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="GameManager/Interface/SubViewportContainer/SubViewport" unique_id=1045076397]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="GameManager/Interface/OptionsInterface/SubViewport" unique_id=1045076397]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.016068, 0, 0)
+visible = false
 layers = 2
 
 [node name="MainCamera3D" type="Camera3D" parent="." unique_id=1888448212]
@@ -1046,11 +1026,10 @@ transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -107.007515, -14.744333, 1
 [connection signal="pressed" from="GameManager/Interface/BattleInterface/StopFightButton" to="GameManager/Interface" method="_on_stop_fight_button_pressed"]
 [connection signal="pressed" from="GameManager/Interface/ShopInterface/InitFightButton" to="GameManager/Interface" method="_on_init_fight_button_pressed"]
 [connection signal="pressed" from="GameManager/Interface/StampInterface/InitShopStampButton" to="GameManager/Interface" method="_on_init_shop_stamp_button_pressed"]
-[connection signal="pressed" from="GameManager/Interface/MenuInterface/ResumeButton" to="GameManager/Interface/MenuInterface" method="_on_resume_button_pressed"]
 [connection signal="pressed" from="GameManager/Interface/MenuInterface/PlayButton" to="GameManager/Interface/MenuInterface" method="_on_play_button_pressed"]
 [connection signal="pressed" from="GameManager/Interface/MenuInterface/QuitButton" to="GameManager/Interface/MenuInterface" method="_on_quit_button_pressed"]
 
 [editable path="GameManager/Stamp/Stampler/CarimboVisuals"]
-[editable path="GameManager/Interface/SubViewportContainer/SubViewport/Caderno opções in game"]
+[editable path="GameManager/Interface/OptionsInterface/SubViewport/Caderno opções in game"]
 [editable path="EnvironmentTI/CaraDoTI"]
 [editable path="EnvironmentBoss/Chefe"]

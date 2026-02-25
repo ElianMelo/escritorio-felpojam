@@ -1,7 +1,7 @@
 class_name MenuInterface
 extends Control
 
-var isEnabled: bool = false
+var isEnabled: bool = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -22,16 +22,15 @@ func ShowVisuals():
 	self.visible = true
 	Engine.time_scale = 0
 	Global.isGamePaused = true
-	pass
+	Global.ChangeCinematicState(Global.CINEMATIC_STATE.INITIAL, "Batalha de Escritorio",
+		"Fuja")
+	Global.ChangeGameState(Global.GAME_STATE.CINEMATIC)
 
 func HideVisuals():
 	Engine.time_scale = 1
 	Global.isGamePaused = false
 	self.visible = false
-	pass
-
-func _on_resume_button_pressed() -> void:
-	Switch()
+	Global.RevertGameState()
 
 func _on_play_button_pressed() -> void:
 	Switch()

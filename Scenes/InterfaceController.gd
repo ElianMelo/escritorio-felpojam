@@ -68,6 +68,8 @@ func OnGameStateChanged(state: Global.GAME_STATE):
 			init_shop_stamp_button.disabled = true
 		Global.GAME_STATE.CINEMATIC:
 			cinematic_interface.visible = true
+			if Global.cinematic_state == Global.CINEMATIC_STATE.INITIAL:
+				menu_interface.visible = true
 
 func OnCinematicStateChanged(state: Global.CINEMATIC_STATE):
 	ChangeCinematicText(Global.cinematic_title, Global.cinematic_subtitle)

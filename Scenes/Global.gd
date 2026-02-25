@@ -20,7 +20,8 @@ var enemy_max_health:float = 150
 
 var player_health:float = 150
 var enemy_health:float = 150
-var game_state:Global.GAME_STATE = Global.GAME_STATE.SHOP
+var last_game_state:Global.GAME_STATE = Global.GAME_STATE.CINEMATIC
+var game_state:Global.GAME_STATE = Global.GAME_STATE.CINEMATIC
 var cinematic_state:Global.CINEMATIC_STATE = Global.CINEMATIC_STATE.INITIAL
 
 var cinematic_title = "O cara do TI"
@@ -40,7 +41,14 @@ func ChangeCinematicState(state: Global.CINEMATIC_STATE, \
 	cinematic_subtitle = subtitle
 	emit_signal("cinematic_state_changed", state)
 	
+func RevertGameState():
+	if game_state == last_game_state:
+		ChangeGameState(Global.GAME_STATE.SHOP)
+		return
+	ChangeGameState(last_game_state)
+
 func ChangeGameState(state: Global.GAME_STATE):
+	last_game_state = game_state
 	game_state = state
 	player_health = player_max_health
 	enemy_health = enemy_max_health

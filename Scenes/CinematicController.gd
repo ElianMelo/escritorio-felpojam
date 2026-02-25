@@ -42,8 +42,8 @@ func SwitchCamera(isCurrentGameplay: bool):
 func GrabCameraPositionBasedOnCinematic():
 	match Global.cinematic_state:
 		Global.CINEMATIC_STATE.INITIAL:
-			currentCameraPosition = cameraCinematicTIPosition
-			currentCameraRotation = cameraCinematicTIRotation
+			currentCameraPosition = cameraCinematicPosition
+			currentCameraRotation = cameraCinematicRotation
 		Global.CINEMATIC_STATE.IT:
 			currentCameraPosition = cameraCinematicTIPosition
 			currentCameraRotation = cameraCinematicTIRotation
