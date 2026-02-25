@@ -10,6 +10,10 @@ extends RigidBody3D
 var listDecal: Array[Decal] = []
 @onready var audio_player: AudioStreamPlayer3D = $AudioPlayer
 
+@onready var grab: AudioStreamPlayer3D = $Grab
+@onready var release: AudioStreamPlayer3D = $Release
+
+
 var rng = RandomNumberGenerator.new()
 
 var objectLayerId = 2
@@ -116,9 +120,13 @@ func _physics_process(delta: float) -> void:
 
 func start_drag():
 	isDragging = true
+	grab.pitch_scale = rng.randf_range(0.8, 1.3)
+	grab.play()
 
 func stop_drag():
 	isDragging = false
+	release.pitch_scale = rng.randf_range(0.8, 1.3)
+	release.play()
 
 func AddStampEffect(stampEffect: Enums.STAMP_EFFECT, stampValue: float):
 	stamp = true

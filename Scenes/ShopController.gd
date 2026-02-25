@@ -5,6 +5,8 @@ extends Node3D
 @onready var buy_item: RigidBody3D = $BuyItem
 @onready var sell_item: RigidBody3D = $SellItem
 @onready var init_fight_button: Button = $"../Interface/ShopInterface/InitFightButton"
+@onready var buy_item_audio: AudioStreamPlayer3D = $BuyItem/BuyItemAudio
+@onready var sell_item_audio: AudioStreamPlayer3D = $SellItem/SellItemAudio
 
 @onready var player_board_controller: PlayerBoardController = %PlayerBoardController
 
@@ -78,6 +80,7 @@ func AttemptBuyItem(officeItem: OfficeItem):
 		init_fight_button.disabled = false
 	interface.ShowShopFeedbackMessage(\
 		"Item comprado com sucesso!")
+	buy_item_audio.play()
 	player_board_controller.AddPlayerItem(officeItem)
 	player_board_controller.DeleteShopItem(officeItem)
 	interface.UpdateCoinText()
@@ -90,6 +93,7 @@ func SellItem(officeItem: OfficeItem):
 		return
 	interface.ShowShopFeedbackMessage(\
 			"Item vendido com sucesso!")
+	sell_item_audio.play()
 	Global.coin += defaultSellValue
 	player_board_controller.DeletePlayerItem(officeItem)
 	interface.UpdateCoinText()
