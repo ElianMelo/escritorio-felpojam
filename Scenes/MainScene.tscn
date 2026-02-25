@@ -54,7 +54,9 @@
 [ext_resource type="Script" uid="uid://dqweomab6ksw3" path="res://Scenes/CinematicController.gd" id="29_oqotn"]
 [ext_resource type="PackedScene" uid="uid://dp3ai8c76eee7" path="res://Prefabs/PopupText.tscn" id="29_u5v48"]
 [ext_resource type="AudioStream" uid="uid://beka3i7s3p6fv" path="res://Audio/SFX/buy_sell.wav" id="37_iv865"]
+[ext_resource type="PackedScene" uid="uid://btkxsv6c67eck" path="res://Models/Table/Pad Compra.glb" id="38_qanbq"]
 [ext_resource type="PackedScene" uid="uid://cil2s8bi4aytc" path="res://Models/Stamp/CarimboScene.tscn" id="40_20cv7"]
+[ext_resource type="PackedScene" uid="uid://ntn14ymuix3r" path="res://Models/Table/Pad venda.glb" id="40_c3yea"]
 [ext_resource type="PackedScene" uid="uid://bl4dm1gvii45m" path="res://Models/Table/TabuleiroScene.tscn" id="47_20cv7"]
 [ext_resource type="PackedScene" uid="uid://um4osjvsqmv5" path="res://UI/Opções in game/Caderno opções in game.glb" id="47_iv865"]
 [ext_resource type="Texture2D" uid="uid://dfasnjmkcaaiw" path="res://UI/Pngs ui/Regua UI PNG.png" id="48_7gb0p"]
@@ -84,7 +86,7 @@
 [ext_resource type="PackedScene" uid="uid://dyts4cjynywdp" path="res://Models/Environment/Vaso de Plantas/Vaso de Plantas.glb" id="72_g550h"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6rnll"]
-size = Vector3(0.63793945, 1.8669128, 0.71673584)
+size = Vector3(1.2212067, 1.8466644, 1.1036301)
 
 [sub_resource type="BoxMesh" id="BoxMesh_6rnll"]
 
@@ -215,8 +217,8 @@ enemiesData = Array[ExtResource("9_4sso6")]([ExtResource("25_uuu6x"), ExtResourc
 
 [node name="CinematicController" type="Node3D" parent="GameManager" unique_id=590458091]
 script = ExtResource("29_oqotn")
-cameraGameplayPosition = Vector3(-0.4074192, 7.913415, 4.4675207)
-cameraGameplayRotation = Vector3(-1.1230321, 0, 0)
+cameraGameplayPosition = Vector3(-0.56578535, 10.573789, 4.583)
+cameraGameplayRotation = Vector3(-1.2093909, 0, 0)
 cameraCinematicPosition = Vector3(39.479164, 33.352768, -228.2965)
 cameraCinematicRotation = Vector3(-0.51487213, 1.1362094, 0)
 cameraCinematicTIPosition = Vector3(60.259903, 22.708206, -418.99374)
@@ -227,7 +229,7 @@ unique_name_in_owner = true
 script = ExtResource("10_6rnll")
 
 [node name="BuyItem" type="RigidBody3D" parent="GameManager/Shop" unique_id=372430108]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7316327, -0.32235867, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0420027, -0.3223589, 0.62457657)
 disable_mode = 2
 sleeping = true
 lock_rotation = true
@@ -239,10 +241,11 @@ contact_monitor = true
 max_contacts_reported = 10
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GameManager/Shop/BuyItem" unique_id=230697353]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0043945313, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07131958, -0.010124207, 0.05773163)
 shape = SubResource("BoxShape3D_6rnll")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="GameManager/Shop/BuyItem" unique_id=384106391]
+visible = false
 material_override = ExtResource("11_enc0b")
 mesh = SubResource("BoxMesh_6rnll")
 
@@ -255,8 +258,11 @@ font_size = 64
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.003973007, 0.48719454, 0.02686888)
 stream = ExtResource("37_iv865")
 
+[node name="Pad Compra" parent="GameManager/Shop/BuyItem" unique_id=1351839118 instance=ExtResource("38_qanbq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18223906, 0.36318356, 0.02187872)
+
 [node name="SellItem" type="RigidBody3D" parent="GameManager/Shop" unique_id=2126865965]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.432129, -0.45299673, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.742, -0.453, 0.625)
 disable_mode = 2
 sleeping = true
 lock_rotation = true
@@ -268,9 +274,11 @@ contact_monitor = true
 max_contacts_reported = 10
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GameManager/Shop/SellItem" unique_id=202734072]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0026779175, 0, -0.025821686)
 shape = SubResource("BoxShape3D_6rnll")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="GameManager/Shop/SellItem" unique_id=39565476]
+visible = false
 material_override = ExtResource("12_hx8n4")
 mesh = SubResource("BoxMesh_6rnll")
 
@@ -282,6 +290,9 @@ font_size = 64
 [node name="SellItemAudio" type="AudioStreamPlayer3D" parent="GameManager/Shop/SellItem" unique_id=374510596]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.021349907, 0.57064503, -0.11228609)
 stream = ExtResource("37_iv865")
+
+[node name="Pad venda" parent="GameManager/Shop/SellItem" unique_id=661708365 instance=ExtResource("40_c3yea")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0938611, 0.46167046, 0.05269921)
 
 [node name="Stamp" type="Node3D" parent="GameManager" unique_id=1188671156]
 unique_name_in_owner = true
@@ -792,9 +803,9 @@ layers = 2
 
 [node name="MainCamera3D" type="Camera3D" parent="." unique_id=1888448212]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 0.43295124, 0.9014174, 0, -0.9014174, 0.43295124, -0.4074192, 7.913415, 4.4675207)
-fov = 64.0
-near = 0.045
+transform = Transform3D(1, 0, 0, 0, 0.35358918, 0.9354008, 0, -0.9354008, 0.35358918, -0.56578535, 10.573789, 4.583)
+fov = 55.0
+near = 0.001
 
 [node name="MainBoard" parent="." unique_id=1263248501 instance=ExtResource("27_c3pre")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.046443224, -0.11300421, 0.015141487)
@@ -825,6 +836,15 @@ transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -119, -17, 14.976)
 
 [node name="Fundo parede amarela" parent="Envinroment" unique_id=1305251430 instance=ExtResource("57_awmh5")]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -107.007515, -14.744333, 15.068996)
+
+[node name="Pc Abas abertas" parent="Envinroment" unique_id=241469662 instance=ExtResource("70_767ms")]
+transform = Transform3D(7.354352, 0, 6.775951, 0, 10, 0, -6.775951, 0, 7.354352, -6.66645, -0.018590927, -4.108743)
+
+[node name="Arquivo de aço" parent="Envinroment" unique_id=1187671115 instance=ExtResource("51_goiu7")]
+transform = Transform3D(9.929138, 0, -1.1883724, 0, 10.000001, 0, 1.1883724, 0, 9.929138, -13.221416, 3.1522675, -1.9535108)
+
+[node name="Impressora" parent="Envinroment" unique_id=154535313 instance=ExtResource("64_ukagr")]
+transform = Transform3D(-9.998692, 0, -0.1617853, 0, 10, 0, 0.1617853, 0, -9.998692, 14.616634, 1.1063709, -3.384757)
 
 [node name="EnvironmentInitial" type="Node3D" parent="." unique_id=1380003553]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -254.03508)
@@ -859,7 +879,7 @@ transform = Transform3D(12.088923, 0, 15.932919, 0, 20, 0, -15.932919, 0, 12.088
 [node name="Granpeador Cenario" parent="EnvironmentInitial" unique_id=457427383 instance=ExtResource("63_7aq6o")]
 transform = Transform3D(-19.92931, 0, 1.6801634, 0, 20.000004, 0, -1.6801634, 0, -19.92931, -9.709947, 0.28320217, 3.1276703)
 
-[node name="Impressora" parent="EnvironmentInitial" unique_id=154535313 instance=ExtResource("64_ukagr")]
+[node name="Impressora" parent="EnvironmentInitial" unique_id=1441717764 instance=ExtResource("64_ukagr")]
 transform = Transform3D(20.000011, 0, 1.9073486e-06, 0, 20.000004, 0, -1.9073486e-06, 0, 20.000011, -24.365177, -2.281601, 31.780624)
 
 [node name="Lixo2" parent="EnvironmentInitial" unique_id=1302461965 instance=ExtResource("65_767ms")]
@@ -871,7 +891,7 @@ transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 12.067984, 0.99423647, 0)
 [node name="Porta papel" parent="EnvironmentInitial" unique_id=824522504 instance=ExtResource("64_ely0l")]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 11.89889, 1.8226423, 0)
 
-[node name="Pc Abas abertas" parent="EnvironmentInitial" unique_id=241469662 instance=ExtResource("70_767ms")]
+[node name="Pc Abas abertas" parent="EnvironmentInitial" unique_id=1175479885 instance=ExtResource("70_767ms")]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 1.1259522, -0.49954224)
 
 [node name="Vaso de Plantas" parent="EnvironmentInitial" unique_id=412522427 instance=ExtResource("72_g550h")]
@@ -950,7 +970,7 @@ transform = Transform3D(-0.07993526, 0, 19.99984, 0, 20, 0, -19.99984, 0, -0.079
 [node name="Pc  Excel2" parent="EnvironmentTI" unique_id=1902268768 instance=ExtResource("70_mxykn")]
 transform = Transform3D(-0.07993526, 0, 19.99984, 0, 20, 0, -19.99984, 0, -0.07993526, -14.711574, 1.0906448, 37.891907)
 
-[node name="Pc  Tela de Iniciar" parent="EnvironmentTI" unique_id=1851914919 instance=ExtResource("71_awmh5")]
+[node name="Pc  Tela de Iniciar" parent="EnvironmentTI" unique_id=1664879228 instance=ExtResource("71_awmh5")]
 transform = Transform3D(0.997217, 0, 19.975124, 0, 20, 0, -19.975124, 0, 0.997217, -15.527439, 1.0700893, -22.547424)
 
 [node name="Pc  Tela de Iniciar2" parent="EnvironmentTI" unique_id=302633912 instance=ExtResource("71_awmh5")]
