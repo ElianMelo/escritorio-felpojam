@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="OfficeItemData" format=3 uid="uid://dv2mbqlgvttia"]
+
+[ext_resource type="PackedScene" uid="uid://h4h40ye2donl" path="res://Models/Props/Agua/Garrafa de agua.glb" id="1_bpslc"]
+[ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="2_2ltmx"]
+
+[resource]
+script = ExtResource("2_2ltmx")
+name = "Garrafa de Agua"
+reload = 2.0
+canDamage = true
+damage = 3
+canFreeze = true
+freezeDuration = 1.0
+meshScene = ExtResource("1_bpslc")
+meshYOffset = 0.406
+collisionShapeSize = Vector3(0.7943782, 0.8107424, 2.3139157)
+collisionShapePosition = Vector3(0.012355924, 0.40458536, 0.0031045675)
+metadata/_custom_type_script = "uid://dvk0rv8yoxdjy"

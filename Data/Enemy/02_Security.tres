@@ -2,14 +2,15 @@
 
 [ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="1_yno4l"]
 [ext_resource type="Resource" uid="uid://b18e37y7q4f2y" path="res://Data/Items/Blunt/Lixeira.tres" id="2_uo1q3"]
+[ext_resource type="Resource" uid="uid://jdpt7l1fsqqk" path="res://Data/Items/Blunt/Relogio.tres" id="3_yno4l"]
 [ext_resource type="Script" uid="uid://dp2dtn4l4rb7q" path="res://Scenes/EnemyData.gd" id="4_53gu8"]
 
 [resource]
 script = ExtResource("4_53gu8")
 name = "O segurança"
 title = "O segurança"
-subTitle = "Ele vai te barrar"
+subTitle = "Ele vai te cumprimentar"
 cine_state = 2
-health = 100
-enemyItems = Array[ExtResource("1_yno4l")]([ExtResource("2_uo1q3"), ExtResource("2_uo1q3")])
+health = 150
+enemyItems = Array[ExtResource("1_yno4l")]([ExtResource("2_uo1q3"), ExtResource("3_yno4l"), ExtResource("2_uo1q3")])
 metadata/_custom_type_script = "uid://dp2dtn4l4rb7q"

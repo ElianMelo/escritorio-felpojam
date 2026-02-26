@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="OfficeItemData" format=3 uid="uid://rk03oam6axrr"]
+
+[ext_resource type="PackedScene" uid="uid://cpbqqet7ecvab" path="res://Models/Props/Telefone mesa/Telefone mesa.glb" id="1_r2j2j"]
+[ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="2_prx0q"]
+
+[resource]
+script = ExtResource("2_prx0q")
+name = "Telefone Mesa"
+reload = 8.0
+canDamage = true
+damage = 16
+canFreeze = true
+freezeDuration = 5.0
+meshScene = ExtResource("1_r2j2j")
+meshYOffset = 0.37
+collisionShapeSize = Vector3(1.8253384, 0.88294524, 2.6275797)
+collisionShapePosition = Vector3(0.3852521, 0.44068682, -0.1519844)
+metadata/_custom_type_script = "uid://dvk0rv8yoxdjy"

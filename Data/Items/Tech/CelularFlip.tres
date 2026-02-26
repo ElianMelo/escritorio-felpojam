@@ -6,9 +6,9 @@
 [resource]
 script = ExtResource("2_075yu")
 name = "Celular Flip"
-reload = 2.0
+reload = 3.0
 canDamage = true
-damage = 2
+damage = 3
 canHaste = true
 hasteDuration = 1.0
 meshScene = ExtResource("1_8rdjn")

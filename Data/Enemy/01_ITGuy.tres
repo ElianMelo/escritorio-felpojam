@@ -7,9 +7,9 @@
 
 [resource]
 script = ExtResource("4_jqnlt")
-name = "Cara do TI 1"
+name = "O Cara do TI"
 title = "O Cara do TI"
-subTitle = "O mais nerd V1"
+subTitle = "O mais nerd da turma puxa assunto"
 cine_state = 1
 health = 100
 enemyItems = Array[ExtResource("1_scwy2")]([ExtResource("2_nsce3"), ExtResource("3_tblx7")])

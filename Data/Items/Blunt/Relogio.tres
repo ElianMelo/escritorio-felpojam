@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="OfficeItemData" format=3 uid="uid://jdpt7l1fsqqk"]
+
+[ext_resource type="PackedScene" uid="uid://cwo1tci703pps" path="res://Models/Props/Relogio de parede/Relogio de parede.glb" id="1_7dcr0"]
+[ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="2_y1nkw"]
+
+[resource]
+script = ExtResource("2_y1nkw")
+name = "Relogio"
+reload = 4.0
+canDamage = true
+damage = 7
+canFreeze = true
+freezeDuration = 6.0
+meshScene = ExtResource("1_7dcr0")
+meshYOffset = 0.147
+collisionShapeSize = Vector3(3.1106868, 0.28812867, 2.954847)
+collisionShapePosition = Vector3(0.00954929, 0.14327851, 0.007338226)
+metadata/_custom_type_script = "uid://dvk0rv8yoxdjy"

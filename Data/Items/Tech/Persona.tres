@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="OfficeItemData" format=3 uid="uid://dumkwx42furqb"]
+
+[ext_resource type="PackedScene" uid="uid://blvui3eo5toby" path="res://Models/Props/Fone estilo persona/Fone estilo persona.glb" id="1_7cfx1"]
+[ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="2_0k57w"]
+
+[resource]
+script = ExtResource("2_0k57w")
+name = "Fone com persona"
+reload = 3.0
+canHaste = true
+hasteDuration = 7.0
+meshScene = ExtResource("1_7cfx1")
+meshYOffset = 0.717
+collisionShapeSize = Vector3(3.304, 0.321, 3.129)
+collisionShapePosition = Vector3(-0.022845, 0.33128816, -0.034050286)
+metadata/_custom_type_script = "uid://dvk0rv8yoxdjy"

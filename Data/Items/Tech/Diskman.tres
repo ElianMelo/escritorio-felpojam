@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="OfficeItemData" format=3 uid="uid://cnhskhutylmfa"]
+
+[ext_resource type="PackedScene" uid="uid://20vnxtycqyg2" path="res://Models/Props/Fone com disk man/Fone com disk man.glb" id="1_1hu87"]
+[ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="2_xly0t"]
+
+[resource]
+script = ExtResource("2_xly0t")
+name = "Fone com disco"
+reload = 1.0
+canHaste = true
+hasteDuration = 3.0
+meshScene = ExtResource("1_1hu87")
+meshYOffset = 0.717
+collisionShapeSize = Vector3(2.5786064, 1.430835, 3.532437)
+collisionShapePosition = Vector3(0.028974801, 0.7146317, -0.06972104)
+metadata/_custom_type_script = "uid://dvk0rv8yoxdjy"

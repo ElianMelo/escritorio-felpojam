@@ -17,7 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://ws4qnqrg3qdt" path="res://Audio/SFX/item_usage.wav" id="7_dj74v"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r3fl7"]
-size = Vector3(3.0847394, 0.18388748, 1.2371082)
+size = Vector3(1, 0.88294524, 1)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_7rqgy"]
 viewport_path = NodePath("ItemProgress/SubViewport")
@@ -47,7 +47,7 @@ stream = ExtResource("5_x57ev")
 script = ExtResource("3_gsc6a")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=809306776]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0028067231, 0.09115791, 0.000931859)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7979213, 0.44068682, -0.33819455)
 shape = SubResource("BoxShape3D_r3fl7")
 
 [node name="DecalReference" type="Decal" parent="." unique_id=315352591]

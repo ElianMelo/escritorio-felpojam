@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="OfficeItemData" format=3 uid="uid://dqenn3evtrisd"]
+
+[ext_resource type="PackedScene" uid="uid://b73ls8osp3scn" path="res://Models/Props/Tamagochi/Tamagochi.glb" id="1_wr5dn"]
+[ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="2_npy8s"]
+
+[resource]
+script = ExtResource("2_npy8s")
+name = "Mascote Virtual"
+reload = 3.0
+canDamage = true
+damage = 5
+canHaste = true
+hasteDuration = 3.0
+meshScene = ExtResource("1_wr5dn")
+meshYOffset = 0.183
+collisionShapeSize = Vector3(0.9051131, 0.36574402, 1.2207675)
+collisionShapePosition = Vector3(0.0011683106, 0.18208618, -0.002883613)
+metadata/_custom_type_script = "uid://dvk0rv8yoxdjy"

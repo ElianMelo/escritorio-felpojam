@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://dvtl8vcbxtgk7"]
+
+[ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="1_en1os"]
+[ext_resource type="Resource" uid="uid://cuggrnoelg1a4" path="res://Data/Items/White/PostIt.tres" id="3_en1os"]
+[ext_resource type="Resource" uid="uid://23uhkh103iob" path="res://Data/Items/Damage/Grampeador.tres" id="4_fjs6j"]
+[ext_resource type="Resource" uid="uid://cl8t5uhbq4yu5" path="res://Data/Items/White/Cracha.tres" id="5_o14vw"]
+[ext_resource type="Resource" uid="uid://dlm4uung1p3gy" path="res://Data/Items/Tech/Mouse.tres" id="6_8i46e"]
+[ext_resource type="Resource" uid="uid://crmpqknmfjn5c" path="res://Data/Items/White/Fichario.tres" id="6_j7vqx"]
+[ext_resource type="Script" uid="uid://dp2dtn4l4rb7q" path="res://Scenes/EnemyData.gd" id="7_rvfnc"]
+
+[resource]
+script = ExtResource("7_rvfnc")
+name = "A Chefe"
+title = "A Chefe"
+subTitle = "Pedindo demissao"
+cine_state = 3
+health = 500
+enemyItems = Array[ExtResource("1_en1os")]([ExtResource("6_8i46e"), ExtResource("3_en1os"), ExtResource("4_fjs6j"), ExtResource("5_o14vw"), ExtResource("6_j7vqx")])
+metadata/_custom_type_script = "uid://dp2dtn4l4rb7q"

@@ -6,9 +6,9 @@
 [resource]
 script = ExtResource("2_nb3lo")
 name = "Borracha"
-reload = 1.0
+reload = 15.0
 canDamage = true
-damage = 1
+damage = 50
 meshScene = ExtResource("1_rw0e0")
 meshYOffset = 0.081
 collisionShapeSize = Vector3(0.49649715, 0.15388542, 0.81178284)

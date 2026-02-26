@@ -6,11 +6,11 @@
 [resource]
 script = ExtResource("2_ub0oy")
 name = "Super Cola"
-reload = 2.0
+reload = 3.0
 canDamage = true
-damage = 3
+damage = 5
 canSlow = true
-slowDuration = 2.0
+slowDuration = 3.0
 meshScene = ExtResource("1_l77d0")
 meshYOffset = 0.227
 collisionShapeSize = Vector3(0.47347906, 1.204689, 0.653023)

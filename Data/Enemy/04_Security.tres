@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://blbpuyvmbai2k"]
+
+[ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="1_a17of"]
+[ext_resource type="Resource" uid="uid://b18e37y7q4f2y" path="res://Data/Items/Blunt/Lixeira.tres" id="2_0gx63"]
+[ext_resource type="Resource" uid="uid://jdpt7l1fsqqk" path="res://Data/Items/Blunt/Relogio.tres" id="3_1duvo"]
+[ext_resource type="Script" uid="uid://dp2dtn4l4rb7q" path="res://Scenes/EnemyData.gd" id="3_iu45m"]
+[ext_resource type="Resource" uid="uid://rk03oam6axrr" path="res://Data/Items/Blunt/TelefoneMesa.tres" id="4_ui78y"]
+
+[resource]
+script = ExtResource("3_iu45m")
+name = "O segurança"
+title = "O segurança"
+subTitle = "Ele vai te dar um cafézinho"
+cine_state = 2
+health = 300
+enemyItems = Array[ExtResource("1_a17of")]([ExtResource("2_0gx63"), ExtResource("3_1duvo"), ExtResource("2_0gx63"), ExtResource("4_ui78y")])
+metadata/_custom_type_script = "uid://dp2dtn4l4rb7q"

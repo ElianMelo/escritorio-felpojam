@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="OfficeItemData" format=3 uid="uid://dgvk2nd5d6qj4"]
+
+[ext_resource type="PackedScene" uid="uid://ftm6orkr0el1" path="res://Models/Props/Baralho/Baralho.glb" id="1_qu50s"]
+[ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="2_qdeqd"]
+
+[resource]
+script = ExtResource("2_qdeqd")
+name = "Baralho"
+reload = 4.0
+canDamage = true
+damage = 6
+canCharge = true
+chargeSeconds = 1.0
+meshScene = ExtResource("1_qu50s")
+meshYOffset = 0.175
+collisionShapeSize = Vector3(0.76388836, 0.34970713, 1.1126586)
+collisionShapePosition = Vector3(-0.0028890073, 0.17406774, 0.00243932)
+metadata/_custom_type_script = "uid://dvk0rv8yoxdjy"
