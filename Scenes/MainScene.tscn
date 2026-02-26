@@ -62,6 +62,7 @@
 [ext_resource type="Resource" uid="uid://dqenn3evtrisd" path="res://Data/Items/Tech/Tamagochi.tres" id="34_r3wja"]
 [ext_resource type="Resource" uid="uid://dvtl8vcbxtgk7" path="res://Data/Enemy/06_Boss.tres" id="35_5q8ga"]
 [ext_resource type="Resource" uid="uid://rk03oam6axrr" path="res://Data/Items/Blunt/TelefoneMesa.tres" id="35_bco25"]
+[ext_resource type="Resource" uid="uid://gryjhh4ygnbi" path="res://Data/Enemy/07_Trainee.tres" id="37_205jp"]
 [ext_resource type="AudioStream" uid="uid://beka3i7s3p6fv" path="res://Audio/SFX/buy_sell.wav" id="37_iv865"]
 [ext_resource type="PackedScene" uid="uid://btkxsv6c67eck" path="res://Models/Table/Pad Compra.glb" id="38_qanbq"]
 [ext_resource type="PackedScene" uid="uid://cil2s8bi4aytc" path="res://Models/Stamp/CarimboScene.tscn" id="40_20cv7"]
@@ -97,6 +98,9 @@
 [ext_resource type="PackedScene" uid="uid://b4n0mgowwf20y" path="res://Models/Environment/Pc/Pc  Tela de Iniciar.glb" id="71_awmh5"]
 [ext_resource type="PackedScene" uid="uid://dyts4cjynywdp" path="res://Models/Environment/Vaso de Plantas/Vaso de Plantas.glb" id="72_g550h"]
 [ext_resource type="Script" uid="uid://blou7ohw87pfc" path="res://Models/Characters/Seguranca/SecurityCode.gd" id="85_3wspw"]
+[ext_resource type="PackedScene" uid="uid://d0kb27qrw75w5" path="res://Models/Characters/Estagiario/estagiario.glb" id="95_bco25"]
+[ext_resource type="AnimationLibrary" uid="uid://816r65lgg1f4" path="res://Models/Characters/Estagiario/estagiarioIdle-loop.glb" id="96_0ubiu"]
+[ext_resource type="Script" uid="uid://diiwsfboshy1o" path="res://Models/Characters/Estagiario/TraineeCode.gd" id="96_x1beu"]
 [ext_resource type="PackedScene" uid="uid://2emvnumq7uhl" path="res://Models/BossRoom/Sala do chefe/Sala do chefe.glb" id="98_2t4jd"]
 [ext_resource type="PackedScene" uid="uid://pav35nbhpssj" path="res://Models/BossRoom/Cadeira chefe/Cadeira chefe.glb" id="99_jgq3e"]
 [ext_resource type="PackedScene" uid="uid://bicd2fwruba71" path="res://Models/BossRoom/Estante/Estante.glb" id="100_pxu6c"]
@@ -232,7 +236,7 @@ script = ExtResource("1_tr2i4")
 unique_name_in_owner = true
 script = ExtResource("2_0iob3")
 office_item_data = Array[ExtResource("3_y4jh7")]([ExtResource("6_usjqs"), ExtResource("7_uuu6x"), ExtResource("7_d0jji"), ExtResource("9_8um71"), ExtResource("10_hkvke"), ExtResource("11_20cv7"), ExtResource("12_ywy86"), ExtResource("11_dtg5n"), ExtResource("6_dtg5n"), ExtResource("15_goiu7"), ExtResource("8_cotnl"), ExtResource("17_fqfjr"), ExtResource("18_oqotn"), ExtResource("19_eebff"), ExtResource("20_qtnps"), ExtResource("9_ypccg"), ExtResource("10_rmfi2"), ExtResource("23_b420t"), ExtResource("24_eebff"), ExtResource("25_qtnps"), ExtResource("26_b420t"), ExtResource("29_mwkn6"), ExtResource("30_2t4jd"), ExtResource("31_jgq3e"), ExtResource("32_pxu6c"), ExtResource("33_wf3jy"), ExtResource("34_r3wja"), ExtResource("35_bco25")])
-enemiesData = Array[ExtResource("9_4sso6")]([ExtResource("25_uuu6x"), ExtResource("31_i8dgf"), ExtResource("9_xc4hf"), ExtResource("27_hkvke"), ExtResource("28_20cv7"), ExtResource("35_5q8ga")])
+enemiesData = Array[ExtResource("9_4sso6")]([ExtResource("25_uuu6x"), ExtResource("37_205jp"), ExtResource("31_i8dgf"), ExtResource("9_xc4hf"), ExtResource("27_hkvke"), ExtResource("28_20cv7"), ExtResource("35_5q8ga")])
 
 [node name="CinematicController" type="Node3D" parent="GameManager" unique_id=590458091]
 script = ExtResource("29_oqotn")
@@ -246,6 +250,8 @@ cameraCinematicSecurityPosition = Vector3(49.70635, 26.852844, -672.2658)
 cameraCinematicSecurityRotation = Vector3(-0.4158868, 1.5891016, -0.0029936535)
 cameraCinematicBossPosition = Vector3(49.70635, 26.852844, -858.14154)
 cameraCinematicBossRotation = Vector3(-0.41588682, 1.5125339, -0.0029936535)
+cameraCinematicTraineePosition = Vector3(42.43972, 18.30365, -1057.02)
+cameraCinematicTraineeRotation = Vector3(-0.4158868, 1.4545367, -0.0029936533)
 
 [node name="Shop" type="Node3D" parent="GameManager" unique_id=196357716]
 unique_name_in_owner = true
@@ -835,7 +841,7 @@ near = 0.001
 
 [node name="MainCamera3D2" type="Camera3D" parent="." unique_id=1279430300]
 unique_name_in_owner = true
-transform = Transform3D(0.059436545, -0.4031397, 0.9132063, -0.0027384658, 0.91475433, 0.40400127, -0.9982283, -0.026513223, 0.05326584, 49.70635, 26.852844, -858.14154)
+transform = Transform3D(0.11719868, -0.40092504, 0.9085833, -0.0027384656, 0.91475433, 0.4040013, -0.9931047, -0.04983655, 0.10611008, 42.43972, 18.30365, -1057.02)
 fov = 55.0
 near = 0.001
 
@@ -1081,11 +1087,219 @@ script = ExtResource("85_3wspw")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="EnvironmentSecurity/Seguranca" unique_id=1467183347]
 libraries/SegurancaIdle-loop = ExtResource("61_5hmhi")
 
+[node name="EnvironmentTrainee" type="Node3D" parent="." unique_id=736924007]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1073.031)
+
+[node name="Paredes Amarelas2" parent="EnvironmentTrainee" unique_id=1159303076 instance=ExtResource("53_fqfjr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0.872, -17, 14.976)
+
+[node name="Paredes Amarelas3" parent="EnvironmentTrainee" unique_id=1062285987 instance=ExtResource("53_fqfjr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -119, -17, 14.976)
+
+[node name="Baia" parent="EnvironmentTrainee" unique_id=1285070425 instance=ExtResource("58_0gkln")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -28.054398, 3.1092386, 14.327026)
+
+[node name="Baia2" parent="EnvironmentTrainee" unique_id=399765580 instance=ExtResource("58_0gkln")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -28.054398, 3.1092386, 63.94458)
+
+[node name="Baia3" parent="EnvironmentTrainee" unique_id=724878696 instance=ExtResource("58_0gkln")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -28.054398, 3.1092386, -34.78186)
+
+[node name="Fundo parede amarela" parent="EnvironmentTrainee" unique_id=1415127599 instance=ExtResource("57_awmh5")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -107.007515, -14.744333, 15.068996)
+
+[node name="Estagiario" parent="EnvironmentTrainee" unique_id=1904213615 instance=ExtResource("95_bco25")]
+transform = Transform3D(8.384606, 0, 18.157598, 0, 20, 0, -18.157598, 0, 8.384606, 24.729141, -14.091883, 9.52832)
+script = ExtResource("96_x1beu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="EnvironmentTrainee/Estagiario" unique_id=1763631400]
+libraries/estagiarioIdle-loop = ExtResource("96_0ubiu")
+
+[node name="Papeis" parent="EnvironmentTrainee" unique_id=578976613 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 13.646397, 0.994, 15.565796)
+
+[node name="Papeis2" parent="EnvironmentTrainee" unique_id=1812522342 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 13.646397, 3.0143514, 15.565796)
+
+[node name="Papeis3" parent="EnvironmentTrainee" unique_id=208431331 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 13.646397, 5.0340714, 15.565796)
+
+[node name="Papeis4" parent="EnvironmentTrainee" unique_id=434970478 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 13.646397, 7.1281257, 15.565796)
+
+[node name="Papeis5" parent="EnvironmentTrainee" unique_id=1247611826 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 13.646397, 9.464296, 15.565796)
+
+[node name="Papeis6" parent="EnvironmentTrainee" unique_id=604389377 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 13.646397, 11.668795, 15.565796)
+
+[node name="Papeis7" parent="EnvironmentTrainee" unique_id=814859049 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 13.646397, -11.379825, 15.565796)
+
+[node name="Papeis8" parent="EnvironmentTrainee" unique_id=1242719516 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 13.646397, -9.359474, 15.565796)
+
+[node name="Papeis9" parent="EnvironmentTrainee" unique_id=86220651 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 13.646397, -7.3397536, 15.565796)
+
+[node name="Papeis10" parent="EnvironmentTrainee" unique_id=1075756227 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 13.646397, -5.2456994, 15.565796)
+
+[node name="Papeis11" parent="EnvironmentTrainee" unique_id=2000242623 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 13.646397, -2.9095287, 15.565796)
+
+[node name="Papeis12" parent="EnvironmentTrainee" unique_id=1059613647 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 13.646397, -0.70503044, 15.565796)
+
+[node name="Papeis13" parent="EnvironmentTrainee" unique_id=509167102 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 10.41906, 0.994, 7.289551)
+
+[node name="Papeis14" parent="EnvironmentTrainee" unique_id=1815313279 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 10.41906, 3.0143514, 7.289551)
+
+[node name="Papeis15" parent="EnvironmentTrainee" unique_id=385355858 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 10.41906, 5.0340714, 7.289551)
+
+[node name="Papeis16" parent="EnvironmentTrainee" unique_id=1801820319 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 10.41906, 7.1281257, 7.289551)
+
+[node name="Papeis17" parent="EnvironmentTrainee" unique_id=791619920 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 10.41906, 9.464296, 7.289551)
+
+[node name="Papeis18" parent="EnvironmentTrainee" unique_id=139916114 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 10.41906, 11.668795, 7.289551)
+
+[node name="Papeis19" parent="EnvironmentTrainee" unique_id=1868890843 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 10.41906, -11.379825, 7.289551)
+
+[node name="Papeis20" parent="EnvironmentTrainee" unique_id=824650216 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 10.41906, -9.359474, 7.289551)
+
+[node name="Papeis21" parent="EnvironmentTrainee" unique_id=657411566 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 10.41906, -7.3397536, 7.289551)
+
+[node name="Papeis22" parent="EnvironmentTrainee" unique_id=1137380582 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 10.41906, -5.2456994, 7.289551)
+
+[node name="Papeis23" parent="EnvironmentTrainee" unique_id=251376020 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 10.41906, -2.9095287, 7.289551)
+
+[node name="Papeis24" parent="EnvironmentTrainee" unique_id=158061587 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 10.41906, -0.70503044, 7.289551)
+
+[node name="Papeis25" parent="EnvironmentTrainee" unique_id=214192957 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 12.443409, 0.994, -0.77001953)
+
+[node name="Papeis26" parent="EnvironmentTrainee" unique_id=445671089 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 12.443409, 3.0143514, -0.77001953)
+
+[node name="Papeis27" parent="EnvironmentTrainee" unique_id=429110504 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 12.443409, 5.0340714, -0.77001953)
+
+[node name="Papeis28" parent="EnvironmentTrainee" unique_id=283180458 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 12.443409, 7.1281257, -0.77001953)
+
+[node name="Papeis29" parent="EnvironmentTrainee" unique_id=1354585720 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 12.443409, 9.464296, -0.77001953)
+
+[node name="Papeis30" parent="EnvironmentTrainee" unique_id=414615470 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 12.443409, 11.668795, -0.77001953)
+
+[node name="Papeis31" parent="EnvironmentTrainee" unique_id=278274668 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 12.443409, -11.379825, -0.77001953)
+
+[node name="Papeis32" parent="EnvironmentTrainee" unique_id=2058817460 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 12.443409, -9.359474, -0.77001953)
+
+[node name="Papeis33" parent="EnvironmentTrainee" unique_id=1697510375 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 12.443409, -7.3397536, -0.77001953)
+
+[node name="Papeis34" parent="EnvironmentTrainee" unique_id=1577601729 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 12.443409, -5.2456994, -0.77001953)
+
+[node name="Papeis35" parent="EnvironmentTrainee" unique_id=361680333 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 12.443409, -2.9095287, -0.77001953)
+
+[node name="Papeis36" parent="EnvironmentTrainee" unique_id=491075213 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 12.443409, -0.70503044, -0.77001953)
+
+[node name="Papeis37" parent="EnvironmentTrainee" unique_id=809103916 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 22.543919, 0.994, -7.2617188)
+
+[node name="Papeis38" parent="EnvironmentTrainee" unique_id=788953044 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 22.543919, 3.0143514, -7.2617188)
+
+[node name="Papeis39" parent="EnvironmentTrainee" unique_id=2001967580 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 22.543919, 5.0340714, -7.2617188)
+
+[node name="Papeis40" parent="EnvironmentTrainee" unique_id=1478638424 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 22.543919, 7.1281257, -7.2617188)
+
+[node name="Papeis41" parent="EnvironmentTrainee" unique_id=832714866 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 22.543919, 9.464296, -7.2617188)
+
+[node name="Papeis42" parent="EnvironmentTrainee" unique_id=252240721 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 22.543919, 11.668795, -7.2617188)
+
+[node name="Papeis43" parent="EnvironmentTrainee" unique_id=1178665009 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 22.543919, -11.379825, -7.2617188)
+
+[node name="Papeis44" parent="EnvironmentTrainee" unique_id=1957140063 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 22.543919, -9.359474, -7.2617188)
+
+[node name="Papeis45" parent="EnvironmentTrainee" unique_id=1600930729 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 22.543919, -7.3397536, -7.2617188)
+
+[node name="Papeis46" parent="EnvironmentTrainee" unique_id=231738747 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 22.543919, -5.2456994, -7.2617188)
+
+[node name="Papeis47" parent="EnvironmentTrainee" unique_id=254334974 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 22.543919, -2.9095287, -7.2617188)
+
+[node name="Papeis48" parent="EnvironmentTrainee" unique_id=915480122 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 22.543919, -0.70503044, -7.2617188)
+
+[node name="Papeis49" parent="EnvironmentTrainee" unique_id=138079490 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 21.619076, 0.994, 23.003052)
+
+[node name="Papeis50" parent="EnvironmentTrainee" unique_id=1555728912 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 21.619076, 3.0143514, 23.003052)
+
+[node name="Papeis51" parent="EnvironmentTrainee" unique_id=82658308 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 21.619076, 5.0340714, 23.003052)
+
+[node name="Papeis52" parent="EnvironmentTrainee" unique_id=1586655826 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 21.619076, 7.1281257, 23.003052)
+
+[node name="Papeis53" parent="EnvironmentTrainee" unique_id=1876479455 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 21.619076, 9.464296, 23.003052)
+
+[node name="Papeis54" parent="EnvironmentTrainee" unique_id=435534128 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 21.619076, 11.668795, 23.003052)
+
+[node name="Papeis55" parent="EnvironmentTrainee" unique_id=895223338 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 21.619076, -11.379825, 23.003052)
+
+[node name="Papeis56" parent="EnvironmentTrainee" unique_id=1709181632 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 21.619076, -9.359474, 23.003052)
+
+[node name="Papeis57" parent="EnvironmentTrainee" unique_id=1608734190 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 21.619076, -7.3397536, 23.003052)
+
+[node name="Papeis58" parent="EnvironmentTrainee" unique_id=1509751507 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 21.619076, -5.2456994, 23.003052)
+
+[node name="Papeis59" parent="EnvironmentTrainee" unique_id=718359946 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 21.619076, -2.9095287, 23.003052)
+
+[node name="Papeis60" parent="EnvironmentTrainee" unique_id=665500250 instance=ExtResource("66_ukagr")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 21.619076, -0.70503044, 23.003052)
+
 [node name="EnvironmentBoss" type="Node3D" parent="." unique_id=1113078601]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -896.0441)
 
 [node name="Chefe" parent="EnvironmentBoss" unique_id=1575948620 instance=ExtResource("62_pa4y5")]
-transform = Transform3D(16.44884, 0, 11.37698, 0, 20, 0, -11.37698, 0, 16.44884, 4.273, -15.107, 26.995)
+transform = Transform3D(16.44884, 0, 11.37698, 0, 20, 0, -11.37698, 0, 16.44884, 15.569707, -15.107, 32.182556)
 script = ExtResource("64_w0aut")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="EnvironmentBoss/Chefe" unique_id=1971907652]
@@ -1104,7 +1318,7 @@ visible = false
 visible = false
 
 [node name="Cadeira chefe" parent="EnvironmentBoss" unique_id=1030440985 instance=ExtResource("99_jgq3e")]
-transform = Transform3D(-7.9538484, 0, 18.350376, 0, 20, 0, -18.350376, 0, -7.9538484, -21.905235, -5.680954, 27.727661)
+transform = Transform3D(-0.96688086, 0, 19.976614, 0, 20, 0, -19.976614, 0, -0.96688086, -23.26197, -8.4219, 19.32257)
 
 [node name="Estante" parent="EnvironmentBoss" unique_id=774588592 instance=ExtResource("100_pxu6c")]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -41.104877, 8.453257, -36.48712)

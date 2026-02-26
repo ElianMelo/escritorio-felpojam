@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://gryjhh4ygnbi"]
+
+[ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="1_6u220"]
+[ext_resource type="Resource" uid="uid://jdpt7l1fsqqk" path="res://Data/Items/Blunt/Relogio.tres" id="3_6u220"]
+[ext_resource type="Resource" uid="uid://dumkwx42furqb" path="res://Data/Items/Tech/Persona.tres" id="4_mdy11"]
+[ext_resource type="Resource" uid="uid://23uhkh103iob" path="res://Data/Items/Damage/Grampeador.tres" id="4_wgbks"]
+[ext_resource type="Resource" uid="uid://dqenn3evtrisd" path="res://Data/Items/Tech/Tamagochi.tres" id="5_0cg53"]
+[ext_resource type="Resource" uid="uid://dv2mbqlgvttia" path="res://Data/Items/Blunt/GarrafaDeAgua.tres" id="6_wgbks"]
+[ext_resource type="Script" uid="uid://dp2dtn4l4rb7q" path="res://Scenes/EnemyData.gd" id="7_qgbhk"]
+
+[resource]
+script = ExtResource("7_qgbhk")
+name = "O estagiario"
+title = "O estagiario"
+subTitle = "Ta ocupado fazendo 3 funções"
+cine_state = 4
+health = 500
+enemyItems = Array[ExtResource("1_6u220")]([ExtResource("4_wgbks"), ExtResource("3_6u220"), ExtResource("4_mdy11"), ExtResource("5_0cg53"), ExtResource("6_wgbks")])
+metadata/_custom_type_script = "uid://dp2dtn4l4rb7q"

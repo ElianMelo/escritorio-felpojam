@@ -13,7 +13,8 @@ enum CINEMATIC_STATE {
 	INITIAL,
 	IT,
 	SECURITY,
-	BOSS
+	BOSS,
+	TRAINEE
 }
 
 var player_max_health:float = 125

@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cd6h5o8ntpakc"]
+
+[ext_resource type="Texture2D" uid="uid://dfs1pgl35y2sr" path="res://Models/Characters/Estagiario/estagiario.png" id="1_q4j0n"]
+
+[resource]
+resource_name = "Estagiario"
+transparency = 3
+alpha_hash_scale = 1.0
+alpha_antialiasing_mode = 0
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_q4j0n")
+texture_filter = 0
