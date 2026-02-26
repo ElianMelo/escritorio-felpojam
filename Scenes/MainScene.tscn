@@ -97,6 +97,11 @@
 [ext_resource type="PackedScene" uid="uid://b4n0mgowwf20y" path="res://Models/Environment/Pc/Pc  Tela de Iniciar.glb" id="71_awmh5"]
 [ext_resource type="PackedScene" uid="uid://dyts4cjynywdp" path="res://Models/Environment/Vaso de Plantas/Vaso de Plantas.glb" id="72_g550h"]
 [ext_resource type="Script" uid="uid://blou7ohw87pfc" path="res://Models/Characters/Seguranca/SecurityCode.gd" id="85_3wspw"]
+[ext_resource type="PackedScene" uid="uid://2emvnumq7uhl" path="res://Models/BossRoom/Sala do chefe/Sala do chefe.glb" id="98_2t4jd"]
+[ext_resource type="PackedScene" uid="uid://pav35nbhpssj" path="res://Models/BossRoom/Cadeira chefe/Cadeira chefe.glb" id="99_jgq3e"]
+[ext_resource type="PackedScene" uid="uid://bicd2fwruba71" path="res://Models/BossRoom/Estante/Estante.glb" id="100_pxu6c"]
+[ext_resource type="PackedScene" uid="uid://dwmtjpvuqr2q5" path="res://Models/BossRoom/Mesa chefe/Mesa chefe.glb" id="101_wf3jy"]
+[ext_resource type="PackedScene" uid="uid://dvgomiig63gyi" path="res://Models/BossRoom/Vaso de Plantas/Vaso de plantas.glb" id="102_r3wja"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6rnll"]
 size = Vector3(1.2212067, 1.8466644, 1.1036301)
@@ -239,6 +244,8 @@ cameraCinematicTIPosition = Vector3(60.259903, 22.708206, -418.99374)
 cameraCinematicTIRotation = Vector3(-0.2199115, 0.83880526, -2.1494053e-08)
 cameraCinematicSecurityPosition = Vector3(49.70635, 26.852844, -672.2658)
 cameraCinematicSecurityRotation = Vector3(-0.4158868, 1.5891016, -0.0029936535)
+cameraCinematicBossPosition = Vector3(49.70635, 26.852844, -858.14154)
+cameraCinematicBossRotation = Vector3(-0.41588682, 1.5125339, -0.0029936535)
 
 [node name="Shop" type="Node3D" parent="GameManager" unique_id=196357716]
 unique_name_in_owner = true
@@ -828,7 +835,7 @@ near = 0.001
 
 [node name="MainCamera3D2" type="Camera3D" parent="." unique_id=1279430300]
 unique_name_in_owner = true
-transform = Transform3D(-0.017094893, -0.40398663, 0.91460514, -0.0027384658, 0.91475433, 0.40400133, -0.99985015, 0.0044017443, -0.01674393, 49.70635, 26.852844, -672.2658)
+transform = Transform3D(0.059436545, -0.4031397, 0.9132063, -0.0027384658, 0.91475433, 0.40400127, -0.9982283, -0.026513223, 0.05326584, 49.70635, 26.852844, -858.14154)
 fov = 55.0
 near = 0.001
 
@@ -1074,66 +1081,57 @@ script = ExtResource("85_3wspw")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="EnvironmentSecurity/Seguranca" unique_id=1467183347]
 libraries/SegurancaIdle-loop = ExtResource("61_5hmhi")
 
-[node name="EnvironmentBoss2" type="Node3D" parent="." unique_id=1113078601]
+[node name="EnvironmentBoss" type="Node3D" parent="." unique_id=1113078601]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -896.0441)
 
-[node name="Mesa" parent="EnvironmentBoss2" unique_id=417916112 instance=ExtResource("50_ywy86")]
-transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -0.19672465, -5.810932, -0.29554772)
-
-[node name="Arquivo de aço" parent="EnvironmentBoss2" unique_id=1380211452 instance=ExtResource("51_goiu7")]
-transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -20.902664, 0.7655686, 13.549188)
-
-[node name="Cadeira2" parent="EnvironmentBoss2" unique_id=1420166895 instance=ExtResource("52_goiu7")]
-transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -0.38563395, -9.060822, 16.402395)
-
-[node name="Paredes Amarelas2" parent="EnvironmentBoss2" unique_id=693863549 instance=ExtResource("53_fqfjr")]
-transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0.872, -17, 14.976)
-
-[node name="Paredes Amarelas3" parent="EnvironmentBoss2" unique_id=1954400156 instance=ExtResource("53_fqfjr")]
-transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -119, -17, 14.976)
-
-[node name="Baia" parent="EnvironmentBoss2" unique_id=1958786072 instance=ExtResource("58_0gkln")]
-transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -67.85077, 3.1092386, 14.326996)
-
-[node name="Baia2" parent="EnvironmentBoss2" unique_id=1044749752 instance=ExtResource("58_0gkln")]
-transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -67.85077, 3.1092386, 63.94455)
-
-[node name="Baia3" parent="EnvironmentBoss2" unique_id=1931682144 instance=ExtResource("58_0gkln")]
-transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -67.85077, 3.1092386, -34.781876)
-
-[node name="Caneca" parent="EnvironmentBoss2" unique_id=736736875 instance=ExtResource("59_e2ql2")]
-transform = Transform3D(12.088923, 0, 15.932919, 0, 20, 0, -15.932919, 0, 12.088923, -7.333414, 1.0006881, -1.9802094)
-
-[node name="Granpeador Cenario" parent="EnvironmentBoss2" unique_id=1014065782 instance=ExtResource("63_7aq6o")]
-transform = Transform3D(-19.92931, 0, 1.6801634, 0, 20.000004, 0, -1.6801634, 0, -19.92931, -9.709947, 0.28320217, 3.1276703)
-
-[node name="Impressora" parent="EnvironmentBoss2" unique_id=1200512091 instance=ExtResource("64_ukagr")]
-transform = Transform3D(20.000011, 0, 1.9073486e-06, 0, 20.000004, 0, -1.9073486e-06, 0, 20.000011, -24.365177, -2.281601, 31.780624)
-
-[node name="Lixo2" parent="EnvironmentBoss2" unique_id=1098689858 instance=ExtResource("65_767ms")]
-transform = Transform3D(20.00001, 0, 9.536743e-07, 0, 20.000004, 0, -9.536743e-07, 0, 20.00001, 19.778925, -11.869573, 1.670639)
-
-[node name="Papeis" parent="EnvironmentBoss2" unique_id=1450692373 instance=ExtResource("66_ukagr")]
-transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 12.067984, 0.99423647, 0)
-
-[node name="Porta papel" parent="EnvironmentBoss2" unique_id=1012629621 instance=ExtResource("64_ely0l")]
-transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 11.89889, 1.8226423, 0)
-
-[node name="Chefe" parent="EnvironmentBoss2" unique_id=1575948620 instance=ExtResource("62_pa4y5")]
-transform = Transform3D(16.44884, 0, 11.37698, 0, 20, 0, -11.37698, 0, 16.44884, -15.633978, -12.837027, -40.870316)
+[node name="Chefe" parent="EnvironmentBoss" unique_id=1575948620 instance=ExtResource("62_pa4y5")]
+transform = Transform3D(16.44884, 0, 11.37698, 0, 20, 0, -11.37698, 0, 16.44884, 4.273, -15.107, 26.995)
 script = ExtResource("64_w0aut")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="EnvironmentBoss2/Chefe" unique_id=1971907652]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="EnvironmentBoss/Chefe" unique_id=1971907652]
 libraries/ChefeIdle-loop = ExtResource("63_jnakw")
 
-[node name="Pc Abas abertas" parent="EnvironmentBoss2" unique_id=990061536 instance=ExtResource("70_767ms")]
-transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 1.1259522, -0.49954224)
+[node name="Sala do chefe" parent="EnvironmentBoss" unique_id=1996907549 instance=ExtResource("98_2t4jd")]
+transform = Transform3D(-30, 0, -2.6226833e-06, 0, 30, 0, 2.6226833e-06, 0, -30, 170.18547, -18.146059, 30.708008)
 
-[node name="Vaso de Plantas" parent="EnvironmentBoss2" unique_id=921818171 instance=ExtResource("72_g550h")]
-transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 16.913925, -11.29619, 11.810684)
+[node name="Paredes_001" parent="EnvironmentBoss/Sala do chefe" index="0" unique_id=1578133924]
+visible = false
 
-[node name="Fundo parede amarela" parent="EnvironmentBoss2" unique_id=644913765 instance=ExtResource("57_awmh5")]
-transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -107.007515, -14.744333, 15.068996)
+[node name="Porta_001" parent="EnvironmentBoss/Sala do chefe" index="2" unique_id=896027952]
+visible = false
+
+[node name="Porta_002" parent="EnvironmentBoss/Sala do chefe" index="4" unique_id=1892349294]
+visible = false
+
+[node name="Cadeira chefe" parent="EnvironmentBoss" unique_id=1030440985 instance=ExtResource("99_jgq3e")]
+transform = Transform3D(-7.9538484, 0, 18.350376, 0, 20, 0, -18.350376, 0, -7.9538484, -21.905235, -5.680954, 27.727661)
+
+[node name="Estante" parent="EnvironmentBoss" unique_id=774588592 instance=ExtResource("100_pxu6c")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -41.104877, 8.453257, -36.48712)
+
+[node name="Estante2" parent="EnvironmentBoss" unique_id=96873232 instance=ExtResource("100_pxu6c")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 18.265476, 8.453257, -36.48712)
+
+[node name="Estante3" parent="EnvironmentBoss" unique_id=1502114225 instance=ExtResource("100_pxu6c")]
+transform = Transform3D(-20, 0, -1.7484556e-06, 0, 20, 0, 1.7484556e-06, 0, -20, 22.229748, 8.453257, 111.453674)
+
+[node name="Estante4" parent="EnvironmentBoss" unique_id=1701303880 instance=ExtResource("100_pxu6c")]
+transform = Transform3D(-20, 0, -1.7484556e-06, 0, 20, 0, 1.7484556e-06, 0, -20, -37.74437, 8.453257, 111.453674)
+
+[node name="Mesa chefe2" parent="EnvironmentBoss" unique_id=1378622452 instance=ExtResource("101_wf3jy")]
+transform = Transform3D(6.098283, 0, 19.047594, 0, 19.999998, 0, -19.047594, 0, 6.098283, -11.786907, -3.8146973e-06, 60.387146)
+
+[node name="Vaso de plantas" parent="EnvironmentBoss" unique_id=1657251249 instance=ExtResource("102_r3wja")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -5.6980743, -10.389933, -22.990356)
+
+[node name="Vaso de plantas3" parent="EnvironmentBoss" unique_id=2126933536 instance=ExtResource("102_r3wja")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -6.5953445, -10.389933, 98.91345)
+
+[node name="Vaso de plantas4" parent="EnvironmentBoss" unique_id=547504593 instance=ExtResource("102_r3wja")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -54.750065, -10.389933, 97.70746)
+
+[node name="Vaso de plantas2" parent="EnvironmentBoss" unique_id=2118563078 instance=ExtResource("102_r3wja")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -50.913002, -10.389929, -20.690796)
 
 [connection signal="body_entered" from="GameManager/Shop/BuyItem" to="GameManager/Shop" method="_on_buy_item_body_entered"]
 [connection signal="body_entered" from="GameManager/Shop/SellItem" to="GameManager/Shop" method="_on_sell_item_body_entered"]
@@ -1147,4 +1145,5 @@ transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -107.007515, -14.744333, 1
 [editable path="GameManager/Stamp/Stampler/CarimboVisuals"]
 [editable path="GameManager/Interface/OptionsInterface/SubViewport/Caderno opções in game"]
 [editable path="EnvironmentTI/CaraDoTI"]
-[editable path="EnvironmentBoss2/Chefe"]
+[editable path="EnvironmentBoss/Chefe"]
+[editable path="EnvironmentBoss/Sala do chefe"]

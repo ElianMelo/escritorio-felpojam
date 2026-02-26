@@ -15,6 +15,9 @@ extends Node3D
 @export var cameraCinematicSecurityPosition: Vector3
 @export var cameraCinematicSecurityRotation: Vector3
 
+@export var cameraCinematicBossPosition: Vector3
+@export var cameraCinematicBossRotation: Vector3
+
 var currentCameraPosition: Vector3
 var currentCameraRotation: Vector3
 
@@ -54,5 +57,5 @@ func GrabCameraPositionBasedOnCinematic():
 			currentCameraPosition = cameraCinematicSecurityPosition
 			currentCameraRotation = cameraCinematicSecurityRotation
 		Global.CINEMATIC_STATE.BOSS:
-			currentCameraPosition = cameraCinematicTIPosition
-			currentCameraRotation = cameraCinematicTIRotation
+			currentCameraPosition = cameraCinematicBossPosition
+			currentCameraRotation = cameraCinematicBossRotation
