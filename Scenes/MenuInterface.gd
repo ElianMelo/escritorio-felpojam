@@ -1,6 +1,8 @@
 class_name MenuInterface
 extends Control
 
+@onready var tutorial: Control = $Tutorial
+
 var isEnabled: bool = true
 
 # Called when the node enters the scene tree for the first time.
@@ -32,8 +34,20 @@ func HideVisuals():
 	self.visible = false
 	Global.RevertGameState()
 
+func ShowTutorial():
+	tutorial.visible = true
+
+func HideTutorial():
+	tutorial.visible = false
+
 func _on_play_button_pressed() -> void:
 	Switch()
 
 func _on_quit_button_pressed() -> void:
 	get_tree().quit()
+
+func _on_tutorial_button_pressed() -> void:
+	ShowTutorial()
+
+func _on_quit_tutorial_button_pressed() -> void:
+	HideTutorial()

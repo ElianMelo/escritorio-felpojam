@@ -773,7 +773,6 @@ text = "[img=32]res://Sprites/Effects/Blunt.png[/img]
 fit_content = true
 
 [node name="MenuInterface" type="Control" parent="GameManager/Interface" unique_id=1175070585]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -791,13 +790,28 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -81.0
-offset_top = -27.0
-offset_right = 119.0
-offset_bottom = 4.0
+offset_left = -80.0
+offset_top = -73.0
+offset_right = 120.0
+offset_bottom = -42.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Jogar"
+
+[node name="TutorialButton" type="Button" parent="GameManager/Interface/MenuInterface" unique_id=1225524314]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -82.0
+offset_top = -25.0
+offset_right = 118.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Tutorial"
 
 [node name="QuitButton" type="Button" parent="GameManager/Interface/MenuInterface" unique_id=1775478679]
 layout_mode = 1
@@ -813,6 +827,45 @@ offset_bottom = 59.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Sair"
+
+[node name="Tutorial" type="Control" parent="GameManager/Interface/MenuInterface" unique_id=2038390747]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="GameManager/Interface/MenuInterface/Tutorial" unique_id=1711134447]
+layout_mode = 0
+offset_left = -166.0
+offset_top = -214.0
+offset_right = 234.0
+offset_bottom = 236.0
+texture = ExtResource("49_nod4m")
+expand_mode = 1
+
+[node name="QuitTutorialButton" type="Button" parent="GameManager/Interface/MenuInterface/Tutorial/TextureRect" unique_id=668260887]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 62.0
+offset_top = -209.0
+offset_right = 187.0
+offset_bottom = -178.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Fechar Tutorial
+"
 
 [node name="OptionsInterface" type="SubViewportContainer" parent="GameManager/Interface" unique_id=1025884235]
 visible = false
@@ -1362,7 +1415,9 @@ transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -50.913002, -10.389929, -2
 [connection signal="pressed" from="GameManager/Interface/ShopInterface/InitFightButton" to="GameManager/Interface" method="_on_init_fight_button_pressed"]
 [connection signal="pressed" from="GameManager/Interface/StampInterface/InitShopStampButton" to="GameManager/Interface" method="_on_init_shop_stamp_button_pressed"]
 [connection signal="pressed" from="GameManager/Interface/MenuInterface/PlayButton" to="GameManager/Interface/MenuInterface" method="_on_play_button_pressed"]
+[connection signal="pressed" from="GameManager/Interface/MenuInterface/TutorialButton" to="GameManager/Interface/MenuInterface" method="_on_tutorial_button_pressed"]
 [connection signal="pressed" from="GameManager/Interface/MenuInterface/QuitButton" to="GameManager/Interface/MenuInterface" method="_on_quit_button_pressed"]
+[connection signal="pressed" from="GameManager/Interface/MenuInterface/Tutorial/TextureRect/QuitTutorialButton" to="GameManager/Interface/MenuInterface" method="_on_quit_tutorial_button_pressed"]
 
 [editable path="GameManager/Stamp/Stampler/CarimboVisuals"]
 [editable path="GameManager/Interface/OptionsInterface/SubViewport/Caderno opções in game"]
