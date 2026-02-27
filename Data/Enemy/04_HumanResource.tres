@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://d3wqlbu8x7tk3"]
+
+[ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="1_5skd0"]
+[ext_resource type="Resource" uid="uid://cuggrnoelg1a4" path="res://Data/Items/White/PostIt.tres" id="2_pahpo"]
+[ext_resource type="Resource" uid="uid://bxgplmr1dnm5w" path="res://Data/Items/White/PacotePapelA4.tres" id="3_hpqqf"]
+[ext_resource type="Resource" uid="uid://crmpqknmfjn5c" path="res://Data/Items/White/Fichario.tres" id="4_wsvhb"]
+[ext_resource type="Resource" uid="uid://du3nrhlbl2hu2" path="res://Data/Items/White/Livro.tres" id="5_140qn"]
+[ext_resource type="Script" uid="uid://dp2dtn4l4rb7q" path="res://Scenes/EnemyData.gd" id="6_rxfdn"]
+
+[resource]
+script = ExtResource("6_rxfdn")
+name = "A moça do RH"
+title = "A moça do RH"
+subTitle = "Responde 3 e-mails por dia"
+cine_state = 5
+health = 300
+enemyItems = Array[ExtResource("1_5skd0")]([ExtResource("2_pahpo"), ExtResource("3_hpqqf"), ExtResource("4_wsvhb"), ExtResource("5_140qn")])
+metadata/_custom_type_script = "uid://dp2dtn4l4rb7q"

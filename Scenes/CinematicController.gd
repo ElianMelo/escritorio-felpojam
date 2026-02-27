@@ -21,6 +21,9 @@ extends Node3D
 @export var cameraCinematicTraineePosition: Vector3
 @export var cameraCinematicTraineeRotation: Vector3
 
+@export var cameraCinematicRHPosition: Vector3
+@export var cameraCinematicRHRotation: Vector3
+
 var currentCameraPosition: Vector3
 var currentCameraRotation: Vector3
 
@@ -65,3 +68,6 @@ func GrabCameraPositionBasedOnCinematic():
 		Global.CINEMATIC_STATE.TRAINEE:
 			currentCameraPosition = cameraCinematicTraineePosition
 			currentCameraRotation = cameraCinematicTraineeRotation
+		Global.CINEMATIC_STATE.RH:
+			currentCameraPosition = cameraCinematicRHPosition
+			currentCameraRotation = cameraCinematicRHRotation

@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://5h35ufo5ut33"]
+
+[resource]
+resource_name = "OutlineCamisa"
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.12919426, 0.29746234, 0.1839898, 1)

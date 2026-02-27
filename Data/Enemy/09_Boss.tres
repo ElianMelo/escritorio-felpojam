@@ -14,6 +14,6 @@ name = "A Chefe"
 title = "A Chefe"
 subTitle = "Pedindo demissao"
 cine_state = 3
-health = 500
+health = 550
 enemyItems = Array[ExtResource("1_en1os")]([ExtResource("6_8i46e"), ExtResource("3_en1os"), ExtResource("4_fjs6j"), ExtResource("5_o14vw"), ExtResource("6_j7vqx")])
 metadata/_custom_type_script = "uid://dp2dtn4l4rb7q"

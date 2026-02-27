@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bthbrecj44j1g"]
+
+[resource]
+resource_name = "OutlineCalca"
+shading_mode = 0
+albedo_color = Color(0.24682924, 0.03433709, 0.037320122, 1)
