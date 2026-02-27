@@ -1143,6 +1143,27 @@ bbcode_enabled = true
 text = "Utilize o mouse para interagir, botão esquerdo para pegar largar, comprar, vender, carimbar, arrastar"
 fit_content = true
 
+[node name="RichTextLabel" type="RichTextLabel" parent="GameManager/Interface/MenuInterface/Tutorial" unique_id=10753833]
+layout_mode = 0
+offset_left = -180.0
+offset_top = -207.0
+offset_right = 95.774994
+offset_bottom = -161.0
+theme_override_colors/default_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_outline_size = 5
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 30
+theme_override_font_sizes/bold_italics_font_size = 30
+theme_override_font_sizes/italics_font_size = 30
+theme_override_font_sizes/mono_font_size = 30
+bbcode_enabled = true
+text = "[b]TUTORIAL LER[/b]"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="OptionsInterface" type="SubViewportContainer" parent="GameManager/Interface" unique_id=1025884235]
 visible = false
 offset_left = 306.0
