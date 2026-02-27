@@ -8,8 +8,10 @@
 [ext_resource type="Script" uid="uid://btxlbpkwaflct" path="res://Scenes/InterfaceController.gd" id="3_4b75m"]
 [ext_resource type="AudioStream" uid="uid://yc2xvtt3glio" path="res://Audio/Ambience/office_ambience.wav" id="3_jv1ax"]
 [ext_resource type="Script" uid="uid://dvk0rv8yoxdjy" path="res://Scenes/OfficeItemData.gd" id="3_y4jh7"]
+[ext_resource type="AudioStream" uid="uid://dofo5vpexqlu" path="res://Audio/Music/regular_music.wav" id="4_3b22y"]
 [ext_resource type="Texture2D" uid="uid://6mgebga6vqdm" path="res://Sprites/block_back.png" id="4_xb4mg"]
 [ext_resource type="Texture2D" uid="uid://bsti8misj8x0m" path="res://Sprites/block.png" id="5_6t1o7"]
+[ext_resource type="AudioStream" uid="uid://b8xwpqpsbly4y" path="res://Audio/Music/boss_fight_music.wav" id="5_hudhm"]
 [ext_resource type="Resource" uid="uid://dn8huehs0n064" path="res://Data/Items/Tech/CdJanela98.tres" id="6_dtg5n"]
 [ext_resource type="PackedScene" uid="uid://wrs1isxs68sw" path="res://Prefabs/OfficeItem.tscn" id="6_q68mp"]
 [ext_resource type="Resource" uid="uid://b18e37y7q4f2y" path="res://Data/Items/Blunt/Lixeira.tres" id="6_usjqs"]
@@ -225,6 +227,12 @@ script = ExtResource("2_reede")
 stream = ExtResource("3_jv1ax")
 volume_db = -10.0
 
+[node name="RegularMusicPlayer2D" type="AudioStreamPlayer2D" parent="GameManager/SoundController" unique_id=230827381]
+stream = ExtResource("4_3b22y")
+
+[node name="BossMusicPlayer2D" type="AudioStreamPlayer2D" parent="GameManager/SoundController" unique_id=1887461829]
+stream = ExtResource("5_hudhm")
+
 [node name="SpawnerController" type="Node3D" parent="GameManager" unique_id=1347889653]
 unique_name_in_owner = true
 script = ExtResource("2_s1acj")
@@ -236,7 +244,7 @@ script = ExtResource("1_tr2i4")
 unique_name_in_owner = true
 script = ExtResource("2_0iob3")
 office_item_data = Array[ExtResource("3_y4jh7")]([ExtResource("6_usjqs"), ExtResource("7_uuu6x"), ExtResource("7_d0jji"), ExtResource("9_8um71"), ExtResource("10_hkvke"), ExtResource("11_20cv7"), ExtResource("12_ywy86"), ExtResource("11_dtg5n"), ExtResource("6_dtg5n"), ExtResource("15_goiu7"), ExtResource("8_cotnl"), ExtResource("17_fqfjr"), ExtResource("18_oqotn"), ExtResource("19_eebff"), ExtResource("20_qtnps"), ExtResource("9_ypccg"), ExtResource("10_rmfi2"), ExtResource("23_b420t"), ExtResource("24_eebff"), ExtResource("25_qtnps"), ExtResource("26_b420t"), ExtResource("29_mwkn6"), ExtResource("30_2t4jd"), ExtResource("31_jgq3e"), ExtResource("32_pxu6c"), ExtResource("33_wf3jy"), ExtResource("34_r3wja"), ExtResource("35_bco25")])
-enemiesData = Array[ExtResource("9_4sso6")]([ExtResource("25_uuu6x"), ExtResource("37_205jp"), ExtResource("31_i8dgf"), ExtResource("9_xc4hf"), ExtResource("27_hkvke"), ExtResource("28_20cv7"), ExtResource("35_5q8ga")])
+enemiesData = Array[ExtResource("9_4sso6")]([ExtResource("25_uuu6x"), ExtResource("35_5q8ga"), ExtResource("37_205jp"), ExtResource("31_i8dgf"), ExtResource("9_xc4hf"), ExtResource("27_hkvke"), ExtResource("28_20cv7")])
 
 [node name="CinematicController" type="Node3D" parent="GameManager" unique_id=590458091]
 script = ExtResource("29_oqotn")
