@@ -96,9 +96,14 @@
 [ext_resource type="PackedScene" uid="uid://dcxja8iafrfti" path="res://Models/Environment/Lixo/Lixo.glb" id="65_767ms"]
 [ext_resource type="PackedScene" uid="uid://55l7v54ssooa" path="res://Models/Environment/Papeis/Papeis.glb" id="66_ukagr"]
 [ext_resource type="PackedScene" uid="uid://bct2ycp0l1mpr" path="res://Models/Environment/Pc/Pc Abas abertas.glb" id="70_767ms"]
+[ext_resource type="Texture2D" uid="uid://onragqb8krb5" path="res://Sprites/Effects/GlueDecal.png" id="70_fq8yc"]
 [ext_resource type="PackedScene" uid="uid://d1065h1n20li6" path="res://Models/Environment/Pc/Pc  Excel.glb" id="70_mxykn"]
+[ext_resource type="Texture2D" uid="uid://bwj4bxq037jot" path="res://Sprites/Effects/Gray.png" id="71_6atk6"]
 [ext_resource type="PackedScene" uid="uid://b4n0mgowwf20y" path="res://Models/Environment/Pc/Pc  Tela de Iniciar.glb" id="71_awmh5"]
+[ext_resource type="Texture2D" uid="uid://cxyj0fomdrflt" path="res://Sprites/Effects/TechDecal.png" id="72_6atk6"]
 [ext_resource type="PackedScene" uid="uid://dyts4cjynywdp" path="res://Models/Environment/Vaso de Plantas/Vaso de Plantas.glb" id="72_g550h"]
+[ext_resource type="Texture2D" uid="uid://bk8eqr5wmobqn" path="res://Sprites/Effects/BluntDecal.png" id="73_3mtyh"]
+[ext_resource type="Texture2D" uid="uid://sivo7eq6ex8t" path="res://Sprites/Effects/WhiteDecal.png" id="74_ajgk3"]
 [ext_resource type="Script" uid="uid://blou7ohw87pfc" path="res://Models/Characters/Seguranca/SecurityCode.gd" id="85_3wspw"]
 [ext_resource type="PackedScene" uid="uid://d0kb27qrw75w5" path="res://Models/Characters/Estagiario/estagiario.glb" id="95_bco25"]
 [ext_resource type="AnimationLibrary" uid="uid://816r65lgg1f4" path="res://Models/Characters/Estagiario/estagiarioIdle-loop.glb" id="96_0ubiu"]
@@ -373,6 +378,7 @@ offset_right = 40.0
 grow_vertical = 0
 
 [node name="Label" type="Label" parent="GameManager/Interface/GeneralInterface" unique_id=1294020157]
+visible = false
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -866,6 +872,276 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Fechar Tutorial
 "
+
+[node name="TextureRect2" type="TextureRect" parent="GameManager/Interface/MenuInterface/Tutorial/TextureRect" unique_id=663227744]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 50.0
+offset_right = 100.0
+offset_bottom = 442.0
+texture = ExtResource("71_6atk6")
+expand_mode = 1
+
+[node name="GlueTutorial" type="Control" parent="GameManager/Interface/MenuInterface/Tutorial/TextureRect" unique_id=447340955]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -142.0
+offset_top = -162.0
+offset_right = -102.0
+offset_bottom = -122.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="GameManager/Interface/MenuInterface/Tutorial/TextureRect/GlueTutorial" unique_id=2017932649]
+layout_mode = 0
+offset_left = -21.0
+offset_top = -1.0
+offset_right = 19.0
+offset_bottom = 39.0
+texture = ExtResource("70_fq8yc")
+expand_mode = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GameManager/Interface/MenuInterface/Tutorial/TextureRect/GlueTutorial" unique_id=1896680029]
+layout_mode = 0
+offset_left = 49.0
+offset_right = 324.775
+offset_bottom = 46.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "[b]Colado[/b]: Diminui a velocidade dos itens pela metade"
+fit_content = true
+
+[node name="TechTutorial" type="Control" parent="GameManager/Interface/MenuInterface/Tutorial/TextureRect" unique_id=1550273264]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -142.0
+offset_top = -114.0
+offset_right = -102.0
+offset_bottom = -74.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="GameManager/Interface/MenuInterface/Tutorial/TextureRect/TechTutorial" unique_id=1143181827]
+layout_mode = 0
+offset_left = -21.0
+offset_top = -1.0
+offset_right = 19.0
+offset_bottom = 39.0
+texture = ExtResource("72_6atk6")
+expand_mode = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GameManager/Interface/MenuInterface/Tutorial/TextureRect/TechTutorial" unique_id=618202323]
+layout_mode = 0
+offset_left = 49.0
+offset_right = 324.775
+offset_bottom = 46.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "[b]Tecnologico[/b]: Dobra a velocidade dos itens"
+fit_content = true
+
+[node name="BluntTutorial" type="Control" parent="GameManager/Interface/MenuInterface/Tutorial/TextureRect" unique_id=276575457]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -142.0
+offset_top = -66.0
+offset_right = -102.0
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="GameManager/Interface/MenuInterface/Tutorial/TextureRect/BluntTutorial" unique_id=651395620]
+layout_mode = 0
+offset_left = -23.0
+offset_top = -1.0
+offset_right = 17.0
+offset_bottom = 39.0
+texture = ExtResource("73_3mtyh")
+expand_mode = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GameManager/Interface/MenuInterface/Tutorial/TextureRect/BluntTutorial" unique_id=1995459898]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 1.0
+offset_right = 324.775
+offset_bottom = 47.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "[b]Contundente[/b]: Para a execução de um item"
+fit_content = true
+
+[node name="WhiteTutorial" type="Control" parent="GameManager/Interface/MenuInterface/Tutorial/TextureRect" unique_id=1781648345]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -141.0
+offset_top = -21.0
+offset_right = -101.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="GameManager/Interface/MenuInterface/Tutorial/TextureRect/WhiteTutorial" unique_id=1399304032]
+layout_mode = 0
+offset_left = -26.0
+offset_top = 1.0
+offset_right = 14.0
+offset_bottom = 41.0
+texture = ExtResource("74_ajgk3")
+expand_mode = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GameManager/Interface/MenuInterface/Tutorial/TextureRect/WhiteTutorial" unique_id=156095]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 3.0
+offset_right = 324.775
+offset_bottom = 49.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "[b]Em branco[/b]: Pula o tempo de execução de um item"
+fit_content = true
+
+[node name="RTutorial" type="Control" parent="GameManager/Interface/MenuInterface/Tutorial/TextureRect" unique_id=1881211735]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -141.0
+offset_top = 29.0
+offset_right = -101.0
+offset_bottom = 69.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="GameManager/Interface/MenuInterface/Tutorial/TextureRect/RTutorial" unique_id=1489525220]
+layout_mode = 0
+offset_left = -22.0
+offset_top = 3.0
+offset_right = 20.055
+offset_bottom = 47.49
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 30
+theme_override_font_sizes/bold_italics_font_size = 30
+theme_override_font_sizes/italics_font_size = 30
+theme_override_font_sizes/mono_font_size = 30
+bbcode_enabled = true
+text = "[b]R[/b]"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GameManager/Interface/MenuInterface/Tutorial/TextureRect/RTutorial" unique_id=1457419075]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 7.0
+offset_right = 324.775
+offset_bottom = 53.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "Reseta a posição dos itens da loja, inventário, carimbo"
+fit_content = true
+
+[node name="EscTutorial" type="Control" parent="GameManager/Interface/MenuInterface/Tutorial/TextureRect" unique_id=1114160316]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -141.0
+offset_top = 82.0
+offset_right = -101.0
+offset_bottom = 122.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="GameManager/Interface/MenuInterface/Tutorial/TextureRect/EscTutorial" unique_id=179745412]
+layout_mode = 0
+offset_left = -25.0
+offset_right = 29.345001
+offset_bottom = 45.87
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 30
+theme_override_font_sizes/bold_italics_font_size = 30
+theme_override_font_sizes/italics_font_size = 30
+theme_override_font_sizes/mono_font_size = 30
+bbcode_enabled = true
+text = "[b]Esc[/b]"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GameManager/Interface/MenuInterface/Tutorial/TextureRect/EscTutorial" unique_id=412144909]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 8.0
+offset_right = 325.775
+offset_bottom = 54.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "Abre o menu"
+fit_content = true
+
+[node name="EscTutorial2" type="Control" parent="GameManager/Interface/MenuInterface/Tutorial/TextureRect" unique_id=1944616376]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -141.0
+offset_top = 127.0
+offset_right = -101.0
+offset_bottom = 167.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="GameManager/Interface/MenuInterface/Tutorial/TextureRect/EscTutorial2" unique_id=109711710]
+layout_mode = 0
+offset_left = -32.0
+offset_right = 33.885002
+offset_bottom = 51.055
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 30
+theme_override_font_sizes/bold_italics_font_size = 30
+theme_override_font_sizes/italics_font_size = 30
+theme_override_font_sizes/mono_font_size = 30
+bbcode_enabled = true
+text = "[b]LMB[/b]"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GameManager/Interface/MenuInterface/Tutorial/TextureRect/EscTutorial2" unique_id=1107357940]
+layout_mode = 0
+offset_left = 48.0
+offset_top = -3.0
+offset_right = 323.775
+offset_bottom = 89.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "Utilize o mouse para interagir, botão esquerdo para pegar largar, comprar, vender, carimbar, arrastar"
+fit_content = true
 
 [node name="OptionsInterface" type="SubViewportContainer" parent="GameManager/Interface" unique_id=1025884235]
 visible = false
