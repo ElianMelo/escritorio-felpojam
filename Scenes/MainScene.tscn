@@ -517,6 +517,7 @@ scale = Vector2(0.305, 0.305)
 texture = ExtResource("48_7gb0p")
 
 [node name="StopFightButton" type="Button" parent="GameManager/Interface/BattleInterface" unique_id=554972227]
+visible = false
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
