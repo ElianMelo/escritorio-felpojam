@@ -104,6 +104,8 @@
 [ext_resource type="PackedScene" uid="uid://dyts4cjynywdp" path="res://Models/Environment/Vaso de Plantas/Vaso de Plantas.glb" id="72_g550h"]
 [ext_resource type="Texture2D" uid="uid://bk8eqr5wmobqn" path="res://Sprites/Effects/BluntDecal.png" id="73_3mtyh"]
 [ext_resource type="Texture2D" uid="uid://sivo7eq6ex8t" path="res://Sprites/Effects/WhiteDecal.png" id="74_ajgk3"]
+[ext_resource type="Script" uid="uid://6cn2ghiw8atr" path="res://Scenes/WinGameInterface.gd" id="75_uslhs"]
+[ext_resource type="Texture2D" uid="uid://b2lbyhxqn6q47" path="res://Sprites/WinGame/WinGameResult.png" id="76_rfkrj"]
 [ext_resource type="Script" uid="uid://blou7ohw87pfc" path="res://Models/Characters/Seguranca/SecurityCode.gd" id="85_3wspw"]
 [ext_resource type="PackedScene" uid="uid://d0kb27qrw75w5" path="res://Models/Characters/Estagiario/estagiario.glb" id="95_bco25"]
 [ext_resource type="AnimationLibrary" uid="uid://816r65lgg1f4" path="res://Models/Characters/Estagiario/estagiarioIdle-loop.glb" id="96_0ubiu"]
@@ -395,6 +397,7 @@ theme_override_font_sizes/font_size = 30
 text = "Aperte R para resetar posição / ESC para abrir o menu / Utilize o mouse para interagir"
 
 [node name="BattleInterface" type="Control" parent="GameManager/Interface" unique_id=1859071300]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -784,6 +787,7 @@ text = "[img=32]res://Sprites/Effects/Blunt.png[/img]
 fit_content = true
 
 [node name="MenuInterface" type="Control" parent="GameManager/Interface" unique_id=1175070585]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -1168,6 +1172,68 @@ text = "[b]TUTORIAL LER[/b]"
 fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="WinGameInterface" type="Control" parent="GameManager/Interface" unique_id=1828193948]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+mouse_filter = 2
+script = ExtResource("75_uslhs")
+
+[node name="TextureRect" type="TextureRect" parent="GameManager/Interface/WinGameInterface" unique_id=1970308517]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -302.0
+offset_top = -267.0
+offset_right = 298.0
+offset_bottom = 333.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("76_rfkrj")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="GameManager/Interface/WinGameInterface" unique_id=1468816349]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -152.0
+offset_top = -247.0
+offset_right = 153.0
+offset_bottom = -224.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 30
+text = "Vitória, você pediu demissão com estilo"
+
+[node name="QuitButton" type="Button" parent="GameManager/Interface/WinGameInterface" unique_id=1639090861]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.0
+offset_top = 204.0
+offset_right = 105.0
+offset_bottom = 235.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Sair"
 
 [node name="OptionsInterface" type="SubViewportContainer" parent="GameManager/Interface" unique_id=1025884235]
 visible = false
@@ -1928,6 +1994,7 @@ transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -50.913002, -10.389929, -2
 [connection signal="pressed" from="GameManager/Interface/MenuInterface/TutorialButton" to="GameManager/Interface/MenuInterface" method="_on_tutorial_button_pressed"]
 [connection signal="pressed" from="GameManager/Interface/MenuInterface/QuitButton" to="GameManager/Interface/MenuInterface" method="_on_quit_button_pressed"]
 [connection signal="pressed" from="GameManager/Interface/MenuInterface/Tutorial/TextureRect/QuitTutorialButton" to="GameManager/Interface/MenuInterface" method="_on_quit_tutorial_button_pressed"]
+[connection signal="pressed" from="GameManager/Interface/WinGameInterface/QuitButton" to="GameManager/Interface/WinGameInterface" method="_on_quit_button_pressed"]
 
 [editable path="GameManager/Stamp/Stampler/CarimboVisuals"]
 [editable path="GameManager/Interface/OptionsInterface/SubViewport/Caderno opções in game"]

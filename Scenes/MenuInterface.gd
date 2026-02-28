@@ -24,8 +24,8 @@ func ShowVisuals():
 	self.visible = true
 	Engine.time_scale = 0
 	Global.isGamePaused = true
-	Global.ChangeCinematicState(Global.CINEMATIC_STATE.INITIAL, "Batalha de Escritorio",
-		"Fuja")
+	Global.ChangeCinematicState(Global.CINEMATIC_STATE.INITIAL, "Batalha de Escritório",
+		"Peça demissão")
 	Global.ChangeGameState(Global.GAME_STATE.CINEMATIC)
 
 func HideVisuals():

@@ -32,6 +32,8 @@ extends Node3D
 @onready var menu_interface: MenuInterface = $MenuInterface
 @onready var tooltip: TooltipItem = $TooltipBase/Tooltip
 @onready var cinematic_interface: Control = $CinematicInterface
+@onready var win_game_interface: WinGameInterface = $WinGameInterface
+
 
 var shop_message_tween: Tween
 
@@ -61,6 +63,10 @@ func OnGameStateChanged(state: Global.GAME_STATE):
 			battle_interface.visible = true
 		Global.GAME_STATE.POSTBATTLE:
 			post_battle_interface.visible = true
+			if Global.cinematic_state == Global.CINEMATIC_STATE.BOSS:
+				Global.isGameEnded = true
+				Global.ChangeCinematicState(Global.CINEMATIC_STATE.INITIAL, "", "")
+				Global.ChangeGameState(Global.GAME_STATE.CINEMATIC)
 		Global.GAME_STATE.SHOP:
 			shop_interface.visible = true
 		Global.GAME_STATE.STAMP:
@@ -69,7 +75,11 @@ func OnGameStateChanged(state: Global.GAME_STATE):
 		Global.GAME_STATE.CINEMATIC:
 			cinematic_interface.visible = true
 			if Global.cinematic_state == Global.CINEMATIC_STATE.INITIAL:
-				menu_interface.visible = true
+				if Global.isGameEnded:
+					win_game_interface.visible = true
+					win_game_interface.ShowVisuals(Global.wins >= Global.loses)
+				else:
+					menu_interface.visible = true
 
 func OnCinematicStateChanged(state: Global.CINEMATIC_STATE):
 	ChangeCinematicText(Global.cinematic_title, Global.cinematic_subtitle)
@@ -81,6 +91,7 @@ func DisableAllInterfaces():
 	menu_interface.visible = false
 	post_battle_interface.visible = false
 	cinematic_interface.visible = false
+	win_game_interface.visible = false
 
 func ChangeCinematicText(mainText: String, subText: String):
 	main_text.text = mainText

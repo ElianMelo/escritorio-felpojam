@@ -34,6 +34,9 @@ var cinematic_subtitle = "O mais nerd da turma"
 var coin: int = 4
 var firstItemBrought: bool = false
 var isGamePaused = false
+var isGameEnded = false
+var wins: int = 0
+var loses: int = 0
 
 signal game_state_changed(state: Global.GAME_STATE)
 signal cinematic_state_changed(state: Global.CINEMATIC_STATE)

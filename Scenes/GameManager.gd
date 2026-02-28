@@ -9,22 +9,13 @@ var loseText = "Derrota!"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Global.ChangeCinematicState(Global.CINEMATIC_STATE.INITIAL, "Batalha de Escritorio",
-		"Fuja")
+	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	Global.ChangeCinematicState(Global.CINEMATIC_STATE.INITIAL, "Batalha de Escritório",
+		"Peça demissão")
 	Global.ChangeGameState(Global.GAME_STATE.CINEMATIC)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("g_key_button") \
-		and Global.game_state == Global.GAME_STATE.SHOP:
-		Global.ChangeCinematicState(Global.CINEMATIC_STATE.IT, "O cara do TI",
-			"O mais nerd")
-		Global.ChangeGameState(Global.GAME_STATE.CINEMATIC)
-		return
-	if Input.is_action_just_pressed("g_key_button") \
-		and Global.game_state == Global.GAME_STATE.CINEMATIC:
-		Global.ChangeGameState(Global.GAME_STATE.SHOP)
-		return
 	if Global.enemy_health <= 0:
 		WinBattle()
 	if Global.player_health <= 0:
@@ -32,6 +23,7 @@ func _process(delta: float) -> void:
 
 func WinBattle():
 	Global.coin += winGold
+	Global.wins += 1
 	interface.ChangePostBattleText(winText, \
 		"Ganhou %s de moeda" % [winGold])
 	PostGameCoroutine()
@@ -39,6 +31,7 @@ func WinBattle():
 
 func LoseBattle():
 	Global.coin += loseGold
+	Global.loses += 1
 	interface.ChangePostBattleText(loseText, \
 		"Ganhou %s de moeda" % [loseGold])
 	PostGameCoroutine()
@@ -47,4 +40,5 @@ func LoseBattle():
 func PostGameCoroutine():
 	Global.ChangeGameState(Global.GAME_STATE.POSTBATTLE)
 	await get_tree().create_timer(3.0).timeout
+	if Global.isGameEnded: return
 	Global.ChangeGameState(Global.GAME_STATE.STAMP)
