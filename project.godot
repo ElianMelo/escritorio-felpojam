@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="escritorio-felpojam"
+config/name="BatalhaDeEscritorio"
 run/main_scene="uid://hplos1ocgsaa"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://b51ki0q1hch25"
 
 [autoload]
 
